@@ -6,11 +6,6 @@ Build/pdepend
 Build/lib
 Build/tmp
 Resources/Public/JavaScript/production*.js*
-Resources/Public/Css/adw.css
-Resources/Public/Css/germania-sacra.css
-Resources/Public/Css/edfu.css
-Resources/Private/Scss/_libs.scss
-Resources/Private/Scss/_Includes/_FontAwesome/*
 .gradle
 .sass-cache
 .idea
@@ -18,6 +13,4 @@ Resources/Private/Scss/_Includes/_FontAwesome/*
 Documentation/_make/build/
 *.iml
 
-package.json
-gulpfile.js
 node_modules

@@ -1,0 +1,25 @@
+{
+  "name": "tmpl_digizeit",
+  "version": "1.0.0",
+  "description": "[![Build Status](https://travis-ci.org/ipf/typo3-tmpl_digizeit.svg?branch=master)](https://travis-ci.org/ipf/typo3-tmpl_digizeit)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/subugoe/typo3-tmpl_digizeit.git"
+  },
+  "author": "",
+  "license": "GPL",
+  "bugs": {
+    "url": "https://github.com/subugoe/typo3-tmpl_digizeit/issues"
+  },
+  "homepage": "https://github.com/subugoe/typo3-tmpl_digizeit",
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-compass": "^2.0.3",
+    "gulp-sass": "^1.2.4",
+    "gulp-watch": "^3.0.0"
+  }
+}

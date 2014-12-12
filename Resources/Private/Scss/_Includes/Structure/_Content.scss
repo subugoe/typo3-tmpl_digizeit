@@ -1,4 +1,4 @@
-@import '_Includes/Settings';
+@import '../Settings';
 
 //@extend-elements
 //original selectors
@@ -132,14 +132,12 @@
 }
 
 #sidebar {
-	position: relative;
+	@extend .col-md-4;
 	top: 0;
 	right: 0;
-	width: 200px;
-	float: left;
-	background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/sidebarborder.gif) repeat-y;
+	background: #fff url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/sidebarborder.gif) repeat-y;
 	padding: 30px 0 30px 40px;
-	margin: 0 0 20px 20px;
+	//margin: 0 0 20px 20px;
 	line-height: 1.7em;
 	#sidebarlupe {
 		position: absolute;
@@ -386,17 +384,17 @@ h3 {
 	margin-right: 75px;
 }
 
-@import '_Includes/felogin';
-@import '_Includes/irfaq';
-@import '_Includes/drwiki';
-@import '_Includes/goobit3';
+@import '../Extensions/felogin';
+@import '../Extensions/irfaq';
+@import '../Extensions/drwiki';
+@import '../Extensions/goobit3';
 
 img {
 	border: none;
 }
 
 .redirect {
-	BORDER: $color_astral_approx 1px dashed;
+	border: $color_astral_approx 1px dashed;
 	PADDING: 1em;
 	COLOR: $black;
 	LINE-HEIGHT: 1.1em;
@@ -408,65 +406,6 @@ img {
 	float: left;
 	margin-right: 20px;
 	margin-bottom: 10px;
-}
-
-.wiki-box {
-	BORDER: $color_astral_approx 1px dashed;
-	PADDING: 1em;
-	COLOR: $black;
-	LINE-HEIGHT: 1.1em;
-	BACKGROUND-COLOR: $color_alabaster_approx;
-}
-
-.wiki-box-blue {
-	display: block;
-	font-size: 1em;
-	color: $black;
-	padding: 0.5em;
-	background: $color_athens_gray_approx;
-	border-left: 8px #E0E7F5 solid;
-}
-
-.wiki-box-red {
-	display: block;
-	font-size: 1em;
-	color: $black;
-	padding: 0.5em;
-	background: $color_fair_pink_approx;
-	border-left: 8px $color_pink_approx solid;
-}
-
-.wiki-box-green {
-	display: block;
-	font-size: 1em;
-	color: $black;
-	padding: 0.5em;
-	background: #33FF33;
-	border-left: 8px $color_japanese_laurel_approx solid;
-}
-
-.wiki-box-yellow {
-	display: block;
-	font-size: 1em;
-	color: $black;
-	padding: 0.5em;
-	background: #FFFF99;
-	border-left: 8px #FFFF00 solid;
-}
-
-.wiki-box-catlinks {
-	border: 1px solid $color_silver_chalice_approx;
-	background-color: $color_alabaster_approx;
-	padding: 5px;
-	margin-top: 1em;
-	clear: both;
-}
-
-.wiki-table {
-	margin: 1em 1em 1em 0;
-	background: $color_alabaster_approx;
-	border: 1px $color_silver_chalice_approx solid;
-	border-collapse: collapse;
 }
 
 .diff-r {

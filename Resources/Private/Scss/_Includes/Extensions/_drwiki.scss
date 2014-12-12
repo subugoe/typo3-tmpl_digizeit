@@ -139,3 +139,62 @@
 .tx-drwiki-pi1-urlextension {
 	display: none;
 }
+
+.wiki-box {
+	BORDER: $color_astral_approx 1px dashed;
+	PADDING: 1em;
+	COLOR: $black;
+	LINE-HEIGHT: 1.1em;
+	BACKGROUND-COLOR: $color_alabaster_approx;
+}
+
+.wiki-box-blue {
+	display: block;
+	font-size: 1em;
+	color: $black;
+	padding: 0.5em;
+	background: $color_athens_gray_approx;
+	border-left: 8px #E0E7F5 solid;
+}
+
+.wiki-box-red {
+	display: block;
+	font-size: 1em;
+	color: $black;
+	padding: 0.5em;
+	background: $color_fair_pink_approx;
+	border-left: 8px $color_pink_approx solid;
+}
+
+.wiki-box-green {
+	display: block;
+	font-size: 1em;
+	color: $black;
+	padding: 0.5em;
+	background: #33FF33;
+	border-left: 8px $color_japanese_laurel_approx solid;
+}
+
+.wiki-box-yellow {
+	display: block;
+	font-size: 1em;
+	color: $black;
+	padding: 0.5em;
+	background: #FFFF99;
+	border-left: 8px #FFFF00 solid;
+}
+
+.wiki-box-catlinks {
+	border: 1px solid $color_silver_chalice_approx;
+	background-color: $color_alabaster_approx;
+	padding: 5px;
+	margin-top: 1em;
+	clear: both;
+}
+
+.wiki-table {
+	margin: 1em 1em 1em 0;
+	background: $color_alabaster_approx;
+	border: 1px $color_silver_chalice_approx solid;
+	border-collapse: collapse;
+}

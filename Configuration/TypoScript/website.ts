@@ -26,15 +26,10 @@ page.headerData.10 < plugin.tx_simulatebe_pi1
 page.headerData.999 < plugin.meta
 
 page.includeCSS {
-	file1 = EXT:tmpl_digizeit/Resources/Public/Css/digi_layout.css
+	file1 = EXT:tmpl_digizeit/Resources/Public/Css/digizeit.css
 	file1.rel = stylesheet
 	file1.type = text/css
 	file1.media = screen,projection
-
-	file2 = EXT:tmpl_digizeit/Resources/Public/Css/digi_content.css
-	file2.rel = stylesheet
-	file2.type = text/css
-	file2.media = screen,projection
 }
 
 [browser = msie] AND [version = <7]

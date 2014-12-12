@@ -231,32 +231,32 @@ tt_content.list.20.9 {
 plugin {
 	tx_goobit3_browse {
 		_CSS_DEFAULT_STYLE >
-		templatefile = EXT:tmpl_digizeit/Resources/Private/Templates/goobit3_colbrowse_tmpl.html
+		templatefile = EXT:tmpl_digizeit/Resources/Private/Templates/Extensions/Goobit3/goobit3_colbrowse_tmpl.html
 	}
 
 	tx_goobit3_img {
 		_CSS_DEFAULT_STYLE >
-		templatefile = EXT:tmpl_digizeit/Resources/Private/Templates/goobit3_img_tmpl.html
+		templatefile = EXT:tmpl_digizeit/Resources/Private/Templates/Extensions/Goobit3/goobit3_img_tmpl.html
 	}
 
 	tx_goobit3_met {
 		_CSS_DEFAULT_STYLE >
-		templatefile = EXT:tmpl_digizeit/Resources/Private/Templates/goobit3_met_tmpl.html
+		templatefile = EXT:tmpl_digizeit/Resources/Private/Templates/Extensions/Goobit3/goobit3_met_tmpl.html
 	}
 
 	tx_goobit3_pdf {
 		_CSS_DEFAULT_STYLE >
-		templatefile = EXT:tmpl_digizeit/Resources/Private/Templates/goobit3_pdf_tmpl.html
+		templatefile = EXT:tmpl_digizeit/Resources/Private/Templates/Extensions/Goobit3/goobit3_pdf_tmpl.html
 	}
 
 	tx_goobit3_search {
 		_CSS_DEFAULT_STYLE >
-		templatefile = EXT:tmpl_digizeit/Resources/Private/Templates/goobit3_search_tmpl.html
+		templatefile = EXT:tmpl_digizeit/Resources/Private/Templates/Extensions/Goobit3/goobit3_search_tmpl.html
 	}
 
 	tx_goobit3_toc {
 		_CSS_DEFAULT_STYLE >
-		templatefile = EXT:tmpl_digizeit/Resources/Private/Templates/goobit3_toc_tmpl.html
+		templatefile = EXT:tmpl_digizeit/Resources/Private/Templates/Extensions/Goobit3/goobit3_toc_tmpl.html
 	}
 }
 

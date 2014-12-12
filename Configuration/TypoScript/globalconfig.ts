@@ -9,8 +9,6 @@ config {
 
 	removeDefaultJS = 0
 
-	#cache_clearAtMidnight = 1
-
 	#Kommentare ausblenden
 	disablePrefixComment = 1
 
@@ -18,7 +16,6 @@ config {
 	inlineStyle2TempFile = 1
 	disableImgBorderAttr = 1
 	index_enable = 1
-	#spamProtectEmailAddresses = 1
 
 	simulateStaticDocuments = 0
 	baseURL = {$BASEURL}
@@ -146,12 +143,6 @@ page.headerData {
 		)
 		wrap = <meta name="DC.Subject" content="|" />
 	}
-
-	#   1100 = TEXT
-	#   1100.dataWrap = <meta name="DC.identifier"
-	#       content="{getIndpEnv:TYPO3_REQUEST_URL}" scheme="DCTERMS.URI" />
-	#       #usw.
-	#   }
 }
 
 ###############################################################################

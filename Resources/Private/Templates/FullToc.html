@@ -1,0 +1,26 @@
+<f:cObject typoscriptObjectPath="page.10.subparts.cslogin"/>
+
+<a id="a_top"></a>
+<div class="wrapper">
+	<div id="bgicon"></div>
+	<div id="linebook"></div>
+	<div id="headborder"></div>
+	<div class="content">
+
+		<f:render partial="Header"/>
+		<f:render partial="Language"/>
+		<f:render partial="Navigation"/>
+
+		<f:cObject typoscriptObjectPath="page.10.subparts.breadcrumb"/>
+
+		<f:cObject typoscriptObjectPath="page.10.subparts.submenu"/>
+
+		<div id="maincol_full">
+			<f:cObject typoscriptObjectPath="page.10.subparts.maincontent"/>
+
+			<f:render partial="Login"/>
+
+			<f:render partial="Footer"/>
+		</div>
+	</div>
+</div>

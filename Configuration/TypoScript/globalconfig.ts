@@ -146,11 +146,6 @@ page.headerData {
 }
 
 ###############################################################################
-###############################################################################
-###############################################################################
-
-
-###############################################################################
 ### Plugin config #############################################################
 ###############################################################################
 
@@ -158,7 +153,7 @@ page.headerData {
 
 plugin.tx_drwiki_pi1 {
 	_CSS_DEFAULT_STYLE >
-	templateFile = EXT:tmpl_digizeit/Resources/Private/Templates/digizeit_drwiki_tmpl.html
+	templateFile = EXT:tmpl_digizeit/Resources/Private/Templates/Extensions/Drwiki/digizeit_drwiki_tmpl.html
 	### ACHTUNG: Funktioniert nicht, ist in class.tx_drwiki_pi1.php hardcodiert
 	#    allowedHTML = <center><a><br><b><h1><h2><h3><h4><h5><h6><img><li><ol><p><strong><table><tr><td><th><u><ul><thead><tbody><tfoot><em><dd><dt><dl><span><div><del><add><i><hr><pre><br><blockquote><address><code><caption><abbr><acronym><cite><dfn><q><ins><sup><sub><kbd><samp><var><tt><small><big>
 }
@@ -166,7 +161,7 @@ plugin.tx_drwiki_pi1 {
 plugin.tx_irfaq_pi1 {
 	iconPlus = /typo3conf/ext/tmpl_digizeit/Resources/Public/Images/plus.gif
 	iconMinus = /typo3conf/ext/tmpl_digizeit/Resources/Public/Images/minus.gif
-	templateFile = EXT:tmpl_digizeit/Resources/Private/Templates/digizeit_irfaq_tmpl.html
+	templateFile = EXT:tmpl_digizeit/Resources/Private/Templates/Extensions/Irfaq/digizeit_irfaq_tmpl.html
 	_CSS_DEFAULT_STYLE >
 }
 
@@ -252,7 +247,7 @@ plugin {
 }
 
 plugin.tx_felogin_pi1 {
-	templateFile = EXT:tmpl_digizeit/Resources/Private/Templates/digizeit_felogin.html
+	templateFile = EXT:tmpl_digizeit/Resources/Private/Templates/Extensions/Felogin/digizeit_felogin.html
 	_CSS_DEFAULT_STYLE >
 	welcomeHeader_stdWrap {
 		wrap = <h4>|</h4>
@@ -307,7 +302,3 @@ plugin.tx_ttaddress_pi1 {
 		description.required = 1
 	}
 }
-
-###############################################################################
-###############################################################################
-###############################################################################

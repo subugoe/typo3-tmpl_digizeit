@@ -43,19 +43,23 @@ page.includeCSS {
 
 page.bodyTag = <body>
 
-page.10 = TEMPLATE
-page.10.template = FILE
+page.10 = FLUIDTEMPLATE
+page.10 {
+	template = FILE
+	partialRootPath = EXT:tmpl_digizeit/Resources/Private/Templates/Partials/
+	layoutRootPath = EXT:tmpl_digizeit/Resources/Private/Templates/Layouts/
+}
 
 # ALTERNATIVES SEITENLAYOUT
 #  ***************************************************
 [globalVar = TSFE:page|layout=0]
-	page.10.template.file = EXT:tmpl_digizeit/Resources/Private/Templates/digizeit_main_tmpl.html
+	page.10.template.file = EXT:tmpl_digizeit/Resources/Private/Templates/Main.html
 [globalVar = TSFE:page|layout=1]
-	page.10.template.file = EXT:tmpl_digizeit/Resources/Private/Templates/digizeit_main_full_tmpl.html
+	page.10.template.file = EXT:tmpl_digizeit/Resources/Private/Templates/Full.html
 [globalVar = TSFE:page|layout=2]
-	page.10.template.file = EXT:tmpl_digizeit/Resources/Private/Templates/digizeit_main_search_tmpl.html
+	page.10.template.file = EXT:tmpl_digizeit/Resources/Private/Templates/Search.html
 [globalVar = TSFE:page|layout=3]
-	page.10.template.file = EXT:tmpl_digizeit/Resources/Private/Templates/digizeit_main_full_toc_tmpl.html
+	page.10.template.file = EXT:tmpl_digizeit/Resources/Private/Templates/FullToc.html
 [global]
 
 #[globalVar = TSFE:id=239, TSFE:id=227]
@@ -181,7 +185,6 @@ page.10 {
 		config {
 			disableAllHeaderCode = 1
 			additionalHeaders = Content-type:text/xml
-			#        no_cache = 1
 			xhtml_cleaning = 0
 		}
 	}
@@ -195,7 +198,7 @@ print.stylesheet = EXT:tmpl_digizeit/Resources/Public/Css/digi_print.css
 print.10 = TEMPLATE
 print.10 {
 	template = FILE
-	template.file = EXT:tmpl_digizeit/Resources/Private/Templates/digizeit_print_tmpl.html
+	template.file = EXT:tmpl_digizeit/Resources/Private/Templates/Print.html
 	workOnSubpart = DOCUMENT_BODY
 	subparts {
 		CONTENT < styles.content.get
@@ -203,6 +206,11 @@ print.10 {
 
 	marks {
 		TOPGFX = IMAGE
-		TOPGFX.file = EXT:tmpl_digizeit/Resources/Public/Images/Layout/logo_print.jpg
+		TOPGFX {
+			file = EXT:tmpl_digizeit/Resources/Public/Images/Layout/logo_print.jpg
+			file {
+				width = 300px
+			}
+		}
 	}
 }

@@ -1,0 +1,567 @@
+@import '_Includes/Settings';
+
+//@extend-elements
+//original selectors
+//#sidebarbordertop, #sidebarborderend
+%extend_1 {
+	position: absolute;
+	left: 0;
+	width: 20px;
+	height: 50px;
+}
+
+//original selectors
+//#maincol h3, #maincol_full h3
+%extend_2 {
+	font-size: 2em;
+	line-height: 1.2em;
+	max-width: 650px;
+}
+
+//original selectors
+//#maincol h4, #maincol_full h4
+%extend_3 {
+	font-size: 1.3em;
+	line-height: 1.2em;
+	max-width: 650px;
+	margin: 0;
+	font-weight: normal;
+	color: $color_log_cabin_approx;
+	font-style: italic;
+	margin: 10px 0 0;
+}
+
+//original selectors
+//#maincol h5, #maincol_full h5
+%extend_4 {
+	font-size: 1em;
+	line-height: 1.2em;
+	max-width: 650px;
+	font-weight: bold;
+	margin: 10px 0 0;
+}
+
+//original selectors
+//#hidebib, #showbib
+%extend_5 {
+	position: absolute;
+	right: -30px;
+	text-indent: -2000px;
+	overflow: hidden;
+	border-bottom: none;
+}
+
+//original selectors
+//.coll_object ul li, .objecthead
+%extend_6 {
+	max-width: 824px;
+	border-bottom: 1px dotted $color_celeste_approx;
+	padding: 4px 20px 3px 75px;
+	margin: 0 0 0 2px;
+}
+
+//original selectors
+//#collection .closebook, #collection .openbook
+%extend_7 {
+	position: absolute;
+	top: 0;
+	right: 40px;
+	width: 22px;
+	height: 22px;
+	text-indent: -2000px;
+	overflow: hidden;
+	border-bottom: none;
+}
+
+//original selectors
+//#mydigizeit_filter hr, #tx-goobit3-search hr
+%extend_8 {
+	color: $white;
+	background: $white;
+	border: 0 solid $white;
+	border-bottom: 1px dotted $color_celeste_approx;
+}
+
+//original selectors
+//#tx-goobi-img_head .comment hr, #tx-goobit3-toc_toc .comment hr, #tx-goobit3-met_section .comment hr
+%extend_9 {
+	color: $color_log_cabin_approx;
+	background-color: $black;
+	height: 1px;
+	border: 0;
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+
+//original selectors
+//.tx-irfaq-pi1 .irfaq-related-faq, .tx-irfaq-pi1 .irfaq-related-links
+%extend_10 {
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-top: 3px;
+	margin-bottom: 15px;
+}
+
+//original selectors
+//#tx-drwiki h1, #tx-drwiki h2, #tx-drwiki h3, #tx-drwiki h4, #tx-drwiki h5, #tx-drwiki h6
+%extend_11 {
+	font-family: $font_4, $font_5, $font_6, $font_7;
+	font-style: normal;
+	color: $black;
+	background: none;
+	font-weight: bold;
+	margin: 0;
+	padding: 0.5em 0 0.17em 0;
+	border-bottom: 1px solid $color_silver_chalice_approx;
+}
+
+//original selectors
+//#tx-drwiki input, #tx-drwiki textarea
+%extend_12 {
+	border: 1px $color_celeste_approx solid;
+	background: $alabaster;
+	color: $color_tapa_approx;
+}
+
+//original selectors
+//#tx-drwiki input[type=text]:focus, textarea:focus
+%extend_13 {
+	background: $color_gallery_approx;
+	color: $color_mine_shaft_approx;
+	border-color: $color_storm_dust_approx;
+}
+
+#sidebar {
+	position: relative;
+	top: 0;
+	right: 0;
+	width: 200px;
+	float: left;
+	background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/sidebarborder.gif) repeat-y;
+	padding: 30px 0 30px 40px;
+	margin: 0 0 20px 20px;
+	line-height: 1.7em;
+	#sidebarlupe {
+		position: absolute;
+		top: 58px;
+		right: 10px;
+		width: 26px;
+		height: 21px;
+		background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/sidebarlupe.gif) no-repeat 0 0;
+	}
+	h3 {
+		font-size: 1.6em;
+		margin-bottom: 10px;
+	}
+	h4 {
+		font-size: 1.2em;
+		color: $color_red_berry_approx;
+	}
+	p {
+		color: $color_log_cabin_approx;
+	}
+}
+
+#sidebarbordertop {
+	@extend %extend_1;
+	top: 0;
+	background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/sidebarborder_top.gif) no-repeat 0 0;
+}
+
+#sidebarborderend {
+	@extend %extend_1;
+	bottom: 0;
+	background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/sidebarborder_end.gif) no-repeat 0 0;
+}
+
+#liner {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 900px;
+	height: 1px;
+	border-top: 1px dotted $color_mountain_mist_approx;
+	clear: left;
+}
+
+h3 {
+	font-family: $font_0, $font_1, $font_2, $font_3;
+	font-style: italic;
+	color: $color_red_berry_approx;
+	padding: 0 0 5px 0;
+	border-bottom: 1px dotted $color_celeste_approx;
+}
+
+#maincol {
+	h3 {
+		@extend %extend_2;
+	}
+	h4 {
+		@extend %extend_3;
+	}
+	h5 {
+		@extend %extend_4;
+	}
+	p {
+		margin: 20px 0 0;
+		color: $color_log_cabin_approx;
+	}
+}
+
+#maincol_full {
+	h3 {
+		@extend %extend_2;
+	}
+	h4 {
+		@extend %extend_3;
+	}
+	h5 {
+		@extend %extend_4;
+	}
+	p {
+		margin: 20px 0 0;
+		color: $color_log_cabin_approx;
+	}
+}
+
+#blog {
+	.entry {
+		border-bottom: 1px dotted $color_celeste_approx;
+		padding: 10px 0;
+		h4 {
+			font-size: 1.1em;
+			line-height: 1.2em;
+			max-width: 650px;
+			margin: 0;
+			font-weight: bold;
+			color: $color_red_berry_approx;
+			font-style: normal;
+			.date {
+				font-weight: normal;
+				color: $color_log_cabin_approx;
+				.datesep {
+					width: 1px;
+					color: $white;
+					border-right: 1px solid $color_log_cabin_approx;
+				}
+			}
+		}
+	}
+	p {
+		margin: 0;
+	}
+}
+
+#newsicon {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 35px;
+	height: 40px;
+	background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/newsicon.gif) no-repeat 0 0;
+}
+
+#hidebib {
+	@extend %extend_5;
+	right: -30px;
+	bottom: 10px;
+	width: 180px;
+	height: 10px;
+	background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/hidebib.gif) no-repeat 0 0;
+}
+
+#showbib {
+	@extend %extend_5;
+	right: -30px;
+	bottom: 10px;
+	width: 180px;
+	height: 10px;
+	background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/showbib.gif) no-repeat 0 0;
+}
+
+#lock {
+	position: absolute;
+	top: -43px;
+	left: -40px;
+	width: 30px;
+	height: 30px;
+	overflow: hidden;
+	display: block;
+}
+
+#collection {
+	.coll_object {
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 950px;
+		clear: left;
+		margin: 20px 0 0;
+		padding: 0 0 6px 12px;
+		background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/bgwrapper.png) repeat-y;
+	}
+	.closebook {
+		@extend %extend_7;
+		background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/closebook.gif) no-repeat 0 0;
+	}
+	.openbook {
+		@extend %extend_7;
+		background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/openbook.gif) no-repeat 0 0;
+	}
+	.siteno {
+		position: absolute;
+		right: 200px;
+		display: inline;
+	}
+	.siteyear {
+		position: relative;
+		left: 0;
+		margin-right: 20px;
+	}
+	.sitepdf {
+		position: relative;
+		left: 0;
+		display: inline;
+		margin-left: 10px;
+		margin-top: 2px;
+		margin-right: 10px;
+	}
+	a.sitepdf:hover {
+		background: transparent;
+	}
+	img.pdficon {
+		vertical-align: middle;
+		padding-bottom: 2px;
+	}
+}
+
+.objsep {
+	position: absolute;
+	top: -20px;
+	left: 0;
+	width: 950px;
+	height: 20px;
+	background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/objsep.png) no-repeat top center;
+}
+
+.coll_object {
+	a {
+		border-bottom: none !important;
+	}
+	ul li {
+		@extend %extend_6;
+	}
+}
+
+.objecthead {
+	@extend %extend_6;
+	font-weight: bold;
+}
+
+.collectionend {
+	position: relative;
+	width: 950px;
+	height: 20px;
+	background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/objsep.png) no-repeat top center;
+}
+
+#address {
+	img {
+		display: inline;
+		float: left;
+		margin-right: 10px;
+		margin-bottom: 10px;
+	}
+	li {
+		padding: 0 0 7px 0;
+		line-height: 1.6em;
+	}
+	p.description {
+		border-bottom: 1px dotted $color_mountain_mist_approx;
+	}
+}
+
+.preceeding {
+	margin-left: 75px;
+	margin-right: 75px;
+}
+
+@import '_Includes/felogin';
+@import '_Includes/irfaq';
+@import '_Includes/drwiki';
+@import '_Includes/goobit3';
+
+img {
+	border: none;
+}
+
+.redirect {
+	BORDER: $color_astral_approx 1px dashed;
+	PADDING: 1em;
+	COLOR: $black;
+	LINE-HEIGHT: 1.1em;
+	BACKGROUND-COLOR: #FFFFF0;
+}
+
+.icons {
+	vertical-align: middle;
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 10px;
+}
+
+.wiki-box {
+	BORDER: $color_astral_approx 1px dashed;
+	PADDING: 1em;
+	COLOR: $black;
+	LINE-HEIGHT: 1.1em;
+	BACKGROUND-COLOR: $color_alabaster_approx;
+}
+
+.wiki-box-blue {
+	display: block;
+	font-size: 1em;
+	color: $black;
+	padding: 0.5em;
+	background: $color_athens_gray_approx;
+	border-left: 8px #E0E7F5 solid;
+}
+
+.wiki-box-red {
+	display: block;
+	font-size: 1em;
+	color: $black;
+	padding: 0.5em;
+	background: $color_fair_pink_approx;
+	border-left: 8px $color_pink_approx solid;
+}
+
+.wiki-box-green {
+	display: block;
+	font-size: 1em;
+	color: $black;
+	padding: 0.5em;
+	background: #33FF33;
+	border-left: 8px $color_japanese_laurel_approx solid;
+}
+
+.wiki-box-yellow {
+	display: block;
+	font-size: 1em;
+	color: $black;
+	padding: 0.5em;
+	background: #FFFF99;
+	border-left: 8px #FFFF00 solid;
+}
+
+.wiki-box-catlinks {
+	border: 1px solid $color_silver_chalice_approx;
+	background-color: $color_alabaster_approx;
+	padding: 5px;
+	margin-top: 1em;
+	clear: both;
+}
+
+.wiki-table {
+	margin: 1em 1em 1em 0;
+	background: $color_alabaster_approx;
+	border: 1px $color_silver_chalice_approx solid;
+	border-collapse: collapse;
+}
+
+.diff-r {
+	color: $color_red_approx;
+}
+
+.diff-g {
+	color: $color_japanese_laurel_approx;
+}
+
+.diff-result {
+	BORDER: $color_astral_approx 1px dashed;
+	PADDING: 1em;
+	COLOR: $black;
+	LINE-HEIGHT: 1.1em;
+	BACKGROUND-COLOR: $color_alabaster_approx;
+	font-family: $font_8, $font_9;
+}
+
+.diff-table {
+	width: 100%;
+}
+
+.diff-table-cell-green {
+	vertical-align: top;
+	text-align: left;
+	white-space: normal;
+	color: $color_japanese_laurel_approx;
+	font-family: $font_8, $font_9;
+	font-size: 10pt;
+	BORDER: $color_astral_approx 1px dashed;
+	PADDING: 1em;
+}
+
+.diff-table-cell-red {
+	vertical-align: top;
+	text-align: left;
+	white-space: normal;
+	color: $color_red_approx;
+	font-family: $font_8, $font_9;
+	font-size: 10pt;
+	BORDER: $color_astral_approx 1px dashed;
+	PADDING: 1em;
+}
+
+#toc {
+	BORDER: $color_silver_chalice_approx 1px solid;
+	PADDING: 5px;
+	FONT-SIZE: 10pt;
+	BACKGROUND-COLOR: $color_alabaster_approx;
+	.tocindent {
+		MARGIN-LEFT: 2em;
+	}
+	.tocline {
+		MARGIN-BOTTOM: 0;
+	}
+	P {
+		FONT-SIZE: 10pt;
+		MARGIN: 0;
+	}
+	.toctoggle {
+		FONT-SIZE: 10pt;
+	}
+	.editsection {
+		MARGIN-TOP: 0.7em;
+		FONT-SIZE: 10pt;
+	}
+}
+
+#welcome p {
+	font-family: $font_0, $font_1, $font_2, $font_3;
+	font-weight: normal;
+	font-size: 1.5em;
+	line-height: 1.5em;
+	font-style: italic;
+	padding: 15px 100px 20px 80px;
+	color: $color_log_cabin_approx;
+	margin: 0;
+}
+
+.list li {
+	background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/listelement.gif) no-repeat 0 5px;
+	padding: 0 0 0 15px;
+	line-height: 1.6em;
+}
+
+a.objecthead:hover {
+	background: none;
+	color: #C00;
+}
+
+#mydigizeit_filter hr {
+	@extend %extend_8;
+}
+
+textarea:focus {
+	@extend %extend_13;
+}

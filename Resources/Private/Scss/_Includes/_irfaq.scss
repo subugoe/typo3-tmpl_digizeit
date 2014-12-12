@@ -1,0 +1,72 @@
+.tx-irfaq-pi1 {
+	ul {
+		&.tx-irfaq-questions-list {
+			margin-bottom: 75px;
+		}
+		li a {
+			color: $black;
+			text-decoration: none;
+			&:hover {
+				color: $black;
+				text-decoration: underline;
+			}
+			p.bodytext {
+				margin: 0;
+				display: inline;
+				font-weight: bold;
+			}
+		}
+	}
+	.tx-irfaq-answer {
+		margin-bottom: 10px;
+		h4 p.bodytext {
+			margin: 0;
+			display: inline;
+			font-weight: bold;
+		}
+	}
+	dd {
+		margin-left: 0;
+		p {
+			margin-top: 0;
+		}
+	}
+	.additional-info {
+		border-top: 2px solid $color_mercury_approx;
+		margin-bottom: 10px;
+	}
+	.irfaq-related-faq {
+		@extend %extend_10;
+	}
+	.irfaq-related-links {
+		@extend %extend_10;
+	}
+	dt p {
+		font-weight: bold;
+		margin: 0;
+		display: inline;
+	}
+}
+
+.tx-irfaq-cleaner {
+	clear: left;
+	height: 1px;
+}
+
+.tx-irfaq-dynheader {
+	cursor: pointer;
+	color: $color_red_berry_approx;
+}
+
+.tx-irfaq-dynans-hidden {
+	display: none;
+}
+
+.tx-irfaq-dynans-visible {
+	display: inline;
+}
+
+dt.tx-irfaq-pi1 {
+	color: $color_red_berry_approx;
+	text-decoration: none;
+}

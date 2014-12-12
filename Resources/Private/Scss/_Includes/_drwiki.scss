@@ -1,0 +1,141 @@
+#tx-drwiki {
+	width: 640px;
+	border-left: 1px dotted $color_celeste_approx;
+	border-right: 1px dotted $color_celeste_approx;
+	padding: 5px;
+	td {
+		padding: 3px;
+	}
+	a {
+		text-decoration: none;
+		border: none;
+		&:hover {
+			TEXT-DECORATION: underline;
+		}
+	}
+	.notCreated {
+		color: $color_red_approx;
+	}
+	ul {
+		list-style-type: disc;
+	}
+	li {
+	}
+	ol {
+		&.references {
+			font-size: 9pt;
+			> li:target {
+				background-color: #DEF;
+			}
+		}
+		&.references-2column {
+			font-size: 9pt;
+			//Instead of the line below you could use @includecolumn-count($count)
+			column-count: 2;
+		}
+	}
+	.editsection {
+		float: right;
+		margin-left: 5px;
+	}
+	h1 {
+		@extend %extend_11;
+		font-size: 188%;
+		.editsection {
+			font-size: 53%;
+			font-weight: normal;
+		}
+	}
+	h2 {
+		@extend %extend_11;
+		font-size: 150%;
+		.editsection {
+			font-size: 67%;
+			font-weight: normal;
+		}
+	}
+	h3 {
+		@extend %extend_11;
+		font-size: 132%;
+		.editsection {
+			font-size: 76%;
+			font-weight: normal;
+		}
+	}
+	h4 {
+		@extend %extend_11;
+		font-size: 116%;
+		.editsection {
+			font-size: 86%;
+			font-weight: normal;
+		}
+	}
+	h5 {
+		@extend %extend_11;
+		font-size: 100%;
+		.editsection {
+			font-weight: normal;
+		}
+	}
+	h6 {
+		@extend %extend_11;
+		font-size: 80%;
+		.editsection {
+			font-size: 125%;
+			font-weight: normal;
+		}
+	}
+	HR {
+		height: 1px;
+		border-top: 1px dotted $black;
+		border-left: 0;
+		border-right: 0;
+		border-bottom: 0;
+	}
+	OL {
+		PADDING-RIGHT: 0;
+		PADDING-LEFT: 0;
+		PADDING-BOTTOM: 0;
+		MARGIN: 0.3em 0 0 3.2em;
+		LINE-HEIGHT: 1.5em;
+		PADDING-TOP: 0;
+	}
+	UL {
+		PADDING-RIGHT: 0;
+		PADDING-LEFT: 0;
+		PADDING-BOTTOM: 0;
+		MARGIN: 0.3em 0 0 1.5em;
+		LINE-HEIGHT: 1.5em;
+		PADDING-TOP: 0;
+	}
+	PRE {
+		BORDER: $color_astral_approx 1px dashed;
+		PADDING: 1em;
+		COLOR: $black;
+		LINE-HEIGHT: 1.1em;
+		BACKGROUND-COLOR: $color_alabaster_approx;
+		font-family: $font_8, $font_9;
+	}
+	INPUT {
+		font-size: 10pt;
+	}
+	TEXTAREA {
+		width: 100%;
+		font-size: 10pt;
+	}
+	input {
+		@extend %extend_12;
+	}
+	textarea {
+		@extend %extend_12;
+	}
+	sup.reference:target {
+		background-color: #DEF;
+	}
+	input[type=text]:focus {
+		@extend %extend_13;
+	}
+}
+.tx-drwiki-pi1-urlextension {
+	display: none;
+}

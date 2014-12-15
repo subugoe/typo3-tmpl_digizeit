@@ -48,6 +48,13 @@ page.10 {
 	template = FILE
 	partialRootPath = EXT:tmpl_digizeit/Resources/Private/Templates/Partials/
 	layoutRootPath = EXT:tmpl_digizeit/Resources/Private/Templates/Layouts/
+	settings {
+	}
+	variables {
+		language = TEXT
+		language.data = TSFE:config|config|sys_language_uid
+		language.insertData = 1
+	}
 }
 
 # ALTERNATIVES SEITENLAYOUT
@@ -70,7 +77,7 @@ page.10.marks.HLINE = TEXT
 page.10.marks.HLINE.value =
 #[end]
 
-temp.printview = TEXT 
+temp.printview = TEXT
 temp.printview {
 	# Default language (german)
 	value = Druckansicht
@@ -165,9 +172,6 @@ page.10 {
 
 	# Substitute the ###footmenu### subparts with dynamic menu
 	subparts.footmenu < temp.footmenu
-
-	# Substitute the ###lang_selector### subpart :
-	subparts.lang_selector < temp.language_selector
 }
 
 [globalVar = TSFE:type=100]

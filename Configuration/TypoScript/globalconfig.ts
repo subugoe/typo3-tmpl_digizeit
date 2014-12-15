@@ -4,7 +4,6 @@
 config {
 	xmlprologue = none
 	no_cache = 0
-
 	admPanel = 1
 
 	removeDefaultJS = 0
@@ -21,7 +20,6 @@ config {
 	baseURL = {$BASEURL}
 	tx_realurl_enable = 1
 	#### dr_wiki ####
-	inlineStyle2TempFile = 1
 	# the next line is necessary to make the anchors work again
 	prefixLocalAnchors = output
 	#### dr_wiki ####
@@ -51,7 +49,6 @@ config {
 	tx_piwik {
 		piwik_host = http://piwik.gwdg.de/
 		piwik_idsite = 142
-		#????
 		trackGoal = 1
 		setDomains = 92.51.150.136,*.digizeitschriften.de,*.digizeitschriften.org,resolver.sub.uni-goettingen.de
 		setDownloadClasses = maintitle_pdf,sitepdf
@@ -65,10 +62,6 @@ config {
 	config.locale_all = en_EN.utf-8
 [end]
 
-#Language selector
-temp.language_selector = PHP_SCRIPT
-temp.language_selector.file = typo3conf/ext/tmpl_digizeit/Resources/Private/Scripts/languageSelector.php
-
 #Additional header
 page.meta {
 	keywords.field = keywords
@@ -77,7 +70,7 @@ page.meta {
 	)
 	description.field = description
 	description.ifEmpty (
-         DigiZeitschriften - Das deutsche digitale Zeitschriftenarchiv - stellt deutsche Kernzeitschriften von großer wissenschaftlicher Bedeutung für den direkten Nutzerzugriff über das WWW bereit. Die Zeitschriften stammen aus folgenden Fachgebieten: Anglistik, Buchwesen, Bibliothekswesen, Erziehungswissenschaften, Geowissenschaften, Germanistik, Geschichte, Kunst, Mathematik, Musikwissenschaft, Naturwissenschaften, Neuere Philologien, Rechtswissenschaften, Religion, Romanistik, Soziologie, Wirtschaftswissenschaften 
+         DigiZeitschriften - Das deutsche digitale Zeitschriftenarchiv - stellt deutsche Kernzeitschriften von großer wissenschaftlicher Bedeutung für den direkten Nutzerzugriff über das WWW bereit. Die Zeitschriften stammen aus folgenden Fachgebieten: Anglistik, Buchwesen, Bibliothekswesen, Erziehungswissenschaften, Geowissenschaften, Germanistik, Geschichte, Kunst, Mathematik, Musikwissenschaft, Naturwissenschaften, Neuere Philologien, Rechtswissenschaften, Religion, Romanistik, Soziologie, Wirtschaftswissenschaften
 	)
 	robots = INDEX,FOLLOW
 

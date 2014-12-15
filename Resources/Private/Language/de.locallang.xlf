@@ -11,6 +11,14 @@
 				<source>register</source> <target state="signed-off">registrieren</target></trans-unit>
 			<trans-unit id="item_lostpass" approved="yes">
 				<source>Forgot your password?</source> <target state="signed-off">Passwort vergessen?</target></trans-unit>
+			<trans-unit id="langLink" approved="yes">
+				<source>0</source>
+				<target state="signed-off">2</target>
+			</trans-unit>
+			<trans-unit id="lang" approved="yes">
+				<source>english</source>
+				<target state="signed-off">english</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

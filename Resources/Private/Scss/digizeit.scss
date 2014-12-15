@@ -1,3 +1,4 @@
+@import '_Includes/Settings';
 @import 'bootstrap';
 
 /*
@@ -13,13 +14,13 @@ CSS-Datei für die Gestaltung des Layouts der Seite.
 /* ----------------- [ allgemeine Definitionen ] -------------------------------------------- */
 
 * {
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 }
 
 body {
 	background: #7e756a url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/bggrad.gif) repeat-x fixed;
-	font-family: Verdana, Arial, Helvetica, Sans-Serif;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 1em;
 	color: $gray-darker;
 }
@@ -125,67 +126,7 @@ img {
 	border-bottom: none;
 }
 
-#welcome,
-#breadcrumb {
-	position: relative;
-	width: 100%;
-	background: #f3ecd5;
-	margin-bottom: 10px;
-}
 
-#breadcrumb {
-	height: 30px;
-}
-
-#welcome p strong {
-	color: #900;
-}
-
-#cnose {
-	position: absolute;
-	bottom: -11px;
-	left: 41px;
-	width: 45px;
-	height: 11px;
-	background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/cnose.gif) no-repeat 0 0;
-	clear: left;
-}
-
-#breadcrumb dl {
-	position: absolute;
-	top: 7px;
-	left: 60px;
-}
-
-#breadcrumb dl dd,
-#breadcrumb dl dt {
-	float: left;
-	margin: 0 2px 0 0;
-}
-
-#breadcrumb dl dd .breadsep {
-	margin: 0 0 0 2px;
-	color: #222;
-}
-
-#breadcrumb a {
-	border-bottom: none;
-	font-weight: bold;
-	color: #222;
-	padding: 1px 2px;
-}
-
-#breadcrumb a:hover {
-	border-bottom: none;
-	background: #222;
-	font-weight: bold;
-	color: #fff;
-	padding: 1px 2px;
-}
-
-#breadcrumb dd {
-	color: #900;
-}
 
 /* ----------------- [ / Hintergrundgrafiken, Header & Breadcrumb ] ------------------------- */
 
@@ -221,177 +162,17 @@ img {
 
 #maincol_full {
 	@extend .col-md-8;
-	//width: 800px;
 	padding: 0;
 }
 
 /* ----------------- [ / Aufbau des Inhalts (Spalten etc.) ] -------------------------------- */
 
+@import '_Includes/Structure/Breadcrumb';
 @import '_Includes/Structure/Language';
-
-/* ----------------- [ Design der Navigation incl. der Buttons ] ---------------------------- */
-
-#nav {
-	position: absolute;
-	top: 129px;
-	left: 23px;
-	width: 900px;
-	height: 35px;
-	display: block;
-}
-
-#nav li {
-	position: relative;
-	top: 0;
-	left: 0;
-	float: left;
-	display: block;
-	height: 35px;
-	width: auto;
-}
-
-#nav li a {
-	position: relative;
-	top: 0;
-	left: 0;
-	width: auto;
-	height: 25px;
-	border-bottom: none;
-	display: block;
-	color: #fff;
-	text-align: center;
-	font-weight: bold;
-	font-size: 14px;
-	text-transform: uppercase;
-	font-family: 'Lucida Grande', Verdana, Arial, Sans-Serif;
-	padding: 5px 13px;
-	border-right: 1px dotted #fff;
-}
-
-* html #nav li a {
-	width: 100px;
-	height: 35px;
-}
-
-#nav li a.act {
-	background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/nav_act.gif) no-repeat bottom center;
-	height: 100%;
-}
-
-#nav li a:hover {
-	background: #f3ecd5;
-	color: #900;
-	height: 100%;
-}
-
-/* ----------------- [ / Design der Navigation incl. der Buttons ] -------------------------- */
-
-/* ----------------- [ / SubMenu ] -------------------------- */
-#submenu {
-	position: relative;
-	top: 0;
-	left: 0;
-	width: auto;
-	height: 30px;
-	overflow: hidden;
-	margin: 20px 0 0 60px;
-	font-size: 1.2em;
-}
-
-#submenu li {
-	position: relative;
-	top: 0;
-	left: 0;
-	float: left;
-	margin: 0 5px 0 0;
-}
-
-#submenu li a {
-	border-bottom: none;
-	color: #222;
-	float: left;
-}
-
-#submenu li a:hover {
-	border-bottom: none;
-	background: #900;
-	color: #fff;
-	float: left;
-}
-
-#submenu li a.sub_act {
-	font-weight: bold;
-	color: #900;
-}
-
-#submenu li a.sub_act:hover {
-	font-weight: bold;
-	background: #900;
-	color: #fff;
-}
-
-#submenu li .subnavsep {
-	position: relative;
-	top: 2px;
-	left: 0;
-	width: 5px;
-	height: 14px;
-	border-right: 1px solid #222;
-	display: block;
-	float: left;
-}
-
-/* ----------------- [ / SubMenu ] -------------------------- */
-
+@import '_Includes/Structure/Navigation';
+@import '_Includes/Structure/Submenu';
 @import '_Includes/Structure/Footer';
-
-/* ----------------- [ Direktsuche (oben rechts) ] ------------------------------------------ */
-#fastsearch {
-	position: absolute;
-	top: 20px;
-	right: 0;
-	width: 320px;
-	height: 68px;
-	border-left: 1px dotted #ccc;
-	#introtxt {
-		position: absolute;
-		top: 7px;
-		left: 16px;
-		width: 222px;
-		height: 12px;
-		font-size: 10px;
-		color: #baa;
-		overflow: hidden;
-	}
-	#searchstring {
-		position: absolute;
-		right: 15px;
-		top: 20px;
-		width: 280px;
-		height: 28px;
-		background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/inpbg_fastsearch.gif) no-repeat 0 0;
-		border: none;
-		font-size: 1.2em;
-		color: #fff;
-		padding: 6px 0 0 10px;
-	}
-	#send {
-		position: absolute;
-		top: 13px;
-		right: 15px;
-		height: 50px;
-		width: 61px;
-		border: none;
-		background: transparent url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/btn_fastsearch.png) no-repeat 0 0;
-		text-indent: -2000px;
-		overflow: hidden;
-		display: block;
-		font-size: 0;
-		color: #ccc;
-	}
-}
-
-/* ----------------- [ / Direktsuche (oben rechts) ] ---------------------------------------- */
+@import '_Includes/Structure/Fastsearch';
 
 /*-------------------- Sitemap ---------------------------------------------------*/
 

@@ -1201,7 +1201,7 @@ img {
   line-height: 1.42857;
   background-color: #fff;
   border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 0;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
@@ -1627,7 +1627,7 @@ code {
   font-size: 90%;
   color: #c7254e;
   background-color: #f9f2f4;
-  border-radius: 4px;
+  border-radius: 0;
 }
 
 kbd {
@@ -1656,7 +1656,7 @@ pre {
   color: #333333;
   background-color: #f5f5f5;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 0;
 }
 pre code {
   padding: 0;
@@ -2934,7 +2934,7 @@ output {
   color: #555555;
 }
 
-.form-control, .tx-femanager form .controls input {
+.form-control, .tx-femanager form .controls input, .tx-femanager form .controls textarea, .tx-femanager form .controls select {
   display: block;
   width: 100%;
   height: 34px;
@@ -2945,36 +2945,36 @@ output {
   background-color: #fff;
   background-image: none;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
-.form-control:focus, .tx-femanager form .controls input:focus {
+.form-control:focus, .tx-femanager form .controls input:focus, .tx-femanager form .controls textarea:focus, .tx-femanager form .controls select:focus {
   border-color: #66afe9;
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
-.form-control::-moz-placeholder, .tx-femanager form .controls input::-moz-placeholder {
+.form-control::-moz-placeholder, .tx-femanager form .controls input::-moz-placeholder, .tx-femanager form .controls textarea::-moz-placeholder, .tx-femanager form .controls select::-moz-placeholder {
   color: #999;
   opacity: 1;
 }
-.form-control:-ms-input-placeholder, .tx-femanager form .controls input:-ms-input-placeholder {
+.form-control:-ms-input-placeholder, .tx-femanager form .controls input:-ms-input-placeholder, .tx-femanager form .controls textarea:-ms-input-placeholder, .tx-femanager form .controls select:-ms-input-placeholder {
   color: #999;
 }
-.form-control::-webkit-input-placeholder, .tx-femanager form .controls input::-webkit-input-placeholder {
+.form-control::-webkit-input-placeholder, .tx-femanager form .controls input::-webkit-input-placeholder, .tx-femanager form .controls textarea::-webkit-input-placeholder, .tx-femanager form .controls select::-webkit-input-placeholder {
   color: #999;
 }
-.form-control[disabled], .tx-femanager form .controls input[disabled], .form-control[readonly], .tx-femanager form .controls input[readonly], fieldset[disabled] .form-control, fieldset[disabled] .tx-femanager form .controls input, .tx-femanager form .controls fieldset[disabled] input {
+.form-control[disabled], .tx-femanager form .controls input[disabled], .tx-femanager form .controls textarea[disabled], .tx-femanager form .controls select[disabled], .form-control[readonly], .tx-femanager form .controls input[readonly], .tx-femanager form .controls textarea[readonly], .tx-femanager form .controls select[readonly], fieldset[disabled] .form-control, fieldset[disabled] .tx-femanager form .controls input, .tx-femanager form .controls fieldset[disabled] input, fieldset[disabled] .tx-femanager form .controls textarea, .tx-femanager form .controls fieldset[disabled] textarea, fieldset[disabled] .tx-femanager form .controls select, .tx-femanager form .controls fieldset[disabled] select {
   cursor: not-allowed;
   background-color: #eeeeee;
   opacity: 1;
 }
 
-textarea.form-control {
+textarea.form-control, .tx-femanager form .controls textarea {
   height: auto;
 }
 
@@ -3054,6 +3054,7 @@ input[type="search"] {
 
 .radio input[type="radio"],
 .radio-inline input[type="radio"],
+.tx-femanager form label.radio input[type="radio"],
 .checkbox input[type="checkbox"],
 .checkbox-inline input[type="checkbox"] {
   position: absolute;
@@ -3066,7 +3067,7 @@ input[type="search"] {
   margin-top: -5px;
 }
 
-.radio-inline,
+.radio-inline, .tx-femanager form label.radio,
 .checkbox-inline {
   display: inline-block;
   padding-left: 20px;
@@ -3076,7 +3077,7 @@ input[type="search"] {
   cursor: pointer;
 }
 
-.radio-inline + .radio-inline,
+.radio-inline + .radio-inline, .tx-femanager form label.radio + .radio-inline, .tx-femanager form .radio-inline + label.radio, .tx-femanager form label.radio + label.radio,
 .checkbox-inline + .checkbox-inline {
   margin-top: 0;
   margin-left: 10px;
@@ -3089,7 +3090,7 @@ input[type="checkbox"] {
   cursor: not-allowed;
 }
 
-.radio-inline.disabled, fieldset[disabled] .radio-inline,
+.radio-inline.disabled, .tx-femanager form label.disabled.radio, fieldset[disabled] .radio-inline, fieldset[disabled] .tx-femanager form label.radio, .tx-femanager form fieldset[disabled] label.radio,
 .checkbox-inline.disabled, fieldset[disabled]
 .checkbox-inline {
   cursor: not-allowed;
@@ -3106,18 +3107,18 @@ input[type="checkbox"] {
   padding-bottom: 7px;
   margin-bottom: 0;
 }
-.form-control-static.input-lg, .input-group-lg > .form-control-static.form-control, .tx-femanager form .controls .input-group-lg > input.form-control-static,
+.form-control-static.input-lg, .input-group-lg > .form-control-static.form-control, .tx-femanager form .controls .input-group-lg > input.form-control-static, .tx-femanager form .controls .input-group-lg > textarea.form-control-static, .tx-femanager form .controls .input-group-lg > select.form-control-static,
 .input-group-lg > .form-control-static.input-group-addon,
-.input-group-lg > .input-group-btn > .form-control-static.btn, .form-control-static.input-sm, .input-group-sm > .form-control-static.form-control, .tx-femanager form .controls .input-group-sm > input.form-control-static,
+.input-group-lg > .input-group-btn > .form-control-static.btn, .form-control-static.input-sm, .input-group-sm > .form-control-static.form-control, .tx-femanager form .controls .input-group-sm > input.form-control-static, .tx-femanager form .controls .input-group-sm > textarea.form-control-static, .tx-femanager form .controls .input-group-sm > select.form-control-static,
 .input-group-sm > .form-control-static.input-group-addon,
 .input-group-sm > .input-group-btn > .form-control-static.btn {
   padding-left: 0;
   padding-right: 0;
 }
 
-.input-sm, .input-group-sm > .form-control, .tx-femanager form .controls .input-group-sm > input,
+.input-sm, .input-group-sm > .form-control, .tx-femanager form .controls .input-group-sm > input, .tx-femanager form .controls .input-group-sm > textarea, .tx-femanager form .controls .input-group-sm > select,
 .input-group-sm > .input-group-addon,
-.input-group-sm > .input-group-btn > .btn, .form-group-sm .form-control, .form-group-sm .tx-femanager form .controls input, .tx-femanager form .controls .form-group-sm input {
+.input-group-sm > .input-group-btn > .btn, .form-group-sm .form-control, .form-group-sm .tx-femanager form .controls input, .tx-femanager form .controls .form-group-sm input, .form-group-sm .tx-femanager form .controls textarea, .tx-femanager form .controls .form-group-sm textarea, .form-group-sm .tx-femanager form .controls select, .tx-femanager form .controls .form-group-sm select {
   height: 30px;
   padding: 5px 10px;
   font-size: 12px;
@@ -3125,26 +3126,27 @@ input[type="checkbox"] {
   border-radius: 3px;
 }
 
-select.input-sm, .input-group-sm > select.form-control,
+select.input-sm, .input-group-sm > select.form-control, .tx-femanager form .controls .input-group-sm > select,
 .input-group-sm > select.input-group-addon,
-.input-group-sm > .input-group-btn > select.btn, .form-group-sm .form-control, .form-group-sm .tx-femanager form .controls input, .tx-femanager form .controls .form-group-sm input {
+.input-group-sm > .input-group-btn > select.btn, .form-group-sm .form-control, .form-group-sm .tx-femanager form .controls input, .tx-femanager form .controls .form-group-sm input, .form-group-sm .tx-femanager form .controls textarea, .tx-femanager form .controls .form-group-sm textarea, .form-group-sm .tx-femanager form .controls select, .tx-femanager form .controls .form-group-sm select {
   height: 30px;
   line-height: 30px;
 }
 
-textarea.input-sm, .input-group-sm > textarea.form-control,
+textarea.input-sm, .input-group-sm > textarea.form-control, .tx-femanager form .controls .input-group-sm > textarea,
 .input-group-sm > textarea.input-group-addon,
-.input-group-sm > .input-group-btn > textarea.btn, .form-group-sm .form-control, .form-group-sm .tx-femanager form .controls input, .tx-femanager form .controls .form-group-sm input,
+.input-group-sm > .input-group-btn > textarea.btn, .form-group-sm .form-control, .form-group-sm .tx-femanager form .controls input, .tx-femanager form .controls .form-group-sm input, .form-group-sm .tx-femanager form .controls textarea, .tx-femanager form .controls .form-group-sm textarea, .form-group-sm .tx-femanager form .controls select, .tx-femanager form .controls .form-group-sm select,
 select[multiple].input-sm,
 .input-group-sm > select[multiple].form-control,
+.tx-femanager form .controls .input-group-sm > select[multiple],
 .input-group-sm > select[multiple].input-group-addon,
-.input-group-sm > .input-group-btn > select[multiple].btn, .form-group-sm .form-control, .form-group-sm .tx-femanager form .controls input, .tx-femanager form .controls .form-group-sm input {
+.input-group-sm > .input-group-btn > select[multiple].btn, .form-group-sm .form-control, .form-group-sm .tx-femanager form .controls input, .tx-femanager form .controls .form-group-sm input, .form-group-sm .tx-femanager form .controls textarea, .tx-femanager form .controls .form-group-sm textarea, .form-group-sm .tx-femanager form .controls select, .tx-femanager form .controls .form-group-sm select {
   height: auto;
 }
 
-.input-lg, .input-group-lg > .form-control, .tx-femanager form .controls .input-group-lg > input,
+.input-lg, .input-group-lg > .form-control, .tx-femanager form .controls .input-group-lg > input, .tx-femanager form .controls .input-group-lg > textarea, .tx-femanager form .controls .input-group-lg > select,
 .input-group-lg > .input-group-addon,
-.input-group-lg > .input-group-btn > .btn, .form-group-lg .form-control, .form-group-lg .tx-femanager form .controls input, .tx-femanager form .controls .form-group-lg input {
+.input-group-lg > .input-group-btn > .btn, .form-group-lg .form-control, .form-group-lg .tx-femanager form .controls input, .tx-femanager form .controls .form-group-lg input, .form-group-lg .tx-femanager form .controls textarea, .tx-femanager form .controls .form-group-lg textarea, .form-group-lg .tx-femanager form .controls select, .tx-femanager form .controls .form-group-lg select {
   height: 46px;
   padding: 10px 16px;
   font-size: 18px;
@@ -3152,27 +3154,28 @@ select[multiple].input-sm,
   border-radius: 6px;
 }
 
-select.input-lg, .input-group-lg > select.form-control,
+select.input-lg, .input-group-lg > select.form-control, .tx-femanager form .controls .input-group-lg > select,
 .input-group-lg > select.input-group-addon,
-.input-group-lg > .input-group-btn > select.btn, .form-group-lg .form-control, .form-group-lg .tx-femanager form .controls input, .tx-femanager form .controls .form-group-lg input {
+.input-group-lg > .input-group-btn > select.btn, .form-group-lg .form-control, .form-group-lg .tx-femanager form .controls input, .tx-femanager form .controls .form-group-lg input, .form-group-lg .tx-femanager form .controls textarea, .tx-femanager form .controls .form-group-lg textarea, .form-group-lg .tx-femanager form .controls select, .tx-femanager form .controls .form-group-lg select {
   height: 46px;
   line-height: 46px;
 }
 
-textarea.input-lg, .input-group-lg > textarea.form-control,
+textarea.input-lg, .input-group-lg > textarea.form-control, .tx-femanager form .controls .input-group-lg > textarea,
 .input-group-lg > textarea.input-group-addon,
-.input-group-lg > .input-group-btn > textarea.btn, .form-group-lg .form-control, .form-group-lg .tx-femanager form .controls input, .tx-femanager form .controls .form-group-lg input,
+.input-group-lg > .input-group-btn > textarea.btn, .form-group-lg .form-control, .form-group-lg .tx-femanager form .controls input, .tx-femanager form .controls .form-group-lg input, .form-group-lg .tx-femanager form .controls textarea, .tx-femanager form .controls .form-group-lg textarea, .form-group-lg .tx-femanager form .controls select, .tx-femanager form .controls .form-group-lg select,
 select[multiple].input-lg,
 .input-group-lg > select[multiple].form-control,
+.tx-femanager form .controls .input-group-lg > select[multiple],
 .input-group-lg > select[multiple].input-group-addon,
-.input-group-lg > .input-group-btn > select[multiple].btn, .form-group-lg .form-control, .form-group-lg .tx-femanager form .controls input, .tx-femanager form .controls .form-group-lg input {
+.input-group-lg > .input-group-btn > select[multiple].btn, .form-group-lg .form-control, .form-group-lg .tx-femanager form .controls input, .tx-femanager form .controls .form-group-lg input, .form-group-lg .tx-femanager form .controls textarea, .tx-femanager form .controls .form-group-lg textarea, .form-group-lg .tx-femanager form .controls select, .tx-femanager form .controls .form-group-lg select {
   height: auto;
 }
 
 .has-feedback {
   position: relative;
 }
-.has-feedback .form-control, .has-feedback .tx-femanager form .controls input, .tx-femanager form .controls .has-feedback input {
+.has-feedback .form-control, .has-feedback .tx-femanager form .controls input, .tx-femanager form .controls .has-feedback input, .has-feedback .tx-femanager form .controls textarea, .tx-femanager form .controls .has-feedback textarea, .has-feedback .tx-femanager form .controls select, .tx-femanager form .controls .has-feedback select {
   padding-right: 42.5px;
 }
 
@@ -3189,7 +3192,7 @@ select[multiple].input-lg,
   pointer-events: none;
 }
 
-.input-lg + .form-control-feedback, .input-group-lg > .form-control + .form-control-feedback, .tx-femanager form .controls .input-group-lg > input + .form-control-feedback,
+.input-lg + .form-control-feedback, .input-group-lg > .form-control + .form-control-feedback, .tx-femanager form .controls .input-group-lg > input + .form-control-feedback, .tx-femanager form .controls .input-group-lg > textarea + .form-control-feedback, .tx-femanager form .controls .input-group-lg > select + .form-control-feedback,
 .input-group-lg > .input-group-addon + .form-control-feedback,
 .input-group-lg > .input-group-btn > .btn + .form-control-feedback {
   width: 46px;
@@ -3197,7 +3200,7 @@ select[multiple].input-lg,
   line-height: 46px;
 }
 
-.input-sm + .form-control-feedback, .input-group-sm > .form-control + .form-control-feedback, .tx-femanager form .controls .input-group-sm > input + .form-control-feedback,
+.input-sm + .form-control-feedback, .input-group-sm > .form-control + .form-control-feedback, .tx-femanager form .controls .input-group-sm > input + .form-control-feedback, .tx-femanager form .controls .input-group-sm > textarea + .form-control-feedback, .tx-femanager form .controls .input-group-sm > select + .form-control-feedback,
 .input-group-sm > .input-group-addon + .form-control-feedback,
 .input-group-sm > .input-group-btn > .btn + .form-control-feedback {
   width: 30px;
@@ -3216,15 +3219,17 @@ select[multiple].input-lg,
 .has-success .radio,
 .has-success .checkbox,
 .has-success .radio-inline,
-.has-success .checkbox-inline, .has-success.radio label, .has-success.checkbox label, .has-success.radio-inline label, .has-success.checkbox-inline label {
+.has-success .tx-femanager form label.radio,
+.tx-femanager form .has-success label.radio,
+.has-success .checkbox-inline, .has-success.radio label, .has-success.checkbox label, .has-success.radio-inline label, .tx-femanager form label.has-success.radio label, .has-success.checkbox-inline label {
   color: #3c763d;
 }
-.has-success .form-control, .has-success .tx-femanager form .controls input, .tx-femanager form .controls .has-success input {
+.has-success .form-control, .has-success .tx-femanager form .controls input, .tx-femanager form .controls .has-success input, .has-success .tx-femanager form .controls textarea, .tx-femanager form .controls .has-success textarea, .has-success .tx-femanager form .controls select, .tx-femanager form .controls .has-success select {
   border-color: #3c763d;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
-.has-success .form-control:focus, .has-success .tx-femanager form .controls input:focus, .tx-femanager form .controls .has-success input:focus {
+.has-success .form-control:focus, .has-success .tx-femanager form .controls input:focus, .tx-femanager form .controls .has-success input:focus, .has-success .tx-femanager form .controls textarea:focus, .tx-femanager form .controls .has-success textarea:focus, .has-success .tx-femanager form .controls select:focus, .tx-femanager form .controls .has-success select:focus {
   border-color: #2b542c;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
@@ -3249,15 +3254,17 @@ select[multiple].input-lg,
 .has-warning .radio,
 .has-warning .checkbox,
 .has-warning .radio-inline,
-.has-warning .checkbox-inline, .has-warning.radio label, .has-warning.checkbox label, .has-warning.radio-inline label, .has-warning.checkbox-inline label {
+.has-warning .tx-femanager form label.radio,
+.tx-femanager form .has-warning label.radio,
+.has-warning .checkbox-inline, .has-warning.radio label, .has-warning.checkbox label, .has-warning.radio-inline label, .tx-femanager form label.has-warning.radio label, .has-warning.checkbox-inline label {
   color: #8a6d3b;
 }
-.has-warning .form-control, .has-warning .tx-femanager form .controls input, .tx-femanager form .controls .has-warning input {
+.has-warning .form-control, .has-warning .tx-femanager form .controls input, .tx-femanager form .controls .has-warning input, .has-warning .tx-femanager form .controls textarea, .tx-femanager form .controls .has-warning textarea, .has-warning .tx-femanager form .controls select, .tx-femanager form .controls .has-warning select {
   border-color: #8a6d3b;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
-.has-warning .form-control:focus, .has-warning .tx-femanager form .controls input:focus, .tx-femanager form .controls .has-warning input:focus {
+.has-warning .form-control:focus, .has-warning .tx-femanager form .controls input:focus, .tx-femanager form .controls .has-warning input:focus, .has-warning .tx-femanager form .controls textarea:focus, .tx-femanager form .controls .has-warning textarea:focus, .has-warning .tx-femanager form .controls select:focus, .tx-femanager form .controls .has-warning select:focus {
   border-color: #66512c;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
@@ -3282,15 +3289,17 @@ select[multiple].input-lg,
 .has-error .radio,
 .has-error .checkbox,
 .has-error .radio-inline,
-.has-error .checkbox-inline, .has-error.radio label, .has-error.checkbox label, .has-error.radio-inline label, .has-error.checkbox-inline label {
+.has-error .tx-femanager form label.radio,
+.tx-femanager form .has-error label.radio,
+.has-error .checkbox-inline, .has-error.radio label, .has-error.checkbox label, .has-error.radio-inline label, .tx-femanager form label.has-error.radio label, .has-error.checkbox-inline label {
   color: #a94442;
 }
-.has-error .form-control, .has-error .tx-femanager form .controls input, .tx-femanager form .controls .has-error input {
+.has-error .form-control, .has-error .tx-femanager form .controls input, .tx-femanager form .controls .has-error input, .has-error .tx-femanager form .controls textarea, .tx-femanager form .controls .has-error textarea, .has-error .tx-femanager form .controls select, .tx-femanager form .controls .has-error select {
   border-color: #a94442;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
-.has-error .form-control:focus, .has-error .tx-femanager form .controls input:focus, .tx-femanager form .controls .has-error input:focus {
+.has-error .form-control:focus, .has-error .tx-femanager form .controls input:focus, .tx-femanager form .controls .has-error input:focus, .has-error .tx-femanager form .controls textarea:focus, .tx-femanager form .controls .has-error textarea:focus, .has-error .tx-femanager form .controls select:focus, .tx-femanager form .controls .has-error select:focus {
   border-color: #843534;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
@@ -3324,7 +3333,7 @@ select[multiple].input-lg,
     margin-bottom: 0;
     vertical-align: middle;
   }
-  .form-inline .form-control, .form-inline .tx-femanager form .controls input, .tx-femanager form .controls .form-inline input {
+  .form-inline .form-control, .form-inline .tx-femanager form .controls input, .tx-femanager form .controls .form-inline input, .form-inline .tx-femanager form .controls textarea, .tx-femanager form .controls .form-inline textarea, .form-inline .tx-femanager form .controls select, .tx-femanager form .controls .form-inline select {
     display: inline-block;
     width: auto;
     vertical-align: middle;
@@ -3340,10 +3349,14 @@ select[multiple].input-lg,
   .form-inline .input-group .input-group-btn,
   .form-inline .input-group .form-control,
   .form-inline .input-group .tx-femanager form .controls input,
-  .tx-femanager form .controls .form-inline .input-group input {
+  .tx-femanager form .controls .form-inline .input-group input,
+  .form-inline .input-group .tx-femanager form .controls textarea,
+  .tx-femanager form .controls .form-inline .input-group textarea,
+  .form-inline .input-group .tx-femanager form .controls select,
+  .tx-femanager form .controls .form-inline .input-group select {
     width: auto;
   }
-  .form-inline .input-group > .form-control, .form-inline .tx-femanager form .controls .input-group > input, .tx-femanager form .controls .form-inline .input-group > input {
+  .form-inline .input-group > .form-control, .form-inline .tx-femanager form .controls .input-group > input, .tx-femanager form .controls .form-inline .input-group > input, .form-inline .tx-femanager form .controls .input-group > textarea, .tx-femanager form .controls .form-inline .input-group > textarea, .form-inline .tx-femanager form .controls .input-group > select, .tx-femanager form .controls .form-inline .input-group > select {
     width: 100%;
   }
   .form-inline .control-label, .form-inline #login form .form-group label, #login form .form-group .form-inline label, .form-inline #login .tx-femanager form .femanager_fieldset label, #login .tx-femanager form .femanager_fieldset .form-inline label, .form-inline .tx-femanager #login form .femanager_fieldset label, .tx-femanager #login form .femanager_fieldset .form-inline label {
@@ -3378,6 +3391,9 @@ select[multiple].input-lg,
 .form-horizontal .radio-inline,
 #login form .radio-inline,
 .tx-femanager form .radio-inline,
+#login .tx-femanager form label.radio,
+.tx-femanager #login form label.radio,
+.tx-femanager form label.radio,
 .form-horizontal .checkbox-inline,
 #login form .checkbox-inline,
 .tx-femanager form .checkbox-inline {
@@ -3437,7 +3453,7 @@ select[multiple].input-lg,
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.42857;
-  border-radius: 4px;
+  border-radius: 0;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -3732,7 +3748,7 @@ tbody.collapse.in {
   background-color: #fff;
   border: 1px solid #ccc;
   border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
+  border-radius: 0;
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   background-clip: padding-box;
@@ -3994,12 +4010,12 @@ tbody.collapse.in {
   border-radius: 0;
 }
 .btn-group-vertical > .btn:first-child:not(:last-child) {
-  border-top-right-radius: 4px;
+  border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 .btn-group-vertical > .btn:last-child:not(:first-child) {
-  border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 0;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
@@ -4057,7 +4073,7 @@ tbody.collapse.in {
   padding-left: 0;
   padding-right: 0;
 }
-.input-group .form-control, .input-group .tx-femanager form .controls input, .tx-femanager form .controls .input-group input {
+.input-group .form-control, .input-group .tx-femanager form .controls input, .tx-femanager form .controls .input-group input, .input-group .tx-femanager form .controls textarea, .tx-femanager form .controls .input-group textarea, .input-group .tx-femanager form .controls select, .tx-femanager form .controls .input-group select {
   position: relative;
   z-index: 2;
   float: left;
@@ -4069,14 +4085,22 @@ tbody.collapse.in {
 .input-group-btn,
 .input-group .form-control,
 .input-group .tx-femanager form .controls input,
-.tx-femanager form .controls .input-group input {
+.tx-femanager form .controls .input-group input,
+.input-group .tx-femanager form .controls textarea,
+.tx-femanager form .controls .input-group textarea,
+.input-group .tx-femanager form .controls select,
+.tx-femanager form .controls .input-group select {
   display: table-cell;
 }
 .input-group-addon:not(:first-child):not(:last-child),
 .input-group-btn:not(:first-child):not(:last-child),
 .input-group .form-control:not(:first-child):not(:last-child),
 .input-group .tx-femanager form .controls input:not(:first-child):not(:last-child),
-.tx-femanager form .controls .input-group input:not(:first-child):not(:last-child) {
+.tx-femanager form .controls .input-group input:not(:first-child):not(:last-child),
+.input-group .tx-femanager form .controls textarea:not(:first-child):not(:last-child),
+.tx-femanager form .controls .input-group textarea:not(:first-child):not(:last-child),
+.input-group .tx-femanager form .controls select:not(:first-child):not(:last-child),
+.tx-femanager form .controls .input-group select:not(:first-child):not(:last-child) {
   border-radius: 0;
 }
 
@@ -4096,16 +4120,16 @@ tbody.collapse.in {
   text-align: center;
   background-color: #eeeeee;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 0;
 }
-.input-group-addon.input-sm, .tx-femanager form .controls .input-group-sm > input.input-group-addon,
+.input-group-addon.input-sm, .tx-femanager form .controls .input-group-sm > input.input-group-addon, .tx-femanager form .controls .input-group-sm > textarea.input-group-addon, .tx-femanager form .controls .input-group-sm > select.input-group-addon,
 .input-group-sm > .input-group-addon,
 .input-group-sm > .input-group-btn > .input-group-addon.btn {
   padding: 5px 10px;
   font-size: 12px;
   border-radius: 3px;
 }
-.input-group-addon.input-lg, .tx-femanager form .controls .input-group-lg > input.input-group-addon,
+.input-group-addon.input-lg, .tx-femanager form .controls .input-group-lg > input.input-group-addon, .tx-femanager form .controls .input-group-lg > textarea.input-group-addon, .tx-femanager form .controls .input-group-lg > select.input-group-addon,
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .input-group-addon.btn {
   padding: 10px 16px;
@@ -4117,7 +4141,7 @@ tbody.collapse.in {
   margin-top: 0;
 }
 
-.input-group .form-control:first-child, .input-group .tx-femanager form .controls input:first-child, .tx-femanager form .controls .input-group input:first-child,
+.input-group .form-control:first-child, .input-group .tx-femanager form .controls input:first-child, .tx-femanager form .controls .input-group input:first-child, .input-group .tx-femanager form .controls textarea:first-child, .tx-femanager form .controls .input-group textarea:first-child, .input-group .tx-femanager form .controls select:first-child, .tx-femanager form .controls .input-group select:first-child,
 .input-group-addon:first-child,
 .input-group-btn:first-child > .btn,
 .input-group-btn:first-child > .btn-group > .btn,
@@ -4132,7 +4156,7 @@ tbody.collapse.in {
   border-right: 0;
 }
 
-.input-group .form-control:last-child, .input-group .tx-femanager form .controls input:last-child, .tx-femanager form .controls .input-group input:last-child,
+.input-group .form-control:last-child, .input-group .tx-femanager form .controls input:last-child, .tx-femanager form .controls .input-group input:last-child, .input-group .tx-femanager form .controls textarea:last-child, .tx-femanager form .controls .input-group textarea:last-child, .input-group .tx-femanager form .controls select:last-child, .tx-femanager form .controls .input-group select:last-child,
 .input-group-addon:last-child,
 .input-group-btn:last-child > .btn,
 .input-group-btn:last-child > .btn-group > .btn,
@@ -4229,7 +4253,7 @@ tbody.collapse.in {
   margin-right: 2px;
   line-height: 1.42857;
   border: 1px solid transparent;
-  border-radius: 4px 4px 0 0;
+  border-radius: 0 0 0 0;
 }
 .nav-tabs > li > a:hover {
   border-color: #eeeeee #eeeeee #ddd;
@@ -4246,7 +4270,7 @@ tbody.collapse.in {
   float: left;
 }
 .nav-pills > li > a {
-  border-radius: 4px;
+  border-radius: 0;
 }
 .nav-pills > li + li {
   margin-left: 2px;
@@ -4293,7 +4317,7 @@ tbody.collapse.in {
 }
 .nav-tabs-justified > li > a, .nav-tabs.nav-justified > li > a {
   margin-right: 0;
-  border-radius: 4px;
+  border-radius: 0;
 }
 .nav-tabs-justified > .active > a, .nav-tabs.nav-justified > .active > a,
 .nav-tabs-justified > .active > a:hover,
@@ -4305,7 +4329,7 @@ tbody.collapse.in {
 @media (min-width: 768px) {
   .nav-tabs-justified > li > a, .nav-tabs.nav-justified > li > a {
     border-bottom: 1px solid #ddd;
-    border-radius: 4px 4px 0 0;
+    border-radius: 0 0 0 0;
   }
   .nav-tabs-justified > .active > a, .nav-tabs.nav-justified > .active > a,
   .nav-tabs-justified > .active > a:hover,
@@ -4346,7 +4370,7 @@ tbody.collapse.in {
 }
 @media (min-width: 768px) {
   .navbar {
-    border-radius: 4px;
+    border-radius: 0;
   }
 }
 
@@ -4497,7 +4521,7 @@ tbody.collapse.in {
   background-color: transparent;
   background-image: none;
   border: 1px solid transparent;
-  border-radius: 4px;
+  border-radius: 0;
 }
 .navbar-toggle:focus {
   outline: 0;
@@ -4577,7 +4601,7 @@ tbody.collapse.in {
     margin-bottom: 0;
     vertical-align: middle;
   }
-  .navbar-form .form-control, .navbar-form .tx-femanager form .controls input, .tx-femanager form .controls .navbar-form input {
+  .navbar-form .form-control, .navbar-form .tx-femanager form .controls input, .tx-femanager form .controls .navbar-form input, .navbar-form .tx-femanager form .controls textarea, .tx-femanager form .controls .navbar-form textarea, .navbar-form .tx-femanager form .controls select, .tx-femanager form .controls .navbar-form select {
     display: inline-block;
     width: auto;
     vertical-align: middle;
@@ -4593,10 +4617,14 @@ tbody.collapse.in {
   .navbar-form .input-group .input-group-btn,
   .navbar-form .input-group .form-control,
   .navbar-form .input-group .tx-femanager form .controls input,
-  .tx-femanager form .controls .navbar-form .input-group input {
+  .tx-femanager form .controls .navbar-form .input-group input,
+  .navbar-form .input-group .tx-femanager form .controls textarea,
+  .tx-femanager form .controls .navbar-form .input-group textarea,
+  .navbar-form .input-group .tx-femanager form .controls select,
+  .tx-femanager form .controls .navbar-form .input-group select {
     width: auto;
   }
-  .navbar-form .input-group > .form-control, .navbar-form .tx-femanager form .controls .input-group > input, .tx-femanager form .controls .navbar-form .input-group > input {
+  .navbar-form .input-group > .form-control, .navbar-form .tx-femanager form .controls .input-group > input, .tx-femanager form .controls .navbar-form .input-group > input, .navbar-form .tx-femanager form .controls .input-group > textarea, .tx-femanager form .controls .navbar-form .input-group > textarea, .navbar-form .tx-femanager form .controls .input-group > select, .tx-femanager form .controls .navbar-form .input-group > select {
     width: 100%;
   }
   .navbar-form .control-label, .navbar-form #login form .form-group label, #login form .form-group .navbar-form label, .navbar-form #login .tx-femanager form .femanager_fieldset label, #login .tx-femanager form .femanager_fieldset .navbar-form label, .navbar-form .tx-femanager #login form .femanager_fieldset label, .tx-femanager #login form .femanager_fieldset .navbar-form label {
@@ -4651,8 +4679,8 @@ tbody.collapse.in {
 }
 
 .navbar-fixed-bottom .navbar-nav > li > .dropdown-menu {
-  border-top-right-radius: 4px;
-  border-top-left-radius: 4px;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
@@ -4864,7 +4892,7 @@ tbody.collapse.in {
   margin-bottom: 20px;
   list-style: none;
   background-color: #f5f5f5;
-  border-radius: 4px;
+  border-radius: 0;
 }
 .breadcrumb > li {
   display: inline-block;
@@ -4882,7 +4910,7 @@ tbody.collapse.in {
   display: inline-block;
   padding-left: 0;
   margin: 20px 0;
-  border-radius: 4px;
+  border-radius: 0;
 }
 .pagination > li {
   display: inline;
@@ -4902,13 +4930,13 @@ tbody.collapse.in {
 .pagination > li:first-child > a,
 .pagination > li:first-child > span {
   margin-left: 0;
-  border-bottom-left-radius: 4px;
-  border-top-left-radius: 4px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
 }
 .pagination > li:last-child > a,
 .pagination > li:last-child > span {
-  border-bottom-right-radius: 4px;
-  border-top-right-radius: 4px;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
 }
 .pagination > li > a:hover, .pagination > li > a:focus,
 .pagination > li > span:hover,
@@ -5175,7 +5203,7 @@ a.badge:hover, a.badge:focus {
   line-height: 1.42857;
   background-color: #fff;
   border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 0;
   -webkit-transition: border 0.2s ease-in-out;
   -o-transition: border 0.2s ease-in-out;
   transition: border 0.2s ease-in-out;
@@ -5203,7 +5231,7 @@ a.thumbnail.active {
   padding: 15px;
   margin-bottom: 20px;
   border: 1px solid transparent;
-  border-radius: 4px;
+  border-radius: 0;
 }
 .alert h4 {
   margin-top: 0;
@@ -5301,7 +5329,7 @@ a.thumbnail.active {
   height: 20px;
   margin-bottom: 20px;
   background-color: #f5f5f5;
-  border-radius: 4px;
+  border-radius: 0;
   -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
@@ -5432,13 +5460,13 @@ a.thumbnail.active {
   border: 1px solid #ddd;
 }
 .list-group-item:first-child {
-  border-top-right-radius: 4px;
-  border-top-left-radius: 4px;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
 }
 .list-group-item:last-child {
   margin-bottom: 0;
-  border-bottom-right-radius: 4px;
-  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 a.list-group-item {
@@ -5581,7 +5609,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
   margin-bottom: 20px;
   background-color: #fff;
   border: 1px solid transparent;
-  border-radius: 4px;
+  border-radius: 0;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
@@ -5600,8 +5628,8 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
 .panel-heading {
   padding: 10px 15px;
   border-bottom: 1px solid transparent;
-  border-top-right-radius: 3px;
-  border-top-left-radius: 3px;
+  border-top-right-radius: -1;
+  border-top-left-radius: -1;
 }
 .panel-heading > .dropdown .dropdown-toggle {
   color: inherit;
@@ -5621,8 +5649,8 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
   padding: 10px 15px;
   background-color: #f5f5f5;
   border-top: 1px solid #ddd;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: -1;
+  border-bottom-left-radius: -1;
 }
 
 .panel > .list-group,
@@ -5637,14 +5665,14 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
 .panel > .list-group:first-child .list-group-item:first-child,
 .panel > .panel-collapse > .list-group:first-child .list-group-item:first-child {
   border-top: 0;
-  border-top-right-radius: 3px;
-  border-top-left-radius: 3px;
+  border-top-right-radius: -1;
+  border-top-left-radius: -1;
 }
 .panel > .list-group:last-child .list-group-item:last-child,
 .panel > .panel-collapse > .list-group:last-child .list-group-item:last-child {
   border-bottom: 0;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: -1;
+  border-bottom-left-radius: -1;
 }
 
 .panel-heading + .list-group .list-group-item:first-child {
@@ -5673,8 +5701,8 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
 .panel > .table:first-child, .content .panel > table:first-child,
 .panel > .table-responsive:first-child > .table:first-child,
 .content .panel > .table-responsive:first-child > table:first-child {
-  border-top-right-radius: 3px;
-  border-top-left-radius: 3px;
+  border-top-right-radius: -1;
+  border-top-left-radius: -1;
 }
 .panel > .table:first-child > thead:first-child > tr:first-child, .content .panel > table:first-child > thead:first-child > tr:first-child,
 .panel > .table:first-child > tbody:first-child > tr:first-child,
@@ -5683,8 +5711,8 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
 .content .panel > .table-responsive:first-child > table:first-child > thead:first-child > tr:first-child,
 .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child,
 .content .panel > .table-responsive:first-child > table:first-child > tbody:first-child > tr:first-child {
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
+  border-top-left-radius: -1;
+  border-top-right-radius: -1;
 }
 .panel > .table:first-child > thead:first-child > tr:first-child td:first-child, .content .panel > table:first-child > thead:first-child > tr:first-child td:first-child,
 .panel > .table:first-child > thead:first-child > tr:first-child th:first-child,
@@ -5701,7 +5729,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
 .content .panel > .table-responsive:first-child > table:first-child > tbody:first-child > tr:first-child td:first-child,
 .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child,
 .content .panel > .table-responsive:first-child > table:first-child > tbody:first-child > tr:first-child th:first-child {
-  border-top-left-radius: 3px;
+  border-top-left-radius: -1;
 }
 .panel > .table:first-child > thead:first-child > tr:first-child td:last-child, .content .panel > table:first-child > thead:first-child > tr:first-child td:last-child,
 .panel > .table:first-child > thead:first-child > tr:first-child th:last-child,
@@ -5718,13 +5746,13 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
 .content .panel > .table-responsive:first-child > table:first-child > tbody:first-child > tr:first-child td:last-child,
 .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child,
 .content .panel > .table-responsive:first-child > table:first-child > tbody:first-child > tr:first-child th:last-child {
-  border-top-right-radius: 3px;
+  border-top-right-radius: -1;
 }
 .panel > .table:last-child, .content .panel > table:last-child,
 .panel > .table-responsive:last-child > .table:last-child,
 .content .panel > .table-responsive:last-child > table:last-child {
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: -1;
+  border-bottom-left-radius: -1;
 }
 .panel > .table:last-child > tbody:last-child > tr:last-child, .content .panel > table:last-child > tbody:last-child > tr:last-child,
 .panel > .table:last-child > tfoot:last-child > tr:last-child,
@@ -5733,8 +5761,8 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
 .content .panel > .table-responsive:last-child > table:last-child > tbody:last-child > tr:last-child,
 .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child,
 .content .panel > .table-responsive:last-child > table:last-child > tfoot:last-child > tr:last-child {
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: -1;
+  border-bottom-right-radius: -1;
 }
 .panel > .table:last-child > tbody:last-child > tr:last-child td:first-child, .content .panel > table:last-child > tbody:last-child > tr:last-child td:first-child,
 .panel > .table:last-child > tbody:last-child > tr:last-child th:first-child,
@@ -5751,7 +5779,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
 .content .panel > .table-responsive:last-child > table:last-child > tfoot:last-child > tr:last-child td:first-child,
 .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child,
 .content .panel > .table-responsive:last-child > table:last-child > tfoot:last-child > tr:last-child th:first-child {
-  border-bottom-left-radius: 3px;
+  border-bottom-left-radius: -1;
 }
 .panel > .table:last-child > tbody:last-child > tr:last-child td:last-child, .content .panel > table:last-child > tbody:last-child > tr:last-child td:last-child,
 .panel > .table:last-child > tbody:last-child > tr:last-child th:last-child,
@@ -5768,7 +5796,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
 .content .panel > .table-responsive:last-child > table:last-child > tfoot:last-child > tr:last-child td:last-child,
 .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child,
 .content .panel > .table-responsive:last-child > table:last-child > tfoot:last-child > tr:last-child th:last-child {
-  border-bottom-right-radius: 3px;
+  border-bottom-right-radius: -1;
 }
 .panel > .panel-body + .table, .content .panel > .panel-body + table,
 .panel > .panel-body + .table-responsive,
@@ -5844,7 +5872,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
 }
 .panel-group .panel {
   margin-bottom: 0;
-  border-radius: 4px;
+  border-radius: 0;
 }
 .panel-group .panel + .panel {
   margin-top: 5px;
@@ -6010,7 +6038,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
   margin-bottom: 20px;
   background-color: #f5f5f5;
   border: 1px solid #e3e3e3;
-  border-radius: 4px;
+  border-radius: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 }
@@ -6238,7 +6266,7 @@ button.close {
   text-align: center;
   text-decoration: none;
   background-color: #000;
-  border-radius: 4px;
+  border-radius: 0;
 }
 
 .tooltip-arrow {
@@ -6952,13 +6980,13 @@ CSS-Datei für die Gestaltung des Layouts der Seite.
 */
 /* ----------------- [ allgemeine Definitionen ] -------------------------------------------- */
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   background: #7e756a url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/bggrad.gif) repeat-x fixed;
-  font-family: Verdana, Arial, Helvetica, Sans-Serif;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
   font-size: 1em;
   color: #222222;
 }
@@ -7062,68 +7090,6 @@ img {
   border-bottom: none;
 }
 
-#welcome,
-#breadcrumb {
-  position: relative;
-  width: 100%;
-  background: #f3ecd5;
-  margin-bottom: 10px;
-}
-
-#breadcrumb {
-  height: 30px;
-}
-
-#welcome p strong {
-  color: #900;
-}
-
-#cnose {
-  position: absolute;
-  bottom: -11px;
-  left: 41px;
-  width: 45px;
-  height: 11px;
-  background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/cnose.gif) no-repeat 0 0;
-  clear: left;
-}
-
-#breadcrumb dl {
-  position: absolute;
-  top: 7px;
-  left: 60px;
-}
-
-#breadcrumb dl dd,
-#breadcrumb dl dt {
-  float: left;
-  margin: 0 2px 0 0;
-}
-
-#breadcrumb dl dd .breadsep {
-  margin: 0 0 0 2px;
-  color: #222;
-}
-
-#breadcrumb a {
-  border-bottom: none;
-  font-weight: bold;
-  color: #222;
-  padding: 1px 2px;
-}
-
-#breadcrumb a:hover {
-  border-bottom: none;
-  background: #222;
-  font-weight: bold;
-  color: #fff;
-  padding: 1px 2px;
-}
-
-#breadcrumb dd {
-  color: #900;
-}
-
 /* ----------------- [ / Hintergrundgrafiken, Header & Breadcrumb ] ------------------------- */
 /* ----------------- [ Aufbau des Inhalts (Spalten etc.) ] ---------------------------------- */
 .content {
@@ -7155,6 +7121,68 @@ img {
 }
 
 /* ----------------- [ / Aufbau des Inhalts (Spalten etc.) ] -------------------------------- */
+#welcome,
+#breadcrumb {
+  position: relative;
+  width: 100%;
+  background: #f3ecd5;
+  margin-bottom: 10px;
+}
+#welcome dd,
+#breadcrumb dd {
+  color: #900;
+}
+#welcome dl,
+#breadcrumb dl {
+  position: absolute;
+  top: 7px;
+  left: 60px;
+}
+#welcome dl dd, #welcome dl dt,
+#breadcrumb dl dd,
+#breadcrumb dl dt {
+  float: left;
+  margin: 0 2px 0 0;
+}
+#welcome a,
+#breadcrumb a {
+  border-bottom: none;
+  font-weight: bold;
+  color: #222;
+  padding: 1px 2px;
+}
+#welcome a:hover,
+#breadcrumb a:hover {
+  border-bottom: none;
+  background: #222;
+  font-weight: bold;
+  color: #fff;
+  padding: 1px 2px;
+}
+#welcome #cnose,
+#breadcrumb #cnose {
+  position: absolute;
+  bottom: -11px;
+  left: 41px;
+  width: 45px;
+  height: 11px;
+  background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/cnose.gif) no-repeat 0 0;
+  clear: left;
+}
+
+#welcome p strong {
+  color: #900;
+}
+
+#breadcrumb {
+  height: 30px;
+}
+
+#breadcrumb dl dd .breadsep {
+  margin: 0 0 0 2px;
+  color: #222;
+}
+
 /* ----------------- [ Sprachen Navigation ] ---------------------------- */
 #lang_nav {
   position: absolute;
@@ -7213,7 +7241,6 @@ img {
 }
 
 /* ----------------- [ /Sprachen Navigation ] ---------------------------- */
-/* ----------------- [ Design der Navigation incl. der Buttons ] ---------------------------- */
 #nav {
   position: absolute;
   top: 129px;
@@ -7222,7 +7249,6 @@ img {
   height: 35px;
   display: block;
 }
-
 #nav li {
   position: relative;
   top: 0;
@@ -7232,7 +7258,6 @@ img {
   height: 35px;
   width: auto;
 }
-
 #nav li a {
   position: relative;
   top: 0;
@@ -7246,9 +7271,18 @@ img {
   font-weight: bold;
   font-size: 14px;
   text-transform: uppercase;
-  font-family: 'Lucida Grande', Verdana, Arial, Sans-Serif;
+  font-family: 'Lucida Grande', Verdana, Arial, sans-serif;
   padding: 5px 13px;
   border-right: 1px dotted #fff;
+}
+#nav li a:hover {
+  background: #f3ecd5;
+  color: #900;
+  height: 100%;
+}
+#nav li a.act {
+  background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/nav_act.gif) no-repeat bottom center;
+  height: 100%;
 }
 
 * html #nav li a {
@@ -7256,19 +7290,6 @@ img {
   height: 35px;
 }
 
-#nav li a.act {
-  background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/nav_act.gif) no-repeat bottom center;
-  height: 100%;
-}
-
-#nav li a:hover {
-  background: #f3ecd5;
-  color: #900;
-  height: 100%;
-}
-
-/* ----------------- [ / Design der Navigation incl. der Buttons ] -------------------------- */
-/* ----------------- [ / SubMenu ] -------------------------- */
 #submenu {
   position: relative;
   top: 0;
@@ -7279,7 +7300,6 @@ img {
   margin: 20px 0 0 60px;
   font-size: 1.2em;
 }
-
 #submenu li {
   position: relative;
   top: 0;
@@ -7287,32 +7307,7 @@ img {
   float: left;
   margin: 0 5px 0 0;
 }
-
-#submenu li a {
-  border-bottom: none;
-  color: #222;
-  float: left;
-}
-
-#submenu li a:hover {
-  border-bottom: none;
-  background: #900;
-  color: #fff;
-  float: left;
-}
-
-#submenu li a.sub_act {
-  font-weight: bold;
-  color: #900;
-}
-
-#submenu li a.sub_act:hover {
-  font-weight: bold;
-  background: #900;
-  color: #fff;
-}
-
-#submenu li .subnavsep {
+#submenu li.subnavsep {
   position: relative;
   top: 2px;
   left: 0;
@@ -7322,8 +7317,27 @@ img {
   display: block;
   float: left;
 }
+#submenu li a {
+  border-bottom: none;
+  color: #222;
+  float: left;
+}
+#submenu li a:hover {
+  border-bottom: none;
+  background: #900;
+  color: #fff;
+  float: left;
+}
+#submenu li a.sub_act {
+  font-weight: bold;
+  color: #900;
+}
+#submenu li a.sub_act:hover {
+  font-weight: bold;
+  background: #900;
+  color: #fff;
+}
 
-/* ----------------- [ / SubMenu ] -------------------------- */
 /* ----------------- [ Fußzeile ] ----------------------------------------------------------- */
 #totop {
   position: absolute;
@@ -7392,7 +7406,6 @@ img {
 }
 
 /* ----------------- [ / Fußzeile ] --------------------------------------------------------- */
-/* ----------------- [ Direktsuche (oben rechts) ] ------------------------------------------ */
 #fastsearch {
   position: absolute;
   top: 20px;
@@ -7438,7 +7451,6 @@ img {
   color: #ccc;
 }
 
-/* ----------------- [ / Direktsuche (oben rechts) ] ---------------------------------------- */
 /*-------------------- Sitemap ---------------------------------------------------*/
 .sitemap_level1 {
   margin-left: 10px;

@@ -1,0 +1,44 @@
+#fastsearch {
+	position: absolute;
+	top: 20px;
+	right: 0;
+	width: 320px;
+	height: 68px;
+	border-left: 1px dotted #ccc;
+	#introtxt {
+		position: absolute;
+		top: 7px;
+		left: 16px;
+		width: 222px;
+		height: 12px;
+		font-size: 10px;
+		color: #baa;
+		overflow: hidden;
+	}
+	#searchstring {
+		position: absolute;
+		right: 15px;
+		top: 20px;
+		width: 280px;
+		height: 28px;
+		background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/inpbg_fastsearch.gif) no-repeat 0 0;
+		border: none;
+		font-size: 1.2em;
+		color: #fff;
+		padding: 6px 0 0 10px;
+	}
+	#send {
+		position: absolute;
+		top: 13px;
+		right: 15px;
+		height: 50px;
+		width: 61px;
+		border: none;
+		background: transparent url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/btn_fastsearch.png) no-repeat 0 0;
+		text-indent: -2000px;
+		overflow: hidden;
+		display: block;
+		font-size: 0;
+		color: #ccc;
+	}
+}

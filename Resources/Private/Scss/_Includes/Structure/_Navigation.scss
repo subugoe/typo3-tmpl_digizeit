@@ -1,0 +1,48 @@
+#nav {
+	position: absolute;
+	top: 129px;
+	left: 23px;
+	width: 900px;
+	height: 35px;
+	display: block;
+	li {
+		position: relative;
+		top: 0;
+		left: 0;
+		float: left;
+		display: block;
+		height: 35px;
+		width: auto;
+		a {
+			position: relative;
+			top: 0;
+			left: 0;
+			width: auto;
+			height: 25px;
+			border-bottom: none;
+			display: block;
+			color: #fff;
+			text-align: center;
+			font-weight: bold;
+			font-size: 14px;
+			text-transform: uppercase;
+			font-family: 'Lucida Grande', Verdana, Arial, sans-serif;
+			padding: 5px 13px;
+			border-right: 1px dotted #fff;
+			&:hover {
+				background: #f3ecd5;
+				color: #900;
+				height: 100%;
+			}
+			&.act {
+				background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/nav_act.gif) no-repeat bottom center;
+				height: 100%;
+			}
+		}
+	}
+}
+
+* html #nav li a {
+	width: 100px;
+	height: 35px;
+}

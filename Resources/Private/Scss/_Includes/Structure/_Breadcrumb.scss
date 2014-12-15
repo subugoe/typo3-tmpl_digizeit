@@ -1,0 +1,55 @@
+#welcome,
+#breadcrumb {
+	position: relative;
+	width: 100%;
+	background: #f3ecd5;
+	margin-bottom: 10px;
+	dd {
+		color: #900;
+	}
+	dl {
+		position: absolute;
+		top: 7px;
+		left: 60px;
+		dd, dt {
+			float: left;
+			margin: 0 2px 0 0;
+		}
+	}
+	a {
+		border-bottom: none;
+		font-weight: bold;
+		color: #222;
+		padding: 1px 2px;
+		&:hover {
+			border-bottom: none;
+			background: #222;
+			font-weight: bold;
+			color: #fff;
+			padding: 1px 2px;
+		}
+	}
+	#cnose {
+		position: absolute;
+		bottom: -11px;
+		left: 41px;
+		width: 45px;
+		height: 11px;
+		background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/cnose.gif) no-repeat 0 0;
+		clear: left;
+	}
+
+}
+
+#welcome p strong {
+	color: #900;
+}
+
+#breadcrumb {
+	height: 30px;
+}
+
+#breadcrumb dl dd .breadsep {
+	margin: 0 0 0 2px;
+	color: #222;
+}

@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff version="1.0">
+	<file source-language="de" datatype="plaintext" original="messages" date="2014-12-15T10:46:37Z" product-name="tmpl_digizeit">
+		<header/>
+		<body>
+			<trans-unit id="item_username" approved="yes">
+				<source>username</source> <target state="signed-off">username</target></trans-unit>
+			<trans-unit id="item_password" approved="yes">
+				<source>password</source> <target state="signed-off">password</target></trans-unit>
+			<trans-unit id="item_register" approved="yes">
+				<source>register</source> <target state="signed-off">register</target></trans-unit>
+			<trans-unit id="item_lostpass" approved="yes">
+				<source>Forgot your password?</source> <target state="signed-off">Forgot your password?</target></trans-unit>
+		</body>
+	</file>
+</xliff>

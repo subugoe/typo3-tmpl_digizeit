@@ -1,32 +1,53 @@
-/* ----------------- [ login (oben) Jochen ] ------------------------------------------ */
 #login {
+	@extend .col-md-offset-8;
+	@extend .col-md-4;
+	form {
+		@extend .form-horizontal;
+		.login-head {
+			@extend .row;
+			p {
+				margin-bottom: 5px;
+				&.title {
+					@extend .pull-left;
+					margin-left: 5px;
+				}
+				&.logged-in {
+					@extend .pull-left;
+				}
+				&.lostpass {
+					@extend .pull-right;
+				}
+			}
+		}
+		.form-group {
+			margin-bottom: 0;
+			padding-bottom: 7px;
+			label {
+				@extend .control-label;
+				@extend .col-md-4;
+				font-weight: normal;
+				padding-top: 0;
+			}
+			input {
+				&.loginsubmit {
+					border: none;
+					font-size: 1.1em;
+					padding: 0 5px;
+					background: #8b7f6d;
+					color: #fff;
+					margin-left: 10px;
+				}
+			}
+		}
+	}
+
 	position: absolute;
-	top: 20px;
-	/*    right:330px; */
+	top: 16px;
 	right: 0;
-	/*    width:220px; */
-	width: 320px;
-	height: 68px;
 	border-left: 1px dotted #ccc;
 	padding-left: 16px;
 	padding-top: 5px;
-	#logintable {
-		width: 260px;
-	}
-	#loginsubmit {
-		border: none;
-		/*    width:33px;
-			height:14px; */
-		font-size: 1.1em;
-		/*    padding-left: 2px;
-			padding-right: 2px; */
-		padding-left: 5px;
-		padding-right: 5px;
-		padding-top: 2px;
-		padding-bottom: 2px;
-		background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/inpbg_login.gif) no-repeat right;
-		color: #fff;
-	}
+
 	#loginstatus {
 		width: 180px;
 		max-width: 180px;
@@ -38,18 +59,14 @@
 	#logout {
 		text-align: right;
 	}
-}
-
-#login label, p {
-	color: #b2aca6;
+	label, p {
+		color: #b2aca6;
+	}
 }
 
 #login #pass,
 #login #user {
-	/*    width:84px; */
-	width: 104px;
-	height: 17px;
-	background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/inpbg_login.gif) no-repeat right;
+	background: #8b7f6d;
 	border: none;
 	font-size: 1.1em;
 	color: #fff
@@ -76,5 +93,3 @@
 	background: #900;
 	border-bottom: none;
 }
-
-/* ----------------- [ / login (oben) ] ------------------------------------------ */

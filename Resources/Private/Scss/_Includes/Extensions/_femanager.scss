@@ -1,0 +1,19 @@
+.tx-femanager {
+	form {
+		@extend .form-horizontal;
+		.femanager_fieldset {
+			@extend .form-group;
+			&.femanager_gender {
+			}
+		}
+		label {
+			@extend .col-md-3;
+		}
+		.controls {
+			@extend .col-md-5;
+			input {
+				@extend .form-control;
+			}
+		}
+	}
+}

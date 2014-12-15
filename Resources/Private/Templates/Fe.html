@@ -1,0 +1,48 @@
+<form name="login" method="post" action="{action}">
+	<div class="login-head">
+		<f:if condition="{loggedIn}">
+			<f:then>
+				<p class="title">Loginstatus:
+					<f:link.page pageUid="{myDigiZeit}" title="{loggedIn}">{loggedIn}</f:link.page>
+				</p>
+			</f:then>
+			<f:else>
+				<p class="title">Login</p>
+				<p class="lostpass"><a href="/login/?tx_felogin_pi1%5Bforgot%5D=1">
+					<f:translate key="LLL:EXT:tmpl_digizeit/Resources/Private/Language/locallang.xlf:item_lostpass"/>
+				</a></p>
+			</f:else>
+		</f:if>
+
+	</div>
+
+	<f:if condition="{loggedIn}">
+		<f:then>
+			<div class="form-group">
+				<input type="submit" class="loginsubmit" value="{loginType}"/>
+			</div>
+		</f:then>
+		<f:else>
+			<div class="form-group">
+				<label for="user">
+					<f:translate key="LLL:EXT:tmpl_digizeit/Resources/Private/Language/locallang.xlf:item_username"/>
+					: </label>
+				<input name="user" id="user" type="text" value=""/>
+			</div>
+			<div class="form-group">
+
+				<label for="pass">
+					<f:translate key="LLL:EXT:tmpl_digizeit/Resources/Private/Language/locallang.xlf:item_password"/>
+					: </label>
+				<input type="password" id="pass" name="pass" value=""/>
+				<input type="submit" class="loginsubmit" value="{loginType}"/>
+
+			</div>
+		</f:else>
+	</f:if>
+
+
+	<input type="hidden" name="logintype" value="{loginType}"/>
+	<input type="hidden" name="pid" value="{storagePid}"/>
+	<input type="hidden" name="redirect_url" value=""/>
+</form>

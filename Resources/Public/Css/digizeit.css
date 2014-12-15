@@ -1715,19 +1715,19 @@ pre code {
   clear: both;
 }
 
-.row {
+.row, #login form .login-head {
   margin-left: -15px;
   margin-right: -15px;
 }
-.row:before, .row:after {
+.row:before, #login form .login-head:before, .row:after, #login form .login-head:after {
   content: " ";
   display: table;
 }
-.row:after {
+.row:after, #login form .login-head:after {
   clear: both;
 }
 
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, #sidebar, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, #maincol, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, #maincol_full, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .tx-femanager form label, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, #login, #login form .form-group label, #login .tx-femanager form .femanager_fieldset label, .tx-femanager #login form .femanager_fieldset label, #sidebar, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .tx-femanager form .controls, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, #maincol, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, #maincol_full, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -2152,7 +2152,7 @@ pre code {
   }
 }
 @media (min-width: 992px) {
-  .col-md-1, .col-md-2, .col-md-3, .col-md-4, #sidebar, .col-md-5, .col-md-6, .col-md-7, #maincol, .col-md-8, #maincol_full, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+  .col-md-1, .col-md-2, .col-md-3, .tx-femanager form label, .col-md-4, #login, #login form .form-group label, #login .tx-femanager form .femanager_fieldset label, .tx-femanager #login form .femanager_fieldset label, #sidebar, .col-md-5, .tx-femanager form .controls, .col-md-6, .col-md-7, #maincol, .col-md-8, #maincol_full, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
     float: left;
   }
 
@@ -2164,15 +2164,15 @@ pre code {
     width: 16.66667%;
   }
 
-  .col-md-3 {
+  .col-md-3, .tx-femanager form label {
     width: 25%;
   }
 
-  .col-md-4, #sidebar {
+  .col-md-4, #login, #login form .form-group label, #login .tx-femanager form .femanager_fieldset label, .tx-femanager #login form .femanager_fieldset label, #sidebar {
     width: 33.33333%;
   }
 
-  .col-md-5 {
+  .col-md-5, .tx-femanager form .controls {
     width: 41.66667%;
   }
 
@@ -2340,7 +2340,7 @@ pre code {
     margin-left: 58.33333%;
   }
 
-  .col-md-offset-8 {
+  .col-md-offset-8, #login {
     margin-left: 66.66667%;
   }
 
@@ -2934,7 +2934,7 @@ output {
   color: #555555;
 }
 
-.form-control {
+.form-control, .tx-femanager form .controls input {
   display: block;
   width: 100%;
   height: 34px;
@@ -2952,23 +2952,23 @@ output {
   -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
-.form-control:focus {
+.form-control:focus, .tx-femanager form .controls input:focus {
   border-color: #66afe9;
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
-.form-control::-moz-placeholder {
+.form-control::-moz-placeholder, .tx-femanager form .controls input::-moz-placeholder {
   color: #999;
   opacity: 1;
 }
-.form-control:-ms-input-placeholder {
+.form-control:-ms-input-placeholder, .tx-femanager form .controls input:-ms-input-placeholder {
   color: #999;
 }
-.form-control::-webkit-input-placeholder {
+.form-control::-webkit-input-placeholder, .tx-femanager form .controls input::-webkit-input-placeholder {
   color: #999;
 }
-.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+.form-control[disabled], .tx-femanager form .controls input[disabled], .form-control[readonly], .tx-femanager form .controls input[readonly], fieldset[disabled] .form-control, fieldset[disabled] .tx-femanager form .controls input, .tx-femanager form .controls fieldset[disabled] input {
   cursor: not-allowed;
   background-color: #eeeeee;
   opacity: 1;
@@ -2990,43 +2990,49 @@ input[type="search"] {
     line-height: 34px;
   }
 
-  input[type="date"].input-sm, .input-group-sm > input[type="date"].form-control,
+  input[type="date"].input-sm, .input-group-sm > input[type="date"].form-control, .tx-femanager form .controls .input-group-sm > input[type="date"],
   .input-group-sm > input[type="date"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="date"].btn,
   input[type="time"].input-sm,
   .input-group-sm > input[type="time"].form-control,
+  .tx-femanager form .controls .input-group-sm > input[type="time"],
   .input-group-sm > input[type="time"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="time"].btn,
   input[type="datetime-local"].input-sm,
   .input-group-sm > input[type="datetime-local"].form-control,
+  .tx-femanager form .controls .input-group-sm > input[type="datetime-local"],
   .input-group-sm > input[type="datetime-local"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="datetime-local"].btn,
   input[type="month"].input-sm,
   .input-group-sm > input[type="month"].form-control,
+  .tx-femanager form .controls .input-group-sm > input[type="month"],
   .input-group-sm > input[type="month"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="month"].btn {
     line-height: 30px;
   }
 
-  input[type="date"].input-lg, .input-group-lg > input[type="date"].form-control,
+  input[type="date"].input-lg, .input-group-lg > input[type="date"].form-control, .tx-femanager form .controls .input-group-lg > input[type="date"],
   .input-group-lg > input[type="date"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="date"].btn,
   input[type="time"].input-lg,
   .input-group-lg > input[type="time"].form-control,
+  .tx-femanager form .controls .input-group-lg > input[type="time"],
   .input-group-lg > input[type="time"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="time"].btn,
   input[type="datetime-local"].input-lg,
   .input-group-lg > input[type="datetime-local"].form-control,
+  .tx-femanager form .controls .input-group-lg > input[type="datetime-local"],
   .input-group-lg > input[type="datetime-local"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="datetime-local"].btn,
   input[type="month"].input-lg,
   .input-group-lg > input[type="month"].form-control,
+  .tx-femanager form .controls .input-group-lg > input[type="month"],
   .input-group-lg > input[type="month"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="month"].btn {
     line-height: 46px;
   }
 }
-.form-group {
+.form-group, .tx-femanager form .femanager_fieldset {
   margin-bottom: 15px;
 }
 
@@ -3100,18 +3106,18 @@ input[type="checkbox"] {
   padding-bottom: 7px;
   margin-bottom: 0;
 }
-.form-control-static.input-lg, .input-group-lg > .form-control-static.form-control,
+.form-control-static.input-lg, .input-group-lg > .form-control-static.form-control, .tx-femanager form .controls .input-group-lg > input.form-control-static,
 .input-group-lg > .form-control-static.input-group-addon,
-.input-group-lg > .input-group-btn > .form-control-static.btn, .form-control-static.input-sm, .input-group-sm > .form-control-static.form-control,
+.input-group-lg > .input-group-btn > .form-control-static.btn, .form-control-static.input-sm, .input-group-sm > .form-control-static.form-control, .tx-femanager form .controls .input-group-sm > input.form-control-static,
 .input-group-sm > .form-control-static.input-group-addon,
 .input-group-sm > .input-group-btn > .form-control-static.btn {
   padding-left: 0;
   padding-right: 0;
 }
 
-.input-sm, .input-group-sm > .form-control,
+.input-sm, .input-group-sm > .form-control, .tx-femanager form .controls .input-group-sm > input,
 .input-group-sm > .input-group-addon,
-.input-group-sm > .input-group-btn > .btn, .form-group-sm .form-control {
+.input-group-sm > .input-group-btn > .btn, .form-group-sm .form-control, .form-group-sm .tx-femanager form .controls input, .tx-femanager form .controls .form-group-sm input {
   height: 30px;
   padding: 5px 10px;
   font-size: 12px;
@@ -3121,24 +3127,24 @@ input[type="checkbox"] {
 
 select.input-sm, .input-group-sm > select.form-control,
 .input-group-sm > select.input-group-addon,
-.input-group-sm > .input-group-btn > select.btn, .form-group-sm .form-control {
+.input-group-sm > .input-group-btn > select.btn, .form-group-sm .form-control, .form-group-sm .tx-femanager form .controls input, .tx-femanager form .controls .form-group-sm input {
   height: 30px;
   line-height: 30px;
 }
 
 textarea.input-sm, .input-group-sm > textarea.form-control,
 .input-group-sm > textarea.input-group-addon,
-.input-group-sm > .input-group-btn > textarea.btn, .form-group-sm .form-control,
+.input-group-sm > .input-group-btn > textarea.btn, .form-group-sm .form-control, .form-group-sm .tx-femanager form .controls input, .tx-femanager form .controls .form-group-sm input,
 select[multiple].input-sm,
 .input-group-sm > select[multiple].form-control,
 .input-group-sm > select[multiple].input-group-addon,
-.input-group-sm > .input-group-btn > select[multiple].btn, .form-group-sm .form-control {
+.input-group-sm > .input-group-btn > select[multiple].btn, .form-group-sm .form-control, .form-group-sm .tx-femanager form .controls input, .tx-femanager form .controls .form-group-sm input {
   height: auto;
 }
 
-.input-lg, .input-group-lg > .form-control,
+.input-lg, .input-group-lg > .form-control, .tx-femanager form .controls .input-group-lg > input,
 .input-group-lg > .input-group-addon,
-.input-group-lg > .input-group-btn > .btn, .form-group-lg .form-control {
+.input-group-lg > .input-group-btn > .btn, .form-group-lg .form-control, .form-group-lg .tx-femanager form .controls input, .tx-femanager form .controls .form-group-lg input {
   height: 46px;
   padding: 10px 16px;
   font-size: 18px;
@@ -3148,25 +3154,25 @@ select[multiple].input-sm,
 
 select.input-lg, .input-group-lg > select.form-control,
 .input-group-lg > select.input-group-addon,
-.input-group-lg > .input-group-btn > select.btn, .form-group-lg .form-control {
+.input-group-lg > .input-group-btn > select.btn, .form-group-lg .form-control, .form-group-lg .tx-femanager form .controls input, .tx-femanager form .controls .form-group-lg input {
   height: 46px;
   line-height: 46px;
 }
 
 textarea.input-lg, .input-group-lg > textarea.form-control,
 .input-group-lg > textarea.input-group-addon,
-.input-group-lg > .input-group-btn > textarea.btn, .form-group-lg .form-control,
+.input-group-lg > .input-group-btn > textarea.btn, .form-group-lg .form-control, .form-group-lg .tx-femanager form .controls input, .tx-femanager form .controls .form-group-lg input,
 select[multiple].input-lg,
 .input-group-lg > select[multiple].form-control,
 .input-group-lg > select[multiple].input-group-addon,
-.input-group-lg > .input-group-btn > select[multiple].btn, .form-group-lg .form-control {
+.input-group-lg > .input-group-btn > select[multiple].btn, .form-group-lg .form-control, .form-group-lg .tx-femanager form .controls input, .tx-femanager form .controls .form-group-lg input {
   height: auto;
 }
 
 .has-feedback {
   position: relative;
 }
-.has-feedback .form-control {
+.has-feedback .form-control, .has-feedback .tx-femanager form .controls input, .tx-femanager form .controls .has-feedback input {
   padding-right: 42.5px;
 }
 
@@ -3183,7 +3189,7 @@ select[multiple].input-lg,
   pointer-events: none;
 }
 
-.input-lg + .form-control-feedback, .input-group-lg > .form-control + .form-control-feedback,
+.input-lg + .form-control-feedback, .input-group-lg > .form-control + .form-control-feedback, .tx-femanager form .controls .input-group-lg > input + .form-control-feedback,
 .input-group-lg > .input-group-addon + .form-control-feedback,
 .input-group-lg > .input-group-btn > .btn + .form-control-feedback {
   width: 46px;
@@ -3191,7 +3197,7 @@ select[multiple].input-lg,
   line-height: 46px;
 }
 
-.input-sm + .form-control-feedback, .input-group-sm > .form-control + .form-control-feedback,
+.input-sm + .form-control-feedback, .input-group-sm > .form-control + .form-control-feedback, .tx-femanager form .controls .input-group-sm > input + .form-control-feedback,
 .input-group-sm > .input-group-addon + .form-control-feedback,
 .input-group-sm > .input-group-btn > .btn + .form-control-feedback {
   width: 30px;
@@ -3201,18 +3207,24 @@ select[multiple].input-lg,
 
 .has-success .help-block,
 .has-success .control-label,
+.has-success #login form .form-group label,
+#login form .form-group .has-success label,
+.has-success #login .tx-femanager form .femanager_fieldset label,
+#login .tx-femanager form .femanager_fieldset .has-success label,
+.has-success .tx-femanager #login form .femanager_fieldset label,
+.tx-femanager #login form .femanager_fieldset .has-success label,
 .has-success .radio,
 .has-success .checkbox,
 .has-success .radio-inline,
 .has-success .checkbox-inline, .has-success.radio label, .has-success.checkbox label, .has-success.radio-inline label, .has-success.checkbox-inline label {
   color: #3c763d;
 }
-.has-success .form-control {
+.has-success .form-control, .has-success .tx-femanager form .controls input, .tx-femanager form .controls .has-success input {
   border-color: #3c763d;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
-.has-success .form-control:focus {
+.has-success .form-control:focus, .has-success .tx-femanager form .controls input:focus, .tx-femanager form .controls .has-success input:focus {
   border-color: #2b542c;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
@@ -3228,18 +3240,24 @@ select[multiple].input-lg,
 
 .has-warning .help-block,
 .has-warning .control-label,
+.has-warning #login form .form-group label,
+#login form .form-group .has-warning label,
+.has-warning #login .tx-femanager form .femanager_fieldset label,
+#login .tx-femanager form .femanager_fieldset .has-warning label,
+.has-warning .tx-femanager #login form .femanager_fieldset label,
+.tx-femanager #login form .femanager_fieldset .has-warning label,
 .has-warning .radio,
 .has-warning .checkbox,
 .has-warning .radio-inline,
 .has-warning .checkbox-inline, .has-warning.radio label, .has-warning.checkbox label, .has-warning.radio-inline label, .has-warning.checkbox-inline label {
   color: #8a6d3b;
 }
-.has-warning .form-control {
+.has-warning .form-control, .has-warning .tx-femanager form .controls input, .tx-femanager form .controls .has-warning input {
   border-color: #8a6d3b;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
-.has-warning .form-control:focus {
+.has-warning .form-control:focus, .has-warning .tx-femanager form .controls input:focus, .tx-femanager form .controls .has-warning input:focus {
   border-color: #66512c;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
@@ -3255,18 +3273,24 @@ select[multiple].input-lg,
 
 .has-error .help-block,
 .has-error .control-label,
+.has-error #login form .form-group label,
+#login form .form-group .has-error label,
+.has-error #login .tx-femanager form .femanager_fieldset label,
+#login .tx-femanager form .femanager_fieldset .has-error label,
+.has-error .tx-femanager #login form .femanager_fieldset label,
+.tx-femanager #login form .femanager_fieldset .has-error label,
 .has-error .radio,
 .has-error .checkbox,
 .has-error .radio-inline,
 .has-error .checkbox-inline, .has-error.radio label, .has-error.checkbox label, .has-error.radio-inline label, .has-error.checkbox-inline label {
   color: #a94442;
 }
-.has-error .form-control {
+.has-error .form-control, .has-error .tx-femanager form .controls input, .tx-femanager form .controls .has-error input {
   border-color: #a94442;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
-.has-error .form-control:focus {
+.has-error .form-control:focus, .has-error .tx-femanager form .controls input:focus, .tx-femanager form .controls .has-error input:focus {
   border-color: #843534;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
@@ -3295,12 +3319,12 @@ select[multiple].input-lg,
 }
 
 @media (min-width: 768px) {
-  .form-inline .form-group {
+  .form-inline .form-group, .form-inline .tx-femanager form .femanager_fieldset, .tx-femanager form .form-inline .femanager_fieldset {
     display: inline-block;
     margin-bottom: 0;
     vertical-align: middle;
   }
-  .form-inline .form-control {
+  .form-inline .form-control, .form-inline .tx-femanager form .controls input, .tx-femanager form .controls .form-inline input {
     display: inline-block;
     width: auto;
     vertical-align: middle;
@@ -3314,13 +3338,15 @@ select[multiple].input-lg,
   }
   .form-inline .input-group .input-group-addon,
   .form-inline .input-group .input-group-btn,
-  .form-inline .input-group .form-control {
+  .form-inline .input-group .form-control,
+  .form-inline .input-group .tx-femanager form .controls input,
+  .tx-femanager form .controls .form-inline .input-group input {
     width: auto;
   }
-  .form-inline .input-group > .form-control {
+  .form-inline .input-group > .form-control, .form-inline .tx-femanager form .controls .input-group > input, .tx-femanager form .controls .form-inline .input-group > input {
     width: 100%;
   }
-  .form-inline .control-label {
+  .form-inline .control-label, .form-inline #login form .form-group label, #login form .form-group .form-inline label, .form-inline #login .tx-femanager form .femanager_fieldset label, #login .tx-femanager form .femanager_fieldset .form-inline label, .form-inline .tx-femanager #login form .femanager_fieldset label, .tx-femanager #login form .femanager_fieldset .form-inline label {
     margin-bottom: 0;
     vertical-align: middle;
   }
@@ -3345,46 +3371,54 @@ select[multiple].input-lg,
   }
 }
 
-.form-horizontal .radio,
+.form-horizontal .radio, #login form .radio, .tx-femanager form .radio,
 .form-horizontal .checkbox,
+#login form .checkbox,
+.tx-femanager form .checkbox,
 .form-horizontal .radio-inline,
-.form-horizontal .checkbox-inline {
+#login form .radio-inline,
+.tx-femanager form .radio-inline,
+.form-horizontal .checkbox-inline,
+#login form .checkbox-inline,
+.tx-femanager form .checkbox-inline {
   margin-top: 0;
   margin-bottom: 0;
   padding-top: 7px;
 }
-.form-horizontal .radio,
-.form-horizontal .checkbox {
+.form-horizontal .radio, #login form .radio, .tx-femanager form .radio,
+.form-horizontal .checkbox,
+#login form .checkbox,
+.tx-femanager form .checkbox {
   min-height: 27px;
 }
-.form-horizontal .form-group {
+.form-horizontal .form-group, #login form .form-group, .tx-femanager form .form-group, #login .tx-femanager form .femanager_fieldset, .tx-femanager #login form .femanager_fieldset, .tx-femanager form .femanager_fieldset {
   margin-left: -15px;
   margin-right: -15px;
 }
-.form-horizontal .form-group:before, .form-horizontal .form-group:after {
+.form-horizontal .form-group:before, #login form .form-group:before, .tx-femanager form .form-group:before, #login .tx-femanager form .femanager_fieldset:before, .tx-femanager #login form .femanager_fieldset:before, .tx-femanager form .femanager_fieldset:before, .form-horizontal .form-group:after, #login form .form-group:after, .tx-femanager form .form-group:after, #login .tx-femanager form .femanager_fieldset:after, .tx-femanager #login form .femanager_fieldset:after, .tx-femanager form .femanager_fieldset:after {
   content: " ";
   display: table;
 }
-.form-horizontal .form-group:after {
+.form-horizontal .form-group:after, #login form .form-group:after, .tx-femanager form .form-group:after, #login .tx-femanager form .femanager_fieldset:after, .tx-femanager #login form .femanager_fieldset:after, .tx-femanager form .femanager_fieldset:after {
   clear: both;
 }
 @media (min-width: 768px) {
-  .form-horizontal .control-label {
+  .form-horizontal .control-label, #login form .control-label, .tx-femanager form .control-label, #login form .form-group label, #login .tx-femanager form .femanager_fieldset label, .tx-femanager #login form .femanager_fieldset label {
     text-align: right;
     margin-bottom: 0;
     padding-top: 7px;
   }
 }
-.form-horizontal .has-feedback .form-control-feedback {
+.form-horizontal .has-feedback .form-control-feedback, #login form .has-feedback .form-control-feedback, .tx-femanager form .has-feedback .form-control-feedback {
   right: 15px;
 }
 @media (min-width: 768px) {
-  .form-horizontal .form-group-lg .control-label {
+  .form-horizontal .form-group-lg .control-label, #login form .form-group-lg .control-label, .tx-femanager form .form-group-lg .control-label, .form-horizontal .form-group-lg #login form .form-group label, #login form .form-group-lg .form-group label, #login form .form-group .form-group-lg label, .form-horizontal .form-group-lg #login .tx-femanager form .femanager_fieldset label, #login .tx-femanager form .form-group-lg .femanager_fieldset label, #login .tx-femanager form .femanager_fieldset .form-group-lg label, .form-horizontal .form-group-lg .tx-femanager #login form .femanager_fieldset label, .tx-femanager #login form .form-group-lg .femanager_fieldset label, .tx-femanager #login form .femanager_fieldset .form-group-lg label {
     padding-top: 14.3px;
   }
 }
 @media (min-width: 768px) {
-  .form-horizontal .form-group-sm .control-label {
+  .form-horizontal .form-group-sm .control-label, #login form .form-group-sm .control-label, .tx-femanager form .form-group-sm .control-label, .form-horizontal .form-group-sm #login form .form-group label, #login form .form-group-sm .form-group label, #login form .form-group .form-group-sm label, .form-horizontal .form-group-sm #login .tx-femanager form .femanager_fieldset label, #login .tx-femanager form .form-group-sm .femanager_fieldset label, #login .tx-femanager form .femanager_fieldset .form-group-sm label, .form-horizontal .form-group-sm .tx-femanager #login form .femanager_fieldset label, .tx-femanager #login form .form-group-sm .femanager_fieldset label, .tx-femanager #login form .femanager_fieldset .form-group-sm label {
     padding-top: 6px;
   }
 }
@@ -3703,7 +3737,7 @@ tbody.collapse.in {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   background-clip: padding-box;
 }
-.dropdown-menu.pull-right {
+.dropdown-menu.pull-right, #login form .login-head p.dropdown-menu.lostpass {
   right: 0;
   left: auto;
 }
@@ -3782,7 +3816,7 @@ tbody.collapse.in {
   z-index: 990;
 }
 
-.pull-right > .dropdown-menu {
+.pull-right > .dropdown-menu, #login form .login-head p.lostpass > .dropdown-menu {
   right: 0;
   left: auto;
 }
@@ -4023,7 +4057,7 @@ tbody.collapse.in {
   padding-left: 0;
   padding-right: 0;
 }
-.input-group .form-control {
+.input-group .form-control, .input-group .tx-femanager form .controls input, .tx-femanager form .controls .input-group input {
   position: relative;
   z-index: 2;
   float: left;
@@ -4033,12 +4067,16 @@ tbody.collapse.in {
 
 .input-group-addon,
 .input-group-btn,
-.input-group .form-control {
+.input-group .form-control,
+.input-group .tx-femanager form .controls input,
+.tx-femanager form .controls .input-group input {
   display: table-cell;
 }
 .input-group-addon:not(:first-child):not(:last-child),
 .input-group-btn:not(:first-child):not(:last-child),
-.input-group .form-control:not(:first-child):not(:last-child) {
+.input-group .form-control:not(:first-child):not(:last-child),
+.input-group .tx-femanager form .controls input:not(:first-child):not(:last-child),
+.tx-femanager form .controls .input-group input:not(:first-child):not(:last-child) {
   border-radius: 0;
 }
 
@@ -4060,14 +4098,14 @@ tbody.collapse.in {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-.input-group-addon.input-sm,
+.input-group-addon.input-sm, .tx-femanager form .controls .input-group-sm > input.input-group-addon,
 .input-group-sm > .input-group-addon,
 .input-group-sm > .input-group-btn > .input-group-addon.btn {
   padding: 5px 10px;
   font-size: 12px;
   border-radius: 3px;
 }
-.input-group-addon.input-lg,
+.input-group-addon.input-lg, .tx-femanager form .controls .input-group-lg > input.input-group-addon,
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .input-group-addon.btn {
   padding: 10px 16px;
@@ -4079,7 +4117,7 @@ tbody.collapse.in {
   margin-top: 0;
 }
 
-.input-group .form-control:first-child,
+.input-group .form-control:first-child, .input-group .tx-femanager form .controls input:first-child, .tx-femanager form .controls .input-group input:first-child,
 .input-group-addon:first-child,
 .input-group-btn:first-child > .btn,
 .input-group-btn:first-child > .btn-group > .btn,
@@ -4094,7 +4132,7 @@ tbody.collapse.in {
   border-right: 0;
 }
 
-.input-group .form-control:last-child,
+.input-group .form-control:last-child, .input-group .tx-femanager form .controls input:last-child, .tx-femanager form .controls .input-group input:last-child,
 .input-group-addon:last-child,
 .input-group-btn:last-child > .btn,
 .input-group-btn:last-child > .btn-group > .btn,
@@ -4534,12 +4572,12 @@ tbody.collapse.in {
   margin-bottom: 8px;
 }
 @media (min-width: 768px) {
-  .navbar-form .form-group {
+  .navbar-form .form-group, .navbar-form .tx-femanager form .femanager_fieldset, .tx-femanager form .navbar-form .femanager_fieldset {
     display: inline-block;
     margin-bottom: 0;
     vertical-align: middle;
   }
-  .navbar-form .form-control {
+  .navbar-form .form-control, .navbar-form .tx-femanager form .controls input, .tx-femanager form .controls .navbar-form input {
     display: inline-block;
     width: auto;
     vertical-align: middle;
@@ -4553,13 +4591,15 @@ tbody.collapse.in {
   }
   .navbar-form .input-group .input-group-addon,
   .navbar-form .input-group .input-group-btn,
-  .navbar-form .input-group .form-control {
+  .navbar-form .input-group .form-control,
+  .navbar-form .input-group .tx-femanager form .controls input,
+  .tx-femanager form .controls .navbar-form .input-group input {
     width: auto;
   }
-  .navbar-form .input-group > .form-control {
+  .navbar-form .input-group > .form-control, .navbar-form .tx-femanager form .controls .input-group > input, .tx-femanager form .controls .navbar-form .input-group > input {
     width: 100%;
   }
-  .navbar-form .control-label {
+  .navbar-form .control-label, .navbar-form #login form .form-group label, #login form .form-group .navbar-form label, .navbar-form #login .tx-femanager form .femanager_fieldset label, #login .tx-femanager form .femanager_fieldset .navbar-form label, .navbar-form .tx-femanager #login form .femanager_fieldset label, .tx-femanager #login form .femanager_fieldset .navbar-form label {
     margin-bottom: 0;
     vertical-align: middle;
   }
@@ -4584,10 +4624,10 @@ tbody.collapse.in {
   }
 }
 @media (max-width: 767px) {
-  .navbar-form .form-group {
+  .navbar-form .form-group, .navbar-form .tx-femanager form .femanager_fieldset, .tx-femanager form .navbar-form .femanager_fieldset {
     margin-bottom: 5px;
   }
-  .navbar-form .form-group:last-child {
+  .navbar-form .form-group:last-child, .navbar-form .tx-femanager form .femanager_fieldset:last-child, .tx-femanager form .navbar-form .femanager_fieldset:last-child {
     margin-bottom: 0;
   }
 }
@@ -5341,12 +5381,15 @@ a.thumbnail.active {
 }
 
 .media-right,
-.media > .pull-right {
+.media > .pull-right,
+#login form .login-head .media > p.lostpass {
   padding-left: 10px;
 }
 
 .media-left,
-.media > .pull-left {
+.media > .pull-left,
+#login form .login-head .media > p.title,
+#login form .login-head .media > p.logged-in {
   padding-right: 10px;
 }
 
@@ -6621,11 +6664,11 @@ button.close {
   margin-right: auto;
 }
 
-.pull-right {
+.pull-right, #login form .login-head p.lostpass {
   float: right !important;
 }
 
-.pull-left {
+.pull-left, #login form .login-head p.title, #login form .login-head p.logged-in {
   float: left !important;
 }
 
@@ -7414,35 +7457,35 @@ img {
 }
 
 /*-----------------------------------------------------------------------------------*/
-/* ----------------- [ login (oben) Jochen ] ------------------------------------------ */
 #login {
   position: absolute;
-  top: 20px;
-  /*    right:330px; */
+  top: 16px;
   right: 0;
-  /*    width:220px; */
-  width: 320px;
-  height: 68px;
   border-left: 1px dotted #ccc;
   padding-left: 16px;
   padding-top: 5px;
 }
-#login #logintable {
-  width: 260px;
+#login form .login-head p {
+  margin-bottom: 5px;
 }
-#login #loginsubmit {
+#login form .login-head p.title {
+  margin-left: 5px;
+}
+#login form .form-group, #login .tx-femanager form .femanager_fieldset, .tx-femanager #login form .femanager_fieldset {
+  margin-bottom: 0;
+  padding-bottom: 7px;
+}
+#login form .form-group label, #login .tx-femanager form .femanager_fieldset label, .tx-femanager #login form .femanager_fieldset label {
+  font-weight: normal;
+  padding-top: 0;
+}
+#login form .form-group input.loginsubmit, #login .tx-femanager form .femanager_fieldset input.loginsubmit, .tx-femanager #login form .femanager_fieldset input.loginsubmit {
   border: none;
-  /*    width:33px;
-  	height:14px; */
   font-size: 1.1em;
-  /*    padding-left: 2px;
-  	padding-right: 2px; */
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/inpbg_login.gif) no-repeat right;
+  padding: 0 5px;
+  background: #8b7f6d;
   color: #fff;
+  margin-left: 10px;
 }
 #login #loginstatus {
   width: 180px;
@@ -7455,17 +7498,13 @@ img {
 #login #logout {
   text-align: right;
 }
-
-#login label, p {
+#login label, #login p {
   color: #b2aca6;
 }
 
 #login #pass,
 #login #user {
-  /*    width:84px; */
-  width: 104px;
-  height: 17px;
-  background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/inpbg_login.gif) no-repeat right;
+  background: #8b7f6d;
   border: none;
   font-size: 1.1em;
   color: #fff;
@@ -7493,7 +7532,6 @@ img {
   border-bottom: none;
 }
 
-/* ----------------- [ / login (oben) ] ------------------------------------------ */
 #sidebarbordertop, #sidebarborderend {
   position: absolute;
   left: 0;
@@ -7552,7 +7590,7 @@ img {
   border-bottom: none;
 }
 
-#tx-goobit3-search hr, #mydigizeit_filter hr {
+#mydigizeit_filter hr, #tx-goobit3-search hr {
   color: #fff;
   background: #fff;
   border: 0 solid #fff;
@@ -7592,7 +7630,7 @@ img {
   color: #777;
 }
 
-#tx-drwiki input[type=text]:focus, textarea:focus {
+textarea:focus, #tx-drwiki input[type=text]:focus {
   background: #f0f0f0;
   color: #333;
   border-color: #666;
@@ -7809,6 +7847,182 @@ h3 {
   margin-right: 75px;
 }
 
+img {
+  border: none;
+}
+
+.redirect {
+  border: #2f6fab 1px dashed;
+  PADDING: 1em;
+  COLOR: #000;
+  LINE-HEIGHT: 1.1em;
+  BACKGROUND-COLOR: #FFFFF0;
+}
+
+.icons {
+  vertical-align: middle;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+.diff-r {
+  color: red;
+}
+
+.diff-g {
+  color: #006600;
+}
+
+.diff-result {
+  BORDER: #2f6fab 1px dashed;
+  PADDING: 1em;
+  COLOR: #000;
+  LINE-HEIGHT: 1.1em;
+  BACKGROUND-COLOR: #f9f9f9;
+  font-family: Fixedsys, Courier;
+}
+
+.diff-table {
+  width: 100%;
+}
+
+.diff-table-cell-green {
+  vertical-align: top;
+  text-align: left;
+  white-space: normal;
+  color: #006600;
+  font-family: Fixedsys, Courier;
+  font-size: 10pt;
+  BORDER: #2f6fab 1px dashed;
+  PADDING: 1em;
+}
+
+.diff-table-cell-red {
+  vertical-align: top;
+  text-align: left;
+  white-space: normal;
+  color: red;
+  font-family: Fixedsys, Courier;
+  font-size: 10pt;
+  BORDER: #2f6fab 1px dashed;
+  PADDING: 1em;
+}
+
+#toc {
+  BORDER: #aaa 1px solid;
+  PADDING: 5px;
+  FONT-SIZE: 10pt;
+  BACKGROUND-COLOR: #f9f9f9;
+}
+#toc .tocindent {
+  MARGIN-LEFT: 2em;
+}
+#toc .tocline {
+  MARGIN-BOTTOM: 0;
+}
+#toc P {
+  FONT-SIZE: 10pt;
+  MARGIN: 0;
+}
+#toc .toctoggle {
+  FONT-SIZE: 10pt;
+}
+#toc .editsection {
+  MARGIN-TOP: 0.7em;
+  FONT-SIZE: 10pt;
+}
+
+#welcome p {
+  font-family: Georgia, Times New Roman, Times, serif;
+  font-weight: normal;
+  font-size: 1.5em;
+  line-height: 1.5em;
+  font-style: italic;
+  padding: 15px 100px 20px 80px;
+  color: #222;
+  margin: 0;
+}
+
+.list li {
+  background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/listelement.gif) no-repeat 0 5px;
+  padding: 0 0 0 15px;
+  line-height: 1.6em;
+}
+
+a.objecthead:hover {
+  background: none;
+  color: #C00;
+}
+
+/* ----------------- [ Fußzeile ] ----------------------------------------------------------- */
+#totop {
+  position: absolute;
+  right: 45px;
+  top: 10px;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  overflow: hidden;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: right;
+  color: #a99;
+  border-bottom: none;
+  padding: 0 30px 0 0;
+}
+
+#endborder {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 950px;
+  clear: left;
+  height: 200px;
+  background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/endborder.png) no-repeat top center;
+}
+#endborder #sysnav {
+  position: absolute;
+  top: 20px;
+  left: 80px;
+  height: 20px;
+  border-left: 1px dotted #999;
+}
+#endborder #sysnav li {
+  position: relative;
+  float: left;
+  top: 0;
+  left: 0;
+  height: 20px;
+  padding: 0 10px 0 10px;
+  border-right: 1px dotted #999;
+  text-align: center;
+}
+#endborder #sysnav li a {
+  font-weight: bold;
+  border-bottom: none;
+  color: #999;
+}
+#endborder #sysnav li a:hover {
+  color: #fff;
+}
+#endborder #dfglink {
+  position: absolute;
+  top: 75px;
+  right: 100px;
+  width: 500px;
+  height: 30px;
+  line-height: 30px;
+  background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/bydfg.gif) no-repeat right center;
+  display: block;
+  overflow: hidden;
+  border-bottom: none;
+  text-align: right;
+  color: #fff;
+  padding: 0 73px 0 0;
+}
+
+/* ----------------- [ / Fußzeile ] --------------------------------------------------------- */
 .tx_felogin_pi1-inputtext {
   width: 390px;
   height: 22px;
@@ -8374,180 +8588,3 @@ dt.tx-irfaq-pi1 {
   text-align: center;
   float: left;
 }
-
-img {
-  border: none;
-}
-
-.redirect {
-  border: #2f6fab 1px dashed;
-  PADDING: 1em;
-  COLOR: #000;
-  LINE-HEIGHT: 1.1em;
-  BACKGROUND-COLOR: #FFFFF0;
-}
-
-.icons {
-  vertical-align: middle;
-  float: left;
-  margin-right: 20px;
-  margin-bottom: 10px;
-}
-
-.diff-r {
-  color: red;
-}
-
-.diff-g {
-  color: #006600;
-}
-
-.diff-result {
-  BORDER: #2f6fab 1px dashed;
-  PADDING: 1em;
-  COLOR: #000;
-  LINE-HEIGHT: 1.1em;
-  BACKGROUND-COLOR: #f9f9f9;
-  font-family: Fixedsys, Courier;
-}
-
-.diff-table {
-  width: 100%;
-}
-
-.diff-table-cell-green {
-  vertical-align: top;
-  text-align: left;
-  white-space: normal;
-  color: #006600;
-  font-family: Fixedsys, Courier;
-  font-size: 10pt;
-  BORDER: #2f6fab 1px dashed;
-  PADDING: 1em;
-}
-
-.diff-table-cell-red {
-  vertical-align: top;
-  text-align: left;
-  white-space: normal;
-  color: red;
-  font-family: Fixedsys, Courier;
-  font-size: 10pt;
-  BORDER: #2f6fab 1px dashed;
-  PADDING: 1em;
-}
-
-#toc {
-  BORDER: #aaa 1px solid;
-  PADDING: 5px;
-  FONT-SIZE: 10pt;
-  BACKGROUND-COLOR: #f9f9f9;
-}
-#toc .tocindent {
-  MARGIN-LEFT: 2em;
-}
-#toc .tocline {
-  MARGIN-BOTTOM: 0;
-}
-#toc P {
-  FONT-SIZE: 10pt;
-  MARGIN: 0;
-}
-#toc .toctoggle {
-  FONT-SIZE: 10pt;
-}
-#toc .editsection {
-  MARGIN-TOP: 0.7em;
-  FONT-SIZE: 10pt;
-}
-
-#welcome p {
-  font-family: Georgia, Times New Roman, Times, serif;
-  font-weight: normal;
-  font-size: 1.5em;
-  line-height: 1.5em;
-  font-style: italic;
-  padding: 15px 100px 20px 80px;
-  color: #222;
-  margin: 0;
-}
-
-.list li {
-  background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/listelement.gif) no-repeat 0 5px;
-  padding: 0 0 0 15px;
-  line-height: 1.6em;
-}
-
-a.objecthead:hover {
-  background: none;
-  color: #C00;
-}
-
-/* ----------------- [ Fußzeile ] ----------------------------------------------------------- */
-#totop {
-  position: absolute;
-  right: 45px;
-  top: 10px;
-  width: 100px;
-  height: 30px;
-  line-height: 30px;
-  overflow: hidden;
-  font-size: 12px;
-  font-weight: bold;
-  text-align: right;
-  color: #a99;
-  border-bottom: none;
-  padding: 0 30px 0 0;
-}
-
-#endborder {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 950px;
-  clear: left;
-  height: 200px;
-  background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/endborder.png) no-repeat top center;
-}
-#endborder #sysnav {
-  position: absolute;
-  top: 20px;
-  left: 80px;
-  height: 20px;
-  border-left: 1px dotted #999;
-}
-#endborder #sysnav li {
-  position: relative;
-  float: left;
-  top: 0;
-  left: 0;
-  height: 20px;
-  padding: 0 10px 0 10px;
-  border-right: 1px dotted #999;
-  text-align: center;
-}
-#endborder #sysnav li a {
-  font-weight: bold;
-  border-bottom: none;
-  color: #999;
-}
-#endborder #sysnav li a:hover {
-  color: #fff;
-}
-#endborder #dfglink {
-  position: absolute;
-  top: 75px;
-  right: 100px;
-  width: 500px;
-  height: 30px;
-  line-height: 30px;
-  background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/bydfg.gif) no-repeat right center;
-  display: block;
-  overflow: hidden;
-  border-bottom: none;
-  text-align: right;
-  color: #fff;
-  padding: 0 73px 0 0;
-}
-
-/* ----------------- [ / Fußzeile ] --------------------------------------------------------- */

@@ -6,16 +6,14 @@
 		5 {
 			value (
                 <div id="welcome">
-					<p><strong>Unser Service - Ihr Vorteil:</strong>  DigiZeitschriften ist ein Service f&uuml;r das wissenschaftliche Arbeiten. &Uuml;ber einen kontrollierten Nutzerzugang k&ouml;nnen Studierende und Wissenschaftler auf Kernzeitschriften der deutschen Forschung zugreifen. Der Zugang erfolgt &uuml;ber Bibliotheken und wissenschaftliche Einrichtungen, die DigiZeitschriften subskribiert haben.</p>
-					<div id="cnose"></div>
+					<p><strong>Unser Service &ndash; Ihr Vorteil:</strong>  DigiZeitschriften ist ein Service f&uuml;r das wissenschaftliche Arbeiten. &Uuml;ber einen kontrollierten Nutzerzugang k&ouml;nnen Studierende und Wissenschaftler auf Kernzeitschriften der deutschen Forschung zugreifen. Der Zugang erfolgt &uuml;ber Bibliotheken und wissenschaftliche Einrichtungen, die DigiZeitschriften subskribiert haben.</p>
 				</div>
 			)
 			#other languages (english)
 			lang {
 				en (
                     <div id="welcome">
-                        <p><strong>Our service - your benefit:</strong> DigiZeitschriften is a research service. Students and researchers can access the core German research journals via subscribing institutions. Access is possible via libraries and academic institutions which have subscribed to DigiZeitschriften</p>
-                        <div id="cnose"></div>
+                        <p><strong>Our service &ndash; your benefit:</strong> DigiZeitschriften is a research service. Students and researchers can access the core German research journals via subscribing institutions. Access is possible via libraries and academic institutions which have subscribed to DigiZeitschriften</p>
                     </div>
 				)
 			}
@@ -56,7 +54,6 @@
 		15 = TEXT
 		15.value (
                 </dl>
-                <div id="cnose"></div>
             </div>
 		)
 	}

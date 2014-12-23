@@ -188,57 +188,19 @@ h3 {
 	border-bottom: 1px dotted $color_celeste_approx;
 }
 
-#maincol {
-	h3 {
-		@extend %extend_2;
-	}
-	h4 {
-		@extend %extend_3;
-	}
-	h5 {
-		@extend %extend_4;
-	}
-	p {
-		margin: 20px 0 0;
-		color: $color_log_cabin_approx;
-	}
-}
-
-#maincol_full {
-	h3 {
-		@extend %extend_2;
-	}
-	h4 {
-		@extend %extend_3;
-	}
-	h5 {
-		@extend %extend_4;
-	}
-	p {
-		margin: 20px 0 0;
-		color: $color_log_cabin_approx;
-	}
-}
-
 #blog {
 	.entry {
 		border-bottom: 1px dotted $color_celeste_approx;
 		padding: 10px 0;
 		h4 {
-			font-size: 1.1em;
-			line-height: 1.2em;
-			max-width: 650px;
-			margin: 0;
-			font-weight: bold;
 			color: $color_red_berry_approx;
-			font-style: normal;
 			.date {
 				font-weight: normal;
-				color: $color_log_cabin_approx;
+				color: $color_tapa_approx;
 				.datesep {
 					width: 1px;
 					color: $white;
-					border-right: 1px solid $color_log_cabin_approx;
+					border-right: 1px solid $color_tapa_approx;
 				}
 			}
 		}
@@ -466,17 +428,6 @@ img {
 		MARGIN-TOP: 0.7em;
 		FONT-SIZE: 10pt;
 	}
-}
-
-#welcome p {
-	font-family: $font_0, $font_1, $font_2, $font_3;
-	font-weight: normal;
-	font-size: 1.5em;
-	line-height: 1.5em;
-	font-style: italic;
-	padding: 15px 100px 20px 80px;
-	color: $color_log_cabin_approx;
-	margin: 0;
 }
 
 .list li {

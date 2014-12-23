@@ -155,10 +155,12 @@
 		}
 		li.tx-goobit3-browse_browsecollection {
 			padding-bottom: 5px;
+			display: table-row;
 		}
 	}
 	a {
 		border: none;
+		display: table-cell;
 	}
 }
 

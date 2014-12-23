@@ -2,58 +2,36 @@
 
 #lang_nav {
 	position: absolute;
-	top: 171px;
-	left: 30px;
-	width: 20px;
-	height: 12px;
-	display: block;
-}
-
-#lang_nav img {
-	display: inline;
-	margin: 0 0 0 0;
-	padding: 0 0 0 0;
-}
-
-#lang_nav {
-	position: absolute;
-	top: 171px;
-	left: 30px;
-	width: 20px;
-	height: 12px;
-	display: block;
+	top: 185px;
+	left: 25px;
 	z-index: 1000;
-}
-
-#lang_nav img {
-	display: inline;
-	margin: 0 0 0 0;
-	padding: 0 0 0 0;
-}
-
-#lang_nav a {
-	color: #900;
-	text-decoration: none;
-	padding-right: 4px;
-	border-right: 1px dotted #900;
-	border-bottom: none;
-}
-
-#lang_nav a:visited {
-	color: #900;
-	text-decoration: none;
-	padding-right: 4px;
-	border-right: 1px dotted #900;
-	border-bottom: none;
-}
-
-#lang_nav a:hover {
-	color: #fff;
-	text-decoration: none;
-	border-right: 1px dotted #900;
-	padding-right: 4px;
-	background: #900;
-	border-bottom: none;
+	img {
+		display: inline;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+	}
+	a {
+		color: #900;
+		text-decoration: none;
+		padding-right: 4px;
+		border-right: 1px dotted #900;
+		border-bottom: none;
+		&:visited {
+			color: #900;
+			text-decoration: none;
+			padding-right: 4px;
+			border-right: 1px dotted #900;
+			border-bottom: none;
+		}
+		&:hover {
+			color: #fff;
+			text-decoration: none;
+			border-right: 1px dotted #900;
+			padding-right: 4px;
+			background: #900;
+			border-bottom: none;
+		}
+	}
 }
 
 /* ----------------- [ /Sprachen Navigation ] ---------------------------- */

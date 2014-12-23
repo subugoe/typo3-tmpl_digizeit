@@ -1,15 +1,20 @@
 #login {
+
+	@extend .small;
 	@extend .col-md-offset-8;
 	@extend .col-md-4;
+	position: absolute;
+	top: 16px;
+	right: 0;
+	border-left: 1px dotted #ccc;
+
 	form {
 		@extend .form-horizontal;
 		.login-head {
 			@extend .row;
 			p {
-				margin-bottom: 5px;
 				&.title {
 					@extend .pull-left;
-					margin-left: 5px;
 				}
 				&.logged-in {
 					@extend .pull-left;
@@ -20,65 +25,47 @@
 			}
 		}
 		.form-group {
-			margin-bottom: 0;
-			padding-bottom: 7px;
 			label {
 				@extend .control-label;
 				@extend .col-md-4;
 				font-weight: normal;
-				padding-top: 0;
 			}
-			input {
-				&.loginsubmit {
-					border: none;
-					font-size: 1.1em;
-					padding: 0 5px;
-					background: #8b7f6d;
-					color: #fff;
-					margin-left: 10px;
+			> div {
+				@extend .col-sm-8;
+				input {
+					@include input('dark');
 				}
 			}
 		}
+		.loginsubmit {
+			@include button('dark');
+		}
 	}
 
-	position: absolute;
-	top: 16px;
-	right: 0;
-	border-left: 1px dotted #ccc;
-	padding-left: 16px;
-	padding-top: 5px;
-
-	#loginstatus {
-		width: 180px;
-		max-width: 180px;
-		min-width: 180px;
-		color: #b2aca6;
-		overflow: hidden;
-		text-decoration: none;
-	}
-	#logout {
-		text-align: right;
-	}
 	label, p {
 		color: #b2aca6;
 	}
+
 }
 
-#login #pass,
-#login #user {
-	background: #8b7f6d;
-	border: none;
-	font-size: 1.1em;
-	color: #fff
+#pass,
+#user {
+	@include input;
 }
 
-#login #loginstatus a,
-#login #loginstatus a:hover,
-#login #loginstatus a:visited {
+#loginstatus {
+	width: 180px;
 	color: #b2aca6;
-	font-size: 1.1em;
+	overflow: hidden;
 	text-decoration: none;
-	background: transparent;
+	a,
+	a:hover,
+	a:visited {
+		color: #b2aca6;
+		font-size: 1.1em;
+		text-decoration: none;
+		background: transparent;
+	}
 }
 
 #login a,
@@ -92,4 +79,8 @@
 	text-decoration: none;
 	background: #900;
 	border-bottom: none;
+}
+
+#logout {
+	text-align: right;
 }

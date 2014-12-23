@@ -1,5 +1,6 @@
 @import '_Includes/Settings';
 @import 'bootstrap';
+@import 'mixins';
 
 /*
 
@@ -19,8 +20,7 @@ CSS-Datei für die Gestaltung des Layouts der Seite.
 }
 
 body {
-	background: #7e756a url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/bggrad.gif) repeat-x fixed;
-	font-size: 1em;
+	background: #7e756a linear-gradient(rgba(#000, .2), rgba(#000, 0)) repeat-x fixed;
 	color: $gray-darker;
 }
 
@@ -89,27 +89,6 @@ img {
 	background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/linebook.gif) no-repeat 0 0;
 }
 
-#headborder {
-	position: relative;
-	top: 0;
-	left: 0;
-	width: 950px;
-	height: 110px;
-	background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/headborder.png) no-repeat bottom center;
-}
-
-#header {
-	position: relative;
-	top: 0;
-	left: 0;
-	width: 900px;
-	height: 164px;
-	background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/headerpic.jpg) no-repeat 0 0;
-	h1 {
-		margin: 0;
-	}
-}
-
 #homelink {
 	position: absolute;
 	top: 10px;
@@ -122,19 +101,21 @@ img {
 	border-bottom: none;
 }
 
-
-
 /* ----------------- [ / Hintergrundgrafiken, Header & Breadcrumb ] ------------------------- */
 
 /* ----------------- [ Aufbau des Inhalts (Spalten etc.) ] ---------------------------------- */
 
 .content {
+	margin-top: 110px;
 	position: relative;
 	top: 0;
 	left: 0;
-	background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/bgwrapper.png) repeat-y;
-	padding: 0 17px 0 23px;
+	//background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/bgwrapper.png) repeat-y;
+	background: #fff;
+	box-shadow: 0 0 25px rgba(#000, .5);
+	//padding: 0 17px 0 23px;
 	display: block;
+	padding: 15px;
 	table {
 		@extend .table;
 	}
@@ -145,8 +126,6 @@ img {
 	top: 0;
 	left: 0;
 	margin: 0 0 0 65px;
-	line-height: 1.6em;
-	font-size: 1.2em;
 	color: #222;
 	min-height: 30px;
 }
@@ -160,15 +139,6 @@ img {
 	@extend .col-md-8;
 	padding: 0;
 }
-
-/* ----------------- [ / Aufbau des Inhalts (Spalten etc.) ] -------------------------------- */
-
-@import '_Includes/Structure/Breadcrumb';
-@import '_Includes/Structure/Language';
-@import '_Includes/Structure/Navigation';
-@import '_Includes/Structure/Submenu';
-@import '_Includes/Structure/Footer';
-@import '_Includes/Structure/Fastsearch';
 
 /*-------------------- Sitemap ---------------------------------------------------*/
 
@@ -188,7 +158,13 @@ img {
 	margin-left: 40px;
 }
 
-/*-----------------------------------------------------------------------------------*/
+// TODO: Order
+@import '_Includes/Structure/Header';
+@import '_Includes/Structure/Breadcrumb';
+@import '_Includes/Structure/Language';
+@import '_Includes/Structure/Navigation';
+@import '_Includes/Structure/Submenu';
+@import '_Includes/Structure/Fastsearch';
 @import '_Includes/Structure/Login';
 @import '_Includes/Structure/Content';
 @import '_Includes/Structure/Footer';

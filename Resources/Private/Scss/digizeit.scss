@@ -1,16 +1,7 @@
 @import '_Includes/Settings';
 @import 'bootstrap';
+@import '_fontawesome/font-awesome';
 @import 'mixins';
-
-/*
-
-CSS-Datei für die Gestaltung des Layouts der Seite.
-    - Zentriert die Seite
-    - legt Hintergrundbilder an
-    - positioniert die Hauptelemente (Navigation, Header, Fußbereich, etc.)
-    - Definiert erste HTML-Strukturelemente (Grundsätzliche Textoptik, Überschrift etc.)
-
-*/
 
 /* ----------------- [ allgemeine Definitionen ] -------------------------------------------- */
 
@@ -131,12 +122,12 @@ img {
 }
 
 #maincol {
-	@extend .col-md-7;
+	@include make-md-column(7);
 	padding: 0 0 50px 0;
 }
 
 #maincol_full {
-	@extend .col-md-8;
+	@include make-md-column(8);
 	padding: 0;
 }
 

@@ -22,82 +22,82 @@
 
 class oailucene {
 
-        
+
 	function escStr($str) {
-		return str_replace(array('\\','+','-','&&','||','!','(',')','{','}','[',']','^','"','~','*','?',':'),array('\\\\','\+','\-','\&&','\||','\!','\(','\)','\{','\}','\[','\]','\^','\"','\~','\*','\?','\:'),$str);
+		return str_replace(array('\\', '+', '-', '&&', '||', '!', '(', ')', '{', '}', '[', ']', '^', '"', '~', '*', '?', ':'), array('\\\\', '\+', '\-', '\&&', '\||', '\!', '\(', '\)', '\{', '\}', '\[', '\]', '\^', '\"', '\~', '\*', '\?', '\:'), $str);
 	}
 
-    //PPN:(+urn +nbn +de +bvb +12-bsb00076345-2)
-    function escPPN($ppn) {
-        return oailucene::escStr($ppn);
-    }
+	//PPN:(+urn +nbn +de +bvb +12-bsb00076345-2)
+	function escPPN($ppn) {
+		return oailucene::escStr($ppn);
+	}
 
-    function num_rows($res) {
-        return $res['response']['numFound'];
-    }
+	function num_rows($res) {
+		return $res['response']['numFound'];
+	}
 
-	function query($query,$sort=DEFAULTORDERFIELD,$reverse=false,$arr=array()) {
-       $urlQuery = '&q='.urlencode(trim($query));
-        if(isset($arr['maxresults'])) {
-            $urlQuery .= '&rows='.$arr['maxresults'];
-        }
-        if(isset($arr['start'])) {
-            $urlQuery .= '&start='.$arr['start'];
-        }
-        if($reverse) {
-            $sort .= ' desc';
-        } else {
-            $sort .= ' asc';
-        }
-        if($sort) {
-            $urlQuery .= '&sort='.urlencode(trim($sort));
-        }
-        $solrResult = file_get_contents($this->conf['DB']['solrPhpsUrl'].$urlQuery);
-        $arrSolr = unserialize($solrResult);
-        foreach($arrSolr['response']['docs'] as $key=>$val) {
-            foreach($val as $field=>$_val) {
-                if(is_array($_val)) {
-                    $arrSolr['response']['docs'][$key][$field] = $_val[0];
-                }
-            } 
-            $arrTmp = explode(',',$this->conf['DB']['serialized']);
-            foreach($arrTmp as $field) {
-                if(isset($arrSolr['response']['docs'][$key][$field])) {
-                    $arrSolr['response']['docs'][$key][$field] = oailucene::_unserialize($arrSolr['response']['docs'][$key][$field]);
-                }
-            }
-        }
- 		return $arrSolr;
-    }
+	function query($query, $sort = DEFAULTORDERFIELD, $reverse = false, $arr = array()) {
+		$urlQuery = '&q=' . urlencode(trim($query));
+		if (isset($arr['maxresults'])) {
+			$urlQuery .= '&rows=' . $arr['maxresults'];
+		}
+		if (isset($arr['start'])) {
+			$urlQuery .= '&start=' . $arr['start'];
+		}
+		if ($reverse) {
+			$sort .= ' desc';
+		} else {
+			$sort .= ' asc';
+		}
+		if ($sort) {
+			$urlQuery .= '&sort=' . urlencode(trim($sort));
+		}
+		$solrResult = file_get_contents($this->conf['DB']['solrPhpsUrl'] . $urlQuery);
+		$arrSolr = unserialize($solrResult);
+		foreach ($arrSolr['response']['docs'] as $key => $val) {
+			foreach ($val as $field => $_val) {
+				if (is_array($_val)) {
+					$arrSolr['response']['docs'][$key][$field] = $_val[0];
+				}
+			}
+			$arrTmp = explode(',', $this->conf['DB']['serialized']);
+			foreach ($arrTmp as $field) {
+				if (isset($arrSolr['response']['docs'][$key][$field])) {
+					$arrSolr['response']['docs'][$key][$field] = oailucene::_unserialize($arrSolr['response']['docs'][$key][$field]);
+				}
+			}
+		}
+		return $arrSolr;
+	}
 
 
-    
-    function fetch_assoc(&$iterator) {
-        if($arr=current($iterator['response']['docs'])) {
-            next($iterator['response']['docs']);
-            return $arr;
-        }  else {
-            return false;
-        }
-    }
+	function fetch_assoc(&$iterator) {
+		if ($arr = current($iterator['response']['docs'])) {
+			next($iterator['response']['docs']);
+			return $arr;
+		} else {
+			return false;
+		}
+	}
 
-    function data_seek(&$iterator, $start) {
-    }
+	function data_seek(&$iterator, $start) {
+	}
 
-    /**
-    * [Describe function...]
-    * Helper function to switch from serialized fields to "jsonized" Fields in lucene index
-    *
-    * @param [string]  $str: serialized or jsonized string
-    * @return [type]  unserialized or unjsonized
-    */
-    function _unserialize($str) {
-        $ret = json_decode($str,true);
-        if(!is_array($ret)) {
-            $ret = unserialize($str);
-        }
-        return $ret;
-    }
+	/**
+	 * [Describe function...]
+	 * Helper function to switch from serialized fields to "jsonized" Fields in lucene index
+	 *
+	 * @param [string]  $str: serialized or jsonized string
+	 * @return [type]  unserialized or unjsonized
+	 */
+	function _unserialize($str) {
+		$ret = json_decode($str, true);
+		if (!is_array($ret)) {
+			$ret = unserialize($str);
+		}
+		return $ret;
+	}
 
 }
+
 ?>

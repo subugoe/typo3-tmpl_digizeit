@@ -14,3 +14,4 @@ Documentation/_make/build/
 *.iml
 
 node_modules
+tests/_output/*

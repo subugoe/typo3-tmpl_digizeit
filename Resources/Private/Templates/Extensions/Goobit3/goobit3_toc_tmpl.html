@@ -18,7 +18,7 @@
 <!-- ###NOSEARCHINDEX### END-->
 
 <!-- ###MODS### BEGIN-->
-        <a href="http://www.digizeitschriften.de/informationen/subskription/" ><img id="lock" src="###LOCKBUTTON###" title="###LOCKTEXT###" /></a>
+        <a class="fa fa-lock" href="http://www.digizeitschriften.de/informationen/subskription/" title="###LOCKTEXT###"><img id="lock" src="###LOCKBUTTON###" title="###LOCKTEXT###" /></a>
     </div>
 </div>
 <ul id="collection">
@@ -27,14 +27,14 @@
         <!-- ###MODSSEC### BEGIN-->
         <?xml version="1.0" encoding="utf-8"?>
         <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:mods="http://www.loc.gov/mods/v3">
-        
+
             <xsl:output method="html"/>
-        
+
             <xsl:template name="style">
                 <!-- Platz fuer StyleSheets -->
                 <xsl:call-template name='xmlstyle' />
             </xsl:template>
- 
+
             <xsl:param name="YEARPUBLISH" value="0" />
             <xsl:param name="Successor" value="0" />
             <xsl:param name="Predecessor" value="0" />
@@ -43,8 +43,8 @@
             <xsl:param name="pdflink" value="0" />
             <xsl:param name="pdficon" value="0" />
             <xsl:param name="publlink" value="" />
-            
-<!-- schnelle schmutzige Lösung für DigiZeit besser umbauen zu modsCollection siehe tx_goobi_img.php --> 
+
+<!-- schnelle schmutzige Lösung für DigiZeit besser umbauen zu modsCollection siehe tx_goobi_img.php -->
             <xsl:template match="mods:note[@ID='MGH']" mode="periodicalvolume">
                 <xsl:choose>
                     <xsl:when test="$docstrct='Zeitschrift' or $docstrct='Periodical'">
@@ -129,13 +129,13 @@
                         <xsl:choose>
                             <xsl:when test="mods:titleInfo[1]/mods:title and string-length(normalize-space(string(mods:titleInfo/mods:title))) &lt;= 80">
                                 <a>
-                                    <xsl:attribute name="href"><xsl:value-of select="$basepurl" /><xsl:value-of select="mods:recordInfo/mods:recordIdentifier" /></xsl:attribute> 
+                                    <xsl:attribute name="href"><xsl:value-of select="$basepurl" /><xsl:value-of select="mods:recordInfo/mods:recordIdentifier" /></xsl:attribute>
                                     <xsl:value-of  select="normalize-space(string(mods:titleInfo/mods:title))"  />
                                 </a>
                             </xsl:when>
                             <xsl:otherwise>
                                 <a>
-                                    <xsl:attribute name="href"><xsl:value-of select="$basepurl" /><xsl:value-of select="mods:recordInfo/mods:recordIdentifier" /></xsl:attribute> 
+                                    <xsl:attribute name="href"><xsl:value-of select="$basepurl" /><xsl:value-of select="mods:recordInfo/mods:recordIdentifier" /></xsl:attribute>
                                     <xsl:attribute name="title"><xsl:value-of select="mods:titleInfo/mods:title" /></xsl:attribute>
                                     <xsl:value-of  select="concat(substring(normalize-space(string(mods:titleInfo/mods:title)),0,80),'...')"  />
                                 </a>
@@ -156,13 +156,13 @@
                         <xsl:choose>
                             <xsl:when test="mods:titleInfo[1]/mods:title and string-length(normalize-space(string(mods:titleInfo/mods:title))) &lt;= 80">
                                 <a>
-                                    <xsl:attribute name="href"><xsl:value-of select="$basepurl" /><xsl:value-of select="mods:recordInfo/mods:recordIdentifier" /></xsl:attribute> 
+                                    <xsl:attribute name="href"><xsl:value-of select="$basepurl" /><xsl:value-of select="mods:recordInfo/mods:recordIdentifier" /></xsl:attribute>
                                     <xsl:value-of  select="normalize-space(string(mods:titleInfo/mods:title))"  />
                                 </a>
                             </xsl:when>
                             <xsl:otherwise>
                                 <a>
-                                    <xsl:attribute name="href"><xsl:value-of select="$basepurl" /><xsl:value-of select="mods:recordInfo/mods:recordIdentifier" /></xsl:attribute> 
+                                    <xsl:attribute name="href"><xsl:value-of select="$basepurl" /><xsl:value-of select="mods:recordInfo/mods:recordIdentifier" /></xsl:attribute>
                                     <xsl:attribute name="title"><xsl:value-of select="mods:titleInfo/mods:title" /></xsl:attribute>
                                     <xsl:value-of  select="concat(substring(normalize-space(string(mods:titleInfo/mods:title)),0,80),'...')"  />
                                 </a>
@@ -173,7 +173,7 @@
                 </xsl:for-each>
                 </xsl:if>
             </xsl:template>
-<!-- ############################################################################### --> 
+<!-- ############################################################################### -->
 
             <xsl:template match="/mods:mods">
                 <xsl:apply-templates select="mods:note[@ID='MGH']" mode="periodicalvolume" />
@@ -274,7 +274,7 @@
                                     <div class="tx-goobit3-toc_space"><img src="clear.gif" width="{$indention}" height="5" title="" alt="" /></div>
                                 </xsl:otherwise>
                             </xsl:choose>
-                            
+
                             <!-- title -->
                             <xsl:choose>
                                 <xsl:when test="mods:titleInfo[1]/mods:title and string-length(normalize-space(string(mods:titleInfo[1]/mods:title))) &lt;= 80">
@@ -332,7 +332,7 @@
                                 </xsl:if>
                             </xsl:for-each>
                             <xsl:for-each select="mods:name[@*]" >
-                                <br /> 
+                                <br />
                                 <xsl:choose>
                                     <xsl:when test="mods:displayForm">
                                         <div class="tx-goobit3-toc_space"><img src="clear.gif" width="{$indention}" height="5" title="" alt="" /></div>
@@ -347,11 +347,11 @@
                                     <xsl:text>; </xsl:text>
                                 </xsl:if>
                             </xsl:for-each>
-                            </xsl:if>    
+                            </xsl:if>
                             <!--  pagenumber  -->
                             <xsl:choose>
                                 <xsl:when test="$pdflink">
-<!--	
+<!--
 <form action="dms/gcs-wrapper" method="post" name="{$structid}" class="siteno"><input type="hidden" name="gcsurl" value="{$pdflink}" /><a href="{$link}"><xsl:value-of select="$page" /></a><a href="#" onClick="{$structid}.submit(); return false;" class="sitepdf"><img class="pdficon" src="{$pdficon}" alt="PDF" title="PDF" /></a></form>
 //-->
                                     <span class="siteno"><a href="{$link}"><xsl:value-of select="$page" /></a><a href="{$pdflink}" class="sitepdf"><img class="pdficon" src="{$pdficon}" alt="PDF" title="PDF" /></a></span>
@@ -369,7 +369,7 @@
                     </xsl:choose>
 
             </xsl:template>
-        
+
         </xsl:stylesheet>
     <!-- ###MODSSEC### END -->
 </div>

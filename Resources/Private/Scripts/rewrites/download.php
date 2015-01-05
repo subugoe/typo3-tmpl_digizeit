@@ -200,11 +200,11 @@ if ($status == '200') {
 }
 
 //schreibe Contentserver kompatibles log -> ToDo Counter Auswertung verbessern!
-//129.125.129.128 - 
-//- 
-//[01/Jun/2011:14:48:02 +0200]  
-//"GET http://localhost:8080/gcs/gcs?action=pdf&metsFile=PPN345204425_0046&divID=log11... HTTP/1.1" 200 0 
-//"http://www.digizeitschriften.de/dms/img/?PPN=PPN345204425_0046&DMDID=dmdlog11&PHYSID=phys85" 
+//129.125.129.128 -
+//-
+//[01/Jun/2011:14:48:02 +0200]
+//"GET http://localhost:8080/gcs/gcs?action=pdf&metsFile=PPN345204425_0046&divID=log11... HTTP/1.1" 200 0
+//"http://www.digizeitschriften.de/dms/img/?PPN=PPN345204425_0046&DMDID=dmdlog11&PHYSID=phys85"
 //"Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.2.11) Gecko/20101012 Firefox/3.6.11 ( .NET CLR 3.5.30729; .NET4.0E)"
 //print_r($_SERVER);
 //$logline = $_SERVER['REMOTE_ADDR'].' - ';
@@ -242,5 +242,3 @@ function enc_str($str) {
 function dec_str($str) {
 	return str_replace('|', '/', trim($str));
 }
-
-?>

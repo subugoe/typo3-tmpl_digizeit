@@ -27,21 +27,20 @@
 include_once('./config.php');
 
 if (isset($_REQUEST['img'])) {
-    $img = urldecode($_REQUEST['img']);
+	$img = urldecode($_REQUEST['img']);
 } else {
-    exit();
+	exit();
 }
 //#### END INIT ###########################################
 
 $arrParts = explode('/', $img);
 // file:// entfernen
 if (strtolower($arrParts[0]) == 'file:') {
-    array_shift($arrParts);
-    array_shift($arrParts);
-    $img = implode('/', $arrParts);
+	array_shift($arrParts);
+	array_shift($arrParts);
+	$img = implode('/', $arrParts);
 }
 $start = microtime(true);
 header('Content-type: image/jpg');
 passthru($global['convert'] . ' -compress jpeg -quality 80 ' . urldecode($img) . ' JPG:-');
 file_put_contents($global['logPath'] . 'tif2jpg.log', 'Compress ' . $arrParts[(count($arrParts) - 1)] . ' - ' . number_format((microtime(true) - $start), 2, ',', '.') . ' sec' . "\n", FILE_APPEND);
-?>

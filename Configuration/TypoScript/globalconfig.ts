@@ -122,7 +122,7 @@ page.headerData {
 	200.value = <link rel="alternate" type="application/rss+xml" title="DigiZeitschriften - Last imports: Sociology" href="http://www.digizeitschriften.de/rss/300" />
 
 	# Meta Tag fur Google Website Tools
-	500 = HTML
+	500 = TEXT
 	500.value (
         <meta name="google-site-verification" content="sRqPpOhhh-nLRbPb1YBWyGsmO7GMGjeCkhGqolueRj0" />
 	)
@@ -154,7 +154,7 @@ plugin.tx_drwiki_pi1 {
 plugin.tx_irfaq_pi1 {
 	iconPlus = /typo3conf/ext/tmpl_digizeit/Resources/Public/Images/plus.gif
 	iconMinus = /typo3conf/ext/tmpl_digizeit/Resources/Public/Images/minus.gif
-	templateFile = EXT:tmpl_digizeit/Resources/Private/Templates/Extensions/Irfaq/digizeit_irfaq_tmpl.html
+	templateFile = EXT:tmpl_digizeit/Resources/Private/Templates/Extensions/Irfaq/Irfaq.html
 	_CSS_DEFAULT_STYLE >
 }
 

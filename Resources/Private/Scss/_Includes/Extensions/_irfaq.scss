@@ -46,6 +46,25 @@
 		margin: 0;
 		display: inline;
 	}
+	dl {
+		@extend .panel-group;
+		.item {
+			@extend .panel;
+			@extend .panel-default;
+			dt {
+				@extend .panel-title;
+				@extend .panel-heading;
+
+			}
+			dd {
+				@extend .panel-body;
+				@extend .panel-collapse;
+				@extend .collapse;
+				@extend .in;
+			}
+		}
+
+	}
 }
 
 .tx-irfaq-cleaner {

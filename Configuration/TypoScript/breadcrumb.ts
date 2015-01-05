@@ -1,7 +1,7 @@
+temp.breadcrumb = COA
+temp.breadcrumb.5 = TEXT
 [PIDinRootline = 239]
-	temp.breadcrumb = COA
 	temp.breadcrumb {
-		5 = TEXT
 		# Default language (german)
 		5 {
 			value (
@@ -20,9 +20,7 @@
 		}
 	}
 [else]
-	temp.breadcrumb = COA
 	temp.breadcrumb {
-		5 = TEXT
 		# Default language (german)
 		5 {
 			value (

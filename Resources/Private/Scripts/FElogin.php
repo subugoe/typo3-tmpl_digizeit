@@ -67,5 +67,3 @@ class user_FElogin {
 	}
 
 }
-
-?>

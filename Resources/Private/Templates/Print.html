@@ -1,9 +1,8 @@
-<!-- ###DOCUMENT_BODY### START-->
 <div id="Page">
-	<div id="Top">###TOPGFX###</div>
+	<div id="Top">
+		<f:image src="{f:uri.resource(path:'Images/Layout/logo_print.jpg')}" width="300px" alt=""/>
+	</div>
 	<div id="Content">
-		 <!-- ###CONTENT### START-->PrintContent
-		 <!-- ###CONTENT### END-->
-        </div>
+		{content -> f:format.raw()}
+	</div>
 </div>
-<!-- ###DOCUMENT_BODY### END-->

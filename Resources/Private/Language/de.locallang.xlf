@@ -19,6 +19,18 @@
 				<source>english</source>
 				<target state="signed-off">english</target>
 			</trans-unit>
+			<trans-unit id="dfglinktext" approved="yes">
+				<source>DigiZeitschriften wird durch die Deutsche Forschungsgemeinschaft gefördert.</source>
+				<target state="signed-off">DigiZeitschriften wird durch die Deutsche Forschungsgemeinschaft gefördert.</target>
+			</trans-unit>
+			<trans-unit id="totop" approved="yes">
+				<source>nach oben</source>
+				<target state="signed-off">nach oben</target>
+			</trans-unit>
+			<trans-unit id="printview" approved="yes">
+				<source>Druckansicht</source>
+				<target state="signed-off">Druckansicht</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

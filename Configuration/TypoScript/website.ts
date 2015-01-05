@@ -1,14 +1,5 @@
-#Main Pagetitle
-temp.maincaption = COA
-temp.maincaption {
-	10 = HTML
-	10.value = <h3>
-	20 = TEXT
-	20.field = subtitle // title
-	30 = HTML
-	30.value = </h3>
-}
-
+temp.maincaption = TEXT
+temp.maincaption.field = subtitle // title
 [globalVar = TSFE:id=239]
 	temp.maincaption >
 [global]
@@ -32,20 +23,14 @@ page.includeCSS {
 	file1.media = screen,projection
 }
 
-[browser = msie] AND [version = <7]
-	page.includeCSS {
-		file3 = EXT:tmpl_digizeit/Resources/Public/Css/digi_ie6.css
-		file3.rel = stylesheet
-		file3.type = text/css
-		file3.media = screen,projection
-	}
-[global]
-
-page.bodyTag = <body>
+page.includeJSlibs {
+	bootstrap = EXT:tmpl_digizeit/Resources/Public/JavaScript/bootstrap.js
+}
 
 page.10 = FLUIDTEMPLATE
 page.10 {
 	template = FILE
+	extbase.controllerExtensionName = tmpl_digizeit
 	partialRootPath = EXT:tmpl_digizeit/Resources/Private/Templates/Partials/
 	layoutRootPath = EXT:tmpl_digizeit/Resources/Private/Templates/Layouts/
 	settings {
@@ -54,6 +39,8 @@ page.10 {
 		language = TEXT
 		language.data = TSFE:config|config|sys_language_uid
 		language.insertData = 1
+
+		maincaption < temp.maincaption
 	}
 }
 
@@ -69,87 +56,10 @@ page.10 {
 	page.10.template.file = EXT:tmpl_digizeit/Resources/Private/Templates/FullToc.html
 [global]
 
-#[globalVar = TSFE:id=239, TSFE:id=227]
-#    page.10.marks.HLINE = TEXT
-#    page.10.marks.HLINE.value = <div id="newsicon"></div>
-#[else]
 page.10.marks.HLINE = TEXT
 page.10.marks.HLINE.value =
-#[end]
-
-temp.printview = TEXT
-temp.printview {
-	# Default language (german)
-	value = Druckansicht
-	#other languages (english)
-	lang {
-		en = printable view
-	}
-
-	typolink.parameter.data = page:uid
-	typolink.additionalParams.insertData = 1
-	typolink.additionalParams = &type=98
-	typolink.ATagParams = target="_blank"
-}
 
 page.10 {
-	marks {
-		#Link tart- to startpage
-		START = TEXT
-		START {
-			# Default language (german)
-			value = /
-			#other languages (english)
-			lang.en = /en/
-		}
-
-		# to top link
-		TOTOPLINK = TEXT
-		TOTOPLINK {
-			value = <a href="javascript:window.scrollTo(0,300)" id="totop">nach oben</a>
-			lang.en = <a href="javascript:window.scrollTo(0,300)" id="totop">up</a>
-			/*
-			# Default language (german)
-			value = nach oben
-			#other languages (english)
-			lang.en = up
-			typolink.parameter.data = TSFE:id
-			typolink.addQueryString = 1
-			typolink.addQueryString.method = GET,POST
-			typolink.addQueryString.exclude = xajax,xajaxr,xajaxargs
-			typolink.title = nach oben
-			typolink.title.lang.en = up
-			typolink.ATagParams = id="totop"
-			*/
-		}
-
-		#DFG-Link
-		DFGLINKTEXT = TEXT
-		DFGLINKTEXT {
-			value = DigiZeitschriften wird durch die Deutsche Forschungsgemeinschaft gefördert.
-			lang.en = DigiZeitschriften is supported by Deutsche Forschungsgemeinschaft
-		}
-
-		# Introtext suche
-		SEARCHINTROTEXT = TEXT
-		SEARCHINTROTEXT {
-			value = Suchen Sie hier im Archiv nach Zeitschriften.
-			lang.en = Search the DigiZeitschriften archive.
-		}
-
-		# Direktsuche
-		DIREKTSUCHE = TEXT
-		DIREKTSUCHE {
-			value = Direktsuche
-			lang.en = Search
-		}
-
-		# Druckansicht
-		printview < temp.printview
-	}
-
-	# Select only the content between the <body>-tags
-	workOnSubpart = DOCUMENT_BODY
 
 	# Substitute the ###menu### subparts with dynamic menu
 	subparts.menu < temp.menu
@@ -159,9 +69,6 @@ page.10 {
 
 	# Substitute the ###tabmenu### subparts with nothing
 	subparts.submenu < temp.submenu
-
-	# Substitute the ###maincaption### subpart:
-	subparts.maincaption < temp.maincaption
 
 	# Substitute the ###maincontent### subpart :
 	subparts.maincontent < styles.content.get
@@ -181,8 +88,6 @@ page.10 {
 		typeNum = 100
 		10 >
 		10 < plugin.tt_news
-		#    10.pid_list >
-		#    10.pid_list = 88
 		10.singlePid = 227
 		10.backPid = 239
 		10.defaultCode = XML
@@ -199,22 +104,13 @@ print.typeNum = 98
 # Meta tags
 page.headerData.999 < plugin.meta
 print.stylesheet = EXT:tmpl_digizeit/Resources/Public/Css/digi_print.css
-print.10 = TEMPLATE
+print.10 = FLUIDTEMPLATE
 print.10 {
 	template = FILE
 	template.file = EXT:tmpl_digizeit/Resources/Private/Templates/Print.html
+	extbase.controllerExtensionName = tmpl_digizeit
 	workOnSubpart = DOCUMENT_BODY
-	subparts {
-		CONTENT < styles.content.get
-	}
-
-	marks {
-		TOPGFX = IMAGE
-		TOPGFX {
-			file = EXT:tmpl_digizeit/Resources/Public/Images/Layout/logo_print.jpg
-			file {
-				width = 300px
-			}
-		}
+	variables {
+		content < styles.content.get
 	}
 }

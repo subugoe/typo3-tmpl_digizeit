@@ -44,25 +44,22 @@ $physid = urldecode(htmlentities($physid, ENT_QUOTES, "UTF-8"));
 $rotate = htmlentities($rotate, ENT_QUOTES, "UTF-8");
 
 $acl = 0;
-if(trim($ppn)) {
-    $acl = 0;
-    $imagenumber = intval($arrTmp[(count($arrTmp) - 1)]);
-    $acl = file_get_contents($authServer . 'PPN=' . $ppn . '&PHYSID=' . $physid . '&ipaddress=' . $_SERVER['REMOTE_ADDR'].'&fe_typo_user='.$_COOKIE['fe_typo_user']);
+if (trim($ppn)) {
+	$acl = 0;
+	$imagenumber = intval($arrTmp[(count($arrTmp) - 1)]);
+	$acl = file_get_contents($authServer . 'PPN=' . $ppn . '&PHYSID=' . $physid . '&ipaddress=' . $_SERVER['REMOTE_ADDR'] . '&fe_typo_user=' . $_COOKIE['fe_typo_user']);
 }
 
 if (!$acl) {
-    $arrInfo = getimagesize($restrictImg);
-    $img = file_get_contents($restrictImg);
-    header('Content-type: ' . $arrInfo['mime']);
-    header('HTTP/1.0 401 Unauthorized');
-    echo $img;
-    exit();
+	$arrInfo = getimagesize($restrictImg);
+	$img = file_get_contents($restrictImg);
+	header('Content-type: ' . $arrInfo['mime']);
+	header('HTTP/1.0 401 Unauthorized');
+	echo $img;
+	exit();
 }
 
-$strTmpName = tempnam(sys_get_temp_dir(),'TMP');
-file_put_contents($strTmpName,file_get_contents($imgurl));
+$strTmpName = tempnam(sys_get_temp_dir(), 'TMP');
+file_put_contents($strTmpName, file_get_contents($imgurl));
 header('Content-type: image/jpg');
-passthru('/usr/bin/convert -rotate '.$rotate.' '.$strTmpName.' JPG:-'."\n".'rm -rf '.$strTmpName);
-
-?>
-
+passthru('/usr/bin/convert -rotate ' . $rotate . ' ' . $strTmpName . ' JPG:-' . "\n" . 'rm -rf ' . $strTmpName);

@@ -28,21 +28,21 @@ include_once('./config.php');
 include_once('./functions.php');
 
 if (!trim($_SERVER['argv'][1])) {
-    exit();
+	exit();
 } else {
-    $global['strMetsUrl'] = trim($_SERVER['argv'][1]);
+	$global['strMetsUrl'] = trim($_SERVER['argv'][1]);
 }
 
 if (trim($_SERVER['argv'][2])) {
-    $global['logID'] = trim($_SERVER['argv'][2]);
+	$global['logID'] = trim($_SERVER['argv'][2]);
 } else {
-    $global['logID'] = false;
+	$global['logID'] = false;
 }
 
 if (trim($_SERVER['argv'][3])) {
-    $global['imgpipe'] = true;
+	$global['imgpipe'] = true;
 } else {
-    $global['imgpipe'] = false;
+	$global['imgpipe'] = false;
 }
 //#### END INIT #############################################
 //#### MAIN #################################################
@@ -50,48 +50,46 @@ if (trim($_SERVER['argv'][3])) {
 $global['mets'] = new DOMDocument('1.0', 'UTF-8');
 $test = $global['mets']->load($global['strMetsUrl']);
 if (!$test) {
-    exit();
+	exit();
 }
 $global['xpath'] = new DOMXpath($global['mets']);
 //register namespaces
 setNSprefix($global['xpath']);
 
 foreach ($global['PIDquery'] as $pidquery) {
-    if ($global['xpath']->evaluate($pidquery)->length) {
-        $global['PID'] = trim($global['xpath']->evaluate($pidquery)->item(0)->nodeValue);
-        $node = $global['xpath']->evaluate($pidquery)->item(0);
-        while (is_object($node) && $node->nodeName != 'mets:dmdSec') {
-            $node = $node->parentNode;
-        }
-        if (is_object($node)) {
-            $global['arrWork']['dmdID'] = trim($node->getAttribute('ID'));
-        }
-        break;
-    }
+	if ($global['xpath']->evaluate($pidquery)->length) {
+		$global['PID'] = trim($global['xpath']->evaluate($pidquery)->item(0)->nodeValue);
+		$node = $global['xpath']->evaluate($pidquery)->item(0);
+		while (is_object($node) && $node->nodeName != 'mets:dmdSec') {
+			$node = $node->parentNode;
+		}
+		if (is_object($node)) {
+			$global['arrWork']['dmdID'] = trim($node->getAttribute('ID'));
+		}
+		break;
+	}
 }
-
 
 getWork();
 if (!$global['arrWork']['physID']) {
-    //no physSequence -> nothing to do
-    exit();
+	//no physSequence -> nothing to do
+	exit();
 }
-
 
 $global['itextPath'] = $global['cachePath'] . 'itext/' . enc_str($global['PID']) . '/';
 if (!is_dir($global['itextPath'])) {
-    mkdir($global['itextPath'], 0775);
-    exec('chmod 775 ' . $global['itextPath']);
+	mkdir($global['itextPath'], 0775);
+	exec('chmod 775 ' . $global['itextPath']);
 }
 if (!is_dir($global['itextPath'])) {
-    exit();
+	exit();
 }
 
 if (!$global['logID'] || $global['logID'] == $global['PID']) {
-    $global['logID'] = $global['arrWork']['logID'];
-    $global['filename'] = $global['PID'] . '.xml';
+	$global['logID'] = $global['arrWork']['logID'];
+	$global['filename'] = $global['PID'] . '.xml';
 } else {
-    $global['filename'] = $global['logID'] . '.xml';
+	$global['filename'] = $global['logID'] . '.xml';
 }
 
 //get Parents
@@ -110,10 +108,10 @@ $root = new DOMElement('iText');
 $global['iText']->appendChild($root);
 $root->setAttribute('xmlns:xi', 'http://www.w3.org/2001/XInclude');
 if ($global['arrItext'][0]['title']) {
-    $root->setAttribute('title', trim($global['arrItext'][0]['title']));
+	$root->setAttribute('title', trim($global['arrItext'][0]['title']));
 }
 if ($global['arrItext'][0]['author']) {
-    $root->setAttribute('author', trim($global['arrItext'][0]['author']));
+	$root->setAttribute('author', trim($global['arrItext'][0]['author']));
 }
 $root->setAttribute('keywords', trim($global['PID'] . ' ' . $global['filename']));
 
@@ -125,34 +123,33 @@ $chapter = new DOMElement('chapter');
 $root->appendChild($chapter);
 $chapter->setAttribute('numberdepth', '0');
 
-
-//All sections 
+//All sections
 $section = $chapter;
 foreach ($global['arrItext'] as $key => $arr) {
-    //the very first
-    if ($key == 0) {
-        $title = getTitle($arr['title']);
-        $chapter->appendChild($title);
-        $section = $chapter;
-    } else {
-        $title = getTitle($arr['title']);
-        $section = getSection($section, $arr['depth'], $title);
-    }
-    if (is_array($arr['physID'])) {
-        foreach ($arr['physID'] as $_key => $arrPhys) {
-            if ($arrPhys['logID'] && is_array($arrPhys['logID'])) {
-                foreach ($arrPhys['logID'] as $arrLogID) {
-                    $title = getTitle($arrLogID['title']);
-                    $section = getSection($section, $arrLogID['depth'], $title);
-                }
-            }
-            //images
-            $image = getImage($arrPhys['image']);
-            $section->appendChild($image);
-            $newpage = $global['iText']->createElement('newpage');
-            $section->appendChild($newpage);
-        }
-    }
+	//the very first
+	if ($key == 0) {
+		$title = getTitle($arr['title']);
+		$chapter->appendChild($title);
+		$section = $chapter;
+	} else {
+		$title = getTitle($arr['title']);
+		$section = getSection($section, $arr['depth'], $title);
+	}
+	if (is_array($arr['physID'])) {
+		foreach ($arr['physID'] as $_key => $arrPhys) {
+			if ($arrPhys['logID'] && is_array($arrPhys['logID'])) {
+				foreach ($arrPhys['logID'] as $arrLogID) {
+					$title = getTitle($arrLogID['title']);
+					$section = getSection($section, $arrLogID['depth'], $title);
+				}
+			}
+			//images
+			$image = getImage($arrPhys['image']);
+			$section->appendChild($image);
+			$newpage = $global['iText']->createElement('newpage');
+			$section->appendChild($newpage);
+		}
+	}
 }
 
 $end = microtime(true) - $start;
@@ -166,6 +163,3 @@ $global['iText']->save($global['itextPath'] . enc_str($global['filename']));
 
 //print_r($global['iText']->saveXML());
 //#### END MAIN #############################################
-?>
-
-

@@ -1,165 +1,33 @@
-@import '_Includes/Settings';
-@import 'bootstrap';
-@import '_fontawesome/font-awesome';
-@import 'mixins';
+@import 'utils/variables'; // TODO: Pulled up for FontAwesome, pls check
 
-* {
-	margin: 0;
-	padding: 0;
-}
+@import 'vendors/bootstrap';
+@import 'vendors/font-awesome';
 
-body {
-	background: #7e756a linear-gradient(rgba(#000, .2), rgba(#000, 0)) repeat-x fixed;
-	color: $gray-darker;
-}
+//@import 'utils/functions';
+@import 'utils/mixins';
+//@import 'utils/placeholders';
 
-a {
-	text-decoration: none;
-	border-bottom: 1px dotted #900;
-}
+@import 'base/common';
 
-a:visited {
-	color: #600;
-	text-decoration: none;
-	border-bottom: 1px dotted #600;
-}
+@import 'layout/wrapper';
+@import 'layout/header';
+@import 'layout/breadcrumbs';
+@import 'layout/content';
+@import 'layout/footer';
+@import 'layout/fastsearch';
+@import 'layout/language';
+@import 'layout/login';
+@import 'layout/navigation';
+@import 'layout/sidebar';
+@import 'layout/submenu';
 
-a:hover {
-	border-bottom: 1px solid #900;
-	background: #900;
-}
+@import 'components/drwiki';
+@import 'components/felogin';
+@import 'components/femanager';
+@import 'components/goobit3';
+@import 'components/irfaq';
 
-ul {
-	list-style-type: none;
-}
+@import 'pages/home';
+@import 'pages/sitemap';
 
-strong {
-	font-weight: bold;
-}
-
-#header h2,
-#sitenav,
-#fastsearch label,
-#nav h3,
-#fastsearch h3,
-.hidden {
-	display: none;
-}
-
-img {
-	border: none;
-}
-
-.wrapper {
-	@extend .container;
-	position: relative;
-	text-align: left;
-	margin: 0 auto;
-}
-
-/* ----------------- [ / allgemeine Definitionen ] ------------------------------------------ */
-
-/* ----------------- [ Hintergrundgrafiken, Header & Breadcrumb ] --------------------------- */
-#bgicon {
-	position: absolute;
-	top: 0;
-	left: -50px;
-	width: 400px;
-	height: 300px;
-	background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/bgicon.gif) no-repeat top left;
-}
-
-#linebook {
-	position: absolute;
-	top: 163px;
-	right: -45px;
-	width: 75px;
-	height: 114px;
-	background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/linebook.gif) no-repeat 0 0;
-}
-
-#homelink {
-	position: absolute;
-	top: 10px;
-	left: 20px;
-	height: 80px;
-	width: 360px;
-	background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/digizeit_logo.png) no-repeat 0 0;
-	text-indent: -2000px;
-	overflow: hidden;
-	border-bottom: none;
-}
-
-/* ----------------- [ / Hintergrundgrafiken, Header & Breadcrumb ] ------------------------- */
-
-/* ----------------- [ Aufbau des Inhalts (Spalten etc.) ] ---------------------------------- */
-
-.content {
-	margin-top: 110px;
-	position: relative;
-	top: 0;
-	left: 0;
-	//background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/bgwrapper.png) repeat-y;
-	background: #fff;
-	box-shadow: 0 0 25px rgba(#000, .5);
-	//padding: 0 17px 0 23px;
-	display: block;
-	padding: 15px;
-	table {
-		@extend .table;
-	}
-}
-
-#maincol,
-#maincol_full {
-	top: 0;
-	left: 0;
-	margin: 0 0 0 65px;
-	color: #222;
-	min-height: 30px;
-}
-
-#maincol {
-	@include make-md-column(7);
-	padding: 0 0 50px 0;
-}
-
-#maincol_full {
-	@include make-md-column(8);
-	padding: 0;
-}
-
-/*-------------------- Sitemap ---------------------------------------------------*/
-
-.sitemap_level1 {
-	margin-left: 10px;
-}
-
-.sitemap_level2 {
-	margin-left: 20px;
-}
-
-.sitemap_level3 {
-	margin-left: 30px;
-}
-
-.sitemap_level4 {
-	margin-left: 40px;
-}
-
-// TODO: Order
-@import '_Includes/Structure/Header';
-@import '_Includes/Structure/Breadcrumb';
-@import '_Includes/Structure/Language';
-@import '_Includes/Structure/Navigation';
-@import '_Includes/Structure/Submenu';
-@import '_Includes/Structure/Fastsearch';
-@import '_Includes/Structure/Login';
-@import '_Includes/Structure/Content';
-@import '_Includes/Structure/Footer';
-
-@import '_Includes/Extensions/felogin';
-@import '_Includes/Extensions/irfaq';
-@import '_Includes/Extensions/drwiki';
-@import '_Includes/Extensions/goobit3';
-@import '_Includes/Extensions/femanager';
+@import 'shame';

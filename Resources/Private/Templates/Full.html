@@ -1,35 +1,27 @@
 <f:cObject typoscriptObjectPath="page.10.subparts.cslogin"/>
 
-<a id="a_top"></a>
-<div class="wrapper">
-	<div id="bgicon"></div>
-	<div id="linebook"></div>
-	<div id="headborder"></div>
-	<div class="content">
+<f:render partial="Login"/>
 
-		<f:render partial="Header"/>
-		<f:render partial="Language"/>
+<div id="wrapper">
 
-		<f:render partial="Navigation"/>
+	<f:render partial="Header"/>
 
-		<f:cObject typoscriptObjectPath="page.10.subparts.breadcrumb"/>
+	<f:render partial="Language"/>
 
-		<f:cObject typoscriptObjectPath="page.10.subparts.submenu"/>
+	<f:render partial="Navigation"/>
 
-		<a id="a_content"></a>
+	<f:cObject typoscriptObjectPath="page.10.subparts.breadcrumb"/>
 
-		<div id="maincol_full">
-			<h3>{maincaption}</h3>
+	<f:cObject typoscriptObjectPath="page.10.subparts.submenu"/>
 
-			<f:cObject typoscriptObjectPath="page.10.marks.HLINE"/>
-			<f:cObject typoscriptObjectPath="page.10.subparts.maincontent"/>
+	<div id="content" class="full-width">
+		<h3>{maincaption}</h3>
 
-		</div>
-		<div id="liner"></div>
+		<f:cObject typoscriptObjectPath="page.10.marks.HLINE"/>
+		<f:cObject typoscriptObjectPath="page.10.subparts.maincontent"/>
+
 	</div>
 
-
-	<f:render partial="Login"/>
-
-	<f:render partial="Footer"/>
 </div>
+
+<f:render partial="Footer"/>

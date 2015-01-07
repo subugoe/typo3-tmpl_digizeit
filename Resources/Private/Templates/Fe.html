@@ -1,4 +1,5 @@
 <form name="login" method="post" action="{action}">
+
 	<div class="login-head">
 		<f:if condition="{loggedIn}">
 			<f:then>
@@ -13,7 +14,6 @@
 				</a></p>
 			</f:else>
 		</f:if>
-
 	</div>
 
 	<f:if condition="{loggedIn}">
@@ -41,8 +41,8 @@
 		</f:else>
 	</f:if>
 
-
 	<input type="hidden" name="logintype" value="{loginType}"/>
 	<input type="hidden" name="pid" value="{storagePid}"/>
 	<input type="hidden" name="redirect_url" value=""/>
+
 </form>

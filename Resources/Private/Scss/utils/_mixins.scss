@@ -15,6 +15,7 @@
 	@extend .form-control;
 	border: none;
 	box-shadow: 0px 0px 1px 1px rgba(#000, .5) inset;
+	width: auto;
 	@if $type == 'dark' {
 		color: #fff;
 		background: rgba(#fff, .25);

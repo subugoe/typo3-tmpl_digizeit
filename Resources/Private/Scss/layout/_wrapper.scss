@@ -1,0 +1,32 @@
+#wrapper {
+	@extend .container;
+	@include clearfix;
+	background-color: #fff;
+	margin-top: 110px;
+	position: relative;
+	top: 0;
+	left: 0;
+	box-shadow: 0 0 25px rgba(#000, .5);
+	display: block;
+	padding: 15px;
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+	}
+	&::before {
+		background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/headborder.svg) no-repeat 0 0;
+		background-size: 550px;
+		left: 0;
+		height: 100px;
+		width: 100%;
+		top: -50px;
+		z-index: 9;
+	}
+	&::after {
+		position: relative; // For clearfix
+	}
+	table {
+		@extend .table;
+	}
+}

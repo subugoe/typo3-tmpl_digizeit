@@ -1,0 +1,15 @@
+#welcome {
+	@include wedge('bottom', 'down', 40px, 20px, 100px);
+	font-size: $font-size-large;
+	p {
+		font-family: $font_0, $font_1, $font_2, $font_3;
+		font-weight: normal;
+		font-style: italic;
+		padding: 15px 100px 20px 80px;
+		color: $color_log_cabin_approx;
+		margin: 0;
+		strong {
+			color: #900;
+		}
+	}
+}

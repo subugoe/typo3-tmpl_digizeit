@@ -1,32 +1,42 @@
 #tx-goobit3-search {
 	max-width: 650px;
+
 	img {
-		border: none;
+		border: 0;
 		display: inline;
 		vertical-align: top;
+
 		&.lock {
 			margin-top: 1px;
 		}
+
 		&:hover {
-			border: none;
-			background: $white;
+			border: 0;
+			background: white;
 		}
 	}
+
 	hr {
-		@extend %extend_8;
+		color: white;
+		background: white;
+		border: 0 solid white;
+		border-bottom: 1px dotted $color-gray-light;
 	}
+
 	a {
-		border: none;
+		border: 0;
 		white-space: normal;
 	}
+
 	div.shadow {
 		float: left;
-		background-color: $color_alto_approx;
+		background-color: $color-gray-light;
 		padding: 0;
-		margin: 0.7em 1em;
-		IMG {
+		margin: .7em 1em;
+
+		img {
 			display: block;
-			border: 1px solid $color_mountain_mist_approx;
+			border: 1px solid $color-gray;
 			position: relative;
 			top: -3px;
 			left: -3px;
@@ -41,33 +51,35 @@
 	right: 0;
 	width: 560px;
 	height: 75px;
+
 	#searchforminput {
 		position: absolute;
 		right: 15px;
 		top: 20px;
 		width: 530px;
 		height: 28px;
-		background: $color_stonewall_approx;
-		border-top: 1px solid $color_soya_bean_approx;
-		border-left: 1px solid $color_soya_bean_approx;
-		border-bottom: 1px solid $color_nomad_approx;
-		border-right: 1px solid $color_nomad_approx;
+		background: $color-brown;
+		border-top: 1px solid $color-brown-dark;
+		border-left: 1px solid $color-brown-dark;
+		border-bottom: 1px solid $color-brown-light;
+		border-right: 1px solid $color-brown-light;
 		font-size: 1.2em;
-		color: $white;
+		color: white;
 	}
+
 	#send {
 		position: absolute;
 		top: 13px;
 		right: 15px;
 		height: 50px;
 		width: 61px;
-		border: none;
-		background: transparent url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/btn_fastsearch_ie6.gif) no-repeat 0 0;
+		border: 0;
+		background: transparent url('/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/btn_fastsearch_ie6.gif') no-repeat 0 0;
 		text-indent: -2000px;
 		overflow: hidden;
 		display: block;
 		font-size: 0;
-		color: $color_celeste_approx;
+		color: $color-gray-light;
 	}
 }
 
@@ -78,33 +90,35 @@
 	right: 0;
 	width: 560px;
 	height: 75px;
+
 	#searchforminput {
 		position: absolute;
 		right: 15px;
 		top: 20px;
 		width: 530px;
 		height: 28px;
-		background: $color_stonewall_approx;
-		border-top: 1px solid $color_soya_bean_approx;
-		border-left: 1px solid $color_soya_bean_approx;
-		border-bottom: 1px solid $color_nomad_approx;
-		border-right: 1px solid $color_nomad_approx;
+		background: $color-brown;
+		border-top: 1px solid $color-brown-dark;
+		border-left: 1px solid $color-brown-dark;
+		border-bottom: 1px solid $color-brown-light;
+		border-right: 1px solid $color-brown-light;
 		font-size: 1.2em;
-		color: $white;
+		color: white;
 	}
+
 	#send {
 		position: absolute;
 		top: 13px;
 		right: 15px;
 		height: 50px;
 		width: 61px;
-		border: none;
-		background: transparent url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/btn_fastsearch_ie6.gif) no-repeat 0 0;
+		border: 0;
+		background: transparent url('/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/btn_fastsearch_ie6.gif') no-repeat 0 0;
 		text-indent: -2000px;
 		overflow: hidden;
 		display: block;
 		font-size: 0;
-		color: $color_celeste_approx;
+		color: $color-gray-light;
 	}
 }
 
@@ -113,8 +127,8 @@
 	right: 70px;
 	top: 50px;
 	width: 465px;
-	background: $white;
-	border: none;
+	background: white;
+	border: 0;
 	font-size: 1.2em;
 	overflow: hidden;
 	padding: 6px 0 10px 10px;
@@ -140,9 +154,10 @@
 
 #tx-goobit3-search_proposalline {
 	width: 100%;
+
 	&:hover {
-		color: $white;
-		background-color: $color_red_berry_approx;
+		color: white;
+		background-color: $color-red-dark;
 	}
 }
 
@@ -153,13 +168,15 @@
 			font-weight: bold;
 			line-height: 20px;
 		}
+
 		li.tx-goobit3-browse_browsecollection {
 			padding-bottom: 5px;
 			display: table-row;
 		}
 	}
+
 	a {
-		border: none;
+		border: 0;
 		display: table-cell;
 	}
 }
@@ -167,17 +184,18 @@
 .tx-goobit3-toc {
 	position: relative;
 	width: 600px;
-	border: solid 1px $black;
+	border: solid 1px black;
 	margin-top: 30px;
 	margin-left: 30px;
 	padding-top: 15px;
 	padding-bottom: 15px;
-	border: solid 1px $black;
+	border: solid 1px black;
 }
 
 #tx-goobit3-toc_toc_current {
 	font-weight: bold;
-	background-color: $color_janna_approx;
+	background-color: $color-brown-lighter;
+
 	.tx-goobit3-toc_space {
 		vertical-align: top;
 		float: left;
@@ -189,25 +207,30 @@
 		margin-left: 75px;
 		margin-right: 75px;
 	}
+
 	.tx-goobit3-toc_space {
 		vertical-align: top;
 		float: left;
 	}
+
 	.comment {
 		font-size: 1.1em;
-		color: $color_log_cabin_approx;
+		color: $color-gray-darker;
 		margin-left: 75px;
 		margin-right: 75px;
+
 		div {
 			height: 110px;
 			min-height: 70px;
 		}
+
 		img {
 			margin-left: 2px;
 			margin-right: 15px;
 		}
+
 		hr {
-			@extend %extend_9;
+			@include hr;
 		}
 	}
 }
@@ -226,26 +249,31 @@
 		padding-top: 15px;
 		padding-bottom: 15px;
 	}
+
 	.tx-goobit3-met_hr {
 		margin-left: 75px;
 		margin-right: 75px;
 	}
+
 	.comment {
 		display: block;
 		font-size: 1.1em;
-		color: $color_log_cabin_approx;
+		color: $color-gray-darker;
 		margin-left: 75px;
 		margin-right: 75px;
+
 		img {
 			margin-left: 2px;
 			margin-right: 15px;
 		}
+
 		div {
 			height: 110px;
 			min-height: 70px;
 		}
+
 		hr {
-			@extend %extend_9;
+			@include hr;
 		}
 	}
 }
@@ -253,30 +281,36 @@
 #tx-goobi-img_head {
 	margin-left: 75px;
 	margin-right: 75px;
+
 	.comment {
+
 		div {
 			height: 110px;
 			min-height: 70px;
 		}
+
 		img {
 			margin-left: 2px;
 			margin-right: 15px;
 		}
+
 		hr {
-			@extend %extend_9;
+			@include hr;
 		}
 	}
-	.struct {
-	}
+
 	.maintitle {
 		font-weight: bold;
 	}
+
 	.maintitle_pdf {
 		float: left;
 	}
+
 	.purl {
 		font-weight: bold;
 	}
+
 	a.maintitle_pdf:hover {
 		background: none;
 	}
@@ -284,19 +318,21 @@
 
 #tx-goobit3-img_form {
 	margin-left: 75px;
+
 	.form_input {
 		display: block;
 		float: left;
 		margin: 3px;
 		padding: 0;
 	}
+
 	.form_select {
 		display: block;
 		float: left;
 		height: 20px;
 		margin: 3px;
 		padding: 0;
-		border: solid 1px $black;
+		border: solid 1px black;
 	}
 }
 
@@ -309,24 +345,29 @@
 	width: 802px;
 	overflow: auto;
 	margin-left: 75px;
-	align: center;
+	text-align: center;
+
 	.image {
-		border: solid 1px $black;
+		border: solid 1px black;
 	}
+
 	.fulltext {
-		border: solid 1px $black;
+		border: solid 1px black;
 		padding: 10px 250px 10px 10px;
 		margin-bottom: 5px;
+
 		p {
-			color: $black;
+			color: black;
 		}
 	}
+
 	span.highlight {
-		color: $color_red_berry_approx;
+		color: $color-red-dark;
 		font-weight: bold;
 		text-decoration: none;
 	}
 }
+
 #tx-goobit3-img_pageturn div {
 	text-align: center;
 	float: left;

@@ -1,5 +1,3 @@
-# For SCSS-Lint v0.31.0
-
 linters:
 
   BangFormat:
@@ -52,7 +50,7 @@ linters:
     enabled: true
 
   IdSelector:
-    enabled: true
+    enabled: false
 
   ImportPath:
     enabled: true
@@ -61,8 +59,8 @@ linters:
 
   Indentation:
     enabled: true
-    character: space
-    width: 2
+    character: tab
+    width: 1
 
   LeadingZero:
     enabled: true
@@ -76,11 +74,11 @@ linters:
     convention: hyphenated_lowercase
 
   NestingDepth:
-    enabled: true
+    enabled: false
     max_depth: 3
 
   PlaceholderInExtend:
-    enabled: true
+    enabled: false
 
   PropertySortOrder:
     enabled: false
@@ -100,7 +98,7 @@ linters:
     max_depth: 3
 
   SelectorFormat:
-    enabled: true
+    enabled: false
     convention: hyphenated_lowercase
     class_convention: '^(?:u|is|has)\-[a-z][a-zA-Z0-9]*$|^(?!u|is|has)[a-zA-Z][a-zA-Z0-9]*(?:\-[a-z][a-zA-Z0-9]*)?(?:\-\-[a-z][a-zA-Z0-9]*)?$'
 

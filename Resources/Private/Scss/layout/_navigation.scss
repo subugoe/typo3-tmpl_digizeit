@@ -1,5 +1,5 @@
 #nav {
-	background: rgba(#000, .15);
+	background: rgba(black, .15);
 	position: relative;
 	height: 40px;
 	line-height: 40px;
@@ -7,30 +7,34 @@
 	display: block;
 	padding: 10px 0;
 	width: 100%;
+
 	li {
-		border-right: 1px dotted #fff;
+		border-right: 1px dotted white;
 		float: left;
 		display: block;
 		width: auto;
-		a {
-			position: relative;
-			display: block;
-			color: #fff;
-			text-align: center;
-			font-weight: bold;
-			font-size: 14px;
-			text-transform: uppercase;
-			font-family: 'Lucida Grande', Verdana, Arial, Sans-Serif;
-			margin: -10px 0;
-			padding: 0 15px;
-			&:hover {
-				background: #f3ecd5;
-				color: #900;
-				height: 100%;
-			}
-			&.act {
-				@include wedge('bottom', 'up', 20px, 10px);
-			}
+	}
+
+	a {
+		position: relative;
+		display: block;
+		color: white;
+		text-align: center;
+		font-weight: bold;
+		font-size: 14px;
+		text-transform: uppercase;
+		font-family: 'Lucida Grande', Verdana, Arial, Sans-Serif;
+		margin: -10px 0;
+		padding: 0 15px;
+
+		&:hover {
+			background: $color-brown-lighter;
+			color: $color-red-dark;
+			height: 100%;
+		}
+
+		&.act {
+			@include wedge('bottom', 'up', 20px, 10px);
 		}
 	}
 }

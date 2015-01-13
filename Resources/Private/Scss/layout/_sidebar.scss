@@ -2,46 +2,52 @@
 	@extend .col-md-4;
 	top: 0;
 	right: 0;
-	background: #fff url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/sidebarborder.gif) repeat-y;
+	background: white url('/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/sidebarborder.gif') repeat-y;
 	padding: 30px 0 30px 40px;
 	//margin: 0 0 20px 20px;
 	line-height: 1.7em;
+
 	#sidebarlupe {
+		@extend .fa;
+		@extend .fa-search;
 		position: absolute;
 		top: 58px;
 		right: 10px;
 		width: 26px;
 		height: 21px;
-		@extend .fa;
-		@extend .fa-search;
 	}
+
 	h3 {
 		font-size: 1.6em;
 		margin-bottom: 10px;
 	}
+
 	h4 {
 		font-size: 1.2em;
-		color: $color_red_berry_approx;
+		color: $color-red-dark;
 	}
+
 	p {
-		color: $color_log_cabin_approx;
+		color: $color-gray-darker;
 	}
+
 	&::before {
-		content: "";
+		content: '';
 		position: absolute;
 		left: 0;
 		width: 20px;
 		height: 50px;
 		top: 0;
-		background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/sidebarborder_top.gif) no-repeat 0 0;
+		background: url('/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/sidebarborder_top.gif') no-repeat 0 0;
 	}
+
 	&::after {
-		content: "";
+		content: '';
 		position: absolute;
 		left: 0;
 		width: 20px;
 		height: 50px;
 		bottom: 0;
-		background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/sidebarborder_end.gif) no-repeat 0 0;
+		background: url('/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/sidebarborder_end.gif') no-repeat 0 0;
 	}
 }

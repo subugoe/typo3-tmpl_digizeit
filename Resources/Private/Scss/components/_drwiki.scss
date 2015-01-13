@@ -1,192 +1,227 @@
 #tx-drwiki {
 	width: 640px;
-	border-left: 1px dotted $color_celeste_approx;
-	border-right: 1px dotted $color_celeste_approx;
+	border-left: 1px dotted $color-gray-light;
+	border-right: 1px dotted $color-gray-light;
 	padding: 5px;
+
 	td {
 		padding: 3px;
 	}
+
 	a {
 		text-decoration: none;
-		border: none;
+		border: 0;
+
 		&:hover {
-			TEXT-DECORATION: underline;
+			text-decoration: underline;
 		}
 	}
+
 	.notCreated {
-		color: $color_red_approx;
+		color: $color-red-light;
 	}
+
 	ul {
 		list-style-type: disc;
 	}
-	li {
-	}
+
 	ol {
 		&.references {
 			font-size: 9pt;
+
 			> li:target {
-				background-color: #DEF;
+				background-color: $color-blue-light;
 			}
 		}
+
 		&.references-2column {
 			font-size: 9pt;
 			//Instead of the line below you could use @includecolumn-count($count)
 			column-count: 2;
 		}
 	}
+
 	.editsection {
 		float: right;
 		margin-left: 5px;
 	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: $font-sans-serif;
+		font-style: normal;
+		color: black;
+		background: none;
+		font-weight: bold;
+		margin: 0;
+		padding: .5em 0 .17em;
+		border-bottom: 1px solid $color-gray;
+	}
+
 	h1 {
-		@extend %extend_11;
 		font-size: 188%;
+
 		.editsection {
 			font-size: 53%;
 			font-weight: normal;
 		}
 	}
+
 	h2 {
-		@extend %extend_11;
 		font-size: 150%;
+
 		.editsection {
 			font-size: 67%;
 			font-weight: normal;
 		}
 	}
+
 	h3 {
-		@extend %extend_11;
 		font-size: 132%;
+
 		.editsection {
 			font-size: 76%;
 			font-weight: normal;
 		}
 	}
+
 	h4 {
-		@extend %extend_11;
 		font-size: 116%;
+
 		.editsection {
 			font-size: 86%;
 			font-weight: normal;
 		}
 	}
+
 	h5 {
-		@extend %extend_11;
 		font-size: 100%;
+
 		.editsection {
 			font-weight: normal;
 		}
 	}
+
 	h6 {
-		@extend %extend_11;
 		font-size: 80%;
+
 		.editsection {
 			font-size: 125%;
 			font-weight: normal;
 		}
 	}
-	HR {
+
+	hr {
 		height: 1px;
-		border-top: 1px dotted $black;
+		border-top: 1px dotted black;
 		border-left: 0;
 		border-right: 0;
 		border-bottom: 0;
 	}
-	OL {
-		PADDING-RIGHT: 0;
-		PADDING-LEFT: 0;
-		PADDING-BOTTOM: 0;
-		MARGIN: 0.3em 0 0 3.2em;
-		LINE-HEIGHT: 1.5em;
-		PADDING-TOP: 0;
+
+	ol {
+		padding-right: 0;
+		padding-left: 0;
+		padding-bottom: 0;
+		margin: .3em 0 0 3.2em;
+		line-height: 1.5em;
+		padding-top: 0;
 	}
-	UL {
-		PADDING-RIGHT: 0;
-		PADDING-LEFT: 0;
-		PADDING-BOTTOM: 0;
-		MARGIN: 0.3em 0 0 1.5em;
-		LINE-HEIGHT: 1.5em;
-		PADDING-TOP: 0;
+
+	ul {
+		padding-right: 0;
+		padding-left: 0;
+		padding-bottom: 0;
+		margin: .3em 0 0 1.5em;
+		line-height: 1.5em;
+		padding-top: 0;
 	}
-	PRE {
-		BORDER: $color_astral_approx 1px dashed;
-		PADDING: 1em;
-		COLOR: $black;
-		LINE-HEIGHT: 1.1em;
-		BACKGROUND-COLOR: $color_alabaster_approx;
-		font-family: $font_8, $font_9;
+
+	pre {
+		border: $color-blue 1px dashed;
+		padding: 1em;
+		color: black;
+		line-height: 1.1em;
+		background-color: $color-gray-lightest;
+		font-family: $font-monospace;
 	}
-	INPUT {
+
+	input {
 		font-size: 10pt;
 	}
-	TEXTAREA {
+
+	textarea {
 		width: 100%;
 		font-size: 10pt;
 	}
-	input {
-		@extend %extend_12;
-	}
+
+	input,
 	textarea {
-		@extend %extend_12;
+		border: 1px $color-gray-light solid;
+		background: $color-gray-lightest;
+		color: $color-gray-dark;
 	}
+
 	sup.reference:target {
-		background-color: #DEF;
+		background-color: $color-blue-light;
 	}
+
 	input[type=text]:focus {
-		@extend %extend_13;
+		background: $color-gray-lightest;
+		color: $color-gray-darker;
+		border-color: $color-gray-dark;
 	}
 }
+
 .tx-drwiki-pi1-urlextension {
 	display: none;
 }
 
 .wiki-box {
-	BORDER: $color_astral_approx 1px dashed;
-	PADDING: 1em;
-	COLOR: $black;
-	LINE-HEIGHT: 1.1em;
-	BACKGROUND-COLOR: $color_alabaster_approx;
+	border: $color-blue 1px dashed;
+	padding: 1em;
+	color: black;
+	line-height: 1.1em;
+	background-color: $color-gray-lightest;
 }
 
-.wiki-box-blue {
-	display: block;
-	font-size: 1em;
-	color: $black;
-	padding: 0.5em;
-	background: $color_athens_gray_approx;
-	border-left: 8px #E0E7F5 solid;
-}
-
-.wiki-box-red {
-	display: block;
-	font-size: 1em;
-	color: $black;
-	padding: 0.5em;
-	background: $color_fair_pink_approx;
-	border-left: 8px $color_pink_approx solid;
-}
-
-.wiki-box-green {
-	display: block;
-	font-size: 1em;
-	color: $black;
-	padding: 0.5em;
-	background: #33FF33;
-	border-left: 8px $color_japanese_laurel_approx solid;
-}
-
+.wiki-box-blue,
+.wiki-box-red,
+.wiki-box-green,
 .wiki-box-yellow {
 	display: block;
 	font-size: 1em;
-	color: $black;
-	padding: 0.5em;
-	background: #FFFF99;
-	border-left: 8px #FFFF00 solid;
+	color: black;
+	padding: .5em;
+}
+
+.wiki-box-blue {
+	background: $color-blue-light;
+	border-left: 8px $color-blue solid;
+}
+
+.wiki-box-red {
+	background: $color-pink-light;
+	border-left: 8px $color-pink solid;
+}
+
+.wiki-box-green {
+	background: $color-green-light;
+	border-left: 8px $color-green solid;
+}
+
+.wiki-box-yellow {
+	background: $color-yellow-light;
+	border-left: 8px $color-yellow solid;
 }
 
 .wiki-box-catlinks {
-	border: 1px solid $color_silver_chalice_approx;
-	background-color: $color_alabaster_approx;
+	border: 1px solid $color-gray;
+	background-color: $color-gray-lightest;
 	padding: 5px;
 	margin-top: 1em;
 	clear: both;
@@ -194,7 +229,7 @@
 
 .wiki-table {
 	margin: 1em 1em 1em 0;
-	background: $color_alabaster_approx;
-	border: 1px $color_silver_chalice_approx solid;
+	background: $color-gray-lightest;
+	border: 1px $color-gray solid;
 	border-collapse: collapse;
 }

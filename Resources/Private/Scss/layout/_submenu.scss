@@ -7,40 +7,46 @@
 	overflow: hidden;
 	margin: 20px 0 0 60px;
 	font-size: 1.2em;
+
 	li {
 		position: relative;
 		top: 0;
 		left: 0;
 		float: left;
 		margin: 0 5px 0 0;
+
 		&.subnavsep {
 			position: relative;
 			top: 2px;
 			left: 0;
 			width: 5px;
 			height: 14px;
-			border-right: 1px solid #222;
+			border-right: 1px solid $color-gray-darker;
 			display: block;
 			float: left;
 		}
-		a {
-			border-bottom: none;
-			color: #222;
+	}
+
+	a {
+		border-bottom: 0;
+		color: $color-gray-darker;
+		float: left;
+
+		&:hover {
+			border-bottom: 0;
+			background: $color-red-dark;
+			color: #fff;
 			float: left;
+		}
+
+		&.sub_act {
+			font-weight: bold;
+			color: $color-red-dark;
+
 			&:hover {
-				border-bottom: none;
-				background: #900;
-				color: #fff;
-				float: left;
-			}
-			&.sub_act {
 				font-weight: bold;
-				color: #900;
-				&:hover {
-					font-weight: bold;
-					background: #900;
-					color: #fff;
-				}
+				background: $color-red-dark;
+				color: white;
 			}
 		}
 	}

@@ -3,31 +3,35 @@
 	top: 185px;
 	left: 25px;
 	z-index: 1000;
+
 	img {
 		display: inline;
-		margin: 0 0 0 0;
-		padding: 0 0 0 0;
+		margin: 0;
+		padding: 0;
 	}
+
 	a {
-		color: #900;
+		color: $color-red-dark;
 		text-decoration: none;
 		padding-right: 4px;
-		border-right: 1px dotted #900;
-		border-bottom: none;
+		border-right: 1px dotted $color-red-dark;
+		border-bottom: 0;
+
 		&:visited {
-			color: #900;
+			color: $color-red-dark;
 			text-decoration: none;
 			padding-right: 4px;
-			border-right: 1px dotted #900;
-			border-bottom: none;
+			border-right: 1px dotted $color-red-dark;
+			border-bottom: 0;
 		}
+
 		&:hover {
-			color: #fff;
+			color: white;
 			text-decoration: none;
-			border-right: 1px dotted #900;
+			border-right: 1px dotted $color-red-dark;
 			padding-right: 4px;
-			background: #900;
-			border-bottom: none;
+			background: $color-red-dark;
+			border-bottom: 0;
 		}
 	}
 }

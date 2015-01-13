@@ -1,18 +1,25 @@
 .tx-femanager {
 	form {
 		@extend .form-horizontal;
+
 		.femanager_fieldset {
 			@extend .form-group;
 		}
+
 		label {
 			@extend .col-md-3;
+
 			&.radio {
 				@extend .radio-inline;
 			}
 		}
+
 		.controls {
 			@extend .col-md-5;
-			input, textarea, select {
+
+			input,
+			textarea,
+			select {
 				@extend .form-control;
 			}
 		}

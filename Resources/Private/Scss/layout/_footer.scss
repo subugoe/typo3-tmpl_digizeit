@@ -9,41 +9,46 @@
 	font-size: 12px;
 	font-weight: bold;
 	text-align: right;
-	color: #a99;
-	border-bottom: none;
+	color: $color-brown;
+	border-bottom: 0;
 	padding: 0 30px 0 0;
 }
 
 #footer {
 	position: relative;
 	height: 200px;
-	background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/endborder.png) no-repeat top center;
+	background: url('/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/endborder.png') no-repeat top center;
 	background-size: 100% auto;
+
 	#sysnav {
 		position: absolute;
 		top: 20px;
 		left: 80px;
 		height: 20px;
-		border-left: 1px dotted #999;
+		border-left: 1px dotted $color-gray;
+
 		li {
 			position: relative;
 			float: left;
 			top: 0;
 			left: 0;
 			height: 20px;
-			padding: 0 10px 0 10px;
-			border-right: 1px dotted #999;
+			padding: 0 10px;
+			border-right: 1px dotted $color-gray;
 			text-align: center;
+
 			a {
 				font-weight: bold;
-				border-bottom: none;
-				color: #999;
+				border-bottom: 0;
+				color: $color-gray;
+
 				&:hover {
-					color: #fff;
+					color: white;
 				}
 			}
 		}
 	}
+
 	#dfglink {
 		position: absolute;
 		top: 75px;
@@ -51,12 +56,12 @@
 		width: 500px;
 		height: 30px;
 		line-height: 30px;
-		background: url(/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/bydfg.gif) no-repeat right center;
+		background: url('/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/bydfg.gif') no-repeat right center;
 		display: block;
 		overflow: hidden;
-		border-bottom: none;
+		border-bottom: 0;
 		text-align: right;
-		color: #fff;
+		color: white;
 		padding: 0 73px 0 0;
 	}
 }

@@ -3,13 +3,16 @@
 		&.tx-irfaq-questions-list {
 			margin-bottom: 75px;
 		}
+
 		li a {
-			color: $black;
+			color: black;
 			text-decoration: none;
+
 			&:hover {
-				color: $black;
+				color: black;
 				text-decoration: underline;
 			}
+
 			p.bodytext {
 				margin: 0;
 				display: inline;
@@ -17,45 +20,57 @@
 			}
 		}
 	}
+
 	.tx-irfaq-answer {
 		margin-bottom: 10px;
+
 		h4 p.bodytext {
 			margin: 0;
 			display: inline;
 			font-weight: bold;
 		}
 	}
+
 	dd {
 		margin-left: 0;
+
 		p {
 			margin-top: 0;
 		}
 	}
+
 	.additional-info {
-		border-top: 2px solid $color_mercury_approx;
+		border-top: 2px solid $color-gray-lighter;
 		margin-bottom: 10px;
 	}
-	.irfaq-related-faq {
-		@extend %extend_10;
-	}
+
+	.irfaq-related-faq,
 	.irfaq-related-links {
-		@extend %extend_10;
+		padding-top: 0;
+		padding-bottom: 0;
+		margin-top: 3px;
+		margin-bottom: 15px;
 	}
+
 	dt p {
 		font-weight: bold;
 		margin: 0;
 		display: inline;
 	}
+
 	dl {
 		@extend .panel-group;
+
 		.item {
 			@extend .panel;
 			@extend .panel-default;
+
 			dt {
 				@extend .panel-title;
 				@extend .panel-heading;
 
 			}
+
 			dd {
 				@extend .panel-body;
 				@extend .panel-collapse;
@@ -74,7 +89,7 @@
 
 .tx-irfaq-dynheader {
 	cursor: pointer;
-	color: $color_red_berry_approx;
+	color: $color-red-dark;
 }
 
 .tx-irfaq-dynans-hidden {
@@ -86,6 +101,6 @@
 }
 
 dt.tx-irfaq-pi1 {
-	color: $color_red_berry_approx;
+	color: $color-red-dark;
 	text-decoration: none;
 }

@@ -1,37 +1,20 @@
 #lang_nav {
 	position: absolute;
-	top: 185px;
-	left: 25px;
+	top: 25px;
+	right: 25px;
 	z-index: 1000;
 
-	img {
-		display: inline;
-		margin: 0;
-		padding: 0;
-	}
-
 	a {
-		color: $color-red-dark;
+		color: white;
+		display: inline-block;
+		line-height: 1;
 		text-decoration: none;
-		padding-right: 4px;
-		border-right: 1px dotted $color-red-dark;
-		border-bottom: 0;
-
-		&:visited {
-			color: $color-red-dark;
-			text-decoration: none;
-			padding-right: 4px;
-			border-right: 1px dotted $color-red-dark;
-			border-bottom: 0;
-		}
+		padding: 5px;
 
 		&:hover {
-			color: white;
+			color: $color-red-dark;
 			text-decoration: none;
-			border-right: 1px dotted $color-red-dark;
-			padding-right: 4px;
-			background: $color-red-dark;
-			border-bottom: 0;
+			background: white;
 		}
 	}
 }

@@ -3,11 +3,14 @@ $border-radius-base: 0;
 $link-hover-decoration: none;
 
 // Fonts
-$font-serif: Georgia, 'Times New Roman', Times, serif;
-$font-sans-serif: Verdana, Arial, Helvetica, sans-serif;
+//$font-family-serif: Georgia, 'Times New Roman', Times, serif;
+$font-family-serif: 'Droid Serif', serif;
+//$font-family-sans-serif: Verdana, Arial, Helvetica, sans-serif;
+$font-family-sans-serif: 'Droid Sans', sans-serif;
 $font-monospace: Courier, monospace;
 $font-size-base: 16px;
-$fa-font-path: '../Fonts';
+$font-path: '../Fonts';
+$fa-font-path: '../Fonts'; // Font Awesome
 
 // Reds
 $color-red-darker: #600;

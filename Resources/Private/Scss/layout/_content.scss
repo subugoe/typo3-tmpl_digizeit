@@ -13,14 +13,6 @@
 	}
 }
 
-//original selectors
-//#tx-drwiki input[type=text]:focus, textarea:focus
-%extend_13 {
-	background: $color-gray-lightest;
-	color: $color-gray-darker;
-	border-color: $color-gray-dark;
-}
-
 #liner {
 	position: relative;
 	top: 0;
@@ -32,7 +24,7 @@
 }
 
 h3 {
-	font-family: $font-serif;
+	font-family: $font-family-serif;
 	font-style: italic;
 	color: $color-red-dark;
 	padding: 0 0 5px;

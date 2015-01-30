@@ -1,17 +1,24 @@
 #header {
-	background: url('/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/headerpic.png') no-repeat 0 0;
+	//background: url('/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/headerpic.png') no-repeat 0 0;
+	background: linear-gradient(60deg, $color-red-darker, $color-red-dark);
+	height: $header-height;
+	margin-top: -25px;
+	padding-top: 25px;
 	position: relative;
-	height: 200px;
-	margin-top: -35px;
+	@media (max-width: $screen-xs-max) {
+		height: 150px;
+	}
 
 	h1 {
 		margin: 0;
-		position: relative;
-		top: 35px;
-		left: 20px;
+		position: absolute;
+		top: $gutter * 4;
+		left: $gutter * 2;
 		height: 80px;
-		width: 360px;
-		background: url('/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/digizeit_logo.png') no-repeat 0 0;
+		width: 400px;
+		//background: url('/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/digizeit_logo.png') no-repeat 0 0;
+		background: url('/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/digizeit-logo.svg') no-repeat 0 0;
+		background-size: 400px;
 		text-indent: -9999px;
 		overflow: hidden;
 		border-bottom: 0;

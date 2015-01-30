@@ -305,7 +305,7 @@ img {
 
 .list li {
 	background: url('/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/listelement.gif') no-repeat 0 5px;
-	padding: 0 0 0 15px;
+	padding: 0 0 0 $gutter;
 	line-height: 1.6em;
 }
 

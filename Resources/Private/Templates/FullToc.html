@@ -1,25 +1,31 @@
-<f:cObject typoscriptObjectPath="page.10.subparts.cslogin"/>
+<f:render partial="Navigation"/>
 
 <f:render partial="Login"/>
 
 <div id="wrapper">
 
-	<f:render partial="Header"/>
+	<f:cObject typoscriptObjectPath="page.10.subparts.cslogin"/>
 
-	<f:render partial="Language"/>
+	<f:render partial="Topbar"/>
 
-	<f:render partial="Navigation"/>
+	<div id="main">
 
-	<f:cObject typoscriptObjectPath="page.10.subparts.breadcrumb"/>
+		<f:render partial="Header"/>
 
-	<f:cObject typoscriptObjectPath="page.10.subparts.submenu"/>
+		<f:render partial="Language"/>
 
-	<div id="content" class="full-width">
-		<f:cObject typoscriptObjectPath="page.10.subparts.maincontent"/>
+		<f:cObject typoscriptObjectPath="page.10.subparts.breadcrumb"/>
+
+		<f:cObject typoscriptObjectPath="page.10.subparts.submenu"/>
+
+		<div id="content" class="full-width">
+			<f:cObject typoscriptObjectPath="page.10.subparts.maincontent"/>
+		</div>
+
+		<f:render partial="Login"/>
+
+		<f:render partial="Footer"/>
+
 	</div>
 
-	<f:render partial="Login"/>
-
 </div>
-
-<f:render partial="Footer"/>

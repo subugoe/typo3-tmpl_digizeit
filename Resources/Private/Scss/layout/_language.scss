@@ -1,8 +1,8 @@
 #lang_nav {
 	position: absolute;
-	top: 25px;
-	right: 25px;
-	z-index: 1000;
+	top: $gutter * 2;
+	right: $gutter * 2;
+	z-index: 9;
 
 	a {
 		color: white;
@@ -10,10 +10,10 @@
 		line-height: 1;
 		text-decoration: none;
 		padding: 5px;
+		transition: all .5s;
 
 		&:hover {
 			color: $color-red-dark;
-			text-decoration: none;
 			background: white;
 		}
 	}

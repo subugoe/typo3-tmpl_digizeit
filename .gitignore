@@ -6,6 +6,7 @@ Build/pdepend
 Build/lib
 Build/tmp
 Resources/Public/JavaScript/production*.js*
+scss-lint.log
 .gradle
 .sass-cache
 .idea

@@ -25,6 +25,7 @@ page.includeCSS {
 
 page.includeJSlibs {
 	bootstrap = EXT:tmpl_digizeit/Resources/Public/JavaScript/bootstrap.js
+	script = EXT:tmpl_digizeit/Resources/Public/JavaScript/script.js
 }
 
 page.10 = FLUIDTEMPLATE

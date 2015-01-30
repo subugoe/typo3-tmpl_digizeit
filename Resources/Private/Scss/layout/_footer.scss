@@ -15,17 +15,14 @@
 }
 
 #footer {
+	@include clearfix;
+	background: red;
+	clear: both;
+	margin-bottom: -25px;
+	padding-bottom: 25px;
 	position: relative;
-	height: 200px;
-	background: url('/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/endborder.png') no-repeat top center;
-	background-size: 100% auto;
 
 	#sysnav {
-		position: absolute;
-		top: 20px;
-		left: 80px;
-		height: 20px;
-		border-left: 1px dotted $color-gray;
 
 		li {
 			position: relative;

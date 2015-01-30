@@ -1,7 +1,9 @@
 body {
 	@extend .container;
-	background: $color-gray-dark linear-gradient(rgba(black, .2), rgba(black, 0)) repeat-x fixed;
-	color: $gray-dark;
+	background: $background-color linear-gradient(rgba(black, 0), rgba(black, .2)) repeat-x fixed;
+	color: $text-color;
+	overflow-x: hidden; // For out-of-bounds background images
+	padding: 0;
 	position: relative;
 
 	&::before,
@@ -12,29 +14,31 @@ body {
 	}
 
 	&::before {
-		top: -110px;
-		left: -50px;
+		top: 0;
+		left: -50px - $gutter;
 		width: 400px;
 		height: 300px;
 		background: url('/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/bgicon.gif') no-repeat top left;
 	}
 
 	&::after {
-		top: 60px;
-		right: -90px;
+		top: 160px;
+		right: -60px - $gutter;
 		width: 75px;
 		height: 114px;
 		background: url('/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/linebook.gif') no-repeat 0 0;
+		position: absolute;
 	}
 }
 
 a {
+	border-color: $link-hover-color;
 	color: $link-color;
 	text-decoration: none;
 
 	&:hover {
+		border-bottom: 1px solid;
 		color: $link-hover-color;
-		border-bottom: 1px solid $link-hover-color;
 	}
 }
 

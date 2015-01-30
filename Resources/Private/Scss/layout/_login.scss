@@ -1,45 +1,39 @@
 #login {
+	@extend .pull-right;
 	@extend .small;
-	@extend .col-md-offset-8;
-	@extend .col-md-4;
+	padding: $gutter;
 	position: absolute;
-	top: -110px;
-	border-left: 1px dotted $color-gray-light;
+	right: 0;
+	top: 0;
+	z-index: 11;
 
-	form {
-		@extend .form-horizontal;
+	@media (max-width: $screen-xs-max) {
+		height: 100%;
+		background: $off-canvas-color;
+		top: 0;
+		right: 0;
+		width: 75%;
+		z-index: 0;
+		&.active {
+			z-index: 1;
+		}
 	}
 
-	.login-head {
-		@extend .row;
+	form {
+		@extend .form-inline;
+	}
 
-		.title {
-			@extend .pull-left;
-		}
-
-		.logged-in {
-			@extend .pull-left;
-		}
-
+	.login-foot {
+		.logged-in,
 		.lostpass {
 			@extend .pull-right;
+			margin-top: 5px;
 		}
 	}
 
 	.form-group {
-
-		label {
-			@extend .control-label;
-			@extend .col-md-4;
-			font-weight: normal;
-		}
-
-		> div {
-			@extend .col-sm-8;
-
-			input {
-				@include input('dark');
-			}
+		input {
+			@include input('dark');
 		}
 	}
 
@@ -82,10 +76,8 @@
 }
 
 #login a:hover {
+	border-color: white;
 	color: white;
-	text-decoration: none;
-	background: $color-red-dark;
-	border-bottom: 0;
 }
 
 #logout {

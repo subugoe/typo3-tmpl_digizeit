@@ -1,15 +1,34 @@
-#nav {
-	background: rgba(black, .15);
-	position: relative;
+#navigation {
+	position: absolute;
 	height: 40px;
 	line-height: 40px;
-	margin-top: -40px;
 	display: block;
-	padding: 10px 0;
+	padding: 0 $gutter;
+	top: $topbar-height + $header-height - 50px;
 	width: 100%;
+	z-index: 11;
+
+	@media (max-width: $screen-xs-max) {
+		height: 100%;
+		background: $off-canvas-color;
+		padding: 0;
+		top: 0;
+		width: 75%;
+		z-index: 0;
+		&.active {
+			z-index: 1;
+		}
+	}
 
 	ul {
-		padding: 0;
+		background: rgba(black, .15);
+		float: left;
+		padding: 10px 0;
+		width: 100%;
+		@media (max-width: $screen-xs-max) {
+			background: none;
+			padding: 0;
+		}
 	}
 
 	li {
@@ -17,6 +36,11 @@
 		float: left;
 		display: block;
 		width: auto;
+		@media (max-width: $screen-xs-max) {
+			border-right: 0;
+			border-bottom: 1px solid $color-gray-dark;
+			float: none;
+		}
 	}
 
 	a {
@@ -25,14 +49,18 @@
 		color: white;
 		text-align: center;
 		font-weight: bold;
-		font-size: 14px;
 		text-transform: uppercase;
 		font-family: $font-family-sans-serif;
 		margin: -10px 0;
-		padding: 0 15px;
+		padding: 0 $gutter;
+		@media (max-width: $screen-xs-max) {
+			margin: 0;
+			padding: $gutter/2 $gutter;
+		}
 
 		&:hover {
 			background: $color-brown-lighter;
+			border: 0;
 			color: $color-red-dark;
 			height: 100%;
 		}

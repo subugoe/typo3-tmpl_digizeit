@@ -33,7 +33,7 @@ gulp.task('compile', function() {
 })
 
 gulp.task('watch', function() {
-	gulp.watch(paths.sass, ['lint', 'compile'])
+	gulp.watch(paths.sass, ['compile'])
 })
 
 gulp.task('default', function() {

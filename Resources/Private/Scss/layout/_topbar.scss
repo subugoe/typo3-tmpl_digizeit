@@ -1,0 +1,31 @@
+#topbar {
+
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 9;
+
+	.toggle-buttons {
+		background: $background-color;
+		@extend .visible-xs
+	}
+
+	button {
+		background: $off-canvas-color;
+		border: 0;
+		color: $color-gray;
+		display: none;
+		float: left;
+		font-size: $font-size-large;
+		width: $topbar-height-xs;
+		height: $topbar-height-xs;
+
+		+ button {
+			float: right;
+		}
+
+		@media (max-width: $screen-xs-max) {
+			display: inline-block;
+		}
+	}
+}

@@ -3,45 +3,50 @@ $border-radius-base: 0;
 $link-hover-decoration: none;
 
 // Fonts
-//$font-family-serif: Georgia, 'Times New Roman', Times, serif;
-$font-family-serif: 'Droid Serif', serif;
-//$font-family-sans-serif: Verdana, Arial, Helvetica, sans-serif;
-$font-family-sans-serif: 'Droid Sans', sans-serif;
+$font-family-serif: 'Droid Serif', Georgia, serif;
+$font-family-sans-serif: 'Droid Sans', Helvetica, Arial, sans-serif;
 $font-monospace: Courier, monospace;
 $font-size-base: 16px;
+$line-height-base: 1.5;
 $font-path: '../Fonts';
-$fa-font-path: '../Fonts'; // Font Awesome
+$fa-font-path: $font-path; // Required by Font Awesome
 
-// Reds
+// Layout
+$topbar-height: 100px;
+$topbar-height-xs: 55px;
+$header-height: 200px;
+$gutter: 15px;
+
+// Colors: reds
 $color-red-darker: #600;
 $color-red-dark: #900;
 $color-red: #c00;
 $color-red-light: #f00;
 
-// Pinks
+// Colors: pinks
 $color-pink: #fcc;
 $color-pink-light: #fee;
 
-// Yellows
+// Colors: yellows
 $color-yellow: #ff0;
 $color-yellow-light: #ff9;
 
-// Greens
+// Colors: greens
 $color-green: #060;
 $color-green-light: #3f3;
 
-// Blues
+// Colors: blues
 $color-blue: #2f6fab;
 $color-blue-light: #e0e7f5;
 
-// Browns
+// Colors: browns
 $color-brown-dark: #6b6355;
 $color-brown: #8f8471;
 $color-brown-light: #b4aea3;
 $color-brown-lighter: #f3ecd5;
 $color-brown-lightest: #fffff0;
 
-// Shades of gray
+// Colors: shades of gray
 $color-gray-darker: #333;
 $color-gray-dark: #666;
 $color-gray: #999;
@@ -50,5 +55,9 @@ $color-gray-lighter: #e6e6e6;
 $color-gray-lightest: #fafafa;
 
 // Named colors
+$background-color: $color-gray-dark;
+$border-color: $color-gray;
 $link-color: $color-red-darker;
 $link-hover-color: $color-red-dark;
+$off-canvas-color: $color-gray-darker;
+$text-color: $color-gray-darker;

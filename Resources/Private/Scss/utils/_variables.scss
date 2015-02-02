@@ -8,8 +8,8 @@ $font-family-sans-serif: 'Droid Sans', Helvetica, Arial, sans-serif;
 $font-monospace: Courier, monospace;
 $font-size-base: 16px;
 $line-height-base: 1.5;
-$font-path: '../Fonts';
-$fa-font-path: $font-path; // Required by Font Awesome
+$font-path: '../Fonts/';
+$fa-font-path: '../Fonts'; // Required by Font Awesome. Note the lack of a trailing slash.
 
 // Layout
 $topbar-height: 100px;

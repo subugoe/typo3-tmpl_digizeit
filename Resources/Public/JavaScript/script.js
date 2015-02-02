@@ -8,7 +8,7 @@ jQuery(function() {
 		if ( ! isActive ) $target.addClass('active');
 		$('#wrapper')
 			.css({'right': 'auto'})
-			.animate({ 'left': ( isActive ? 0 : '-75%' ) }, null, function() {
+			.animate({ 'left': ( isActive ? 0 : '-' + $target.css('width') ) }, null, function() {
 				if ( isActive ) $target.removeClass('active')
 			});
 		return false;
@@ -20,7 +20,7 @@ jQuery(function() {
 		if ( ! isActive ) $target.addClass('active');
 		$('#wrapper')
 			.css({'left': 'auto'})
-			.animate({ 'right': ( isActive ? 0 : '-75%' ) }, null, function() {
+			.animate({ 'right': ( isActive ? 0 : '-' + $target.css('width') ) }, null, function() {
 				if ( isActive ) $target.removeClass('active')
 			});
 		return false;
@@ -33,8 +33,11 @@ jQuery(function() {
 			$('[data-toggle="navigation"]').click();
 		}
 	})
-	$('#login, #navigation').click( function() {
-		return false;
+	$('#login, #navigation').click( function(e) {
+		e.stopPropagation()
+	})
+	$(window).resize( function() {
+		$('body').click()
 	})
 
 })

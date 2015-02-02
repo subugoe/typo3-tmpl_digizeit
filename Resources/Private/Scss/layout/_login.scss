@@ -1,6 +1,7 @@
 #login {
 	@extend .pull-right;
 	@extend .small;
+	color: $color-brown-light;
 	padding: $gutter;
 	position: absolute;
 	right: 0;
@@ -12,11 +13,25 @@
 		background: $off-canvas-color;
 		top: 0;
 		right: 0;
-		width: 75%;
+		width: 61.8%;
 		z-index: 0;
 		&.active {
 			z-index: 1;
 		}
+	}
+
+	a,
+	a:hover,
+	a:visited {
+		color: $color-brown-light;
+		font-size: 1.1em;
+		text-decoration: none;
+		background: transparent;
+	}
+
+	a:hover {
+		border-color: white;
+		color: white;
 	}
 
 	form {
@@ -24,14 +39,15 @@
 	}
 
 	.login-foot {
-		.logged-in,
-		.lostpass {
-			@extend .pull-right;
-			margin-top: 5px;
-		}
+		text-align: right;
+		margin-top: 5px;
 	}
 
 	.form-group {
+		margin-right: .5em;
+		@media (max-width: $screen-xs-max) {
+			margin-right: 0;
+		}
 		input {
 			@include input('dark');
 		}
@@ -51,35 +67,4 @@
 #pass,
 #user {
 	@include input;
-}
-
-#loginstatus {
-	width: 180px;
-	color: $color-brown-light;
-	overflow: hidden;
-	text-decoration: none;
-
-	a,
-	a:hover,
-	a:visited {
-		color: $color-brown-light;
-		font-size: 1.1em;
-		text-decoration: none;
-		background: transparent;
-	}
-}
-
-#login a,
-#login a:visited {
-	color: $color-brown-light;
-	text-decoration: none;
-}
-
-#login a:hover {
-	border-color: white;
-	color: white;
-}
-
-#logout {
-	text-align: right;
 }

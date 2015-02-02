@@ -3,8 +3,10 @@
 	<f:if condition="{loggedIn}">
 		<f:then>
 			<div class="form-group">
-				<input type="submit" class="loginsubmit" value="{loginType}"/>
+				<i class="fa fa-user"></i>
+				<f:link.page pageUid="{myDigiZeit}" title="{loggedIn}">{loggedIn}</f:link.page>
 			</div>
+			<input type="submit" class="loginsubmit" value="{loginType}"/>
 		</f:then>
 		<f:else>
 			<div class="form-group">
@@ -21,20 +23,15 @@
 		</f:else>
 	</f:if>
 
-	<div class="login-foot">
-		<f:if condition="{loggedIn}">
-			<f:then>
-				<p class="title">Loginstatus:
-					<f:link.page pageUid="{myDigiZeit}" title="{loggedIn}">{loggedIn}</f:link.page>
-				</p>
-			</f:then>
-			<f:else>
-				<p class="lostpass"><a href="/login/?tx_felogin_pi1%5Bforgot%5D=1">
+	<f:if condition="{loggedIn}">
+		<f:else>
+			<p class="login-foot">
+				<a href="/login/?tx_felogin_pi1%5Bforgot%5D=1">
 					<f:translate key="LLL:EXT:tmpl_digizeit/Resources/Private/Language/locallang.xlf:item_lostpass"/>
-				</a></p>
-			</f:else>
-		</f:if>
-	</div>
+				</a>
+			</p>
+		</f:else>
+	</f:if>
 
 	<input type="hidden" name="logintype" value="{loginType}"/>
 	<input type="hidden" name="pid" value="{storagePid}"/>

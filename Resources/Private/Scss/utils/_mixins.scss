@@ -7,11 +7,10 @@
 	margin-bottom: 3px;
 }
 
-@mixin button($type: 'dark') {
+@mixin button() {
 	@extend .btn;
 	@extend .btn-default;
-	@if $type == 'dark' {
-	}
+	background: $color-gray-lighter;
 }
 
 @mixin input($type: 'dark') {
@@ -19,46 +18,5 @@
 	@if $type == 'dark' {
 		color: white;
 		background: rgba(black, .25);
-	}
-}
-
-// TODO: Replace with SVG
-@mixin wedge($position, $direction, $width, $height, $left: 50%) {
-	&:before,
-	&:after {
-		content: '';
-		display: block;
-		width: $width;
-		height: $height;
-		position: absolute;
-		left: $left;
-
-		@if $position == 'top' {
-			top: if($direction == 'up', -$height, 0);
-		} @else if $position == 'bottom' {
-			bottom: if($direction == 'up', 0, -$height);
-		}
-	}
-
-	&:before {
-		margin-left: 1px - $width;
-	}
-
-	@if $direction == 'up' {
-		&:before {
-			background-image: radial-gradient(0 0, ellipse, rgba($color-brown-lighter, 0) $width, rgba($color-brown-lighter, 1) $width + 1px);
-		}
-
-		&:after {
-			background-image: radial-gradient(100% 0, ellipse, rgba($color-brown-lighter, 0) $width, rgba($color-brown-lighter, 1) $width + 1px);
-		}
-	} @else {
-		&:before {
-			background-image: radial-gradient(0 100%, ellipse, rgba($color-brown-lighter, 0) $width, rgba($color-brown-lighter, 1) $width + 1px);
-		}
-
-		&:after {
-			background-image: radial-gradient(100% 100%, ellipse, rgba($color-brown-lighter, 0) $width, rgba($color-brown-lighter, 1) $width + 1px);
-		}
 	}
 }

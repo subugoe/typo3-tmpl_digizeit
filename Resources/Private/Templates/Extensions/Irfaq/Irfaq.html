@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>FAQ Example Template</title>
 <!-- ###HEADER_PARTS### -->
-<link rel="stylesheet" type="text/css" href="###SITE_REL_PATH###res/styles.css" />
+<!--<link rel="stylesheet" type="text/css" href="###SITE_REL_PATH###res/styles.css" />-->
 <!-- ###HEADER_PARTS### -->
 </head>
 <body>
@@ -101,9 +101,8 @@ RELATED_LINKS - related links (if any)
 -->
 <div class="tx-irfaq-pi1 tx-irfaq-toggle">
 	<p>
-		<input type=button class="tx-irfaq-toggle-all-show" value="###TEXT_SHOW###" />
-		/
-		<input type=button class="tx-irfaq-toggle-all-hide" value="###TEXT_HIDE###" />
+		<button type="button" class="tx-irfaq-toggle-all-show">###TEXT_SHOW###</button>
+		<button type="button" class="tx-irfaq-toggle-all-hide">###TEXT_HIDE###</button>
 	</p>
 	<dl>
 	<!-- ###CONTENT### begin
@@ -112,9 +111,9 @@ RELATED_LINKS - related links (if any)
 		<!-- ###FAQ### begin
 			Template for a single FAQ item
 		-->
-		<div class="item panel">
+		<div class="tx-irfaq-item">
 			<dt class="tx-irfaq-dynheader tx-irfaq-toggle-plus">
-				###FAQ_Q###
+				<i class="fa"></i> ###FAQ_Q###
 			</dt>
 			<dd class="tx-irfaq-dynans">
 				###FAQ_A###

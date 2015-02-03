@@ -24,9 +24,7 @@
 	a:hover,
 	a:visited {
 		color: $color-brown-light;
-		font-size: 1.1em;
 		text-decoration: none;
-		background: transparent;
 	}
 
 	a:hover {
@@ -54,7 +52,7 @@
 	}
 
 	.loginsubmit {
-		@include button('dark');
+		@include button();
 	}
 
 	label,

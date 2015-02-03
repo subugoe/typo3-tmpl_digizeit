@@ -1,12 +1,11 @@
 #welcome {
-	@include wedge('bottom', 'down', 40px, 20px, 100px);
+	background: $color-brown-lighter;
 	font-size: $font-size-large;
+	padding: $gutter ($gutter * 4);
 
 	p {
 		font-family: $font-family-serif;
-		font-weight: normal;
 		font-style: italic;
-		padding: 20px 60px;
 		color: $color-gray-darker;
 		margin: 0;
 

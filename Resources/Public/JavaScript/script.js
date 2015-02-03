@@ -40,4 +40,16 @@ jQuery(function() {
 		$('body').click()
 	})
 
+	$(window).scroll( function() {
+		if ( $(window).scrollTop() > 250 ) {
+			$('#totop:hidden').fadeIn()
+		} else {
+			$('#totop:visible').fadeOut()
+		}
+	})
+
+	$('#totop').click( function() {
+		$('html, body').animate({scrollTop: 0})
+	})
+
 })

@@ -1,0 +1,17 @@
+#colophon {
+	padding: $wedge-height $gutter;
+	position: relative;
+	text-align: right;
+	min-height: $border-height - $gutter;
+
+	a {
+		background: url("#{$img-path}bydfg.gif") no-repeat right -4px;
+		color: $color-brown-light;
+		padding-right: 73px;
+
+		&:hover {
+			border-color: white;
+			color: white;
+		}
+	}
+}

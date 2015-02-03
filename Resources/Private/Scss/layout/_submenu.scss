@@ -1,53 +1,32 @@
-#submenu {
-	position: relative;
-	top: 0;
-	left: 0;
-	width: auto;
-	height: 30px;
+#submenu,
+.csc-menu {
+	margin: 0 ($gutter * 2);
 	overflow: hidden;
-	margin: 20px 0 0 60px;
-	font-size: 1.2em;
 
 	li {
-		position: relative;
-		top: 0;
-		left: 0;
+		border-right: $border;
 		float: left;
-		margin: 0 5px 0 0;
+		margin: 0 .5em 1em 0;
+		padding-right: .5em;
+
+		&:last-child {
+			border-right: 0;
+		}
 
 		&.subnavsep {
-			position: relative;
-			top: 2px;
-			left: 0;
-			width: 5px;
-			height: 14px;
-			border-right: 1px solid $color-gray-darker;
-			display: block;
-			float: left;
+			display: none;
 		}
 	}
 
 	a {
-		border-bottom: 0;
-		color: $color-gray-darker;
-		float: left;
-
-		&:hover {
-			border-bottom: 0;
-			background: $color-red-dark;
-			color: #fff;
-			float: left;
-		}
+		font-weight: bold;
 
 		&.sub_act {
-			font-weight: bold;
-			color: $color-red-dark;
-
-			&:hover {
-				font-weight: bold;
-				background: $color-red-dark;
-				color: white;
-			}
+			color: $color-gray;
 		}
 	}
+}
+
+.csc-menu {
+	margin: 0; // TODO
 }

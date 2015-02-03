@@ -4,7 +4,7 @@
 	right: 0;
 	width: 320px;
 	height: 68px;
-	border-left: 1px dotted $color-gray-light;
+	border-left: $border;
 
 	#introtxt {
 		position: absolute;
@@ -23,7 +23,7 @@
 		top: 20px;
 		width: 280px;
 		height: 28px;
-		background: url('/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/inpbg_fastsearch.gif') no-repeat 0 0;
+		background: url('#{$img-path}inpbg_fastsearch.gif') no-repeat 0 0;
 		border: 0;
 		font-size: 1.2em;
 		color: white;
@@ -37,7 +37,7 @@
 		height: 50px;
 		width: 61px;
 		border: 0;
-		background: transparent url('/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/btn_fastsearch.png') no-repeat 0 0;
+		background: transparent url('#{$img-path}btn_fastsearch.png') no-repeat 0 0;
 		text-indent: -2000px;
 		overflow: hidden;
 		display: block;

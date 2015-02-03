@@ -10,19 +10,20 @@
 @import 'base/fonts';
 @import 'base/common';
 
+@import 'layout/navigation';
+@import 'layout/login';
 @import 'layout/wrapper';
 @import 'layout/topbar';
-@import 'layout/login';
 @import 'layout/main';
+@import 'layout/submenu';
 @import 'layout/header';
-@import 'layout/breadcrumbs';
 @import 'layout/content';
-@import 'layout/footer';
+@import 'layout/breadcrumbs';
 @import 'layout/fastsearch';
 @import 'layout/language';
-@import 'layout/navigation';
 @import 'layout/sidebar';
-@import 'layout/submenu';
+@import 'layout/footer';
+@import 'layout/colophon';
 
 @import 'components/drwiki';
 @import 'components/felogin';
@@ -31,6 +32,7 @@
 @import 'components/irfaq';
 
 @import 'pages/home';
+@import 'pages/faq';
 @import 'pages/sitemap';
 
 @import 'shame';

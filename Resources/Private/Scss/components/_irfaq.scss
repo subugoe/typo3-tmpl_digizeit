@@ -1,106 +1,37 @@
 .tx-irfaq-pi1 {
-	ul {
-		&.tx-irfaq-questions-list {
-			margin-bottom: 75px;
-		}
-
-		li a {
-			color: black;
-			text-decoration: none;
-
-			&:hover {
-				color: black;
-				text-decoration: underline;
-			}
-
-			p.bodytext {
-				margin: 0;
-				display: inline;
-				font-weight: bold;
-			}
-		}
-	}
-
-	.tx-irfaq-answer {
-		margin-bottom: 10px;
-
-		h4 p.bodytext {
-			margin: 0;
-			display: inline;
-			font-weight: bold;
-		}
-	}
-
-	dd {
-		margin-left: 0;
-
-		p {
-			margin-top: 0;
-		}
-	}
-
-	.additional-info {
-		border-top: 2px solid $color-gray-lighter;
-		margin-bottom: 10px;
-	}
-
-	.irfaq-related-faq,
-	.irfaq-related-links {
-		padding-top: 0;
-		padding-bottom: 0;
-		margin-top: 3px;
-		margin-bottom: 15px;
-	}
-
-	dt p {
-		font-weight: bold;
-		margin: 0;
-		display: inline;
-	}
-
-	dl {
-		@extend .panel-group;
-
-		.item {
-			@extend .panel;
-			@extend .panel-default;
-
-			dt {
-				@extend .panel-title;
-				@extend .panel-heading;
-
-			}
-
-			dd {
-				@extend .panel-body;
-				@extend .panel-collapse;
-				@extend .collapse;
-				@extend .in;
-			}
-		}
-
-	}
 }
 
-.tx-irfaq-cleaner {
-	clear: left;
-	height: 1px;
+.tx-irfaq-item {
+	border-bottom: 1px dotted $border-color;
 }
 
 .tx-irfaq-dynheader {
 	cursor: pointer;
-	color: $color-red-dark;
+	display: table;
+	table-layout: fixed;
+	font-weight: bold;
+	padding: ($font-size-base * $line-height-base / 3) 0;
+	width: 100%;
+	&:focus,
+	&:hover,
+	&:active {
+		color: $link-hover-color;
+	}
+	.fa {
+		@include fa-icon;
+		display: table-cell;
+		width: 1.5em;
+	}
 }
 
-.tx-irfaq-dynans-hidden {
-	display: none;
+.tx-irfaq-toggle-plus .fa {
+	@extend .fa-plus-square;
 }
 
-.tx-irfaq-dynans-visible {
-	display: inline;
+.tx-irfaq-toggle-minus .fa {
+	@extend .fa-minus-square;
 }
 
-dt.tx-irfaq-pi1 {
-	color: $color-red-dark;
-	text-decoration: none;
+.tx-irfaq-dynans {
+	padding: ($font-size-base * $line-height-base * 2/3) 0 0
 }

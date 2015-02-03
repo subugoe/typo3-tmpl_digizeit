@@ -45,7 +45,7 @@ temp.breadcrumb.5 = TEXT
 			1 = TMENU
 			1 {
 				NO.doNotLinkIt = |*| 0 |*| 1
-				NO.allWrap = |*| <dd>|<span class="breadsep">&gt;</span></dd> |*| <dd>|</dd>
+				NO.allWrap = |*| <dd>|<span class="breadsep fa fa-chevron-right"></span></dd> |*| <dd>|</dd>
 			}
 		}
 

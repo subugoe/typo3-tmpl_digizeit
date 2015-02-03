@@ -1,15 +1,19 @@
 #content {
-	@include make-md-column(7);
-	top: 0;
-	left: 0;
-	margin: 0 0 0 65px;
+	@include make-md-column(8);
 	color: $color-gray-darker;
 	min-height: 30px;
-	padding: 0 0 50px;
+	padding: 0 $gutter * 2;
+
+	@media (max-width: $screen-sm-max) {
+		padding: 0 $gutter;
+	}
+
+	@media (max-width: $screen-xs-max) {
+		padding: 0;
+	}
 
 	.full-width {
-		@include make-md-column(8);
-		padding: 0;
+		@include make-md-column(12);
 	}
 }
 
@@ -19,7 +23,7 @@
 	left: 0;
 	width: 900px;
 	height: 1px;
-	border-top: 1px dotted $color-gray;
+	border-top: $border;
 	clear: left;
 }
 
@@ -28,12 +32,12 @@ h3 {
 	font-style: italic;
 	color: $color-red-dark;
 	padding: 0 0 5px;
-	border-bottom: 1px dotted $color-gray-light;
+	border-bottom: $border;
 }
 
 #blog {
 	.entry {
-		border-bottom: 1px dotted $color-gray-light;
+		border-bottom: $border;
 		padding: 10px 0;
 
 		h4 {
@@ -63,7 +67,7 @@ h3 {
 	right: 10px;
 	width: 35px;
 	height: 40px;
-	background: url('/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/newsicon.gif') no-repeat 0 0;
+	background: url('#{$img-path}newsicon.gif') no-repeat 0 0;
 }
 
 #hidebib
@@ -77,11 +81,11 @@ h3 {
 	bottom: 10px;
 	width: 180px;
 	height: 10px;
-	background: url('/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/hidebib.gif') no-repeat 0 0;
+	background: url('#{$img-path}hidebib.gif') no-repeat 0 0;
 }
 
 #showbib {
-	background-image: url('/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/showbib.gif');
+	background-image: url('#{$img-path}showbib.gif');
 }
 
 #lock {
@@ -103,7 +107,7 @@ h3 {
 		clear: left;
 		margin: 20px 0 0;
 		padding: 0 0 6px 12px;
-		background: url('/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/bgwrapper.png') repeat-y;
+		background: url('#{$img-path}bgwrapper.png') repeat-y;
 	}
 
 	.closebook,
@@ -116,11 +120,11 @@ h3 {
 		text-indent: -2000px;
 		overflow: hidden;
 		border-bottom: 0;
-		background: url('/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/closebook.gif') no-repeat 0 0;
+		background: url('#{$img-path}closebook.gif') no-repeat 0 0;
 	}
 
 	.openbook {
-		background-image: url('/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/openbook.gif');
+		background-image: url('#{$img-path}openbook.gif');
 	}
 
 	.siteno {
@@ -160,12 +164,12 @@ h3 {
 	left: 0;
 	width: 950px;
 	height: 20px;
-	background: url('/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/objsep.png') no-repeat top center;
+	background: url('#{$img-path}objsep.png') no-repeat top center;
 }
 
 .objecthead {
 	max-width: 824px;
-	border-bottom: 1px dotted $color-gray-light;
+	border-bottom: $border;
 	padding: 4px 20px 3px 75px;
 	margin: 0 0 0 2px;
 	font-weight: bold;
@@ -186,7 +190,7 @@ h3 {
 	position: relative;
 	width: 950px;
 	height: 20px;
-	background: url('/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/objsep.png') no-repeat top center;
+	background: url('#{$img-path}objsep.png') no-repeat top center;
 }
 
 #address {
@@ -203,7 +207,7 @@ h3 {
 	}
 
 	p.description {
-		border-bottom: 1px dotted $color-gray;
+		border-bottom: $border;
 	}
 }
 
@@ -304,7 +308,7 @@ img {
 }
 
 .list li {
-	background: url('/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/listelement.gif') no-repeat 0 5px;
+	background: url('#{$img-path}listelement.gif') no-repeat 0 5px;
 	padding: 0 0 0 $gutter;
 	line-height: 1.6em;
 }
@@ -318,11 +322,15 @@ a.objecthead:hover {
 	color: white;
 	background: white;
 	border: 0 solid white;
-	border-bottom: 1px dotted $color-gray-light;
+	border-bottom: $border;
 }
 
 textarea:focus {
 	background: $color-gray-lightest;
 	color: $color-gray-darker;
 	border-color: $color-gray-dark;
+}
+
+.news-list-morelink {
+	float: right;
 }

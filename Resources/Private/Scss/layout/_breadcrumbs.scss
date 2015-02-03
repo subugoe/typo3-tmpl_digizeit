@@ -1,48 +1,19 @@
 // TODO: Move #welcome
 
-#welcome,
 #breadcrumb {
-	position: relative;
-	width: 100%;
 	background: $color-brown-lighter;
-	margin-bottom: 10px;
+	line-height: 40px;
+	padding: 0 .5em;
 
-	dd {
-		color: $color-red-dark;
+	dd, dt {
+		display: inline-block;
+		font-weight: normal;
+		margin-right: .5em;
 	}
 
-	dl {
-		position: absolute;
-		top: 7px;
-		left: 60px;
-
-		dd, dt {
-			float: left;
-			margin: 0 2px 0 0;
-		}
-	}
-
-	a {
-		border-bottom: 0;
-		font-weight: bold;
-		color: $color-gray-darker;
-		padding: 1px 2px;
-
-		&:hover {
-			border-bottom: 0;
-			background: $color-gray-darker;
-			font-weight: bold;
-			color: white;
-			padding: 1px 2px;
-		}
-	}
-}
-
-#breadcrumb {
-	height: 30px;
-
-	dl dd .breadsep {
-		margin: 0 0 0 2px;
-		color: $color-gray-darker;
+	.breadsep {
+		color: $color-gray-dark;
+		font-size: $font-size-small;
+		margin-left: .5em;;
 	}
 }

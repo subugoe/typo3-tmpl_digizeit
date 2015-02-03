@@ -4,7 +4,7 @@
 	line-height: 40px;
 	display: block;
 	padding: 0 $gutter;
-	top: $topbar-height + $header-height - 50px;
+	top: $topbar-height + $header-height - 25px;
 	width: 100%;
 	z-index: 11;
 
@@ -32,10 +32,15 @@
 	}
 
 	li {
-		border-right: 1px dotted white;
+		border-right: $border;
 		float: left;
 		display: block;
 		width: auto;
+
+		&:last-child {
+			border-right: 0;
+		}
+
 		@media (max-width: $screen-xs-max) {
 			border-right: 0;
 			border-bottom: 1px solid $color-gray-dark;
@@ -59,15 +64,18 @@
 			text-align: left;
 		}
 
+		&.act {
+			background: url('#{$img-path}nav_act.svg') center bottom no-repeat;
+			@media (max-width: $screen-sm-max) {
+				background: $color-gray-dark;
+			}
+		}
+
 		&:hover {
 			background: $color-brown-lighter;
 			border: 0;
 			color: $color-red-dark;
 			height: 100%;
-		}
-
-		&.act {
-			@include wedge('bottom', 'up', 20px, 10px);
 		}
 	}
 }

@@ -38,8 +38,10 @@ body {
 	*/
 }
 
-h4, h5, h6 {
-	margin: ($line-height-base * $font-size-base) 0
+h4,
+h5,
+h6 {
+	margin: ($line-height-base * $font-size-base) 0;
 }
 
 p,

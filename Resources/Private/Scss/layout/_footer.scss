@@ -31,15 +31,3 @@
 	}
 
 }
-
-#totop {
-	@include button;
-	display: none;
-	font-size: $font-size-large;
-	position: fixed;
-	right: $gutter;
-	bottom: 90px;
-	width: $topbar-height-xs;
-	height: $topbar-height-xs;
-	z-index: 15;
-}

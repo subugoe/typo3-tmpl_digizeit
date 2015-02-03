@@ -6,8 +6,8 @@
 	z-index: 9;
 
 	.toggle-buttons {
+		@extend .visible-xs;
 		background: $background-color;
-		@extend .visible-xs
 	}
 
 	button {

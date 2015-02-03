@@ -36,6 +36,7 @@ h3 {
 }
 
 #blog {
+
 	.entry {
 		border-bottom: $border;
 		padding: 10px 0;
@@ -148,11 +149,11 @@ h3 {
 		margin-right: 10px;
 	}
 
-	a.sitepdf:hover {
+	.sitepdf:hover {
 		background: transparent;
 	}
 
-	img.pdficon {
+	.pdficon {
 		vertical-align: middle;
 		padding-bottom: 2px;
 	}
@@ -206,7 +207,7 @@ h3 {
 		line-height: 1.6em;
 	}
 
-	p.description {
+	.description {
 		border-bottom: $border;
 	}
 }
@@ -313,7 +314,7 @@ img {
 	line-height: 1.6em;
 }
 
-a.objecthead:hover {
+.objecthead:hover {
 	background: none;
 	color: $color-red;
 }

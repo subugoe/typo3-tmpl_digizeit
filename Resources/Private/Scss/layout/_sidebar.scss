@@ -6,8 +6,9 @@
 	@media (max-width: $screen-sm-max) {
 		background: none;
 		padding: 0;
+
 		li br {
-			display: none;
+			display: none; // TODO: This should be removed completely
 		}
 	}
 

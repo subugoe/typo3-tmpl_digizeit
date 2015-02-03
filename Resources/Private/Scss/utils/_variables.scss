@@ -1,25 +1,3 @@
-// Own vars
-$border-radius-base: 0;
-$link-hover-decoration: none;
-
-// Fonts
-$font-family-serif: 'Droid Serif', Georgia, serif;
-$font-family-sans-serif: 'Droid Sans', Helvetica, Arial, sans-serif;
-$font-monospace: Courier, monospace;
-$font-size-base: 16px;
-$line-height-base: 1.5;
-$font-path: '../Fonts/';
-$fa-font-path: '../Fonts'; // Required by Font Awesome. Note the lack of a trailing slash.
-$img-path: '/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/';
-$border-height: 100px; // Height of the SVG used for the top and bottom "wedges"
-
-// Layout
-$topbar-height: 95px;
-$topbar-height-xs: 55px;
-$header-height: 175px;
-$gutter: 15px;
-$wedge-height: 25px; // Inner height of the wedge that has to be filled with another background
-
 // Colors: reds
 $color-red-darker: #600;
 $color-red-dark: #900;
@@ -65,5 +43,25 @@ $link-hover-color: $color-red-dark;
 $off-canvas-color: $color-gray-darker;
 $text-color: $color-gray-darker;
 
+// Fonts
+$font-family-serif: 'Droid Serif', Georgia, serif;
+$font-family-sans-serif: 'Droid Sans', Helvetica, Arial, sans-serif;
+$font-monospace: Courier, monospace;
+$font-size-base: 16px;
+$line-height-base: 1.5;
+$font-path: '../Fonts/';
+$fa-font-path: '../Fonts'; // Required by Font Awesome. Note the lack of a trailing slash.
+$img-path: '/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/';
+
+// Layout
+$topbar-height: 95px;
+$topbar-height-xs: 55px;
+$header-height: 175px;
+$gutter: 15px;
+$border-height: 100px; // Height of the SVG used for the top and bottom "wedges"
+$wedge-height: 25px; // Inner height of the wedge that has to be filled with another background
+
 // Base styles
 $border: 1px dotted $border-color;
+$border-radius-base: 0;
+$link-hover-decoration: none;

@@ -15,6 +15,7 @@
 		right: 0;
 		width: 61.8%;
 		z-index: 0;
+
 		&.active {
 			z-index: 1;
 		}
@@ -43,9 +44,11 @@
 
 	.form-group {
 		margin-right: .5em;
+
 		@media (max-width: $screen-xs-max) {
 			margin-right: 0;
 		}
+
 		input {
 			@include input('dark');
 		}

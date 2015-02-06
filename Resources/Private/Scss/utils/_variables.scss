@@ -55,11 +55,14 @@ $img-path: '/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/';
 
 // Layout
 $topbar-height: 95px;
-$topbar-height-xs: 55px;
+$topbar-height-small: 55px;
 $header-height: 175px;
 $gutter: 15px;
 $border-height: 100px; // Height of the SVG used for the top and bottom "wedges"
 $wedge-height: 25px; // Inner height of the wedge that has to be filled with another background
+$grid-gutter-width: $gutter * 2;
+$container-sm: 100%;
+$line-height: $line-height-base * $font-size-base; // While $line-height-base is unitless, $line-height has the same unit as $font-size-base (here: px).
 
 // Base styles
 $border: 1px dotted $border-color;

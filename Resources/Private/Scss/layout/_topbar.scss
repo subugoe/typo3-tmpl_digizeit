@@ -6,8 +6,11 @@
 	z-index: 9;
 
 	.toggle-buttons {
-		@extend .visible-xs;
 		background: $background-color;
+		display: none;
+		@media (max-width: $screen-sm-max) {
+			display: block;
+		}
 	}
 
 	button {
@@ -17,14 +20,14 @@
 		display: none;
 		float: left;
 		font-size: $font-size-large;
-		width: $topbar-height-xs;
-		height: $topbar-height-xs;
+		width: $topbar-height-small;
+		height: $topbar-height-small;
 
 		+ button {
 			float: right;
 		}
 
-		@media (max-width: $screen-xs-max) {
+		@media (max-width: $screen-sm-max) {
 			display: inline-block;
 		}
 	}

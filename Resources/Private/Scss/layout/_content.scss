@@ -8,12 +8,17 @@
 		padding: 0 $gutter;
 	}
 
-	@media (max-width: $screen-xs-max) {
+	@media (max-width: $screen-sm-max) {
 		padding: 0;
 	}
 
 	.full-width {
 		@include make-md-column(12);
+	}
+
+	ul {
+		list-style: disc outside;
+		margin-left: 2em;
 	}
 }
 

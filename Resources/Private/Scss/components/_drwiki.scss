@@ -166,11 +166,11 @@
 		color: $color-gray-dark;
 	}
 
-	sup.reference:target {
+	.reference:target {
 		background-color: $color-blue-light;
 	}
 
-	input[type=text]:focus {
+	[type=text]:focus {
 		background: $color-gray-lightest;
 		color: $color-gray-darker;
 		border-color: $color-gray-dark;

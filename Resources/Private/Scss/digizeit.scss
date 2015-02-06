@@ -1,4 +1,4 @@
-@import 'utils/variables'; // TODO: Pulled up for FontAwesome, please check
+@import 'utils/variables';
 
 @import 'vendors/bootstrap';
 @import 'vendors/font-awesome';
@@ -24,6 +24,7 @@
 @import 'layout/sidebar';
 @import 'layout/footer';
 @import 'layout/colophon';
+@import 'layout/welcome';
 
 @import 'components/drwiki';
 @import 'components/felogin';
@@ -31,8 +32,6 @@
 @import 'components/goobit3';
 @import 'components/irfaq';
 
-@import 'pages/home';
-@import 'pages/faq';
 @import 'pages/sitemap';
 
 @import 'shame';

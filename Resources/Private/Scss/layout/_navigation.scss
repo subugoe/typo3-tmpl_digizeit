@@ -8,7 +8,7 @@
 	width: 100%;
 	z-index: 11;
 
-	@media (max-width: $screen-xs-max) {
+	@media (max-width: $screen-sm-max) {
 		height: 100%;
 		background: $off-canvas-color;
 		padding: 0;
@@ -26,7 +26,7 @@
 		float: left;
 		padding: 10px 0;
 		width: 100%;
-		@media (max-width: $screen-xs-max) {
+		@media (max-width: $screen-sm-max) {
 			background: none;
 			padding: 0;
 		}
@@ -42,7 +42,7 @@
 			border-right: 0;
 		}
 
-		@media (max-width: $screen-xs-max) {
+		@media (max-width: $screen-sm-max) {
 			border-right: 0;
 			border-bottom: 1px solid $color-gray-dark;
 			float: none;
@@ -59,7 +59,7 @@
 		font-family: $font-family-sans-serif;
 		margin: -10px 0;
 		padding: 0 $gutter;
-		@media (max-width: $screen-xs-max) {
+		@media (max-width: $screen-sm-max) {
 			margin: 0;
 			padding: $gutter/2 $gutter;
 			text-align: left;
@@ -68,7 +68,7 @@
 		&.act {
 			background: url('#{$img-path}nav_act.svg') center bottom no-repeat;
 			@media (max-width: $screen-sm-max) {
-				background: $color-gray-dark;
+				background: $color-brown-dark;
 			}
 		}
 

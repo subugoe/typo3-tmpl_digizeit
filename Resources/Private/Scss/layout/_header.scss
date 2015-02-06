@@ -5,23 +5,25 @@
 	margin-top: -$wedge-height;
 	padding-top: $wedge-height;
 	position: relative;
-	@media (max-width: $screen-xs-max) {
+	@media (max-width: $screen-sm-max) {
 		height: 150px;
 	}
 
 	h1 {
 		margin: 0;
-		position: absolute;
-		top: $gutter * 4;
+		position: relative;
+		top: $gutter * 2;
 		left: $gutter * 2;
-		height: 80px;
+		height: 60px;
 		width: 400px;
-		//background: url('#{$img-path}digizeit_logo.png') no-repeat 0 0;
-		background: url('#{$img-path}digizeit-logo.svg') no-repeat 0 0;
-		background-size: 400px;
+		background: url('#{$img-path}digizeit-logo.svg') 0 bottom no-repeat;
+		background-size: contain;
 		text-indent: -9999px;
 		overflow: hidden;
-		border-bottom: 0;
+		@media (max-width: $screen-sm-max) {
+			left: 5%;
+			max-width: 90%;
+		}
 	}
 
 	.tagline {

@@ -23,12 +23,7 @@
 		border-bottom: 1px dotted $color-gray-light;
 	}
 
-	a {
-		border: 0;
-		white-space: normal;
-	}
-
-	div.shadow {
+	.shadow {
 		float: left;
 		background-color: $color-gray-light;
 		padding: 0;
@@ -162,22 +157,37 @@
 }
 
 #tx-goobit3-browse {
-	ul {
-		ul {
-			font-size: 14px;
-			font-weight: bold;
-			line-height: 20px;
+
+	li {
+		@include clearfix;
+		padding-left: 1.5em;
+		position: relative;
+		@media (max-width: $screen-sm-max) {
+			margin-bottom: $line-height / 2;
 		}
 
-		li.tx-goobit3-browse_browsecollection {
-			padding-bottom: 5px;
-			display: table-row;
+		a {
+			display: block;
+			padding-right: 1.5em;
+			&:hover {
+				border: 0;
+			}
 		}
-	}
 
-	a {
-		border: 0;
-		display: table-cell;
+		.rss {
+			padding: 0;
+			position: absolute;
+			right: 0;
+			top: round($line-height / 5);
+		}
+
+		&::before {
+			color: $color-gray-light;
+			content: ''; // chevron-right
+			float: left;
+			font-family: 'FontAwesome';
+			margin-left: -1.5em;
+		}
 	}
 }
 
@@ -311,7 +321,7 @@
 		font-weight: bold;
 	}
 
-	a.maintitle_pdf:hover {
+	.maintitle_pdf:hover {
 		background: none;
 	}
 }
@@ -361,7 +371,7 @@
 		}
 	}
 
-	span.highlight {
+	.highlight {
 		color: $color-red-dark;
 		font-weight: bold;
 		text-decoration: none;

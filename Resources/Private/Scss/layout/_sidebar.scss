@@ -36,7 +36,6 @@
 		background: url('#{$img-path}sidebarborder_top.gif') no-repeat 0 0;
 		@media (max-width: $screen-sm-max) {
 			display: none;
-			padding: 0 $gutter;
 		}
 	}
 
@@ -49,7 +48,7 @@
 		bottom: 0;
 		background: url('#{$img-path}sidebarborder_end.gif') no-repeat 0 0;
 		@media (max-width: $screen-sm-max) {
-			padding: 0 $gutter;
+			display: none;
 		}
 	}
 }

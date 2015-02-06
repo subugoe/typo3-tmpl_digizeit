@@ -3,8 +3,8 @@
 	position: relative;
 	z-index: 2;
 
-	@media (max-width: $screen-xs-max) {
+	@media (max-width: $screen-sm-max) {
 		background: $background-color;
-		padding-top: $topbar-height-xs;
+		padding-top: $topbar-height-small;
 	}
 }

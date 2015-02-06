@@ -12,9 +12,12 @@
 		margin-right: .5em;
 	}
 
+	dt {
+		color: $color-gray-dark;
+	}
+
 	.breadsep {
 		color: $color-gray-dark;
-		font-size: $font-size-small;
 		margin-left: .5em;
 	}
 }

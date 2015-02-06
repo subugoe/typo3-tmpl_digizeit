@@ -21,7 +21,7 @@ body {
 		height: 320px;
 		background: url('#{$img-path}bgicon.svg') no-repeat top left;
 		z-index: 9;
-		@media (max-width: $screen-xs-max) {
+		@media (max-width: $screen-sm-max) {
 			display: none;
 		}
 	}
@@ -41,14 +41,14 @@ body {
 h4,
 h5,
 h6 {
-	margin: ($line-height-base * $font-size-base) 0;
+	margin: $line-height 0;
 }
 
 p,
 ol,
 ul,
 table {
-	margin-bottom: $line-height-base * $font-size-base;
+	margin-bottom: $line-height;
 }
 
 a {

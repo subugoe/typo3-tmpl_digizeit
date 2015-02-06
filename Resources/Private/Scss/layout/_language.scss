@@ -4,6 +4,12 @@
 	right: $gutter * 2;
 	z-index: 9;
 
+	@media (max-width: $screen-sm-max) {
+		top: -$wedge-height - $gutter;
+		left: $topbar-height-small + $gutter;
+		right: auto;
+	}
+
 	a {
 		color: white;
 		display: inline-block;
@@ -13,6 +19,7 @@
 		transition: all .5s;
 
 		&:hover {
+			border: 0;
 			color: $color-red-dark;
 			background: white;
 		}

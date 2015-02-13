@@ -21,16 +21,17 @@
 		}
 	}
 
-	a,
-	a:hover,
-	a:visited {
+	a {
+		border: 0;
 		color: $color-brown-light;
 		text-decoration: none;
-	}
 
-	a:hover {
-		border-color: white;
-		color: white;
+		&:active,
+		&:focus,
+		&:hover {
+			border-color: white;
+			color: white;
+		}
 	}
 
 	form {
@@ -49,13 +50,14 @@
 			margin-right: 0;
 		}
 
-		input {
+		[type=text],
+		[type=password] {
 			@include input('dark');
 		}
 	}
 
 	.loginsubmit {
-		@include button();
+		@include button;
 	}
 
 	label,

@@ -35,7 +35,8 @@ $color-gray-light: #ccc;
 $color-gray-lighter: #e6e6e6;
 $color-gray-lightest: #fafafa;
 
-// Named colors
+// Semantic colors
+$brand-primary: $color-red-dark;
 $background-color: $color-gray-dark;
 $border-color: $color-gray;
 $link-color: $color-red-darker;
@@ -58,11 +59,18 @@ $topbar-height: 95px;
 $topbar-height-small: 55px;
 $header-height: 175px;
 $gutter: 15px;
-$border-height: 100px; // Height of the SVG used for the top and bottom "wedges"
+$border-width: 1px;
+$wedge-wrapper-height: 100px; // Height of the SVG used for the top and bottom "wedges"
 $wedge-height: 25px; // Inner height of the wedge that has to be filled with another background
 $grid-gutter-width: $gutter * 2;
 $container-sm: 100%;
 $line-height: $line-height-base * $font-size-base; // While $line-height-base is unitless, $line-height has the same unit as $font-size-base (here: px).
+
+$btn-default-color: $text-color;
+$btn-default-bg: $color-gray-lightest;
+$btn-default-border: $color-gray;
+
+$time-short: .4s;
 
 // Base styles
 $border: 1px dotted $border-color;

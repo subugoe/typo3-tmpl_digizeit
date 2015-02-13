@@ -1,5 +1,4 @@
 #header {
-	//background: url('#{$img-path}headerpic.png') no-repeat 0 0;
 	background: linear-gradient(60deg, $color-red-darker, $color-red-dark);
 	height: $header-height + $wedge-height;
 	margin-top: -$wedge-height;
@@ -20,9 +19,16 @@
 		background-size: contain;
 		text-indent: -9999px;
 		overflow: hidden;
+
 		@media (max-width: $screen-sm-max) {
 			left: 5%;
 			max-width: 90%;
+		}
+
+		a {
+			border: 0;
+			display: block;
+			height: 100%;
 		}
 	}
 

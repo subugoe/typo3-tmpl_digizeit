@@ -1,16 +1,21 @@
 @mixin hr {
-	color: $color-gray-darker;
-	background-color: black;
-	height: 1px;
+	background: none;
+	height: $line-height - 1px;
 	border: 0;
-	margin-top: 3px;
-	margin-bottom: 3px;
+	border-bottom: $border-width dotted $border-color;
+	margin: 0 0 $line-height;
 }
 
-@mixin button() {
+@mixin button {
 	@extend .btn;
 	@extend .btn-default;
-	background: $color-gray-lighter;
+	background: $color-gray-lightest;
+
+	&:active,
+	&:focus,
+	&:hover {
+		color: $link-hover-color;
+	}
 }
 
 @mixin input($type: 'dark') {

@@ -10,21 +10,22 @@
 @import 'base/fonts';
 @import 'base/common';
 
-@import 'layout/navigation';
-@import 'layout/login';
-@import 'layout/wrapper';
-@import 'layout/topbar';
-@import 'layout/main';
-@import 'layout/submenu';
-@import 'layout/header';
-@import 'layout/content';
+@import 'layout/blog';
 @import 'layout/breadcrumbs';
-@import 'layout/fastsearch';
-@import 'layout/language';
-@import 'layout/sidebar';
-@import 'layout/footer';
 @import 'layout/colophon';
+@import 'layout/content';
+@import 'layout/fastsearch';
+@import 'layout/footer';
+@import 'layout/header';
+@import 'layout/language';
+@import 'layout/login';
+@import 'layout/main';
+@import 'layout/navigation';
+@import 'layout/sidebar';
+@import 'layout/submenu';
+@import 'layout/topbar';
 @import 'layout/welcome';
+@import 'layout/wrapper';
 
 @import 'components/drwiki';
 @import 'components/felogin';

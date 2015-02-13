@@ -1,13 +1,12 @@
 #submenu,
 .csc-menu {
-	margin: 0 ($gutter * 2);
 	overflow: hidden;
 
 	li {
 		border-right: $border;
 		float: left;
-		margin: 0 .5em 1em 0;
-		padding-right: .5em;
+		margin: 0 .75em 0 0;
+		padding-right: .75em;
 
 		&:last-child {
 			border-right: 0;
@@ -19,11 +18,24 @@
 	}
 
 	a {
+		border-bottom: $border-width solid $color-gray-light; // TODO: Duplicate of #content
 		font-weight: bold;
+
+		&:hover {
+			border-color: $link-hover-color;
+		}
 
 		&.sub_act {
 			color: $color-gray;
 		}
+	}
+}
+
+#submenu {
+	padding: 0 ($gutter * 2);
+
+	@media (max-width: $screen-sm-max) {
+		padding: 0;
 	}
 }
 

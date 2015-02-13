@@ -1,9 +1,12 @@
-// TODO: Move #welcome
-
 #breadcrumb {
 	background: $color-brown-lighter;
 	line-height: 40px;
+	margin-bottom: $line-height;
 	padding: 0 .5em;
+
+	dl {
+		margin: 0;
+	}
 
 	dd,
 	dt {

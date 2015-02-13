@@ -5,15 +5,19 @@
 	padding: 0 $gutter * 2;
 
 	@media (max-width: $screen-sm-max) {
-		padding: 0 $gutter;
-	}
-
-	@media (max-width: $screen-sm-max) {
 		padding: 0;
 	}
 
-	.full-width {
-		@include make-md-column(12);
+	&.full-width {
+		width: 100%;
+	}
+
+	a {
+		border-bottom: $border-width solid $color-gray-light;
+
+		&:hover {
+			border-color: $link-hover-color;
+		}
 	}
 
 	ul {
@@ -30,41 +34,6 @@
 	height: 1px;
 	border-top: $border;
 	clear: left;
-}
-
-h3 {
-	font-family: $font-family-serif;
-	font-style: italic;
-	color: $color-red-dark;
-	padding: 0 0 5px;
-	border-bottom: $border;
-}
-
-#blog {
-
-	.entry {
-		border-bottom: $border;
-		padding: 10px 0;
-
-		h4 {
-			color: $color-red-dark;
-
-			.date {
-				font-weight: normal;
-				color: $color-gray-dark;
-			}
-
-			.datesep {
-				width: 1px;
-				color: white;
-				border-right: 1px solid $color-gray-dark;
-			}
-		}
-	}
-
-	p {
-		margin: 0;
-	}
 }
 
 #newsicon {
@@ -322,13 +291,6 @@ img {
 .objecthead:hover {
 	background: none;
 	color: $color-red;
-}
-
-#mydigizeit_filter hr {
-	color: white;
-	background: white;
-	border: 0 solid white;
-	border-bottom: $border;
 }
 
 textarea:focus {

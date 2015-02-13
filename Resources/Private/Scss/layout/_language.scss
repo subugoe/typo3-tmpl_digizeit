@@ -11,12 +11,12 @@
 	}
 
 	a {
+		border: 0;
 		color: white;
 		display: inline-block;
 		line-height: 1;
 		text-decoration: none;
-		padding: 5px;
-		transition: all .5s;
+		padding: ($gutter / 3);
 
 		&:hover {
 			border: 0;

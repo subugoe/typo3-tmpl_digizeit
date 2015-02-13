@@ -20,28 +20,25 @@ body {
 		width: 380px;
 		height: 320px;
 		background: url('#{$img-path}bgicon.svg') no-repeat top left;
+		pointer-events: none; // TODO: Only works in IE>10. Possible solution: Make the right part of the tilted background image a part of the top wedge.
 		z-index: 9;
 		@media (max-width: $screen-sm-max) {
 			display: none;
 		}
 	}
+}
 
-	/*
-	&::after {
-		top: 160px;
-		right: -60px - $gutter;
-		width: 75px;
-		height: 114px;
-		background: url('#{$img-path}linebook.gif') no-repeat 0 0;
-		position: absolute;
-	}
-	*/
+h3 {
+	font-family: $font-family-serif;
+	font-style: italic;
+	color: $color-red-dark;
+	margin: $line-height 0;
 }
 
 h4,
 h5,
 h6 {
-	margin: $line-height 0;
+	margin: 0 0 $line-height;
 }
 
 p,
@@ -52,19 +49,43 @@ table {
 }
 
 a {
-	border-color: $link-hover-color;
+	border-bottom: $border-width solid $color-gray-light;
 	color: $link-color;
 	text-decoration: none;
+	transition: border-color $time-short, color $time-short, background-color $time-short;
 
 	&:hover {
-		border-bottom: 1px solid;
+		border-color: $link-hover-color;
 		color: $link-hover-color;
 	}
+}
+
+hr {
+	@include hr;
+}
+
+input {
+	background: $color-gray-lightest;
+	border: 1px solid $color-gray;
+
+	&:focus {
+		border-color: $link-color;
+	}
+}
+
+button,
+[type=button],
+[type=submit] {
+	@include button;
 }
 
 ul {
 	list-style-type: none;
 	padding: 0;
+}
+
+li {
+	margin-bottom: ($line-height / 2);
 }
 
 strong {

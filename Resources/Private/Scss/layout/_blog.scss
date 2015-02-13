@@ -1,0 +1,29 @@
+#blog {
+
+	.entry {
+		border-bottom: $border;
+		margin-bottom: $line-height;
+		padding-bottom: $line-height - $border-width;
+
+		h4 {
+			margin-top: 0;
+			color: $color-red-dark;
+
+			.date {
+				font-weight: normal;
+				color: $color-gray-dark;
+			}
+
+			.datesep {
+				border-right: 1px solid #666;
+				display: inline-block;
+				margin: 0 .5em;
+				text-indent: -9999em;
+			}
+		}
+	}
+
+	p {
+		margin: 0;
+	}
+}

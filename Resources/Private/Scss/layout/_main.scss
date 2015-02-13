@@ -15,7 +15,7 @@
 	&::before {
 		background: url('#{$img-path}headborder.svg') no-repeat left top;
 		left: 0;
-		height: 100px;
+		height: $wedge-wrapper-height;
 		width: 100%;
 		top: -85px;
 		z-index: 8;
@@ -25,7 +25,7 @@
 		position: absolute;
 		background: url("#{$img-path}footborder.svg") no-repeat right bottom;
 		left: 0;
-		height: 100px;
+		height: $wedge-wrapper-height;
 		width: 100%;
 		z-index: 8;
 	}

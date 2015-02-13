@@ -18,10 +18,13 @@
 			@extend .col-md-5;
 		}
 
-		input,
+		[type=text],
+		[type=password],
+		[type=file],
 		textarea,
 		select {
 			@extend .form-control;
 		}
+
 	}
 }

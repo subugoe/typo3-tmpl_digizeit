@@ -2,11 +2,12 @@
 	padding: $wedge-height $gutter;
 	position: relative;
 	text-align: right;
-	min-height: $border-height - $gutter;
+	min-height: $wedge-wrapper-height - $gutter;
 	z-index: 9;
 
 	a {
 		background: url("#{$img-path}bydfg.gif") no-repeat right -4px;
+		border: 0;
 		color: $color-brown-light;
 		padding-right: 73px;
 
@@ -23,7 +24,7 @@
 	font-size: $font-size-large;
 	position: fixed;
 	right: $gutter;
-	bottom: $border-height;
+	bottom: $wedge-wrapper-height;
 	width: $topbar-height-small;
 	height: $topbar-height-small;
 	z-index: 15;

@@ -15,7 +15,7 @@
 	a {
 		border-bottom: $border-width solid $color-gray-light;
 
-		&:hover {
+		@include hover {
 			border-color: $link-hover-color;
 		}
 	}

@@ -11,7 +11,7 @@
 		color: $color-brown-light;
 		padding-right: 73px;
 
-		&:hover {
+		@include hover {
 			border-color: white;
 			color: white;
 		}

@@ -26,6 +26,7 @@
 		float: left;
 		padding: 10px $border-width;
 		width: 100%;
+
 		@media (max-width: $screen-sm-max) {
 			background: none;
 			padding: 0;
@@ -61,6 +62,14 @@
 		font-family: $font-family-sans-serif;
 		margin: -10px (-$border-width);
 		padding: 0 ($gutter + $border-width);
+
+		@include hover {
+			background: $color-brown-lighter;
+			border: 0;
+			color: $color-red-dark;
+			height: 100%;
+		}
+
 		@media (max-width: $screen-sm-max) {
 			margin: 0;
 			padding: $gutter/2 $gutter;
@@ -69,18 +78,11 @@
 
 		&.act {
 			background: url('#{$img-path}nav_act.svg') center bottom no-repeat;
+
 			@media (max-width: $screen-sm-max) {
-				background: $color-brown-dark;
+				background: $active-color;
 			}
 		}
 
-		&:active,
-		&:focus,
-		&:hover {
-			background: $color-brown-lighter;
-			border: 0;
-			color: $color-red-dark;
-			height: 100%;
-		}
 	}
 }

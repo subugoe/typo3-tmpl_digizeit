@@ -54,7 +54,7 @@ a {
 	text-decoration: none;
 	transition: border-color $time-short, color $time-short, background-color $time-short;
 
-	&:hover {
+	@include hover {
 		border-color: $link-hover-color;
 		color: $link-hover-color;
 	}
@@ -62,6 +62,10 @@ a {
 
 hr {
 	@include hr;
+}
+
+label {
+	cursor: pointer;
 }
 
 input {

@@ -24,7 +24,7 @@
 		font-weight: bold;
 		color: $color-gray;
 
-		&:hover {
+		@include hover {
 			color: $link-hover-color;
 		}
 	}

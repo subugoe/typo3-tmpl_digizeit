@@ -36,13 +36,15 @@ $color-gray-lighter: #e6e6e6;
 $color-gray-lightest: #fafafa;
 
 // Semantic colors
-$brand-primary: $color-red-dark;
+$brand-primary: $color-red-dark; // Bootstrap override
 $background-color: $color-gray-dark;
 $border-color: $color-gray;
 $link-color: $color-red-darker;
 $link-hover-color: $color-red-dark;
+$active-color: $color-brown-light;
 $off-canvas-color: $color-gray-darker;
 $text-color: $color-gray-darker;
+$text-color-light: $color-gray;
 
 // Fonts
 $font-family-serif: 'Droid Serif', Georgia, serif;
@@ -73,6 +75,7 @@ $btn-default-border: $color-gray;
 $time-short: .4s;
 
 // Base styles
-$border: 1px dotted $border-color;
+//$border: 1px dotted $border-color;
+$border: 1px solid rgba($border-color, .5);
 $border-radius-base: 0;
 $link-hover-decoration: none;

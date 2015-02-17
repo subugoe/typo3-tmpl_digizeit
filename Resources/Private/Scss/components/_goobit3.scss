@@ -76,7 +76,7 @@
 			display: block;
 			padding-right: 1.25em;
 
-			&:hover {
+			@include hover {
 				border: 0;
 			}
 		}
@@ -310,4 +310,36 @@
 	position: absolute;
 	right: 0;
 	top: 0;
+}
+
+.goobit3-pagination {
+	@extend %pagination;
+}
+
+.goobit3-results {
+	display: table;
+	list-style: none;
+	padding: 0;
+}
+
+.goobit3-item {
+	display: table-row;
+}
+
+.goobit3-item-thumbnail {
+	// TODO
+}
+
+.goobit3-item-index {
+	color: $text-color-light;
+	display: table-cell;
+	font-weight: bold;
+	padding-right: 1em;
+	text-align: right;
+}
+
+.goobit3-item-info {
+	display: table-cell;
+	padding-bottom: $line-height;
+	width: 100%;
 }

@@ -6241,6 +6241,36 @@ button.close {
 .fa-meanpath:before {
   content: "\f20c"; }
 
+.goobit3-pagination {
+  font-weight: bold;
+  line-height: 1;
+  text-align: center; }
+  .goobit3-pagination ol {
+    display: inline-block;
+    list-style: none;
+    margin: 24px 0;
+    padding: 0; }
+  .goobit3-pagination li {
+    float: left;
+    padding: 6px 3px; }
+    .goobit3-pagination li + li {
+      border-left: 1px solid rgba(153, 153, 153, 0.5); }
+  .goobit3-pagination a, .goobit3-pagination span {
+    border: 0 !important;
+    border-radius: .25em;
+    float: left;
+    margin: -10px 0;
+    min-width: 2em;
+    padding: .5em; }
+  .goobit3-pagination a:hover, .goobit3-pagination a:focus, .goobit3-pagination a:active {
+    background: #600;
+    color: #fff; }
+  .goobit3-pagination .disabled a, .goobit3-pagination .disabled span {
+    color: #999; }
+  .goobit3-pagination .active a {
+    background: #b4aea3;
+    color: #fff; }
+
 @font-face {
   font-family: 'Droid Sans';
   src: url('../Fonts/DroidSans-webfont.eot');
@@ -6323,7 +6353,7 @@ a {
   color: #600;
   text-decoration: none;
   transition: border-color 0.4s, color 0.4s, background-color 0.4s; }
-  a:hover {
+  a:hover, a:focus, a:active {
     border-color: #900;
     color: #900; }
 
@@ -6334,6 +6364,9 @@ hr {
   border-bottom: 1px dotted #999;
   margin: 0 0 24px; }
 
+label {
+  cursor: pointer; }
+
 input {
   background: #fafafa;
   border: 1px solid #999; }
@@ -6342,7 +6375,7 @@ input {
 
 button, [type=button], [type=submit] {
   background: #fafafa; }
-  button:active, button:focus, button:hover, [type=button]:active, [type=button]:focus, [type=button]:hover, [type=submit]:active, [type=submit]:focus, [type=submit]:hover {
+  button:hover, button:focus, button:active, [type=button]:hover, [type=button]:focus, [type=button]:active, [type=submit]:hover, [type=submit]:focus, [type=submit]:active {
     color: #900; }
 
 ul {
@@ -6362,7 +6395,7 @@ table {
   border-bottom: 1px solid #ddd; }
 
 #blog .entry {
-  border-bottom: 1px dotted #999;
+  border-bottom: 1px solid rgba(153, 153, 153, 0.5);
   margin-bottom: 24px;
   padding-bottom: 23px; }
   #blog .entry h4 {
@@ -6407,7 +6440,7 @@ table {
     border: 0;
     color: #b4aea3;
     padding-right: 73px; }
-    #colophon a:hover {
+    #colophon a:hover, #colophon a:focus, #colophon a:active {
       border-color: white;
       color: white; }
 
@@ -6421,7 +6454,7 @@ table {
   width: 55px;
   height: 55px;
   z-index: 15; }
-  #totop:active, #totop:focus, #totop:hover {
+  #totop:hover, #totop:focus, #totop:active {
     color: #900; }
 
 #content {
@@ -6443,7 +6476,7 @@ table {
     width: 100%; }
   #content a {
     border-bottom: 1px solid #ccc; }
-    #content a:hover {
+    #content a:hover, #content a:focus, #content a:active {
       border-color: #900; }
   #content ul {
     list-style: disc outside;
@@ -6455,7 +6488,7 @@ table {
   left: 0;
   width: 900px;
   height: 1px;
-  border-top: 1px dotted #999;
+  border-top: 1px solid rgba(153, 153, 153, 0.5);
   clear: left; }
 
 #newsicon {
@@ -6542,7 +6575,7 @@ table {
 
 .objecthead, .coll_object ul li {
   max-width: 824px;
-  border-bottom: 1px dotted #999;
+  border-bottom: 1px solid rgba(153, 153, 153, 0.5);
   padding: 4px 20px 3px 75px;
   margin: 0 0 0 2px;
   font-weight: bold; }
@@ -6567,7 +6600,7 @@ table {
   padding: 0 0 7px;
   line-height: 1.6em; }
 #address .description {
-  border-bottom: 1px dotted #999; }
+  border-bottom: 1px solid rgba(153, 153, 153, 0.5); }
 
 .preceeding {
   margin-left: 75px;
@@ -6667,7 +6700,7 @@ textarea:focus {
   right: 0;
   width: 320px;
   height: 68px;
-  border-left: 1px dotted #999; }
+  border-left: 1px solid rgba(153, 153, 153, 0.5); }
   #fastsearch #introtxt {
     position: absolute;
     top: 7px;
@@ -6715,7 +6748,7 @@ textarea:focus {
   #footer ul {
     padding-left: 15px; }
     #footer ul li {
-      border-right: 1px dotted #999;
+      border-right: 1px solid rgba(153, 153, 153, 0.5);
       float: left;
       margin-right: .75em;
       padding-right: .75em; }
@@ -6724,7 +6757,7 @@ textarea:focus {
   #footer a {
     font-weight: bold;
     color: #999; }
-    #footer a:hover {
+    #footer a:hover, #footer a:focus, #footer a:active {
       color: #900; }
 
 #header {
@@ -6775,7 +6808,7 @@ textarea:focus {
     line-height: 1;
     text-decoration: none;
     padding: 5px; }
-    #lang_nav a:hover {
+    #lang_nav a:hover, #lang_nav a:focus, #lang_nav a:active {
       border: 0;
       color: #900;
       background: white; }
@@ -6801,7 +6834,7 @@ textarea:focus {
     border: 0;
     color: #b4aea3;
     text-decoration: none; }
-    #login a:active, #login a:focus, #login a:hover {
+    #login a:hover, #login a:focus, #login a:active {
       border-color: white;
       color: white; }
   #login .login-foot {
@@ -6817,7 +6850,7 @@ textarea:focus {
       background: rgba(0, 0, 0, 0.25); }
   #login .loginsubmit {
     background: #fafafa; }
-    #login .loginsubmit:active, #login .loginsubmit:focus, #login .loginsubmit:hover {
+    #login .loginsubmit:hover, #login .loginsubmit:focus, #login .loginsubmit:active {
       color: #900; }
   #login label, #login p {
     color: #b4aea3; }
@@ -6884,7 +6917,7 @@ textarea:focus {
         background: none;
         padding: 0; } }
   #navigation li {
-    border-right: 1px dotted #999;
+    border-right: 1px solid rgba(153, 153, 153, 0.5);
     display: block;
     float: left;
     margin: 0;
@@ -6907,6 +6940,11 @@ textarea:focus {
     font-family: 'Droid Sans', Helvetica, Arial, sans-serif;
     margin: -10px -1px;
     padding: 0 16px; }
+    #navigation a:hover, #navigation a:focus, #navigation a:active {
+      background: #f3ecd5;
+      border: 0;
+      color: #900;
+      height: 100%; }
     @media (max-width: 991px) {
       #navigation a {
         margin: 0;
@@ -6916,12 +6954,7 @@ textarea:focus {
       background: url('/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/Layout/nav_act.svg') center bottom no-repeat; }
       @media (max-width: 991px) {
         #navigation a.act {
-          background: #6b6355; } }
-    #navigation a:active, #navigation a:focus, #navigation a:hover {
-      background: #f3ecd5;
-      border: 0;
-      color: #900;
-      height: 100%; }
+          background: #b4aea3; } }
 
 #sidebar {
   position: relative;
@@ -6974,7 +7007,7 @@ textarea:focus {
 #submenu, .csc-menu {
   overflow: hidden; }
   #submenu li, .csc-menu li {
-    border-right: 1px dotted #999;
+    border-right: 1px solid rgba(153, 153, 153, 0.5);
     float: left;
     margin: 0 .75em 0 0;
     padding-right: .75em; }
@@ -6985,7 +7018,7 @@ textarea:focus {
   #submenu a, .csc-menu a {
     border-bottom: 1px solid #ccc;
     font-weight: bold; }
-    #submenu a:hover, .csc-menu a:hover {
+    #submenu a:hover, #submenu a:focus, #submenu a:active, .csc-menu a:hover, .csc-menu a:focus, .csc-menu a:active {
       border-color: #900; }
     #submenu a.sub_act, .csc-menu a.sub_act {
       color: #999; }
@@ -7059,7 +7092,7 @@ textarea:focus {
   #tx-drwiki a {
     text-decoration: none;
     border: 0; }
-    #tx-drwiki a:hover {
+    #tx-drwiki a:hover, #tx-drwiki a:focus, #tx-drwiki a:active {
       text-decoration: underline; }
   #tx-drwiki .notCreated {
     color: #f00; }
@@ -7215,7 +7248,7 @@ textarea:focus {
     border: 0;
     display: block;
     padding-right: 1.25em; }
-    #tx-goobit3-browse li a:hover {
+    #tx-goobit3-browse li a:hover, #tx-goobit3-browse li a:focus, #tx-goobit3-browse li a:active {
       border: 0; }
   #tx-goobit3-browse li .rss {
     padding: 0;
@@ -7386,6 +7419,26 @@ textarea:focus {
   right: 0;
   top: 0; }
 
+.goobit3-results {
+  display: table;
+  list-style: none;
+  padding: 0; }
+
+.goobit3-item {
+  display: table-row; }
+
+.goobit3-item-index {
+  color: #999;
+  display: table-cell;
+  font-weight: bold;
+  padding-right: 1em;
+  text-align: right; }
+
+.goobit3-item-info {
+  display: table-cell;
+  padding-bottom: 24px;
+  width: 100%; }
+
 .tx-irfaq-item {
   border-bottom: 1px dotted #999; }
 
@@ -7396,7 +7449,7 @@ textarea:focus {
   font-weight: bold;
   padding: 8px 0;
   width: 100%; }
-  .tx-irfaq-dynheader:focus, .tx-irfaq-dynheader:hover, .tx-irfaq-dynheader:active {
+  .tx-irfaq-dynheader:hover, .tx-irfaq-dynheader:focus, .tx-irfaq-dynheader:active {
     color: #900; }
   .tx-irfaq-dynheader .fa {
     display: inline-block;

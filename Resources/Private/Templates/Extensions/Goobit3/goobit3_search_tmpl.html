@@ -11,7 +11,6 @@
             ###HIDDEN###
             <input  id="searchforminput" size="25" name="formquery" value="###FORM_SQUERY_VALUE###" onKeyup="tx_goobit3_searchproposallist(xajax.getFormValues('tx-goobit3-search_form'))" />
             <input id="send" type="submit" value="&#xf002" title="Suchen"/>
-            <div id="tx-goobit3-search_proposal"></div>
         </form>
         <br />
     </div>
@@ -19,46 +18,55 @@
     <!-- ###SSEARCHFORM### END -->
 
     <div id="tx-goobit3-search">
-        <div align="center">
-            <!-- ###BROWSEBARTOP### START -->
-            <hr />
-                ###RESULTFIRSTPRE###&nbsp;###RESULTPREVPRE###&nbsp;<b>###RESULTLINK###</b>&nbsp;###RESULTNEXTPOST###&nbsp;###RESULTLASTPOST###
-            <!-- ###BROWSEBARTOP### END -->
+        <div class="goobit3-pagination">
+            <ol>
+                <!-- ###BROWSEBARTOP### START -->
+                    ###RESULTFIRSTPRE###
+                    ###RESULTPREVPRE###
+                    ###RESULTLINK###
+                    ###RESULTNEXTPOST###
+                    ###RESULTLASTPOST###
+                <!-- ###BROWSEBARTOP### END -->
+            </ol>
         </div>
 
-        <table>
-    <!-- ###SSEARCHHIT### BEGIN-->
-            <tr><td colspan="3"><hr></td></tr>
-            <tr>
-                <td valign="top" width="31" align="right">
-                    <div class="shadow" id="###THUMBNAILDIVID###">###THUMBNAIL###</div>
+        <ol class="goobit3-results">
+        <!-- ###SSEARCHHIT### BEGIN-->
+            <li class="goobit3-item">
+                <div class="goobit3-item-thumbnail">
+                    <div class="###THUMBNAILDIVID###">###THUMBNAIL###</div>
                     ###THUMBNAILSCRIPT###
-
-                </td>
-                <td valign="top"><b>###COUNT###&nbsp;</b><br /><a class="fa ###LOCKCLASS###" href="/informationen/subskription/" title="###LOCKTEXT###"></a></td>
-                <td width="619" valign="top">
-                    <b>###TITLE###</b>
+                </div>
+                <div class="goobit3-item-index">
+                    ###COUNT###
+                    <a class="fa ###LOCKCLASS###" href="/informationen/subskription/" title="###LOCKTEXT###"></a>
+                </div>
+                <div class="goobit3-item-info">
+                    <div class="title">###TITLE###</div>
                     <div>###CREATORSTRING###</div>
                     <div>###ORDERFIELD###</div>
                      ###FULLTEXTSCRIPT###
-                    <div id="###FULLTEXTID###"></div>
+                    <div class="###FULLTEXTID###"></div>
                     <div>###STRUCTRUN###</div>
-                </td>
-            </tr>
+                </div>
+            </li>
         <!-- ###SSEARCHHIT### END -->
-        </table>
+        </ol>
 
-        <div align="center">
-            <!-- ###BROWSEBARBOTTOM### BEGIN -->
-            <hr />
-            ###RESULTFIRSTPRE###&nbsp;###RESULTPREVPRE###&nbsp;<b>###RESULTLINK###</b>&nbsp;###RESULTNEXTPOST###&nbsp;###RESULTLASTPOST###
-            <!-- ###BROWSEBARBOTTOM### END -->
+        <div class="goobit3-pagination">
+            <ol>
+                <!-- ###BROWSEBARTOP### START -->
+                    ###RESULTFIRSTPRE###
+                    ###RESULTPREVPRE###
+                    ###RESULTLINK###
+                    ###RESULTNEXTPOST###
+                    ###RESULTLASTPOST###
+                <!-- ###BROWSEBARTOP### END -->
+            </ol>
         </div>
     </div>
 </div>
     <div id="sidebar">
-        <h3>&nbsp;</h3>
-        <div id="sidebarlupe"></div>
 
        <!-- ###SSEARCHRIGHT### BEGIN-->
         <h4>###SEARCHFIELDCAPTION###</h4>
@@ -70,17 +78,16 @@
         <h4>###COLCAPTION###</h4>
         <ul>
             <!-- ###SSEARCHDC### BEGIN-->
-            <li><nobr>###DC###</nobr></li>
+            <li>###DC###</li>
             <!-- ###SSEARCHDC### END-->
         </ul>
-        <br /><br />
+
         <h4>###CATCAPTION###</h4>
         <ul>
             <!-- ###SSEARCHDOCSTRCT### BEGIN-->
-            <li><nobr>###DOCSTRCT###</nobr></li>
+            <li>###DOCSTRCT###</li>
             <!-- ###SSEARCHDOCSTRCT### END-->
         </ul>
         <!-- ###SSEARCHRIGHT### END-->
-
 
 <!-- ###SSEARCH### END-->

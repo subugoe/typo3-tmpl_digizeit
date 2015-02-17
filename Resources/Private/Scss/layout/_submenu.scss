@@ -21,7 +21,7 @@
 		border-bottom: $border-width solid $color-gray-light; // TODO: Duplicate of #content
 		font-weight: bold;
 
-		&:hover {
+		@include hover {
 			border-color: $link-hover-color;
 		}
 

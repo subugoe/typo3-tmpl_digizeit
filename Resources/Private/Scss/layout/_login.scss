@@ -26,9 +26,7 @@
 		color: $color-brown-light;
 		text-decoration: none;
 
-		&:active,
-		&:focus,
-		&:hover {
+		@include hover {
 			border-color: white;
 			color: white;
 		}

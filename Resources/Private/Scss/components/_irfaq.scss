@@ -10,9 +10,7 @@
 	padding: ($line-height / 3) 0;
 	width: 100%;
 
-	&:focus,
-	&:hover,
-	&:active {
+	@include hover {
 		color: $link-hover-color;
 	}
 

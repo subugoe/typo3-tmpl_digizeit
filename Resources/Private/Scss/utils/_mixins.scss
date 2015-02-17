@@ -11,9 +11,7 @@
 	@extend .btn-default;
 	background: $color-gray-lightest;
 
-	&:active,
-	&:focus,
-	&:hover {
+	@include hover {
 		color: $link-hover-color;
 	}
 }
@@ -23,5 +21,14 @@
 	@if $type == 'dark' {
 		color: white;
 		background: rgba(black, .25);
+	}
+}
+
+@mixin hover {
+
+	&:hover,
+	&:focus,
+	&:active {
+		@content;
 	}
 }

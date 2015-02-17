@@ -18,7 +18,7 @@
 		text-decoration: none;
 		padding: ($gutter / 3);
 
-		&:hover {
+		@include hover {
 			border: 0;
 			color: $color-red-dark;
 			background: white;

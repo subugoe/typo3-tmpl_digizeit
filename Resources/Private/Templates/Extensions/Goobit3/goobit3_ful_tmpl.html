@@ -88,7 +88,7 @@
                             <xsl:choose>
                                 <xsl:when test="$pdflink">
                                     <div class="maintitle_pdf">
-                                        <!--	
+                                        <!--
                                         <form action="dms/gcs-wrapper" method="post" name="pdfform">
                                            <input type="hidden" name="gcsurl" value="{$pdflink}" />
                                            <a href="#" onClick="pdfform.submit(); return false;" class="maintitle_pdf"><img class="sitepdf" src="/fileadmin/layout/pdficon_big.png" alt="PDF" title="PDF" /></a>
@@ -106,7 +106,7 @@
                             <xsl:choose>
                                 <xsl:when test="$pdflink">
                                     <div class="maintitle_pdf">
-                                        <!--	
+                                        <!--
                                         <form action="dms/gcs-wrapper" method="post" name="pdfform">
                                            <input type="hidden" name="gcsurl" value="{$pdflink}" />
                                            <a href="#" onClick="pdfform.submit(); return false;" class="maintitle_pdf"><img class="sitepdf" src="/fileadmin/layout/pdficon_big.png" alt="PDF" title="PDF" /></a>
@@ -129,7 +129,7 @@
                             <xsl:choose>
                                 <xsl:when test="$pdflink">
                                     <div class="maintitle_pdf">
-                                        <!--	
+                                        <!--
                                         <form action="dms/gcs-wrapper" method="post" name="pdfform">
                                            <input type="hidden" name="gcsurl" value="{$pdflink}" />
                                            <a href="#" onClick="pdfform.submit(); return false;" class="maintitle_pdf"><img class="sitepdf" src="/fileadmin/layout/pdficon_big.png" alt="PDF" title="PDF" /></a>
@@ -155,9 +155,9 @@
                                 <xsl:if test="$firstpage">
                                     <xsl:text>&#160;/&#160;</xsl:text><xsl:value-of select="$firstpage" />
                                     <xsl:if test="$lastpage and $lastpage!=$firstpage">
-                                        <xsl:text>&#160;-&#160;</xsl:text><xsl:value-of select="$lastpage" />          						    
+                                        <xsl:text>&#160;-&#160;</xsl:text><xsl:value-of select="$lastpage" />
                                     </xsl:if>
-                                </xsl:if>    						
+                                </xsl:if>
                             </span>
                         </xsl:when>
                         <xsl:when test="position()=1 and string-length(normalize-space(string(../../mods:titleInfo[1]/mods:title))) &lt;= 100">
@@ -271,7 +271,7 @@
                     <div>Image : Page<br/>
                         <select class="form_select" name="selectPHYSID" onchange="document.forms['tx-goobit3-img_form'].PHYSID.value = this.value; document.forms['tx-goobit3-img_form'].submit();">
                             <!--  <option disabled="disabled">Image : Page</option> -->
-                            <xsl:for-each select="mets:div[@TYPE='page']">	   	  	         	
+                            <xsl:for-each select="mets:div[@TYPE='page']">
                                 <xsl:choose>
                                     <xsl:when test="attribute::ID=$physid">
                                         <option selected="selected"><xsl:attribute name="value"><xsl:value-of select="attribute::ID" /></xsl:attribute><xsl:value-of select="attribute::ORDER" /><xsl:text> : </xsl:text><xsl:value-of select="attribute::ORDERLABEL" /></option>
@@ -320,12 +320,12 @@
                     </div>
                 </form>
             </div>
-            <div style="clear: both;"></div>				
+            <div style="clear: both;"></div>
 
             <div id="tx-goobit3-img_image">
             </div>
 
-            <div style="clear: both;"></div>				
+            <div style="clear: both;"></div>
             <div id="tx-goobit3-img_pageturn">
                 <form action="{$action}?PPN={$ppn}&amp;DMDID={$dmdid}&amp;LOGID={$logid}&amp;PHYSID={$physid}#navi" id="tx-goobit3-img_form_bottom" method="post">
                     <input type="hidden" name="PHYSID" value="{$physid}" />
@@ -391,4 +391,4 @@
         <div class="objsep"></div>
     </li>
 </ul>
-<!--  ###IMAGEVIEW### END -->		
+<!--  ###IMAGEVIEW### END -->

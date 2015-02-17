@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
 	autoprefixer = require('gulp-autoprefixer'),
+	livereload = require('gulp-livereload'),
 	notifier = require('node-notifier'),
 	sass = require('gulp-sass'),
 	scsslint = require('gulp-scss-lint'),
@@ -10,11 +11,11 @@ var config = {
 		sass: ['./Resources/Private/Scss/**/*.scss', '!./Resources/Private/Scss/vendors/**/*.scss'],
 		css: './Resources/Public/Css/'
 	},
-	dist: false
+	production: false
 }
 
 gulp.task('sass', function() {
-	if ( config.dist ) {
+	if ( config.production ) {
 		gulp.src(config.paths.sass)
 			.pipe(sass({
 				outputStyle: 'compressed',
@@ -31,6 +32,7 @@ gulp.task('sass', function() {
 			//.pipe(autoprefixer()) // TODO: .map file is generated, but only works if autoprefixer is disabled. Why?
 			.pipe(sourcemaps.write('.'))
 			.pipe(gulp.dest(config.paths.css))
+			.pipe(livereload())
 	}
 })
 
@@ -47,11 +49,12 @@ gulp.task('compile', function() {
 })
 
 gulp.task('watch', function() {
+	livereload.listen()
 	gulp.watch(config.paths.sass, ['compile'])
 })
 
-gulp.task('dist', function() {
-	config.dist = true
+gulp.task('production', function() {
+	config.production = true
 	gulp.start('lint', 'compile')
 })
 

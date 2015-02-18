@@ -33,7 +33,6 @@ gulp.task('sass', function() {
 			.pipe(sourcemaps.write('.'))
 			.pipe(gulp.dest(config.paths.css))
 			.pipe(livereload())
-			.on( 'error', errorHandler('LiveReload', 'Could not reload CSS') )
 	}
 })
 

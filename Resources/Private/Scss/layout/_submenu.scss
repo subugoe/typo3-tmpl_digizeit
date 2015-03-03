@@ -1,34 +1,6 @@
 #submenu,
 .csc-menu {
-	overflow: hidden;
-
-	li {
-		border-right: $border;
-		float: left;
-		margin: 0 .75em 0 0;
-		padding-right: .75em;
-
-		&:last-child {
-			border-right: 0;
-		}
-
-		&.subnavsep {
-			display: none;
-		}
-	}
-
-	a {
-		border-bottom: $border-width solid $color-gray-light; // TODO: Duplicate of #content
-		font-weight: bold;
-
-		@include hover {
-			border-color: $link-hover-color;
-		}
-
-		&.sub_act {
-			color: $color-gray;
-		}
-	}
+	@extend %horizontal-link-list;
 }
 
 #submenu {
@@ -39,6 +11,14 @@
 	}
 }
 
-.csc-menu {
-	margin: 0; // TODO
+#content .csc-menu {
+	border-top: $border;
+	list-style: none;
+	margin-left: -3px;
+	margin-top: (-$line-height * 1.25);
+	padding-top: $line-height - 1px;
+}
+
+.subnavsep {
+	display: none;
 }

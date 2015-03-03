@@ -9,16 +9,8 @@
 	z-index: 11;
 
 	@media (max-width: $screen-sm-max) {
-		height: 100%;
-		background: $off-canvas-color;
+		@include off-canvas('left');
 		padding: 0;
-		top: 0;
-		width: 61.8%;
-		z-index: 0;
-
-		&.active {
-			z-index: 1;
-		}
 	}
 
 	ul {

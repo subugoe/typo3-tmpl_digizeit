@@ -3,91 +3,91 @@
 <!-- ###NOSEARCHINDEX### END-->
 
 <!-- ###SSEARCH### BEGIN-->
-    <!-- ###SSEARCHFORM### BEGIN -->
-    <div id="tx-goobit3-search">
-        <h4>###SEARCHTITLE###</h4>
-        <span class="warning">###WARNMESSAGE###</span>
-        <form id="tx-goobit3-search_form" action="###FORM_ACTION###" method="post">
-            ###HIDDEN###
-            <input  id="searchforminput" size="25" name="formquery" value="###FORM_SQUERY_VALUE###" onKeyup="tx_goobit3_searchproposallist(xajax.getFormValues('tx-goobit3-search_form'))" />
-            <input id="send" type="submit" value="&#xf002" title="Suchen"/>
-        </form>
-        <br />
-    </div>
-    ###HITMESSAGE###
-    <!-- ###SSEARCHFORM### END -->
+	<!-- ###SSEARCHFORM### BEGIN -->
+	<div id="tx-goobit3-search">
+		<h4>###SEARCHTITLE###</h4>
+		<span class="warning">###WARNMESSAGE###</span>
+		<form id="tx-goobit3-search_form" action="###FORM_ACTION###" method="post">
+			###HIDDEN###
+			<input  id="searchforminput" size="25" name="formquery" value="###FORM_SQUERY_VALUE###" onKeyup="tx_goobit3_searchproposallist(xajax.getFormValues('tx-goobit3-search_form'))" />
+			<input id="send" type="submit" value="&#xf002" title="Suchen"/>
+		</form>
+		<br />
+	</div>
+	###HITMESSAGE###
+	<!-- ###SSEARCHFORM### END -->
 
-    <div id="tx-goobit3-search">
-        <div class="goobit3-pagination">
-            <ol>
-                <!-- ###BROWSEBARTOP### START -->
-                    ###RESULTFIRSTPRE###
-                    ###RESULTPREVPRE###
-                    ###RESULTLINK###
-                    ###RESULTNEXTPOST###
-                    ###RESULTLASTPOST###
-                <!-- ###BROWSEBARTOP### END -->
-            </ol>
-        </div>
+	<div id="tx-goobit3-search">
+		<div class="goobit3-pagination">
+			<ol>
+				<!-- ###BROWSEBARTOP### START -->
+					###RESULTFIRSTPRE###
+					###RESULTPREVPRE###
+					###RESULTLINK###
+					###RESULTNEXTPOST###
+					###RESULTLASTPOST###
+				<!-- ###BROWSEBARTOP### END -->
+			</ol>
+		</div>
 
-        <ol class="goobit3-results">
-        <!-- ###SSEARCHHIT### BEGIN-->
-            <li class="goobit3-item">
-                <div class="goobit3-item-thumbnail">
-                    <div class="###THUMBNAILDIVID###">###THUMBNAIL###</div>
-                    ###THUMBNAILSCRIPT###
-                </div>
-                <div class="goobit3-item-index">
-                    ###COUNT###
-                    <a class="fa ###LOCKCLASS###" href="/informationen/subskription/" title="###LOCKTEXT###"></a>
-                </div>
-                <div class="goobit3-item-info">
-                    <div class="title">###TITLE###</div>
-                    <div>###CREATORSTRING###</div>
-                    <div>###ORDERFIELD###</div>
-                     ###FULLTEXTSCRIPT###
-                    <div class="###FULLTEXTID###"></div>
-                    <div>###STRUCTRUN###</div>
-                </div>
-            </li>
-        <!-- ###SSEARCHHIT### END -->
-        </ol>
+		<ol class="goobit3-results">
+		<!-- ###SSEARCHHIT### BEGIN-->
+			<li class="goobit3-item">
+				<div class="goobit3-item-index">
+					###COUNT###
+					<a class="fa ###LOCKCLASS###" href="/informationen/subskription/" title="###LOCKTEXT###"></a>
+				</div>
+				<div class="goobit3-item-thumbnail">
+					<div class="###THUMBNAILDIVID###">###THUMBNAIL###</div>
+					###THUMBNAILSCRIPT###
+				</div>
+				<div class="goobit3-item-info">
+					<div class="title">###TITLE###</div>
+					<div>###CREATORSTRING###</div>
+					<div>###ORDERFIELD###</div>
+					 ###FULLTEXTSCRIPT###
+					<div class="###FULLTEXTID###"></div>
+					<div>###STRUCTRUN###</div>
+				</div>
+			</li>
+		<!-- ###SSEARCHHIT### END -->
+		</ol>
 
-        <div class="goobit3-pagination">
-            <ol>
-                <!-- ###BROWSEBARTOP### START -->
-                    ###RESULTFIRSTPRE###
-                    ###RESULTPREVPRE###
-                    ###RESULTLINK###
-                    ###RESULTNEXTPOST###
-                    ###RESULTLASTPOST###
-                <!-- ###BROWSEBARTOP### END -->
-            </ol>
-        </div>
-    </div>
+		<div class="goobit3-pagination">
+			<ol>
+				<!-- ###BROWSEBARTOP### START -->
+					###RESULTFIRSTPRE###
+					###RESULTPREVPRE###
+					###RESULTLINK###
+					###RESULTNEXTPOST###
+					###RESULTLASTPOST###
+				<!-- ###BROWSEBARTOP### END -->
+			</ol>
+		</div>
+	</div>
 </div>
-    <div id="sidebar">
+	<div id="sidebar">
 
-       <!-- ###SSEARCHRIGHT### BEGIN-->
-        <h4>###SEARCHFIELDCAPTION###</h4>
-        ###SEARCHFIELDFORM###
+	   <!-- ###SSEARCHRIGHT### BEGIN-->
+		<h4>###SEARCHFIELDCAPTION###</h4>
+		###SEARCHFIELDFORM###
 
-        <h4>###SEARCHORDERCAPTION###</h4>
-        ###SEARCHORDERFORM###
+		<h4>###SEARCHORDERCAPTION###</h4>
+		###SEARCHORDERFORM###
 
-        <h4>###COLCAPTION###</h4>
-        <ul>
-            <!-- ###SSEARCHDC### BEGIN-->
-            <li>###DC###</li>
-            <!-- ###SSEARCHDC### END-->
-        </ul>
+		<h4>###COLCAPTION###</h4>
+		<ul>
+			<!-- ###SSEARCHDC### BEGIN-->
+			<li>###DC###</li>
+			<!-- ###SSEARCHDC### END-->
+		</ul>
 
-        <h4>###CATCAPTION###</h4>
-        <ul>
-            <!-- ###SSEARCHDOCSTRCT### BEGIN-->
-            <li>###DOCSTRCT###</li>
-            <!-- ###SSEARCHDOCSTRCT### END-->
-        </ul>
-        <!-- ###SSEARCHRIGHT### END-->
+		<h4>###CATCAPTION###</h4>
+		<ul>
+			<!-- ###SSEARCHDOCSTRCT### BEGIN-->
+			<li>###DOCSTRCT###</li>
+			<!-- ###SSEARCHDOCSTRCT### END-->
+		</ul>
+		<!-- ###SSEARCHRIGHT### END-->
 
 <!-- ###SSEARCH### END-->

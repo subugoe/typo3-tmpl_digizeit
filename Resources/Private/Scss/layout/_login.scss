@@ -9,16 +9,7 @@
 	z-index: 11;
 
 	@media (max-width: $screen-sm-max) {
-		height: 100%;
-		background: $off-canvas-color;
-		top: 0;
-		right: 0;
-		width: 61.8%;
-		z-index: 0;
-
-		&.active {
-			z-index: 1;
-		}
+		@include off-canvas('right');
 	}
 
 	a {

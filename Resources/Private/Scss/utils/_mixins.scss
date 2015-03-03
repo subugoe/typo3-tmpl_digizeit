@@ -32,3 +32,18 @@
 		@content;
 	}
 }
+
+@mixin off-canvas($horizonal-position: 'left') {
+	height: 100%;
+	background: $off-canvas-color;
+	top: 0;
+	@if $horizonal-position == 'right' {
+		right: 0;
+	}
+	width: 61.8%;
+	z-index: 0;
+
+	&.active {
+		z-index: 1;
+	}
+}

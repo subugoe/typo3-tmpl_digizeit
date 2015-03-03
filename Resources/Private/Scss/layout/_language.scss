@@ -6,8 +6,7 @@
 
 	@media (max-width: $screen-sm-max) {
 		top: -$wedge-height - $gutter;
-		left: $topbar-height-small + $gutter;
-		right: auto;
+		right: $topbar-height-small + $gutter;
 	}
 
 	a {

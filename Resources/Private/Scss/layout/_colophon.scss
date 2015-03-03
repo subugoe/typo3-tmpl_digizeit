@@ -20,10 +20,11 @@
 
 #totop {
 	@include button;
+	border-right: 0;
 	display: none;
 	font-size: $font-size-large;
 	position: fixed;
-	right: $gutter;
+	right: 0;
 	bottom: $wedge-wrapper-height;
 	width: $topbar-height-small;
 	height: $topbar-height-small;

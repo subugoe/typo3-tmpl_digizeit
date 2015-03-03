@@ -25,12 +25,12 @@ gulp.task('sass', function() {
 			.pipe(gulp.dest(config.paths.css))
 	} else {
 		gulp.src(config.paths.sass)
-			.pipe(sourcemaps.init())
+			//.pipe(sourcemaps.init())
 			.pipe(sass({
 				onError: function(error) { errorHandler('Sass', error) }
 			}))
-			//.pipe(autoprefixer()) // TODO: .map file is generated, but only works if autoprefixer is disabled. Why?
-			.pipe(sourcemaps.write('.'))
+			.pipe(autoprefixer()) // TODO: .map file is generated, but only works if autoprefixer is disabled. Why?
+			//.pipe(sourcemaps.write('.'))
 			.pipe(gulp.dest(config.paths.css))
 			.pipe(livereload())
 	}

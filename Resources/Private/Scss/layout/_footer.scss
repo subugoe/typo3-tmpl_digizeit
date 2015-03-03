@@ -5,6 +5,16 @@
 	margin-bottom: -$wedge-height;
 	padding: ($gutter*2) 0 ($wedge-height + 5px);
 
+	a {
+		border: 0;
+		font-weight: bold;
+		color: $color-gray;
+
+		@include hover {
+			color: $link-hover-color;
+		}
+	}
+
 	ul {
 		padding-left: $gutter;
 
@@ -17,15 +27,6 @@
 			&:last-child {
 				border-right: 0;
 			}
-		}
-	}
-
-	a {
-		font-weight: bold;
-		color: $color-gray;
-
-		@include hover {
-			color: $link-hover-color;
 		}
 	}
 

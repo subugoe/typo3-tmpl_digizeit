@@ -64,73 +64,8 @@
 }
 
 #lock {
-	position: absolute;
-	top: -43px;
-	left: -40px;
-	width: 30px;
-	height: 30px;
 	overflow: hidden;
 	display: block;
-}
-
-#collection {
-	.coll_object {
-		position: relative;
-		top: 0;
-		left: 0;
-		width: 950px;
-		clear: left;
-		margin: 20px 0 0;
-		padding: 0 0 6px 12px;
-		background: url('#{$img-path}bgwrapper.png') repeat-y;
-	}
-
-	.closebook,
-	.openbook {
-		position: absolute;
-		top: 0;
-		right: 40px;
-		width: 22px;
-		height: 22px;
-		text-indent: -2000px;
-		overflow: hidden;
-		border-bottom: 0;
-		background: url('#{$img-path}closebook.gif') no-repeat 0 0;
-	}
-
-	.openbook {
-		background-image: url('#{$img-path}openbook.gif');
-	}
-
-	.siteno {
-		position: absolute;
-		right: 200px;
-		display: inline;
-	}
-
-	.siteyear {
-		position: relative;
-		left: 0;
-		margin-right: 20px;
-	}
-
-	.sitepdf {
-		position: relative;
-		left: 0;
-		display: inline;
-		margin-left: 10px;
-		margin-top: 2px;
-		margin-right: 10px;
-	}
-
-	.sitepdf:hover {
-		background: transparent;
-	}
-
-	.pdficon {
-		vertical-align: middle;
-		padding-bottom: 2px;
-	}
 }
 
 .objsep {

@@ -99,19 +99,3 @@ page.10 {
 		}
 	}
 [end]
-
-print = PAGE
-print.typeNum = 98
-# Meta tags
-page.headerData.999 < plugin.meta
-print.stylesheet = EXT:tmpl_digizeit/Resources/Public/Css/digi_print.css
-print.10 = FLUIDTEMPLATE
-print.10 {
-	template = FILE
-	template.file = EXT:tmpl_digizeit/Resources/Private/Templates/Print.html
-	extbase.controllerExtensionName = tmpl_digizeit
-	workOnSubpart = DOCUMENT_BODY
-	variables {
-		content < styles.content.get
-	}
-}

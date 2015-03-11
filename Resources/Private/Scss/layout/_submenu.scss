@@ -4,19 +4,18 @@
 }
 
 #submenu {
-	padding: 0 ($gutter * 2);
+	padding: 0 ($gutter * 2) ($gutter);
 
 	@media (max-width: $screen-sm-max) {
-		padding: 0;
+		padding: 0 0 ($gutter * 2);
 	}
 }
 
 #content .csc-menu {
 	border-top: $border;
 	list-style: none;
-	margin-left: -3px;
-	margin-top: (-$line-height * 1.25);
-	padding-top: $line-height - 1px;
+	margin-top: (-$gutter);
+	padding: ($gutter * 2 - 1px) 0 ($gutter * 3);
 }
 
 .subnavsep {

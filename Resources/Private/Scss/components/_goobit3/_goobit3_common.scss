@@ -1,0 +1,159 @@
+#tx-goobit3-search {
+
+	img {
+		border: 0;
+		display: inline;
+		vertical-align: top;
+
+		&.lock {
+			margin-top: 1px;
+		}
+
+		&:hover {
+			border: 0;
+			background: white;
+		}
+	}
+
+}
+
+#tx-goobit3-search_form,
+#tx-goobit3-search_formstartpage {
+	position: relative;
+}
+
+#tx-goobit3-search_proposalline {
+	width: 100%;
+
+	&:hover {
+		color: white;
+		background-color: $color-red-dark;
+	}
+}
+
+#tx-goobit3-browse {
+
+	ul {
+		list-style: none;
+		margin: 0;
+	}
+
+	li {
+		@include clearfix;
+		padding-left: 1.25em;
+		position: relative;
+		@media (max-width: $screen-sm-max) {
+			margin-bottom: $line-height / 2;
+		}
+
+		a {
+			border: 0;
+			display: block;
+			padding-right: 1.25em;
+
+			@include hover {
+				border: 0;
+			}
+		}
+
+		.rss {
+			padding: 0;
+			position: absolute;
+			right: 0;
+			top: round($line-height / 5);
+		}
+
+		&::before {
+			color: $color-gray-light;
+			content: ''; // chevron-right
+			float: left;
+			font-family: 'FontAwesome';
+			margin-left: -1.25em;
+		}
+	}
+}
+
+#tx-goobit3-toc_toc_current {
+	font-weight: bold;
+	background-color: $color-brown-lighter;
+
+	.tx-goobit3-toc_space {
+		vertical-align: top;
+		float: left;
+	}
+}
+
+#searchforminput {
+	border: $border-width solid $border-color;
+	padding: $gutter - $border-width;
+	width: 100%;
+
+	&:focus {
+		background: $color-brown-lightest;
+	}
+}
+
+#send {
+	background: none;
+	border: 0;
+	font-family: 'FontAwesome';
+	font-size: $font-size-large;
+	width: ($gutter * 2 - $border-width * 2 + $line-height);
+	height: ($gutter * 2 - $border-width * 2 + $line-height);
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.goobit3pagination {
+	text-align: center;
+
+	ol {
+		@extend %horizontal-link-list;
+	}
+}
+
+.goobit3-results {
+	display: table;
+	list-style: none;
+	padding: 0;
+}
+
+.goobit3-item {
+	display: table-row;
+
+	> div {
+		display: table-cell;
+		padding-bottom: $line-height;
+
+		+ div {
+			padding-left: 1em;
+		}
+	}
+}
+
+// GoobiT3 Common
+
+.goobit3_purl {
+	font-weight: bold;
+}
+
+.goobit3-item-thumbnail {
+	// TODO
+}
+
+.goobit3-item-index {
+	color: $text-color-light;
+	font-weight: bold;
+	text-align: right;
+}
+
+.goobit3-item-info {
+	width: 100%;
+}
+
+.goobit3_lock {
+	border: 0 !important;
+	float: right;
+	font-size: 2em;
+}

@@ -68,9 +68,13 @@ label {
 	cursor: pointer;
 }
 
-input {
+input,
+select,
+textarea {
 	background: $color-gray-lightest;
 	border: 1px solid $color-gray;
+	min-height: $line-height;
+	padding: $line-height / 4;
 
 	&:focus {
 		border-color: $link-color;
@@ -84,12 +88,9 @@ button,
 }
 
 ul {
-	list-style-type: none;
+	list-style: disc outside;
+	margin-left: 2em;
 	padding: 0;
-}
-
-li {
-	margin-bottom: ($line-height / 2);
 }
 
 strong {

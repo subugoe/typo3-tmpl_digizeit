@@ -16,7 +16,9 @@
 	}
 
 	ul {
-		padding-left: $gutter;
+		margin: 0;
+		list-style: none;
+		padding: 0 $gutter;
 
 		li {
 			border-right: $border;

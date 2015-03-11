@@ -1,17 +1,28 @@
 %horizontal-link-list {
-	display: inline-block;
+	display: block;
 	font-weight: bold;
 	line-height: 1;
 	list-style: none;
-	margin: ($line-height / 2) -3px; // negative value of li
+	margin-left: -.25em;
 	padding: 0;
 
 	li {
 		border-right: $border;
 		float: left;
-		padding: 6px 3px;
+		padding: (($line-height - $font-size-base) / 2) .25em;
+
 		&:last-child {
 			border-right: 0;
+		}
+
+		@media (max-width: $screen-sm-max) {
+			border: 0;
+			float: none;
+			margin-bottom: ($line-height * 2 - $font-size-base);
+
+			&:last-child {
+				margin: 0;
+			}
 		}
 	}
 
@@ -40,7 +51,7 @@
 	}
 
 	.active a,
-	a.sub_act {
+	.sub_act {
 		background: $active-color;
 		color: #fff;
 	}

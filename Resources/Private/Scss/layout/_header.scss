@@ -4,6 +4,7 @@
 	margin-top: -$wedge-height;
 	padding-top: $wedge-height;
 	position: relative;
+
 	@media (max-width: $screen-sm-max) {
 		height: 150px;
 	}

@@ -1,0 +1,33 @@
+.goobit3_toc_title {
+	font-weight: bold;
+
+	a {
+		margin-right: 1em;
+	}
+
+	+ .goobit3_toc_item {
+		border-top: $border;
+		margin-top: $line-height;
+		padding-top: $line-height - $border-width;
+	}
+}
+
+.goobit3_toc_item {
+	@for $i from 1 through 5 {
+		&.indent-#{$i * 20} {
+			padding-left: ($i - 2) * 2em;
+		}
+	}
+
+	a {
+		margin-right: 1em;
+	}
+}
+
+.goobit3_toc_page-number {
+	float: right
+}
+
+.goobit3_toc_pdf-link {
+
+}

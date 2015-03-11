@@ -9,10 +9,17 @@
 @mixin button {
 	@extend .btn;
 	@extend .btn-default;
-	background: $color-gray-lightest;
+	background: $color-gray-lighter;
+	border: 1px solid $color-gray-lighter;
+	min-height: $line-height;
+	line-height: $line-height !important; //TODO
+	min-width: $line-height * 2;
+	transition: all $time-short;
 
 	@include hover {
-		color: $link-hover-color;
+		background: $link-hover-color;
+		border-color: $link-hover-color;
+		color: $color-gray-lightest;
 	}
 }
 
@@ -24,8 +31,57 @@
 	}
 }
 
-@mixin hover {
+@mixin horizontal-link-list {
+	display: inline-block;
+	font-weight: bold;
+	line-height: 1;
+	list-style: none;
+	margin: ($line-height / 2) -3px; // negative value of li
+	padding: 0;
 
+	li {
+		border-right: $border;
+		float: left;
+		padding: 6px 3px;
+
+		&:last-child {
+			border-right: 0;
+		}
+	}
+
+	a,
+	span {
+		border: 0 !important;
+		//border-radius: .25em;
+		float: left;
+		margin: -10px 0;
+		min-width: 2em;
+		padding: .5em;
+	}
+
+	a {
+		@include hover {
+			background: $link-color;
+			color: #fff;
+		}
+	}
+
+	.disabled {
+		a,
+		span {
+			color: $text-color-light;
+		}
+	}
+
+	.active a,
+	.sub_act {
+		background: $active-color;
+		color: #fff;
+	}
+}
+
+
+@mixin hover {
 	&:hover,
 	&:focus,
 	&:active {

@@ -1,0 +1,47 @@
+.goobit3_img_title {
+	font-size: $font-size-large;
+
+	&.pdf {
+		float: left;
+	}
+}
+
+.goobit3_img_image {
+	background: $color-gray-lighter;
+	border: $border-width solid $border-color;
+	clear: both;
+	overflow: auto;
+	text-align: center;
+
+	.highlight {
+		color: $color-red-dark;
+		font-weight: bold;
+		text-decoration: none;
+	}
+}
+
+.goobit3_img_viewer_controls {
+	margin: $line-height 0;
+
+	&.right {
+		text-align: right;
+	}
+
+	button + button {
+		margin-left: 1px;
+	}
+}
+
+.goobit3_img_viewer_pagination {
+	display: inline-block;
+	margin: 0 $gutter;
+
+	label {
+		margin: 0 1px 0 0;
+		vertical-align: middle;
+	}
+
+	@media (max-width: $screen-sm-max) {
+		display: block;
+	}
+}

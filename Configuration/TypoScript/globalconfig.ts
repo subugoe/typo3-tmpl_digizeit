@@ -127,6 +127,12 @@ page.headerData {
         <meta name="google-site-verification" content="sRqPpOhhh-nLRbPb1YBWyGsmO7GMGjeCkhGqolueRj0" />
 	)
 
+    # Viewport for mobile devices
+    600 = TEXT
+   	600.value (
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   	)
+
 	# DC Meta tags
 	1000 = TEXT
 	1000 {

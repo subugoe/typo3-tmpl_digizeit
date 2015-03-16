@@ -2,7 +2,10 @@
 	font-size: $font-size-large;
 
 	&.pdf {
-		float: left;
+		border: 0 !important;
+		float: right;
+		font-size: 2em;
+		margin: 0 .5em;
 	}
 }
 

@@ -23,36 +23,43 @@
 	}
 }
 
-@mixin input($type: 'dark') {
+@mixin input {
 	@extend .form-control;
-	@if $type == 'dark' {
-		color: white;
-		background: rgba(black, .25);
-	}
 }
 
 @mixin horizontal-link-list {
-	display: inline-block;
+	@include clearfix;
+	display: block;
 	font-weight: bold;
 	line-height: 1;
 	list-style: none;
-	margin: ($line-height / 2) -3px; // negative value of li
+	margin-left: -.25em;
 	padding: 0;
 
 	li {
 		border-right: $border;
 		float: left;
-		padding: 6px 3px;
+		margin-bottom: $line-height;
+		padding: (($line-height - $font-size-base) / 2) .25em;
 
 		&:last-child {
 			border-right: 0;
+		}
+
+		@media (max-width: $screen-sm-max) {
+			border: 0;
+			float: none;
+			margin-bottom: ($line-height * 2 - $font-size-base);
+
+			&:last-child {
+				margin: 0;
+			}
 		}
 	}
 
 	a,
 	span {
 		border: 0 !important;
-		//border-radius: .25em;
 		float: left;
 		margin: -10px 0;
 		min-width: 2em;
@@ -79,7 +86,6 @@
 		color: #fff;
 	}
 }
-
 
 @mixin hover {
 	&:hover,

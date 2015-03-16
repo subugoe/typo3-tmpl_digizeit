@@ -1,6 +1,7 @@
-@import '_goobit3/_goobit3_common.scss';
-@import '_goobit3/_goobit3_img.scss';
-@import '_goobit3/_goobit3_met.scss';
-@import '_goobit3/_goobit3_toc.scss';
+@import '_goobit3/goobit3_common';
 
-@import '_goobit3/_goobit3_shame.scss';
+@import '_goobit3/goobit3_browse';
+@import '_goobit3/goobit3_img';
+@import '_goobit3/goobit3_met';
+@import '_goobit3/goobit3_search';
+@import '_goobit3/goobit3_toc';

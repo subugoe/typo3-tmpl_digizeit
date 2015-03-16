@@ -1,10 +1,10 @@
 #submenu,
 .csc-menu {
-	@extend %horizontal-link-list;
+	@include horizontal-link-list;
 }
 
 #submenu {
-	padding: 0 ($gutter * 2) ($gutter);
+	padding: 0 ($gutter * 2);
 
 	@media (max-width: $screen-sm-max) {
 		padding: 0 0 ($gutter * 2);

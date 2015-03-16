@@ -25,9 +25,19 @@
 }
 
 .goobit3_toc_page-number {
-	float: right
+	float: right;
 }
 
 .goobit3_toc_pdf-link {
 
+}
+
+#tx-goobit3-toc_toc_current {
+	font-weight: bold;
+	background-color: $color-brown-lighter;
+
+	.tx-goobit3-toc_space {
+		vertical-align: top;
+		float: left;
+	}
 }

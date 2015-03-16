@@ -41,7 +41,7 @@
 
 		[type=text],
 		[type=password] {
-			@include input('dark');
+			@include input;
 		}
 	}
 

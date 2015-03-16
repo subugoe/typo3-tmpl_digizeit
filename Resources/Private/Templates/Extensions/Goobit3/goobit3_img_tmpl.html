@@ -78,16 +78,21 @@
 		<!--  Main Title -->
 		<xsl:template match="mods:mods[last()]/mods:titleInfo[1]/mods:title" mode="maintitle">
 
-			<!-- TODO: If unlocked, display fa-unlock icon; use ###LOCKBUTTON### -->
-			<a class="goobit3_lock fa fa-lock" href="http://www.digizeitschriften.de/informationen/subskription/" title="###LOCKTEXT###"><span class="sr-only">###LOCKTEXT###</span></a>
+			<a href="http://www.digizeitschriften.de/informationen/subskription/" title="###LOCKTEXT###">
+				<xsl:attribute name="class">
+					<xsl:choose>
+						<xsl:when test="'###LOCKBUTTON###'='typo3conf/ext/goobit3/res/lockclosed_big.gif'">goobit3_lock fa fa-lock</xsl:when>
+						<xsl:otherwise>goobit3_lock fa fa-unlock</xsl:otherwise>
+					</xsl:choose>
+				</xsl:attribute>
+				<span class="sr-only">###LOCKTEXT###</span>
+			</a>
 
 			<xsl:choose>
 				<xsl:when test="string-length(normalize-space(string(.))) &lt;= 180">
 					<xsl:choose>
 						<xsl:when test="$pdflink">
-							<div class="goobit3_img_title.pdf">
-								<a href="{$pdflink}"><img src="/fileadmin/layout/pdficon_big.png" alt="PDF" title="PDF" /></a>
-							</div>
+							<a class="goobit3_img_title pdf" href="{$pdflink}" title="PDF"><i class="fa fa-file-pdf-o"></i><span class="sr-only">PDF</span></a>
 						</xsl:when>
 					</xsl:choose>
 					<div class="goobit3_img_title">
@@ -97,9 +102,7 @@
 				<xsl:when test="string-length(normalize-space(string(current()))) &gt; 180">
 					<xsl:choose>
 						<xsl:when test="$pdflink">
-							<div class="goobit3_img_title.pdf">
-								<a href="{$pdflink}"><img src="/fileadmin/layout/pdficon_big.png" alt="PDF" title="PDF" /></a>
-							</div>
+							<a class="goobit3_img_title pdf" href="{$pdflink}" title="PDF"><i class="fa fa-file-pdf-o"></i><span class="sr-only">PDF</span></a>
 						</xsl:when>
 					</xsl:choose>
 					<div class="goobit3_img_title">
@@ -196,11 +199,6 @@
 	<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:mets="http://www.loc.gov/METS/">
 
 		<xsl:output method="html"/>
-
-		<xsl:variable name="newline">
-			<xsl:text>
-			</xsl:text>
-		</xsl:variable>
 
 		<xsl:template name="style">
 			<!-- Platz fuer StyleSheets -->

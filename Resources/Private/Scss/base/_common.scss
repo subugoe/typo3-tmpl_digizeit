@@ -66,6 +66,7 @@ hr {
 
 label {
 	cursor: pointer;
+	vertical-align: top;
 }
 
 input,
@@ -79,6 +80,11 @@ textarea {
 	&:focus {
 		border-color: $link-color;
 	}
+}
+
+input[type=radio],
+input[type=checkbox] {
+	margin: 0;
 }
 
 button,

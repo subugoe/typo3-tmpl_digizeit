@@ -1,0 +1,41 @@
+#tx-goobit3-browse {
+
+	ul {
+		list-style: none;
+		margin: 0;
+	}
+
+	li {
+		@include clearfix;
+		padding-left: 1.25em;
+		position: relative;
+		@media (max-width: $screen-sm-max) {
+			margin-bottom: $line-height / 2;
+		}
+
+		a {
+			border: 0;
+			display: block;
+			padding-right: 1.25em;
+
+			@include hover {
+				border: 0;
+			}
+		}
+
+		.rss {
+			padding: 0;
+			position: absolute;
+			right: 0;
+			top: round($line-height / 5);
+		}
+
+		&::before {
+			color: $color-gray-light;
+			content: ''; // chevron-right
+			float: left;
+			font-family: 'FontAwesome';
+			margin-left: -1.25em;
+		}
+	}
+}

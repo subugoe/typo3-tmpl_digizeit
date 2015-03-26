@@ -3,21 +3,22 @@
 }
 
 .tx-irfaq-dynheader {
-	cursor: pointer;
 	display: table;
-	table-layout: fixed;
-	font-weight: bold;
 	padding: ($line-height / 3) 0;
 	width: 100%;
+	table-layout: fixed;
+	font-weight: bold;
+	cursor: pointer;
 
 	@include hover {
 		color: $link-hover-color;
 	}
 
 	.fa {
-		@include fa-icon;
 		display: table-cell;
 		width: 1.5em;
+
+		//@include fa-icon(?); // TODO
 	}
 }
 

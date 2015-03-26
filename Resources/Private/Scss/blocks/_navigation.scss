@@ -1,66 +1,67 @@
-#navigation {
+.navigation {
 	position: absolute;
-	height: 40px;
-	line-height: 40px;
+	top: $topbar-height + $header-height - 25px;
+	z-index: 11;
 	display: block;
 	padding: 0 $gutter;
-	top: $topbar-height + $header-height - 25px;
 	width: 100%;
-	z-index: 11;
+	height: 40px;
+	line-height: 40px;
 
 	@media (max-width: $screen-sm-max) {
-		@include off-canvas('left');
 		padding: 0;
+
+		@include off-canvas('left');
 	}
 
 	ul {
-		background: rgba(black, .15);
 		float: left;
 		margin: 0;
 		padding: 10px $border-width;
 		width: 100%;
+		background: rgba(black, .15);
 
 		@media (max-width: $screen-sm-max) {
-			background: none;
 			padding: 0;
+			background: none;
 		}
 	}
 
 	li {
-		border-right: $border;
 		display: block;
 		float: left;
 		margin: 0;
 		width: auto;
+		border-right: $border;
 
 		&:last-child {
 			border-right: 0;
 		}
 
 		@media (max-width: $screen-sm-max) {
+			float: none;
 			border-right: 0;
 			border-bottom: 1px solid $color-gray-dark;
-			float: none;
 		}
 	}
 
 	a {
-		border: 0;
 		position: relative;
 		display: block;
-		color: white;
-		text-align: center;
-		font-weight: bold;
-		text-transform: uppercase;
-		font-family: $font-family-sans-serif;
 		margin: -10px (-$border-width);
 		padding: 0 ($gutter + $border-width);
+		border: 0;
+		color: white;
+		text-align: center;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-family: $font-family-sans-serif;
 
 		@include hover {
-			background: $color-brown-lighter;
-			border: 0;
-			color: $color-red-dark;
 			height: 100%;
+			border: 0;
+			background: $color-brown-lighter;
+			color: $color-red-dark;
 		}
 
 		@media (max-width: $screen-sm-max) {
@@ -76,6 +77,5 @@
 				background: $active-color;
 			}
 		}
-
 	}
 }

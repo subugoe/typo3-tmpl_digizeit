@@ -1,4 +1,9 @@
-#content .ttaddress-item {
-	border-bottom: $border;
+.ttaddress__item {
 	margin-bottom: $line-height - 1px;
+	border-bottom: $border;
+
+	&--short {
+		margin-bottom: $line-height;
+		border-bottom: 0;
+	}
 }

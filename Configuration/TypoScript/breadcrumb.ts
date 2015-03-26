@@ -5,16 +5,16 @@ temp.breadcrumb.5 = TEXT
 		# Default language (german)
 		5 {
 			value (
-                <div id="welcome">
+				<div class="welcome">
 					<p><strong>Unser Service &ndash; Ihr Vorteil:</strong>  DigiZeitschriften ist ein Service f&uuml;r das wissenschaftliche Arbeiten. &Uuml;ber einen kontrollierten Nutzerzugang k&ouml;nnen Studierende und Wissenschaftler auf Kernzeitschriften der deutschen Forschung zugreifen. Der Zugang erfolgt &uuml;ber Bibliotheken und wissenschaftliche Einrichtungen, die DigiZeitschriften subskribiert haben.</p>
 				</div>
 			)
 			#other languages (english)
 			lang {
 				en (
-                    <div id="welcome">
-                        <p><strong>Our service &ndash; your benefit:</strong> DigiZeitschriften is a research service. Students and researchers can access the core German research journals via subscribing institutions. Access is possible via libraries and academic institutions which have subscribed to DigiZeitschriften</p>
-                    </div>
+					<div class="welcome">
+						<p><strong>Our service &ndash; your benefit:</strong> DigiZeitschriften is a research service. Students and researchers can access the core German research journals via subscribing institutions. Access is possible via libraries and academic institutions which have subscribed to DigiZeitschriften</p>
+					</div>
 				)
 			}
 		}
@@ -24,16 +24,16 @@ temp.breadcrumb.5 = TEXT
 		# Default language (german)
 		5 {
 			value (
-                <div id="breadcrumb">
-                    <dl>
-                        <dt>Sie sind hier:</dt>
+				<div class="breadcrumbs">
+					<dl>
+						<dt>Sie sind hier:</dt>
 			)
 			#other languages (english)
 			lang {
 				en (
-                    <div id="breadcrumb">
-                        <dl>
-                            <dt>You are here:</dt>
+					<div class="breadcrumbs">
+						<dl>
+							<dt>You are here:</dt>
 				)
 			}
 		}
@@ -45,14 +45,14 @@ temp.breadcrumb.5 = TEXT
 			1 = TMENU
 			1 {
 				NO.doNotLinkIt = |*| 0 |*| 1
-				NO.allWrap = |*| <dd>|<span class="breadsep fa fa-angle-right"></span></dd> |*| <dd>|</dd>
+				NO.allWrap = |*| <dd>|<span class="breadcrumbs__separator"></span></dd> |*| <dd>|</dd>
 			}
 		}
 
 		15 = TEXT
 		15.value (
-                </dl>
-            </div>
+				</dl>
+			</div>
 		)
 	}
 [end]

@@ -10,38 +10,38 @@
 		position: absolute;
 		top: 7px;
 		left: 16px;
+		overflow: hidden;
 		width: 222px;
 		height: 12px;
-		font-size: 10px;
 		color: $color-brown-light;
-		overflow: hidden;
+		font-size: 10px;
 	}
 
 	#searchstring {
 		position: absolute;
-		right: 15px;
 		top: 20px;
+		right: 15px;
+		padding: 6px 0 0 10px;
 		width: 280px;
 		height: 28px;
-		background: url('#{$img-path}inpbg_fastsearch.gif') no-repeat 0 0;
 		border: 0;
-		font-size: 1.2em;
+		background: url('#{$img-path}inpbg_fastsearch.gif') no-repeat 0 0;
 		color: white;
-		padding: 6px 0 0 10px;
+		font-size: 1.2em;
 	}
 
 	#send {
 		position: absolute;
 		top: 13px;
 		right: 15px;
-		height: 50px;
+		display: block;
+		overflow: hidden;
 		width: 61px;
+		height: 50px;
 		border: 0;
 		background: transparent url('#{$img-path}btn_fastsearch.png') no-repeat 0 0;
-		text-indent: -2000px;
-		overflow: hidden;
-		display: block;
-		font-size: 0;
 		color: $color-gray-light;
+		text-indent: -2000px;
+		font-size: 0;
 	}
 }

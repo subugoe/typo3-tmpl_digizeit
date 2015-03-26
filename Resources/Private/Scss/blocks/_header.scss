@@ -1,0 +1,39 @@
+.header {
+	position: relative;
+	margin-top: -$wedge-height;
+	padding-top: $wedge-height;
+	height: $header-height + $wedge-height;
+	background: linear-gradient(60deg, $color-red-darker, $color-red-dark);
+
+	@media (max-width: $screen-sm-max) {
+		height: 150px;
+	}
+}
+
+.header__heading {
+	position: relative;
+	top: $gutter * 2;
+	left: $gutter * 2;
+	overflow: hidden;
+	margin: 0;
+	width: 400px;
+	height: 60px;
+	background: url('#{$img-path}digizeit-logo.svg') 0 bottom no-repeat;
+	background-size: contain;
+	text-indent: -9999px;
+
+	@media (max-width: $screen-sm-max) {
+		left: 5%;
+		max-width: 90%;
+	}
+
+	a {
+		display: block;
+		height: 100%;
+		border: 0;
+	}
+}
+
+.header__tagline {
+	text-indent: -9999px;
+}

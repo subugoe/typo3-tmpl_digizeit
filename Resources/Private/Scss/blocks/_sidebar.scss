@@ -1,11 +1,11 @@
-#sidebar {
+.sidebar {
 	@include make-md-column(4);
-	background: white url('#{$img-path}sidebarborder.gif') repeat-y;
 	padding: ($gutter * 2) $gutter 0 ($gutter * 3);
+	background: white url('#{$img-path}sidebar-border-left.png') ($line-height - 12px) repeat-y;
 
 	@media (max-width: $screen-sm-max) {
-		background: none;
 		padding: 0;
+		background: none;
 
 		li br {
 			display: none; // TODO: This should be removed completely
@@ -13,13 +13,13 @@
 	}
 
 	h3 {
-		font-size: 1.6em;
 		margin-bottom: 10px;
+		font-size: 1.6em;
 	}
 
 	h4 {
-		font-size: 1.2em;
 		color: $color-red-dark;
+		font-size: 1.2em;
 	}
 
 	p {
@@ -27,26 +27,28 @@
 	}
 
 	&::before {
-		content: '';
 		position: absolute;
-		left: 0;
-		width: 20px;
-		height: 50px;
 		top: 0;
-		background: url('#{$img-path}sidebarborder_top.gif') no-repeat 0 0;
+		left: ($line-height - 12px);
+		width: 12px;
+		height: 48px;
+		background: url('#{$img-path}sidebar-border-left-top.png') no-repeat 0 0;
+		content: '';
+
 		@media (max-width: $screen-sm-max) {
 			display: none;
 		}
 	}
 
 	&::after {
-		content: '';
 		position: absolute;
-		left: 0;
-		width: 20px;
-		height: 50px;
 		bottom: 0;
-		background: url('#{$img-path}sidebarborder_end.gif') no-repeat 0 0;
+		left: ($line-height - 12px);
+		width: 12px;
+		height: 48px;
+		background: url('#{$img-path}sidebar-border-left-bottom.png') no-repeat 0 0;
+		content: '';
+
 		@media (max-width: $screen-sm-max) {
 			display: none;
 		}

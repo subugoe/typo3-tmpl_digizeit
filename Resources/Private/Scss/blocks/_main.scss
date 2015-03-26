@@ -1,0 +1,36 @@
+.main {
+	@include clearfix;
+	position: relative;
+	display: block;
+	padding: $gutter;
+	background-color: white;
+	box-shadow: 0 0 25px rgba(black, .5);
+
+	&::before,
+	&::after {
+		position: absolute;
+		content: '';
+	}
+
+	&::before {
+		top: -85px;
+		left: 0;
+		z-index: 8;
+		width: 100%;
+		height: $wedge-wrapper-height;
+		background: url('#{$img-path}headborder.svg') no-repeat left top;
+	}
+
+	&::after {
+		position: absolute;
+		left: 0;
+		z-index: 8;
+		width: 100%;
+		height: $wedge-wrapper-height;
+		background: url('#{$img-path}footborder.svg') no-repeat right bottom;
+	}
+
+	table {
+		@extend .table;
+	}
+}

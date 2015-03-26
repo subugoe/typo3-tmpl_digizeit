@@ -1,0 +1,26 @@
+// TODO: .csc-menu
+
+.subnav,
+.content .csc-menu {
+	@include horizontal-link-list;
+}
+
+.subnav {
+	padding: 0 ($gutter * 2);
+
+	@media (max-width: $screen-sm-max) {
+		padding: 0 0 ($gutter * 2);
+	}
+}
+
+.subnav__item--active {
+	background: $color-brown;
+	color: #fff;
+}
+
+.content .csc-menu {
+	margin: (-$gutter) 0 $gutter;
+	padding-top: ($gutter * 2 - 1px);
+	border-top: $border;
+	list-style: none;
+}

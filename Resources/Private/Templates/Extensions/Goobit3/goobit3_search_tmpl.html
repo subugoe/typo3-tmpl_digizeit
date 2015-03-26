@@ -1,24 +1,25 @@
 <!-- ###NOSEARCHINDEX### BEGIN-->
-	<span class="warning">###WARNMESSAGE###</span>
+<span class="goobit3__warning">###WARNMESSAGE###</span>
 <!-- ###NOSEARCHINDEX### END-->
 
 <!-- ###SSEARCH### BEGIN-->
 	<!-- ###SSEARCHFORM### BEGIN -->
-	<div id="tx-goobit3-search">
+	<div class="goobit3-search">
 		<h4>###SEARCHTITLE###</h4>
-		<span class="warning">###WARNMESSAGE###</span>
-		<form id="tx-goobit3-search_form" action="###FORM_ACTION###" method="post">
+		<form class="goobit3-search__form" action="###FORM_ACTION###" method="post">
 			###HIDDEN###
-			<input  id="searchforminput" size="25" name="formquery" value="###FORM_SQUERY_VALUE###" onKeyup="tx_goobit3_searchproposallist(xajax.getFormValues('tx-goobit3-search_form'))" />
-			<input id="send" type="submit" value="&#xf002" title="Suchen"/>
+			<label>
+				<span class="sr-only">Suchbegriff:</span>
+				<input class="goobit3-search__input" size="25" name="formquery" value="###FORM_SQUERY_VALUE###" onKeyup="tx_goobit3_searchproposallist(xajax.getFormValues('tx-goobit3-search_form'))" />
+			</label>
+			<input class="goobit3-search__submit" type="submit" value="&#xf002" title="Suchen"/>
 		</form>
-		<br />
 	</div>
 	###HITMESSAGE###
 	<!-- ###SSEARCHFORM### END -->
 
-	<div id="tx-goobit3-search">
-		<div class="goobit3-pagination">
+	<div class="goobit3-results">
+		<div class="goobit3__pagination">
 			<ol>
 				<!-- ###BROWSEBARTOP### START -->
 					###RESULTFIRSTPRE###
@@ -30,18 +31,19 @@
 			</ol>
 		</div>
 
-		<ol class="goobit3-results">
+		<ol class="goobit3-results__list">
 		<!-- ###SSEARCHHIT### BEGIN-->
-			<li class="goobit3-item">
-				<div class="goobit3-item-index">
+			<li class="goobit3-results__item">
+				<div class="goobit3-results__index">
 					###COUNT###
+					<!-- TODO: Does this work? -->
 					<a class="fa ###LOCKCLASS###" href="/informationen/subskription/" title="###LOCKTEXT###"></a>
 				</div>
-				<div class="goobit3-item-thumbnail">
-					<div class="###THUMBNAILDIVID###">###THUMBNAIL###</div>
+				<div class="goobit3-results__thumbnail">
+					<div class="###THUMBNAILDIVID###">###THUMBNAIL###</div><!-- TODO: Class name / thumbnail is not displayed -->
 					###THUMBNAILSCRIPT###
 				</div>
-				<div class="goobit3-item-info">
+				<div class="goobit3-results__info">
 					<div class="title">###TITLE###</div>
 					<div>###CREATORSTRING###</div>
 					<div>###ORDERFIELD###</div>
@@ -53,7 +55,7 @@
 		<!-- ###SSEARCHHIT### END -->
 		</ol>
 
-		<div class="goobit3-pagination">
+		<div class="goobit3__pagination">
 			<ol>
 				<!-- ###BROWSEBARTOP### START -->
 					###RESULTFIRSTPRE###
@@ -66,9 +68,10 @@
 		</div>
 	</div>
 </div>
-	<div id="sidebar">
 
-	   <!-- ###SSEARCHRIGHT### BEGIN-->
+<div class="sidebar">
+
+	<!-- ###SSEARCHRIGHT### BEGIN-->
 		<h4>###SEARCHFIELDCAPTION###</h4>
 		###SEARCHFIELDFORM###
 
@@ -76,18 +79,14 @@
 		###SEARCHORDERFORM###
 
 		<h4>###COLCAPTION###</h4>
-		<ul>
-			<!-- ###SSEARCHDC### BEGIN-->
-			<li>###DC###</li>
-			<!-- ###SSEARCHDC### END-->
-		</ul>
+		<!-- ###SSEARCHDC### BEGIN-->
+		<p>###DC###</p>
+		<!-- ###SSEARCHDC### END-->
 
 		<h4>###CATCAPTION###</h4>
-		<ul>
-			<!-- ###SSEARCHDOCSTRCT### BEGIN-->
-			<li>###DOCSTRCT###</li>
-			<!-- ###SSEARCHDOCSTRCT### END-->
-		</ul>
-		<!-- ###SSEARCHRIGHT### END-->
+		<!-- ###SSEARCHDOCSTRCT### BEGIN-->
+		<p>###DOCSTRCT###</p>
+		<!-- ###SSEARCHDOCSTRCT### END-->
+	<!-- ###SSEARCHRIGHT### END-->
 
 <!-- ###SSEARCH### END-->

@@ -1,0 +1,34 @@
+.topbar {
+	position: absolute;
+	top: 0;
+	z-index: 9;
+	width: 100%;
+}
+
+.topbar__buttons {
+	display: none;
+	background: $background-color;
+
+	@media (max-width: $screen-sm-max) {
+		display: block;
+	}
+}
+
+.topbar__button {
+	display: none;
+	float: left;
+	width: $topbar-height-small;
+	height: $topbar-height-small;
+	border: 0;
+	background: $off-canvas-color;
+	color: $color-gray;
+	font-size: $font-size-large;
+
+	& + & {
+		float: right;
+	}
+
+	@media (max-width: $screen-sm-max) {
+		display: inline-block;
+	}
+}

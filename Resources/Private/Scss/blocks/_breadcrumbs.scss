@@ -1,0 +1,31 @@
+.breadcrumbs {
+	margin-bottom: $line-height;
+	padding: 0 $gutter;
+	background: $color-brown-lighter;
+	line-height: 40px;
+
+	a {
+		border: 0;
+	}
+
+	dl {
+		margin: 0;
+	}
+
+	dd,
+	dt {
+		display: inline-block;
+		margin-right: .5em;
+		font-weight: normal;
+	}
+
+	dt {
+		color: $color-gray-dark;
+	}
+}
+
+.breadcrumbs__separator {
+	@include fa-icon('angle-right');
+	margin-left: .5em;
+	color: $color-gray-dark;
+}

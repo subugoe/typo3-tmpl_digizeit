@@ -1,16 +1,18 @@
+// TODO: BEM this
+
 #tx-drwiki {
-	width: 640px;
-	border-left: 1px dotted $color-gray-light;
-	border-right: 1px dotted $color-gray-light;
 	padding: 5px;
+	width: 640px;
+	border-right: 1px dotted $color-gray-light;
+	border-left: 1px dotted $color-gray-light;
 
 	td {
 		padding: 3px;
 	}
 
 	a {
-		text-decoration: none;
 		border: 0;
+		text-decoration: none;
 
 		@include hover {
 			text-decoration: underline;
@@ -47,12 +49,12 @@
 	}
 
 	pre {
-		border: $color-blue 1px dashed;
 		padding: 1em;
-		color: black;
-		line-height: 1.1em;
+		border: $color-blue 1px dashed;
 		background-color: $color-gray-lightest;
+		color: black;
 		font-family: $font-monospace;
+		line-height: 1.1em;
 	}
 
 	input {
@@ -76,9 +78,9 @@
 	}
 
 	[type=text]:focus {
+		border-color: $color-gray-dark;
 		background: $color-gray-lightest;
 		color: $color-gray-darker;
-		border-color: $color-gray-dark;
 	}
 }
 
@@ -87,11 +89,11 @@
 }
 
 .wiki-box {
-	border: $color-blue 1px dashed;
 	padding: 1em;
+	border: $color-blue 1px dashed;
+	background-color: $color-gray-lightest;
 	color: black;
 	line-height: 1.1em;
-	background-color: $color-gray-lightest;
 }
 
 .wiki-box-blue,
@@ -99,42 +101,42 @@
 .wiki-box-green,
 .wiki-box-yellow {
 	display: block;
-	font-size: 1em;
-	color: black;
 	padding: .5em;
+	color: black;
+	font-size: 1em;
 }
 
 .wiki-box-blue {
-	background: $color-blue-light;
 	border-left: 8px $color-blue solid;
+	background: $color-blue-light;
 }
 
 .wiki-box-red {
-	background: $color-pink-light;
 	border-left: 8px $color-pink solid;
+	background: $color-pink-light;
 }
 
 .wiki-box-green {
-	background: $color-green-light;
 	border-left: 8px $color-green solid;
+	background: $color-green-light;
 }
 
 .wiki-box-yellow {
-	background: $color-yellow-light;
 	border-left: 8px $color-yellow solid;
+	background: $color-yellow-light;
 }
 
 .wiki-box-catlinks {
+	clear: both;
+	margin-top: 1em;
+	padding: 5px;
 	border: 1px solid $color-gray;
 	background-color: $color-gray-lightest;
-	padding: 5px;
-	margin-top: 1em;
-	clear: both;
 }
 
 .wiki-table {
 	margin: 1em 1em 1em 0;
-	background: $color-gray-lightest;
 	border: 1px $color-gray solid;
 	border-collapse: collapse;
+	background: $color-gray-lightest;
 }

@@ -2,11 +2,11 @@
 
 <f:render partial="Login"/>
 
-<div id="wrapper">
+<div class="wrapper">
 
 	<f:render partial="Topbar"/>
 
-	<div id="main">
+	<div class="main">
 
 		<f:render partial="Header"/>
 
@@ -16,8 +16,8 @@
 
 		<f:cObject typoscriptObjectPath="page.10.subparts.submenu"/>
 
-		<div id="content">
-			<h3>{maincaption}</h3>
+		<div class="content">
+			<h3 class="content__heading">{maincaption}</h3>
 
 			<f:cObject typoscriptObjectPath="page.10.marks.HLINE"/>
 			<f:cObject typoscriptObjectPath="page.10.subparts.maincontent"/>

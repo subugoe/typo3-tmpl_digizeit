@@ -1,15 +1,18 @@
+<!-- This template is not yet fully BEMed. Is it used? -->
+
 <!-- ###SSEARCH### BEGIN-->
 	<!-- ###SSEARCHFORM### BEGIN -->
-	<div id="tx-goobit3-search">
+	<div class="goobit3-search">
 		<h4>###SEARCHTITLE###</h4>
-		<form id="tx-goobit3-search_formstartpage" action="###FORM_ACTION###" method="post">
+		<form class="goobit3-search__form" action="###FORM_ACTION###" method="post">
 			###HIDDEN###
 			<input type="hidden" name="tx_goobit3_search[default]" value="METADATA" />
-			<input id="searchforminput" size="30" name="formquery" value="###FORM_SQUERY_VALUE###" />
-			<input id="send" type="submit" value="Suchen" />
-
+			<label>
+				<span class="sr-only">Suchbegriff:</span>
+				<input class="goobit3-search__input" size="25" name="formquery" value="###FORM_SQUERY_VALUE###" onKeyup="tx_goobit3_searchproposallist(xajax.getFormValues('tx-goobit3-search_form'))" />
+			</label>
+			<input class="goobit3-search__submit" type="submit" value="&#xf002" title="Suchen"/>
 		</form>
-		<br />
 	</div>
 	<!-- ###SSEARCHFORM### END -->
 <!-- ###SSEARCH### END-->

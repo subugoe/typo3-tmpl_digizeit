@@ -1,41 +1,39 @@
-#tx-goobit3-browse {
+.goobit3-collection {
+	margin: 0;
+	list-style: none;
+}
 
-	ul {
-		list-style: none;
-		margin: 0;
+.goobit3-collection__item {
+	@include clearfix;
+	position: relative;
+	padding-left: 1.25em;
+
+	@media (max-width: $screen-sm-max) {
+		margin-bottom: $line-height / 2;
 	}
 
-	li {
-		@include clearfix;
-		padding-left: 1.25em;
-		position: relative;
-		@media (max-width: $screen-sm-max) {
-			margin-bottom: $line-height / 2;
-		}
+	a {
+		display: block;
+		padding-right: 1.25em;
+		border: 0;
 
-		a {
+		@include hover {
 			border: 0;
-			display: block;
-			padding-right: 1.25em;
-
-			@include hover {
-				border: 0;
-			}
 		}
+	}
 
-		.rss {
-			padding: 0;
-			position: absolute;
-			right: 0;
-			top: round($line-height / 5);
-		}
+	.rss {
+		position: absolute;
+		top: round($line-height / 5);
+		right: 0;
+		padding: 0;
+	}
 
-		&::before {
-			color: $color-gray-light;
-			content: ''; // chevron-right
-			float: left;
-			font-family: 'FontAwesome';
-			margin-left: -1.25em;
-		}
+	&::before {
+		float: left;
+		margin-left: -1.25em;
+		color: $color-gray-light;
+		content: ''; // chevron-right
+		font-family: 'FontAwesome';
 	}
 }

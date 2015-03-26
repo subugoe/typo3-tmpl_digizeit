@@ -1,0 +1,76 @@
+.login {
+	@extend .pull-right;
+	@extend .small;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 11;
+	padding: $gutter;
+	color: $color-brown-light;
+
+	@media (max-width: $screen-sm-max) {
+		@include off-canvas('right');
+	}
+
+	a {
+		border: 0;
+		color: $color-brown-light;
+		text-decoration: none;
+
+		@include hover {
+			border-color: white;
+			color: white;
+		}
+	}
+
+	label,
+	p {
+		color: $color-brown-light;
+	}
+}
+
+.login__form {
+	@extend .form-inline;
+
+	label {
+		display: block;
+		margin-bottom: $line-height;
+	}
+
+	[type=text],
+	[type=password],
+	[type=submit] {
+		clear: both;
+		float: right;
+		margin: (-$line-height / 4) 0
+	}
+}
+
+.login__form--inline {
+	[type=text],
+	[type=password] {
+		width: 61.8%;
+	}
+}
+
+.login__form-group {
+	@extend .form-group;
+	margin-right: .5em;
+
+	@media (max-width: $screen-sm-max) {
+		margin-right: 0;
+	}
+}
+
+.login__input {
+	@include input;
+}
+
+.login__submit {
+	@include button;
+}
+
+.login__footer {
+	margin-top: 5px;
+	text-align: right;
+}

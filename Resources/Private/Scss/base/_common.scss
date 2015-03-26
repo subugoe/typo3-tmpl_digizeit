@@ -1,27 +1,28 @@
 body {
 	@extend .container;
-	background: $background-color;
-	color: $text-color;
+	position: relative;
 	overflow-x: hidden; // For out-of-bounds background images
 	overflow-y: scroll;
 	padding: 0;
-	position: relative;
+	background: $background-color;
+	color: $text-color;
 
 	&::before,
 	&::after {
-		content: '';
 		position: absolute;
 		z-index: -1;
+		content: '';
 	}
 
 	&::before {
 		top: -165px + $topbar-height;
 		left: -45px - $gutter;
+		z-index: 9;
 		width: 380px;
 		height: 320px;
 		background: url('#{$img-path}bgicon.svg') no-repeat top left;
 		pointer-events: none; // TODO: Only works in IE>10. Possible solution: Make the right part of the tilted background image a part of the top wedge.
-		z-index: 9;
+
 		@media (max-width: $screen-sm-max) {
 			display: none;
 		}
@@ -29,10 +30,10 @@ body {
 }
 
 h3 {
-	font-family: $font-family-serif;
-	font-style: italic;
-	color: $color-red-dark;
 	margin: $line-height 0;
+	color: $color-red-dark;
+	font-style: italic;
+	font-family: $font-family-serif;
 }
 
 h4,
@@ -65,25 +66,25 @@ hr {
 }
 
 label {
-	cursor: pointer;
 	vertical-align: top;
+	cursor: pointer;
 }
 
 input,
 select,
 textarea {
-	background: $color-gray-lightest;
-	border: 1px solid $color-gray;
-	min-height: $line-height;
 	padding: $line-height / 4;
+	min-height: $line-height;
+	border: 1px solid $color-gray;
+	background: $color-gray-lightest;
 
 	&:focus {
 		border-color: $link-color;
 	}
 }
 
-input[type=radio],
-input[type=checkbox] {
+[type=radio],
+[type=checkbox] {
 	margin: 0;
 }
 
@@ -94,9 +95,9 @@ button,
 }
 
 ul {
-	list-style: disc outside;
 	margin-left: 2em;
 	padding: 0;
+	list-style: disc outside;
 }
 
 strong {

@@ -1,79 +1,28 @@
-#searchforminput {
-	border: $border-width solid $border-color;
-	padding: $gutter - $border-width;
-	width: 100%;
-
-	&:focus {
-		background: $color-brown-lightest;
-	}
-}
-
-#send {
-	background: none;
-	border: 0;
-	font-family: 'FontAwesome';
-	font-size: $font-size-large;
-	width: ($gutter * 2 - $border-width * 2 + $line-height);
-	height: ($gutter * 2 - $border-width * 2 + $line-height);
-	position: absolute;
-	right: 0;
-	top: 0;
-}
-
-.goobit3-pagination {
+.goobit3__pagination {
 	text-align: center;
 
 	ol {
 		@include horizontal-link-list;
-		margin-top: $line-height;
+		margin: $line-height 0;
 	}
 }
 
-.goobit3-results {
-	display: table;
-	list-style: none;
-	padding: 0;
-}
-
-.goobit3-item {
-	display: table-row;
-
-	> div {
-		display: table-cell;
-		padding-bottom: $line-height;
-		vertical-align: top;
-
-		+ div {
-			padding-left: 1em;
-		}
-	}
-}
-
-.goobit3-item-thumbnail {
-	// TODO
-}
-
-.goobit3-item-index {
-	color: $text-color-light;
-	font-weight: bold;
-	text-align: right;
-}
-
-.goobit3-item-info {
-	width: 100%;
-}
-
-.goobit3_purl {
+.goobit3__purl {
 	font-weight: bold;
 }
 
-.goobit3_lock {
+.goobit3__lock {
+	float: right;
+	//TODO: fa fa-lock
 	border: 0 !important;
 	color: $color-gray;
-	float: right;
 	font-size: 2em;
 
 	@include hover {
 		color: $link-hover-color;
+	}
+
+	&--open {
+		//TODO: fa fa-unlock
 	}
 }

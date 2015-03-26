@@ -1,25 +1,16 @@
 <!-- ###NOSEARCHINDEX### BEGIN-->
-<div class="tx-goobit3-toc_toc">
-	<span class="warning">###WARNMESSAGE###</span>
-</div>
+<span class="goobit3__warning">###WARNMESSAGE###</span>
 <!-- ###NOSEARCHINDEX### END-->
 
 <!-- ###MODS### BEGIN-->
-<!-- TODO: If unlocked, display fa-unlock icon -->
-<a class="goobit3_lock fa fa-lock" href="http://www.digizeitschriften.de/informationen/subskription/" title="###LOCKTEXT###"><span class="sr-only">###LOCKTEXT###</span></a>
 
-<div class="tx-goobit3-toc_toc">
+<div class="goobit3-toc">
 
 	<!-- ###MODSSEC### BEGIN-->
 	<?xml version="1.0" encoding="utf-8"?>
 	<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:mods="http://www.loc.gov/mods/v3">
 
 		<xsl:output method="html"/>
-
-		<xsl:template name="style">
-			<!-- Platz fuer StyleSheets -->
-			<xsl:call-template name='xmlstyle' />
-		</xsl:template>
 
 		<xsl:param name="YEARPUBLISH" value="0" />
 		<xsl:param name="Successor" value="0" />
@@ -30,53 +21,64 @@
 		<xsl:param name="pdficon" value="0" />
 		<xsl:param name="publlink" value="" />
 
+		<!-- TODO: Move this -->
+		<a href="http://www.digizeitschriften.de/informationen/subskription/" title="###LOCKTEXT###">
+			<xsl:attribute name="class">
+				<xsl:choose>
+					<xsl:when test="'###LOCKBUTTON###'='typo3conf/ext/goobit3/res/lockclosed_big.gif'">goobit3__lock</xsl:when>
+					<xsl:otherwise>goobit3__lock goobit3__lock--open</xsl:otherwise>
+				</xsl:choose>
+			</xsl:attribute>
+			<span class="sr-only">###LOCKTEXT###</span>
+		</a>
+
 		<!-- schnelle schmutzige Lösung für DigiZeit besser umbauen zu modsCollection siehe tx_goobi_img.php -->
 		<xsl:template match="mods:note[@ID='MGH']" mode="periodicalvolume">
 			<xsl:choose>
 				<xsl:when test="$docstrct='Zeitschrift' or $docstrct='Periodical'">
-					<div class="comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /></div>
+					<div class="goobit3__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /></div>
 				</xsl:when>
 			</xsl:choose>
 		</xsl:template>
 		<xsl:template match="mods:note[@ID='destatis.de']" mode="periodicalvolume">
 			<xsl:choose>
 				<xsl:when test="$docstrct='Zeitschrift' or $docstrct='Periodical'">
-					<div class="comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /></div>
+					<div class="goobit3__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /></div>
 				</xsl:when>
 			</xsl:choose>
 		</xsl:template>
 		<xsl:template match="mods:note[@ID='diglit.ub.uni-heidelberg.de']" mode="periodicalvolume">
 			<xsl:choose>
 				<xsl:when test="$docstrct='Zeitschrift' or $docstrct='Periodical' or $docstrct='multivolume_work'">
-					<div class="comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /></div>
+					<div class="goobit3__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /></div>
 				</xsl:when>
 			</xsl:choose>
 		</xsl:template>
 		<xsl:template match="mods:note[@ID='digi.ub.uni-heidelberg.de']" mode="periodicalvolume">
 			<xsl:choose>
 				<xsl:when test="$docstrct='Zeitschrift' or $docstrct='Periodical' or $docstrct='multivolume_work'">
-					<div class="comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /></div>
+					<div class="goobit3__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /></div>
 				</xsl:when>
 			</xsl:choose>
 		</xsl:template>
 		<xsl:template match="mods:note[@ID='idb.ub.uni-tuebingen.de']" mode="periodicalvolume">
 			<xsl:choose>
 				<xsl:when test="$docstrct='Zeitschrift' or $docstrct='Periodical' or $docstrct='multivolume_work'">
-					<div class="comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /></div>
+					<div class="goobit3__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /></div>
 				</xsl:when>
 			</xsl:choose>
 		</xsl:template>
 		<xsl:template match="mods:note[@ID='www.zbw.eu.digire']" mode="periodicalvolume">
 			<xsl:choose>
 				<xsl:when test="$docstrct='Zeitschrift' or $docstrct='Periodical' or $docstrct='multivolume_work'">
-					<div class="comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /></div>
+					<div class="goobit3__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /></div>
 				</xsl:when>
 			</xsl:choose>
 		</xsl:template>
 		<xsl:template match="mods:note[@ID='www.uni-weimar.de.ubweimar']" mode="periodicalvolume">
 			<xsl:choose>
 				<xsl:when test="$docstrct='Zeitschrift' or $docstrct='Periodical' or $docstrct='multivolume_work'">
-					<div class="comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /></div>
+					<div class="goobit3__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /></div>
 				</xsl:when>
 			</xsl:choose>
 		</xsl:template>
@@ -84,7 +86,7 @@
 		<xsl:template match="mods:note[@ID='europeana.ub.uni-frankfurt.de']" mode="periodicalvolume">
 			<xsl:choose>
 				<xsl:when test="$docstrct='Zeitschrift' or $docstrct='Periodical' or $docstrct='multivolume_work'">
-					<div class="comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /></div>
+					<div class="goobit3__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /></div>
 				</xsl:when>
 			</xsl:choose>
 		</xsl:template>
@@ -92,7 +94,7 @@
 		<xsl:template match="mods:note[@ID='egoobiweb.bbf.dipf.de']" mode="periodicalvolume">
 			<xsl:choose>
 				<xsl:when test="$docstrct='Zeitschrift' or $docstrct='Periodical' or $docstrct='multivolume_work'">
-					<div class="comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /></div>
+					<div class="goobit3__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /></div>
 				</xsl:when>
 			</xsl:choose>
 		</xsl:template>
@@ -100,15 +102,15 @@
 		<xsl:template match="mods:note[@ID='preImport']" mode="periodicalvolume">
 			<xsl:choose>
 				<xsl:when test="$docstrct='Zeitschriftenband' or $docstrct='Periodical Volume'">
-					<div class="comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /></div>
+					<div class="goobit3__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /></div>
 				</xsl:when>
 			</xsl:choose>
 		</xsl:template>
 
-		<xsl:template match="mods:relatedItem[@type='succeeding']"  mode="succeeding">
+		<xsl:template match="mods:relatedItem[@type='succeeding']" mode="succeeding">
 			<xsl:if test="$Successor" >
 				<xsl:for-each select=".">
-					<div class="succeeding">
+					<div class="succeeding"><!-- TODO -->
 						<xsl:value-of select="$Successor" /><xsl:text>: </xsl:text>
 						<xsl:choose>
 							<xsl:when test="mods:titleInfo[1]/mods:title and string-length(normalize-space(string(mods:titleInfo/mods:title))) &lt;= 80">
@@ -125,7 +127,6 @@
 								</a>
 							</xsl:otherwise>
 						</xsl:choose>
-
 					</div>
 				</xsl:for-each>
 			</xsl:if>
@@ -177,7 +178,7 @@
 					<xsl:when test="$indention='0'">
 
 						<!-- Title -->
-						<div class="goobit3_toc_title">
+						<div class="goobit3-toc__title">
 
 							<xsl:choose>
 								<xsl:when test="mods:titleInfo[1]/mods:title and string-length(normalize-space(string(mods:titleInfo[1]/mods:title))) &lt;= 80">
@@ -243,20 +244,20 @@
 					<!-- other lines -->
 					<xsl:otherwise>
 
-						<div class="goobit3_toc_item indent-{$indention} {$current}">
+						<div class="goobit3-toc-item goobit3-toc-item--indent-{$indention} goobit3-toc-item--{$current}">
 							<!-- year of publication -->
 							<xsl:choose>
 								<xsl:when test="$YEARPUBLISH">
-									<a href="{$link}"><span class="siteyear"><xsl:value-of select="$YEARPUBLISH" /></span></a>
+									<a href="{$link}"><span class="goobit3-toc-item__site-year"><xsl:value-of select="$YEARPUBLISH" /></span></a>
 								</xsl:when>
 							</xsl:choose>
 
 							<!-- title -->
 							<xsl:choose>
 								<xsl:when test="mods:titleInfo[1]/mods:title and string-length(normalize-space(string(mods:titleInfo[1]/mods:title))) &lt;= 80">
-									<a href="{$link}"><span class="sitetitle"><xsl:value-of select="mods:titleInfo[1]/mods:title" /></span></a>
+									<a href="{$link}"><span class="goobit3-toc-item__site-title"><xsl:value-of select="mods:titleInfo[1]/mods:title" /></span></a>
 									<xsl:if test="mods:titleInfo[1]/mods:partName">
-										<a href="{$link}"><span class="sitetitle">
+										<a href="{$link}"><span class="goobit3-toc-item__site-title">
 											<xsl:text>  </xsl:text><xsl:value-of select="$docstrct" /><xsl:text>  </xsl:text>
 											<xsl:value-of select="mods:titleInfo[1]/mods:partName" /></span>
 										</a>
@@ -264,13 +265,13 @@
 								</xsl:when>
 								<xsl:when test="mods:titleInfo[1]/mods:title and string-length(normalize-space(string(mods:titleInfo[1]/mods:title))) &gt;= 80">
 									<a href="{$link}">
-									<span class="sitetitle">
+									<span class="goobit3-toc-item__site-title">
 										<xsl:attribute name="title"><xsl:value-of select="mods:titleInfo[1]/mods:title" /></xsl:attribute>
 										<xsl:value-of select="concat(substring(normalize-space(string(mods:titleInfo[1]/mods:title)),0,80),'...')" />
 									</span>
 									</a>
 									<xsl:if test="mods:titleInfo[1]/mods:partName">
-										<a href="{$link}"><span class="sitetitle">
+										<a href="{$link}"><span class="goobit3-toc-item__site-title">
 											<xsl:text>  </xsl:text><xsl:value-of select="$docstrct" /><xsl:text>  </xsl:text>
 											<xsl:value-of select="mods:titleInfo[1]/mods:partName" /></span>
 										</a>
@@ -278,14 +279,14 @@
 								</xsl:when>
 								<xsl:when test="not(mods:titleInfo[1]/mods:title) and string-length($docstrct) &gt;= 80">
 									<a href="{$link}">
-									<span class="sitetitle">
+									<span class="goobit3-toc-item__site-title">
 										<xsl:attribute name="title"><xsl:value-of select="$docstrct" /></xsl:attribute>
 										<xsl:value-of select="concat(substring($docstrct,0,80),'...')" />
 									</span>
 									</a>
 								</xsl:when>
 								<xsl:otherwise>
-									<a href="{$link}"><span class="sitetitle"><xsl:value-of select="$docstrct" /></span></a>
+									<a href="{$link}"><span class="goobit3-toc-item__site-title"><xsl:value-of select="$docstrct" /></span></a>
 								</xsl:otherwise>
 							</xsl:choose>
 
@@ -324,15 +325,14 @@
 									<!--
 									<form action="dms/gcs-wrapper" method="post" name="{$structid}" class="siteno"><input type="hidden" name="gcsurl" value="{$pdflink}" /><a href="{$link}"><xsl:value-of select="$page" /></a><a href="#" onClick="{$structid}.submit(); return false;" class="sitepdf"><img class="pdficon" src="{$pdficon}" alt="PDF" title="PDF" /></a></form>
 									//-->
-									<span class="goobit3_toc_page-number">
+									<span class="goobit3-toc-item__page-number">
 										<a href="{$link}"><xsl:value-of select="$page" /></a>
 										<!-- TODO: On dev, PDF is never set. Please check -->
-										<a href="{$pdflink}" class="goobit3_toc_pdf-link"><span class="sr-only">PDF</span></a>
-										<i class="fa fa-file-pdf-o"></i>
+										<a href="{$pdflink}" class="goobit3-toc-item__pdf-link"><span class="sr-only">PDF</span></a>
 									</span>
 								</xsl:when>
 								<xsl:otherwise>
-									<span class="goobit3_toc_page-number">
+									<span class="goobit3-toc-item__page-number">
 										<a href="{$link}"><xsl:value-of select="$page" /></a>
 									</span>
 								</xsl:otherwise>

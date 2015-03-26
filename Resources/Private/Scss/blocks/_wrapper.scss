@@ -1,10 +1,10 @@
-#wrapper {
-	padding-top: $topbar-height;
+.wrapper {
 	position: relative;
 	z-index: 2;
+	padding-top: $topbar-height;
 
 	@media (max-width: $screen-sm-max) {
-		background: $background-color;
 		padding-top: $topbar-height-small;
+		background: $background-color;
 	}
 }

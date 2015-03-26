@@ -2,7 +2,7 @@
 temp.submenu = COA_INT
 temp.submenu {
 	5 = TEXT
-	5.value = <ul id="submenu">
+	5.value = <ul class="subnav">
 	10 = HMENU
 	10 {
 		entryLevel = {$SUBMENUENTRYLEVEL}
@@ -43,8 +43,7 @@ temp.submenu {
 			}
 
 			# Normal state properties
-			NO.allWrap = |*| <li>|<span class="subnavsep"></span></li> |*| <li>|</li>
-			#        NO.allWrap = |*| &nbsp;|&nbsp;<span class="sep"></span> |*| &nbsp;|
+			NO.allWrap = |*| <li>|</li> |*| <li>|</li>
 
 			ACT = 1
 			ACT.additionalParams.cObject = COA
@@ -81,9 +80,8 @@ temp.submenu {
 			}
 
 			#        ACT.doNotLinkIt = 1
-			ACT.ATagParams = class="sub_act"
-			ACT.allWrap = |*| <li>|<span class="subnavsep"></span></li> |*| <li>|</li>
-			#        ACT.allWrap = |*| &nbsp;|&nbsp;<span class="sep"></span> |*| &nbsp;|
+			ACT.ATagParams = class="subnav__item--active"
+			ACT.allWrap = |*| <li>|</li> |*| <li>|</li>
 		}
 	}
 

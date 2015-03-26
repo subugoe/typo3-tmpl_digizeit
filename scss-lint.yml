@@ -12,7 +12,7 @@ linters:
     enabled: false
 
   Comment:
-    enabled: false
+    enabled: true
 
   DebugStatement:
     enabled: true
@@ -21,7 +21,7 @@ linters:
     enabled: true
 
   DuplicateProperty:
-    enabled: false
+    enabled: true
 
   ElsePlacement:
     enabled: true
@@ -67,14 +67,14 @@ linters:
     style: exclude_zero
 
   MergeableSelector:
-    enabled: false
+    enabled: true
 
   NameFormat:
     enabled: true
-    convention: hyphenated_lowercase
+    convention: BEM
 
   NestingDepth:
-    enabled: false
+    enabled: true
     max_depth: 3
 
   PlaceholderInExtend:
@@ -82,6 +82,7 @@ linters:
 
   PropertySortOrder:
     enabled: false
+    order: smacss
 
   PropertySpelling:
     enabled: true
@@ -98,9 +99,9 @@ linters:
     max_depth: 3
 
   SelectorFormat:
-    enabled: false
-    convention: hyphenated_lowercase
-    class_convention: '^(?:u|is|has)\-[a-z][a-zA-Z0-9]*$|^(?!u|is|has)[a-zA-Z][a-zA-Z0-9]*(?:\-[a-z][a-zA-Z0-9]*)?(?:\-\-[a-z][a-zA-Z0-9]*)?$'
+    enabled: true
+    convention: hyphenated_BEM
+    #class_convention: '^(?:u|is|has)\-[a-z][a-zA-Z0-9]*$|^(?!u|is|has)[a-zA-Z][a-zA-Z0-9]*(?:\-[a-z][a-zA-Z0-9]*)?(?:\-\-[a-z][a-zA-Z0-9]*)?$'
 
   Shorthand:
     enabled: true
@@ -148,7 +149,7 @@ linters:
     enabled: true
 
   UrlFormat:
-    enabled: false
+    enabled: true
 
   UrlQuotes:
     enabled: true

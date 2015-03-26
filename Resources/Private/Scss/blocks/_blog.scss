@@ -1,0 +1,42 @@
+.blog {
+	p {
+		margin: 0;
+	}
+}
+
+.blog__entry {
+	margin-bottom: $line-height;
+	padding-bottom: $line-height - $border-width;
+	border-bottom: $border;
+}
+
+.blog__heading {
+	margin-top: 0;
+	color: $color-red-dark;
+}
+
+.blog__date {
+	color: $color-gray-dark;
+	font-weight: normal;
+}
+
+.blog__date-separator {
+	display: inline-block;
+	margin: 0 .5em;
+	border-right: 1px solid #666;
+	text-indent: -9999em;
+}
+
+.blog__image {
+	display: inline;
+	float: left;
+	margin-right: 1em;
+}
+
+.blog-entry__heading {
+	@extend .h2;
+}
+
+.blog-entry__date {
+	@extend .blog__date;
+}

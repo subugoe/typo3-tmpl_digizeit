@@ -1,4 +1,4 @@
-#lang_nav {
+.language-nav {
 	position: absolute;
 	top: $gutter * 2;
 	right: $gutter * 2;
@@ -10,17 +10,17 @@
 	}
 
 	a {
+		display: inline-block;
+		padding: ($gutter / 3);
 		border: 0;
 		color: white;
-		display: inline-block;
-		line-height: 1;
 		text-decoration: none;
-		padding: ($gutter / 3);
+		line-height: 1;
 
 		@include hover {
 			border: 0;
-			color: $color-red-dark;
 			background: white;
+			color: $color-red-dark;
 		}
 	}
 }

@@ -1,0 +1,42 @@
+.collection {
+	margin: 0;
+	list-style: none;
+}
+
+.collection__close-book {
+	overflow: hidden;
+	width: 22px;
+	height: 22px;
+	background: url('#{$img-path}closebook.gif') no-repeat 0 0;
+	text-indent: -9999em;
+}
+
+.collection__open-book {
+	@extend .collection__close-book;
+	background-image: url('#{$img-path}openbook.gif');
+}
+
+.collection__site-number {
+	position: absolute;
+	right: 200px;
+	display: inline;
+}
+
+.collection__site-year {
+	position: relative;
+	left: 0;
+}
+
+.collection__site-pdf {
+	position: relative;
+	left: 0;
+	display: inline;
+
+	@include hover {
+		background: transparent;
+	}
+}
+
+.collection__pdf-icon {
+	vertical-align: middle;
+}

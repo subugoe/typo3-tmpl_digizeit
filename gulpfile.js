@@ -44,6 +44,11 @@ gulp.task('lint', function() {
 		}))
 })
 
+gulp.task('lint-watch', function() {
+	gulp.start('lint')
+	gulp.watch(config.paths.sass, ['lint'])
+})
+
 gulp.task('compile', function() {
 	gulp.start('sass')
 })

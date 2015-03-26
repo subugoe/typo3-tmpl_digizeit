@@ -1,12 +1,11 @@
+<!-- This template is not yet fully BEMed. Is it used? -->
+
 <!-- ###NOSEARCHINDEX### BEGIN-->
 <span class="warning">###WARNMESSAGE###</span>
 <!-- ###NOSEARCHINDEX### END-->
 
 <!-- ###MODS### BEGIN-->
-<!-- TODO: If unlocked, display fa-unlock icon; use ###LOCKBUTTON### -->
-<a class="goobit3_lock fa fa-lock" href="http://www.digizeitschriften.de/informationen/subskription/" title="###LOCKTEXT###"><span class="sr-only">###LOCKTEXT###</span></a>
-
-<div id="goobit3_met">
+<div id="goobit3-met">
 	<!-- ###MODSSEC### BEGIN-->
 	<?xml version="1.0" encoding="utf-8"?>
 	<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:mods="http://www.loc.gov/mods/v3">
@@ -65,35 +64,35 @@
 		<xsl:template match="mods:note[@ID='MGH']" mode="periodicalvolume">
 			<xsl:choose>
 				<xsl:when test="$docstrct='Zeitschrift' or $docstrct='Periodical'">
-					<div class="comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
+					<div class="goobit3-met__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
 				</xsl:when>
 			</xsl:choose>
 		</xsl:template>
 		<xsl:template match="mods:note[@ID='destatis.de']" mode="periodicalvolume">
 			<xsl:choose>
 				<xsl:when test="$docstrct='Zeitschrift' or $docstrct='Periodical'">
-					<div class="comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
+					<div class="goobit3-met__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
 				</xsl:when>
 			</xsl:choose>
 		</xsl:template>
 		<xsl:template match="mods:note[@ID='diglit.ub.uni-heidelberg.de']" mode="periodicalvolume">
 			<xsl:choose>
 				<xsl:when test="$docstrct='Zeitschrift' or $docstrct='Periodical'">
-					<div class="comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
+					<div class="goobit3-met__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
 				</xsl:when>
 			</xsl:choose>
 		</xsl:template>
 		<xsl:template match="mods:note[@ID='digi.ub.uni-heidelberg.de']" mode="periodicalvolume">
 			<xsl:choose>
 				<xsl:when test="$docstrct='Zeitschrift' or $docstrct='Periodical'">
-					<div class="comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
+					<div class="goobit3-met__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
 				</xsl:when>
 			</xsl:choose>
 		</xsl:template>
 		<xsl:template match="mods:note[@ID='idb.ub.uni-tuebingen.de']" mode="periodicalvolume">
 			<xsl:choose>
 				<xsl:when test="$docstrct='Zeitschrift' or $docstrct='Periodical'">
-					<div class="comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
+					<div class="goobit3-met__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
 				</xsl:when>
 			</xsl:choose>
 		</xsl:template>
@@ -101,7 +100,7 @@
 		<xsl:template match="mods:note[@ID='www.zbw.eu.digire']" mode="periodicalvolume">
 			<xsl:choose>
 				<xsl:when test="$docstrct='Zeitschrift' or $docstrct='Periodical'">
-					<div class="comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
+					<div class="goobit3-met__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
 				</xsl:when>
 			</xsl:choose>
 		</xsl:template>
@@ -109,7 +108,7 @@
 		<xsl:template match="mods:note[@ID='www.uni-weimar.de.ubweimar']" mode="periodicalvolume">
 			<xsl:choose>
 				<xsl:when test="$docstrct='Zeitschrift' or $docstrct='Periodical'">
-					<div class="comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
+					<div class="goobit3-met__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
 				</xsl:when>
 			</xsl:choose>
 		</xsl:template>
@@ -117,7 +116,7 @@
 		<xsl:template match="mods:note[@ID='europeana.ub.uni-frankfurt.de']" mode="periodicalvolume">
 			<xsl:choose>
 				<xsl:when test="$docstrct='Zeitschrift' or $docstrct='Periodical'">
-					<div class="comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
+					<div class="goobit3-met__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
 				</xsl:when>
 			</xsl:choose>
 		</xsl:template>
@@ -125,7 +124,7 @@
 		<xsl:template match="mods:note[@ID='goobiweb.bbf.dipf.de']" mode="periodicalvolume">
 			<xsl:choose>
 				<xsl:when test="$docstrct='Zeitschrift' or $docstrct='Periodical'">
-					<div class="comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
+					<div class="goobit3-met__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
 				</xsl:when>
 			</xsl:choose>
 		</xsl:template>
@@ -140,8 +139,8 @@
 			<xsl:apply-templates select="mods:note[@ID='www.uni-weimar.de.ubweimar']" mode="periodicalvolume" />
 			<xsl:apply-templates select="mods:note[@ID='europeana.ub.uni-frankfurt.de']" mode="periodicalvolume" />
 			<xsl:apply-templates select="mods:note[@ID='goobiweb.bbf.dipf.de']" mode="periodicalvolume" />
-<!--				<div id="tx-goobit3-met_met"> -->
-			<ul class="goobit3_met_list">
+
+			<ul class="goobit3-met__list">
 				<!-- Structurtyp -->
 				<li>
 					<span><strong><xsl:value-of select="$structure" /><xsl:text>: </xsl:text></strong></span>
@@ -149,6 +148,16 @@
 				</li>
 
 				<!-- Maintitle -->
+				<a href="http://www.digizeitschriften.de/informationen/subskription/" title="###LOCKTEXT###">
+					<xsl:attribute name="class">
+						<xsl:choose>
+							<xsl:when test="'###LOCKBUTTON###'='typo3conf/ext/goobit3/res/lockclosed_big.gif'">goobit3__lock</xsl:when>
+							<xsl:otherwise>goobit3__lock goobit3__lock--open</xsl:otherwise>
+						</xsl:choose>
+					</xsl:attribute>
+					<span class="sr-only">###LOCKTEXT###</span>
+				</a>
+
 				<xsl:if test="mods:titleInfo[not(@*)]/mods:title">
 					<li>
 						<span><strong><xsl:value-of select="$title" /><xsl:text>: </xsl:text></strong></span>

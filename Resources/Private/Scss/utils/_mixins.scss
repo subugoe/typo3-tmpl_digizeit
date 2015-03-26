@@ -1,26 +1,31 @@
 @mixin hr {
-	background: none;
+	margin: 0 0 $line-height;
 	height: $line-height - 1px;
 	border: 0;
 	border-bottom: $border-width dotted $border-color;
-	margin: 0 0 $line-height;
+	background: none;
 }
 
 @mixin button {
 	@extend .btn;
 	@extend .btn-default;
-	background: $color-gray-lighter;
-	border: 1px solid $color-gray-lighter;
-	min-height: $line-height;
-	line-height: $line-height !important; //TODO
 	min-width: $line-height * 2;
+	min-height: $line-height;
+	border: 1px solid $color-gray-lighter;
+	background: $color-gray-lighter;
+	line-height: $line-height !important; //TODO
 	transition: all $time-short;
 
 	@include hover {
-		background: $link-hover-color;
 		border-color: $link-hover-color;
+		background: $link-hover-color;
 		color: $color-gray-lightest;
 	}
+}
+
+@mixin fa-icon($name) {
+	@extend .fa;
+	@extend .fa-#{$name};
 }
 
 @mixin input {
@@ -30,26 +35,26 @@
 @mixin horizontal-link-list {
 	@include clearfix;
 	display: block;
+	margin: 0 -.25em;
+	padding: 0;
+	list-style: none;
 	font-weight: bold;
 	line-height: 1;
-	list-style: none;
-	margin-left: -.25em;
-	padding: 0;
 
 	li {
-		border-right: $border;
 		float: left;
 		margin-bottom: $line-height;
 		padding: (($line-height - $font-size-base) / 2) .25em;
+		border-right: $border;
 
 		&:last-child {
 			border-right: 0;
 		}
 
 		@media (max-width: $screen-sm-max) {
-			border: 0;
 			float: none;
 			margin-bottom: ($line-height * 2 - $font-size-base);
+			border: 0;
 
 			&:last-child {
 				margin: 0;
@@ -59,11 +64,11 @@
 
 	a,
 	span {
-		border: 0 !important;
 		float: left;
 		margin: -10px 0;
-		min-width: 2em;
 		padding: .5em;
+		min-width: 2em;
+		border: 0 !important;
 	}
 
 	a {
@@ -80,8 +85,7 @@
 		}
 	}
 
-	.active a,
-	.sub_act {
+	.active a {
 		background: $active-color;
 		color: #fff;
 	}
@@ -96,14 +100,14 @@
 }
 
 @mixin off-canvas($horizonal-position: 'left') {
+	top: 0;
+	z-index: 0;
+	width: 61.8%;
 	height: 100%;
 	background: $off-canvas-color;
-	top: 0;
 	@if $horizonal-position == 'right' {
 		right: 0;
 	}
-	width: 61.8%;
-	z-index: 0;
 
 	&.active {
 		z-index: 1;

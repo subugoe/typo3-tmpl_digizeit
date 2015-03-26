@@ -1,11 +1,11 @@
 <!-- ###NOSEARCHINDEX### BEGIN-->
-<span class="goobit3-warning">###WARNMESSAGE###</span>
+<span class="goobit3__warning">###WARNMESSAGE###</span>
 <!-- ###NOSEARCHINDEX### END-->
 
 <!-- ###IMAGEVIEW## BEGIN -->
 <!--  ###HEAD### BEGIN -->
 
-<div class="goobit3_img_head">
+<div class="goobit3-image__head">
 	<!-- ###HEADSECTION### BEGIN-->
 	<?xml version="1.0" encoding="utf-8"?>
 	<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:goobi="http://www.goobi.org/">
@@ -17,11 +17,6 @@
 		<xsl:param name="firstpage" value="0" />
 		<xsl:param name="lastpage" value="0" />
 		<xsl:param name="rotate" value="0" />
-
-		<xsl:template name="style">
-			<!-- Platz fuer StyleSheets -->
-			<xsl:call-template name='xmlstyle' />
-		</xsl:template>
 
 		<xsl:template match="/mods:modsCollection">
 			<xsl:apply-templates select="mods:mods[1]/mods:note[@ID='MGH']" mode="comment" />
@@ -40,39 +35,39 @@
 		</xsl:template>
 
 		<xsl:template match="mods:mods[1]/mods:note[@ID='MGH']" mode="comment">
-			<div class="goobit3_comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
+			<div class="goobit3__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
 		</xsl:template>
 
 		<xsl:template match="mods:mods[1]/mods:note[@ID='destatis.de']" mode="comment">
-			<div class="goobit3_comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
+			<div class="goobit3__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
 		</xsl:template>
 
 		<xsl:template match="mods:mods[1]/mods:note[@ID='diglit.ub.uni-heidelberg.de']" mode="comment">
-			<div class="goobit3_comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
+			<div class="goobit3__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
 		</xsl:template>
 
 		<xsl:template match="mods:mods[1]/mods:note[@ID='digi.ub.uni-heidelberg.de']" mode="comment">
-			<div class="goobit3_comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
+			<div class="goobit3__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
 		</xsl:template>
 
 		<xsl:template match="mods:mods[1]/mods:note[@ID='idb.ub.uni-tuebingen.de']" mode="comment">
-			<div class="goobit3_comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
+			<div class="goobit3__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
 		</xsl:template>
 
 		<xsl:template match="mods:mods[1]/mods:note[@ID='www.zbw.eu.digire']" mode="comment">
-			<div class="goobit3_comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
+			<div class="goobit3__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
 		</xsl:template>
 
 		<xsl:template match="mods:mods[1]/mods:note[@ID='www.uni-weimar.de.ubweimar']" mode="comment">
-			<div class="goobit3_comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
+			<div class="goobit3__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
 		</xsl:template>
 
 		<xsl:template match="mods:mods[1]/mods:note[@ID='europeana.ub.uni-frankfurt.de']" mode="comment">
-			<div class="goobit3_comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
+			<div class="goobit3__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
 		</xsl:template>
 
 		<xsl:template match="mods:mods[1]/mods:note[@ID='goobiweb.bbf.dipf.de']" mode="comment">
-			<div class="goobit3_comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
+			<div class="goobit3__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
 		</xsl:template>
 
 		<!--  Main Title -->
@@ -81,8 +76,8 @@
 			<a href="http://www.digizeitschriften.de/informationen/subskription/" title="###LOCKTEXT###">
 				<xsl:attribute name="class">
 					<xsl:choose>
-						<xsl:when test="'###LOCKBUTTON###'='typo3conf/ext/goobit3/res/lockclosed_big.gif'">goobit3_lock fa fa-lock</xsl:when>
-						<xsl:otherwise>goobit3_lock fa fa-unlock</xsl:otherwise>
+						<xsl:when test="'###LOCKBUTTON###'='typo3conf/ext/goobit3/res/lockclosed_big.gif'">goobit3__lock</xsl:when>
+						<xsl:otherwise>goobit3__lock goobit3__lock--open</xsl:otherwise>
 					</xsl:choose>
 				</xsl:attribute>
 				<span class="sr-only">###LOCKTEXT###</span>
@@ -92,20 +87,20 @@
 				<xsl:when test="string-length(normalize-space(string(.))) &lt;= 180">
 					<xsl:choose>
 						<xsl:when test="$pdflink">
-							<a class="goobit3_img_title pdf" href="{$pdflink}" title="PDF"><i class="fa fa-file-pdf-o"></i><span class="sr-only">PDF</span></a>
+							<a class="goobit3-image__title goobit3-image__title--pdf" href="{$pdflink}" title="PDF"><span class="sr-only">PDF</span></a>
 						</xsl:when>
 					</xsl:choose>
-					<div class="goobit3_img_title">
+					<div class="goobit3-image__title">
 						<xsl:value-of select="normalize-space(string(.))" />
 					</div>
 				</xsl:when>
 				<xsl:when test="string-length(normalize-space(string(current()))) &gt; 180">
 					<xsl:choose>
 						<xsl:when test="$pdflink">
-							<a class="goobit3_img_title pdf" href="{$pdflink}" title="PDF"><i class="fa fa-file-pdf-o"></i><span class="sr-only">PDF</span></a>
+							<a class="goobit3-image__title goobit3-image__title--pdf" href="{$pdflink}" title="PDF"><span class="sr-only">PDF</span></a>
 						</xsl:when>
 					</xsl:choose>
-					<div class="goobit3_img_title">
+					<div class="goobit3-image__title">
 						<xsl:value-of select="concat(substring(normalize-space(string(.)),0,180),'...')" />
 					</div>
 				</xsl:when>
@@ -117,12 +112,12 @@
 				<xsl:when test="not(/mods:modsCollection/mods:mods[last()]/mods:titleInfo[1]/mods:title)">
 					<xsl:choose>
 						<xsl:when test="$pdflink">
-							<div class="goobit3_img_title.pdf">
+							<div class="goobit3-image__title goobit3-image__title--pdf">
 								<a href="{$pdflink}"><img src="/fileadmin/layout/pdficon_big.png" alt="PDF" title="PDF" /></a>
 							</div>
 						</xsl:when>
 					</xsl:choose>
-					<div class="goobit3_img_title">
+					<div class="goobit3-image__title">
 						<xsl:value-of select="normalize-space(string(.))" />
 					</div>
 				</xsl:when>
@@ -133,7 +128,7 @@
 		<xsl:template match="mods:mods/mods:extension/goobi:type"  mode="structrun">
 			<xsl:choose>
 				<xsl:when test="position()=last()">
-					<span class="goobit3_img_struct">
+					<span class="goobit3-image__struct">
 						<xsl:value-of select="." />
 						<xsl:if test="$firstpage">
 							<xsl:text>&#160;/&#160;</xsl:text><xsl:value-of select="$firstpage" />
@@ -144,7 +139,7 @@
 					</span>
 				</xsl:when>
 				<xsl:when test="position()=1 and string-length(normalize-space(string(../../mods:titleInfo[1]/mods:title))) &lt;= 100">
-					<span class="goobit3_img_struct">
+					<span class="goobit3-image__struct">
 						<a>
 							<xsl:attribute name="href"><xsl:value-of select="../goobi:link" /></xsl:attribute>
 							<xsl:attribute name="title"><xsl:value-of select="../../mods:titleInfo[1]/mods:title" /></xsl:attribute>
@@ -153,7 +148,7 @@
 					</span>
 				</xsl:when>
 				<xsl:when test="position()=1 and string-length(normalize-space(string(../../mods:titleInfo[1]/mods:title))) &gt; 100">
-					<span class="goobit3_img_struct">
+					<span class="goobit3-image__struct">
 						<a>
 							<xsl:attribute name="href"><xsl:value-of select="../goobi:link" /></xsl:attribute>
 							<xsl:attribute name="title"><xsl:value-of select="../../mods:titleInfo[1]/mods:title" /></xsl:attribute>
@@ -162,7 +157,7 @@
 					</span>
 				</xsl:when>
 				<xsl:otherwise>
-					<span class="goobit3_img_struct">
+					<span class="goobit3-image__struct">
 						<a>
 							<xsl:attribute name="href"><xsl:value-of select="../goobi:link" /></xsl:attribute>
 							<xsl:attribute name="title"><xsl:value-of select="../../mods:titleInfo[1]/mods:title" /></xsl:attribute>
@@ -178,7 +173,7 @@
 
 		<!-- PURL -->
 		<xsl:template match="mods:mods[last()]/mods:extension/goobi:purl" mode="purl">
-			<div class="goobit3_purl">
+			<div class="goobit3__purl">
 				<a>
 					<xsl:attribute name="href"><xsl:value-of select="." /></xsl:attribute>
 					<xsl:attribute name="title"><xsl:text>PURL</xsl:text></xsl:attribute>
@@ -193,7 +188,7 @@
 </div>
 <!-- ###HEAD### END -->
 
-<div class="goobit3_img_viewer">
+<div class="goobit3-image-viewer">
 	<!-- ###PAGETURN### BEGIN-->
 	<?xml version="1.0" encoding="utf-8"?>
 	<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:mets="http://www.loc.gov/METS/">
@@ -206,7 +201,7 @@
 		</xsl:template>
 
 		<xsl:template match="/mets:div">
-			<div class="goobit3_img_viewer_controls">
+			<div class="goobit3-image-viewer__controls">
 				<form action="{$action}?PPN={$ppn}&amp;DMDID={$dmdid}&amp;LOGID={$logid}&amp;PHYSID={$physid}#navi" method="post">
 					<input type="hidden" name="PHYSID" value="{$physid}" />
 					<input type="hidden" name="USE" value="{$use}" />
@@ -286,7 +281,7 @@
 					</xsl:if>
 
 					<!--  pageturner -->
-					<div class="goobit3_img_viewer_pagination">
+					<div class="goobit3-image-viewer__pagination">
 						<label>Image : Page
 							<select name="selectPHYSID" onchange="document.forms['tx-goobit3-img_form'].PHYSID.value = this.value; document.forms['tx-goobit3-img_form'].submit();">
 								<!--  <option disabled="disabled">Image : Page</option> -->
@@ -347,11 +342,11 @@
 				</form>
 			</div>
 
-			<div class="goobit3_img_image">
+			<div class="goobit3-image-viewer__image">
 				<img src="{$imgurl}" />
 			</div>
 
-			<div class="goobit3_img_viewer_controls right">
+			<div class="goobit3-image-viewer__controls goobit3-image-viewer__controls--right">
 				<form action="{$action}?PPN={$ppn}&amp;DMDID={$dmdid}&amp;LOGID={$logid}&amp;PHYSID={$physid}#navi" method="post">
 					<input type="hidden" name="PHYSID" value="{$physid}" />
 					<input type="hidden" name="USE" value="{$use}" />

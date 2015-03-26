@@ -1,31 +1,31 @@
-<form name="login" method="post" action="{action}">
+<form class="login__form" name="login" method="post" action="{action}">
 
 	<f:if condition="{loggedIn}">
 		<f:then>
-			<div class="form-group">
+			<div class="login__form-group">
 				<i class="fa fa-user"></i>
 				<f:link.page pageUid="{myDigiZeit}" title="{loggedIn}">{loggedIn}</f:link.page>
 			</div>
-			<input type="submit" class="loginsubmit" value="{loginType}"/>
+			<input class="login__submit" type="submit" class="login__submit" value="{loginType}"/>
 		</f:then>
 		<f:else>
-			<div class="form-group">
-				<input class="form-control" name="user" id="user" placeholder="Username" type="text">
+			<div class="login__form-group">
+				<input class="login__input" name="user" id="user" placeholder="Username" type="text">
 				<!-- TODO: How to use f:translate within placeholder attribute?
 					<f:translate key="LLL:EXT:tmpl_digizeit/Resources/Private/Language/locallang.xlf:item_username"/>
 				-->
 			</div>
-			<div class="form-group">
-				<input class="form-control" name="pass" id="pass" placeholder="Password" type="password">
+			<div class="login__form-group">
+				<input class="login__input" name="pass" id="pass" placeholder="Password" type="password">
 				<!-- TODO: <f:translate key="LLL:EXT:tmpl_digizeit/Resources/Private/Language/locallang.xlf:item_password"/> -->
 			</div>
-			<input type="submit" class="loginsubmit" value="{loginType}"/>
+			<input class="login__submit" type="submit" class="loginsubmit" value="{loginType}"/>
 		</f:else>
 	</f:if>
 
 	<f:if condition="{loggedIn}">
 		<f:else>
-			<p class="login-foot">
+			<p class="login__footer">
 				<a href="/login/?tx_felogin_pi1%5Bforgot%5D=1">
 					<f:translate key="LLL:EXT:tmpl_digizeit/Resources/Private/Language/locallang.xlf:item_lostpass"/>
 				</a>

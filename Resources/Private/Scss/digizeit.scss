@@ -8,31 +8,30 @@
 @import 'base/fonts';
 @import 'base/common';
 
-@import 'layout/blog';
-@import 'layout/breadcrumbs';
-@import 'layout/collection';
-@import 'layout/colophon';
-@import 'layout/content';
-@import 'layout/fastsearch';
-@import 'layout/footer';
-@import 'layout/header';
-@import 'layout/language';
-@import 'layout/login';
-@import 'layout/main';
-@import 'layout/navigation';
-@import 'layout/sidebar';
-@import 'layout/submenu';
-@import 'layout/topbar';
-@import 'layout/welcome';
-@import 'layout/wrapper';
+@import 'blocks/blog';
+@import 'blocks/breadcrumbs';
+@import 'blocks/collection';
+@import 'blocks/colophon';
+@import 'blocks/content';
+@import 'blocks/fastsearch';
+@import 'blocks/footer';
+@import 'blocks/header';
+@import 'blocks/language-nav';
+@import 'blocks/login';
+@import 'blocks/main';
+@import 'blocks/navigation';
+@import 'blocks/sidebar';
+@import 'blocks/sitemap';
+@import 'blocks/subnav';
+@import 'blocks/topbar';
+@import 'blocks/to-top';
+@import 'blocks/welcome';
+@import 'blocks/wrapper';
 
 @import 'components/drwiki';
-@import 'components/felogin';
 @import 'components/femanager';
 @import 'components/goobit3';
 @import 'components/irfaq';
 @import 'components/ttaddress';
-
-@import 'pages/sitemap';
 
 @import 'shame';

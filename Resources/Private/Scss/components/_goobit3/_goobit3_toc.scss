@@ -1,18 +1,18 @@
-.goobit3_toc_title {
+.goobit3-toc__title {
 	font-weight: bold;
 
 	a {
 		margin-right: 1em;
 	}
 
-	+ .goobit3_toc_item {
-		border-top: $border;
+	& + & {
 		margin-top: $line-height;
 		padding-top: $line-height - $border-width;
+		border-top: $border;
 	}
 }
 
-.goobit3_toc_item {
+.goobit3-toc-item {
 	@for $i from 1 through 5 {
 		&.indent-#{$i * 20} {
 			padding-left: ($i - 2) * 2em;
@@ -24,20 +24,21 @@
 	}
 }
 
-.goobit3_toc_page-number {
+.goobit3-toc-item__page-number {
 	float: right;
 }
 
-.goobit3_toc_pdf-link {
-
+.goobit3-toc-item__pdf-link {
+	@include fa-icon('file-pdf-o')
 }
 
-#tx-goobit3-toc_toc_current {
-	font-weight: bold;
+.goobit3-toc-item__current {
 	background-color: $color-brown-lighter;
+	font-weight: bold;
+}
 
-	.tx-goobit3-toc_space {
-		vertical-align: top;
-		float: left;
-	}
+.goobit3-toc-item__space {
+	float: left;
+	// TODO: What is this? Sounds like a non-semantic element.
+	vertical-align: top;
 }

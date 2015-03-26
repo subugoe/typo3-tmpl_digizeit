@@ -1,0 +1,12 @@
+.to-top {
+	@include button;
+	position: fixed;
+	right: 0;
+	bottom: $wedge-wrapper-height;
+	z-index: 15;
+	display: none;
+	width: $topbar-height-small;
+	height: $topbar-height-small;
+	border-right: 0;
+	font-size: $font-size-large;
+}

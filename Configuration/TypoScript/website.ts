@@ -99,3 +99,9 @@ page.10 {
 		}
 	}
 [end]
+
+plugin.tx_femanager.view {
+	templateRootPath = EXT:tmpl_digizeit/Resources/Private/Templates/Extensions/Femanager/Templates/
+	partialRootPath = EXT:tmpl_digizeit/Resources/Private/Templates/Extensions/Femanager/Partials/
+	layoutRootPath = EXT:tmpl_digizeit/Resources/Private/Templates/Extensions/Femanager/Layouts/
+}

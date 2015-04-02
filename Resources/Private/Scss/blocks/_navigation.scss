@@ -71,7 +71,9 @@
 		}
 
 		&.act {
-			background: url('#{$img-path}nav_act.svg') center bottom no-repeat;
+			background-image: url('#{$img-path}nav_act.svg');
+			background-position: center bottom;
+			background-repeat: no-repeat;
 
 			@media (max-width: $screen-sm-max) {
 				background: $active-color;

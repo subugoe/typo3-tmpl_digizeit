@@ -23,9 +23,13 @@
 	}
 }
 
-@mixin fa-icon($name) {
+@mixin fa-icon($name, $with-text: true) {
 	@extend .fa;
 	@extend .fa-#{$name};
+
+	&:before {
+		margin-right: .5em;
+	}
 }
 
 @mixin input {
@@ -72,6 +76,8 @@
 	}
 
 	a {
+		text-align: center;
+
 		@include hover {
 			background: $link-color;
 			color: #fff;

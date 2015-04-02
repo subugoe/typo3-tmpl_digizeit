@@ -37,10 +37,6 @@
 	padding: $gutter - $border-width;
 	width: 100%;
 	border: $border-width solid $border-color;
-
-	&:focus {
-		background: $color-brown-lightest;
-	}
 }
 
 .goobit3-search__submit {

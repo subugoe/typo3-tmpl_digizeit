@@ -27,3 +27,16 @@
 		}
 	}
 }
+
+.qq-uploader__button {
+	@include button;
+}
+
+.qq-uploader__list {
+	list-style: none;
+	margin-left: 0;
+}
+
+.qq-uploader__delete {
+	@include fa-icon('trash', true)
+}

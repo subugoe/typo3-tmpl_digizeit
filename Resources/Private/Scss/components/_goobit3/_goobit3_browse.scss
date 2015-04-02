@@ -3,14 +3,9 @@
 	list-style: none;
 }
 
+.goobit3-collection__heading,
 .goobit3-collection__item {
-	@include clearfix;
 	position: relative;
-	padding-left: 1.25em;
-
-	@media (max-width: $screen-sm-max) {
-		margin-bottom: $line-height / 2;
-	}
 
 	a {
 		display: block;
@@ -24,9 +19,22 @@
 
 	.rss {
 		position: absolute;
-		top: round($line-height / 5);
 		right: 0;
 		padding: 0;
+		top: 0;
+	}
+}
+
+.goobit3-collection__item {
+	@include clearfix;
+	padding-left: 1.25em;
+
+	@media (max-width: $screen-sm-max) {
+		margin-bottom: $line-height / 2;
+	}
+
+	.rss {
+		top: round($line-height / 5);
 	}
 
 	&::before {

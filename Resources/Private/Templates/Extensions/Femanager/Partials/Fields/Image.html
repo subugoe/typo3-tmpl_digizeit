@@ -11,12 +11,12 @@
 			<f:translate key="field_image_fineuploader" />
 		</div>
 		<div id="femanager_field_preview-image">
-			<ul class="qq-upload-list">
+			<ul class="qq-uploader__list">
 				<f:for each="{femanager:Form.GetImages(property: 'image')}" as="image">
-					<li class="alert alert-success">
-						<span class="qq-upload-file">{image}</span>
-						<span class="qq-upload-size"><femanager:Misc.FileSize path="{uploadFolder}/{image}" />kB</span>
-						<a href="#" class="qq-upload-delete icon-trash">Delete</a>
+					<li>
+						<span class="qq-uploader__file">{image}</span>
+						<span class="qq-uploader__size"><femanager:Misc.FileSize path="{uploadFolder}/{image}" />kB</span>
+						<a href="#" class="qq-uploader__delete icon-trash">Delete</a>
 						<f:image
 								src="{uploadFolder}/{image}"
 								alt="{user.firstName} {user.lastName}"
@@ -28,20 +28,20 @@
 		</div>
 		<f:form.hidden id="femanager_field_image" property="image" class="fine_uploader_image" value="{user.image}" />
 	</div>
-	<div class="hidden" style="display: none;">
+	<div class="hidden">
 		<div class="image_container_template">
 			<div class="qq-uploader">
-				<pre class="qq-upload-drop-area">
+				<pre class="qq-uploader__drop-area">
 					<span><f:translate key="field_image_drag" /></span>
 				</pre>
-				<div class="qq-upload-button btn btn-block btn-success">
+				<div class="qq-uploader__button">
 					<f:translate key="field_image_upload" />
 				</div>
-				<span class="qq-drop-processing">
+				<span class="qq-uploader__drop-processing">
 					<span><f:translate key="field_image_drag_processing" /></span>
-					<span class="qq-drop-processing-spinner"></span>
+					<span class="qq-uploader__drop-processing-spinner"></span>
 				</span>
-				<ul class="qq-upload-list"></ul>
+				<ul class="qq-uploader__list"></ul>
 			</div>
 		</div>
 		<div class="image_container_filetemplate">

@@ -189,5 +189,5 @@ class IpCalculatorUtility {
 
 }
 
-$ipcalc = GeneralUtility::makeInstance('Subugoe\\TmplDigizeit\Utility\IpCalculatorUtility');
+$ipcalc = GeneralUtility::makeInstance(\Subugoe\TmplDigizeit\Utility\IpCalculatorUtility::class);
 print_r($ipcalc->main());

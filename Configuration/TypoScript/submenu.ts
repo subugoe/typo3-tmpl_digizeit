@@ -11,6 +11,11 @@ temp.submenu {
 		1 {
 			NO.additionalParams.cObject = COA
 			NO.additionalParams.cObject {
+				3 = TEXT
+				3.data = GP:PID
+				3.if.isTrue.data = GP:PID
+				3.wrap = &PID=|
+
 				5 = TEXT
 				5.data = GP:PPN
 				5.if.isTrue.data = GP:PPN
@@ -30,6 +35,11 @@ temp.submenu {
 				15.data = GP:PHYSID
 				15.if.isTrue.data = GP:PHYSID
 				15.wrap = &PHYSID=|
+
+				16 = TEXT
+				16.data = GP:physid
+				16.if.isTrue.data = GP:physid
+				16.wrap = &physid=|
 
 				17 = TEXT
 				17.data = GP:imagenumber
@@ -48,6 +58,11 @@ temp.submenu {
 			ACT = 1
 			ACT.additionalParams.cObject = COA
 			ACT.additionalParams.cObject {
+				3 = TEXT
+				3.data = GP:PID
+				3.if.isTrue.data = GP:PID
+				3.wrap = &PID=|
+
 				5 = TEXT
 				5.data = GP:PPN
 				5.if.isTrue.data = GP:PPN
@@ -67,6 +82,11 @@ temp.submenu {
 				15.data = GP:PHYSID
 				15.if.isTrue.data = GP:PHYSID
 				15.wrap = &PHYSID=|
+
+				16 = TEXT
+				16.data = GP:physid
+				16.if.isTrue.data = GP:physid
+				16.wrap = &physid=|
 
 				17 = TEXT
 				17.data = GP:imagenumber
@@ -88,4 +108,3 @@ temp.submenu {
 	15 = TEXT
 	15.value = </ul>
 }
-

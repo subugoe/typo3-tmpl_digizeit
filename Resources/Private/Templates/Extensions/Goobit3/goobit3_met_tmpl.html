@@ -19,6 +19,7 @@
 		<xsl:param name="scannedimages" select="0" />
 
 		<!-- default value - effective value comes from METS/MODS -->
+		<xsl:param name="ismets" select="0" />
 		<xsl:param name="ppnopac" select="0" />
 		<xsl:param name="urn-link" select="0" />
 		<xsl:param name="swb-link" select="0" />
@@ -64,35 +65,35 @@
 		<xsl:template match="mods:note[@ID='MGH']" mode="periodicalvolume">
 			<xsl:choose>
 				<xsl:when test="$docstrct='Zeitschrift' or $docstrct='Periodical'">
-					<div class="goobit3-met__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
+					<div class="goobit3-met__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))" /><hr /></div>
 				</xsl:when>
 			</xsl:choose>
 		</xsl:template>
 		<xsl:template match="mods:note[@ID='destatis.de']" mode="periodicalvolume">
 			<xsl:choose>
 				<xsl:when test="$docstrct='Zeitschrift' or $docstrct='Periodical'">
-					<div class="goobit3-met__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
+					<div class="goobit3-met__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))" /><hr /></div>
 				</xsl:when>
 			</xsl:choose>
 		</xsl:template>
 		<xsl:template match="mods:note[@ID='diglit.ub.uni-heidelberg.de']" mode="periodicalvolume">
 			<xsl:choose>
 				<xsl:when test="$docstrct='Zeitschrift' or $docstrct='Periodical'">
-					<div class="goobit3-met__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
+					<div class="goobit3-met__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))" /><hr /></div>
 				</xsl:when>
 			</xsl:choose>
 		</xsl:template>
 		<xsl:template match="mods:note[@ID='digi.ub.uni-heidelberg.de']" mode="periodicalvolume">
 			<xsl:choose>
 				<xsl:when test="$docstrct='Zeitschrift' or $docstrct='Periodical'">
-					<div class="goobit3-met__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
+					<div class="goobit3-met__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))" /><hr /></div>
 				</xsl:when>
 			</xsl:choose>
 		</xsl:template>
 		<xsl:template match="mods:note[@ID='idb.ub.uni-tuebingen.de']" mode="periodicalvolume">
 			<xsl:choose>
 				<xsl:when test="$docstrct='Zeitschrift' or $docstrct='Periodical'">
-					<div class="goobit3-met__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
+					<div class="goobit3-met__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))" /><hr /></div>
 				</xsl:when>
 			</xsl:choose>
 		</xsl:template>
@@ -100,7 +101,7 @@
 		<xsl:template match="mods:note[@ID='www.zbw.eu.digire']" mode="periodicalvolume">
 			<xsl:choose>
 				<xsl:when test="$docstrct='Zeitschrift' or $docstrct='Periodical'">
-					<div class="goobit3-met__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
+					<div class="goobit3-met__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))" /><hr /></div>
 				</xsl:when>
 			</xsl:choose>
 		</xsl:template>
@@ -108,7 +109,7 @@
 		<xsl:template match="mods:note[@ID='www.uni-weimar.de.ubweimar']" mode="periodicalvolume">
 			<xsl:choose>
 				<xsl:when test="$docstrct='Zeitschrift' or $docstrct='Periodical'">
-					<div class="goobit3-met__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
+					<div class="goobit3-met__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))" /><hr /></div>
 				</xsl:when>
 			</xsl:choose>
 		</xsl:template>
@@ -116,7 +117,7 @@
 		<xsl:template match="mods:note[@ID='europeana.ub.uni-frankfurt.de']" mode="periodicalvolume">
 			<xsl:choose>
 				<xsl:when test="$docstrct='Zeitschrift' or $docstrct='Periodical'">
-					<div class="goobit3-met__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
+					<div class="goobit3-met__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))" /><hr /></div>
 				</xsl:when>
 			</xsl:choose>
 		</xsl:template>
@@ -124,7 +125,7 @@
 		<xsl:template match="mods:note[@ID='goobiweb.bbf.dipf.de']" mode="periodicalvolume">
 			<xsl:choose>
 				<xsl:when test="$docstrct='Zeitschrift' or $docstrct='Periodical'">
-					<div class="goobit3-met__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /><hr /></div>
+					<div class="goobit3-met__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))" /><hr /></div>
 				</xsl:when>
 			</xsl:choose>
 		</xsl:template>
@@ -565,7 +566,7 @@
 
 				<xsl:choose>
 					<!-- Links GDZ Produktion-->
-					<xsl:when test="starts-with($PPN,'PPN')">
+					<xsl:when test="starts-with($PID,'PPN')">
 
 						<xsl:for-each select="mods:identifier" >
 							<xsl:choose>
@@ -582,14 +583,14 @@
 												<xsl:text>Links: </xsl:text>
 											</strong></span>
 											<span>
-												<a href="{$metsresolverurl}{$ppn}" target="_blank" title="METS-Download"><img src="/fileadmin/layout/mets.png" border="0"  /></a><img src="clear.gif" border="0" width="20px" />
+												<a href="{$metsresolverurl}{$ppn}" target="_blank" title="METS-Download"><img src="/fileadmin/layout/mets.png" border="0" /></a>
 												<xsl:choose>
 													<xsl:when test="$dfgv-link!=''">
-														<a href="{$dfgv-link}{$ppn}" target="_blank" title="DFG-Viewer"><img src="/fileadmin/layout/dfgv_icon1.gif" border="0"  /></a><img src="clear.gif" border="0" width="20px" />
+														<a href="{$dfgv-link}{$ppn}" target="_blank" title="DFG-Viewer"><img src="/fileadmin/layout/dfgv_icon1.gif" border="0" /></a>
 													</xsl:when>
 												</xsl:choose>
 												<xsl:if test="not(contains(.,'_'))">
-													<a href="{$opac-link}{$ppnopac}" target="_blank" title="SUB-OPAC"><img src="/fileadmin/layout/opac.gif" border="0"  /></a><img src="clear.gif" border="0" width="20px" />
+													<a href="{$opac-link}{$ppnopac}" target="_blank" title="SUB-OPAC"><img src="/fileadmin/layout/opac.gif" border="0" /></a>
 												</xsl:if>
 											</span>
 										</xsl:if>
@@ -613,14 +614,14 @@
 												<xsl:text>Links: </xsl:text>
 											</strong></span>
 											<span>
-												<a href="{$metsresolverurl}{$ppn}" target="_blank" title="METS-Download"><img src="/fileadmin/layout/mets.png" border="0"  /></a><img src="clear.gif" border="0" width="20px" />
+												<a href="{$metsresolverurl}{$ppn}" target="_blank" title="METS-Download"><img src="/fileadmin/layout/mets.png" border="0" /></a>
 												<xsl:choose>
 													<xsl:when test="$dfgv-link!=''">
-														<a href="{$dfgv-link}{$ppn}" target="_blank" title="DFG-Viewer"><img src="/fileadmin/layout/dfgv_icon1.gif" border="0"  /></a><img src="clear.gif" border="0" width="20px" />
+														<a href="{$dfgv-link}{$ppn}" target="_blank" title="DFG-Viewer"><img src="/fileadmin/layout/dfgv_icon1.gif" border="0" /></a>
 													</xsl:when>
 												</xsl:choose>
 												<xsl:if test="not(contains(.,'_'))">
-													<a href="{$opac-link}{$ppnopac}" target="_blank" title="SUB-OPAC"><img src="/fileadmin/layout/opac.gif" border="0"  /></a><img src="clear.gif" border="0" width="20px" />
+													<a href="{$opac-link}{$ppnopac}" target="_blank" title="SUB-OPAC"><img src="/fileadmin/layout/opac.gif" border="0" /></a>
 												</xsl:if>
 											</span>
 										</xsl:if>
@@ -631,7 +632,7 @@
 					</xsl:when>
 
 					<!-- Links - URN as PI -->
-					<xsl:when test="starts-with($PPN,'urn')">
+					<xsl:when test="starts-with($PID,'urn')">
 						<xsl:for-each select="mods:identifier" >
 							<xsl:choose>
 								<xsl:when test="attribute::type='urn'">
@@ -640,10 +641,10 @@
 											<xsl:text>Links: </xsl:text>
 										</strong></span>
 										<span>
-											<a href="{$metsresolverurl}{$PPN}" target="_blank" title="METS-Download"><img src="/fileadmin/layout/mets.png" border="0"  /></a><img src="clear.gif" border="0" width="20px" />
+											<a href="{$metsresolverurl}{$PID}" target="_blank" title="METS-Download"><img src="/fileadmin/layout/mets.png" border="0" /></a>
 											<xsl:choose>
 												<xsl:when test="$dfgv-link!=''">
-													<a href="{$dfgv-link}{$PPN}" target="_blank" title="DFG-Viewer"><img src="/fileadmin/layout/dfgv_icon1.gif" border="0"  /></a><img src="clear.gif" border="0" width="20px" />
+													<a href="{$dfgv-link}{$PID}" target="_blank" title="DFG-Viewer"><img src="/fileadmin/layout/dfgv_icon1.gif" border="0" /></a>
 												</xsl:when>
 											</xsl:choose>
 										</span>
@@ -655,7 +656,7 @@
 
 
 					<!-- Links - other PIs-->
-					<xsl:otherwise>
+					<xsl:when test="$ismets">
 						<!-- <xsl:for-each select="mods:identifier" >
 							<xsl:choose>
 								<xsl:when test="attribute::type='urn'"> -->
@@ -664,10 +665,10 @@
 											<xsl:text>Links: </xsl:text>
 										</strong></span>
 										<span>
-											<a href="{$metsresolverurl}{$PPN}" target="_blank" title="METS-Download"><img src="/fileadmin/layout/mets.png" border="0"  /></a><img src="clear.gif" border="0" width="20px" />
+											<a href="{$metsresolverurl}{$PID}" target="_blank" title="METS-Download"><img src="/fileadmin/layout/mets.png" border="0" /></a>
 											<xsl:choose>
 												<xsl:when test="$dfgv-link!=''">
-													<a href="{$dfgv-link}{$PPN}" target="_blank" title="DFG-Viewer"><img src="/fileadmin/layout/dfgv_icon1.gif" border="0"  /></a><img src="clear.gif" border="0" width="20px" />
+													<a href="{$dfgv-link}{$PID}" target="_blank" title="DFG-Viewer"><img src="/fileadmin/layout/dfgv_icon1.gif" border="0" /></a>
 												</xsl:when>
 											</xsl:choose>
 										</span>
@@ -675,7 +676,7 @@
 								<!-- </xsl:when>
 							</xsl:choose>
 						</xsl:for-each> -->
-					</xsl:otherwise>
+					</xsl:when>
 				</xsl:choose>
 
 		   </ul>

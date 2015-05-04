@@ -49,6 +49,11 @@
 	background: none;
 	font-size: $font-size-large;
 	font-family: 'FontAwesome';
+
+	@include hover {
+		background: none;
+		color: $link-hover-color;
+	}
 }
 
 .goobit3-results {

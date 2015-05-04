@@ -25,12 +25,14 @@ gulp.task('sass', function() {
 			.pipe(gulp.dest(config.paths.css))
 	} else {
 		gulp.src(config.paths.sass)
-			//.pipe(sourcemaps.init())
+			.pipe(sourcemaps.init())
 			.pipe(sass({
 				onError: function(error) { errorHandler('Sass', error) }
 			}))
-			.pipe(autoprefixer()) // TODO: .map file is generated, but only works if autoprefixer is disabled. Why?
-			//.pipe(sourcemaps.write('.'))
+			// TODO: There's an issue preventing sourcemaps from being written correctly with autoprefixer (see
+			// https://github.com/sindresorhus/gulp-autoprefixer/issues/8), so disable for now
+			//.pipe(autoprefixer())
+			.pipe(sourcemaps.write('.'))
 			.pipe(gulp.dest(config.paths.css))
 			.pipe(livereload())
 	}

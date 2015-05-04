@@ -9,7 +9,7 @@
 @mixin button {
 	@extend .btn;
 	@extend .btn-default;
-	min-width: $line-height * 2;
+	min-width: $line-height;
 	min-height: $line-height;
 	border: 1px solid $color-gray-lighter;
 	background: $color-gray-lighter;

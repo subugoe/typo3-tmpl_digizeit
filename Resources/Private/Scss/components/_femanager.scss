@@ -1,30 +1,38 @@
 .tx-femanager {
 	form {
 		@extend .form-horizontal;
+	}
 
-		.femanager_fieldset {
-			@extend .form-group;
+	.femanager_fieldset {
+		@extend .form-group;
+	}
+
+	label {
+		@extend .col-md-3; // TODO: Why does this raise a CSScomb error?
+
+		&.radio {
+			@extend .radio-inline;
 		}
+	}
 
-		label {
-			@extend .col-md-3; // TODO: Why does this raise a CSScomb error?
+	.controls {
+		@extend .col-md-5; // TODO: Why does this raise a CSScomb error?
+	}
 
-			&.radio {
-				@extend .radio-inline;
-			}
-		}
+	[type=text],
+	[type=password],
+	[type=file],
+	textarea,
+	select {
+		@extend .form-control;
+	}
 
-		.controls {
-			@extend .col-md-5; // TODO: Why does this raise a CSScomb error?
-		}
+	.alert {
+		padding: $gutter;
+	}
 
-		[type=text],
-		[type=password],
-		[type=file],
-		textarea,
-		select {
-			@extend .form-control;
-		}
+	.alert-error {
+		@extend .alert-danger;
 	}
 }
 

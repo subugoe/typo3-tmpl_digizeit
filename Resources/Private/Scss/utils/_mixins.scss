@@ -36,7 +36,7 @@
 	@extend .form-control;
 }
 
-@mixin horizontal-link-list {
+@mixin horizontal-link-list($responsive: true) {
 	@include clearfix;
 	display: block;
 	margin: 0 -.25em;
@@ -55,15 +55,18 @@
 			border-right: 0;
 		}
 
-		@media (max-width: $screen-sm-max) {
-			float: none;
-			margin-bottom: ($line-height * 2 - $font-size-base);
-			border: 0;
+		@if($responsive) {
+			@media(max-width: $screen-sm-max) {
+				float: none;
+				margin-bottom: ($line-height * 2 - $font-size-base);
+				border: 0;
 
-			&:last-child {
-				margin: 0;
+				&:last-child {
+					margin: 0;
+				}
 			}
 		}
+
 	}
 
 	a,

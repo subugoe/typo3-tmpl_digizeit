@@ -70,9 +70,9 @@ linters:
     enabled: true
 
   NameFormat:
-    enabled: true
+    enabled: false
     convention: BEM
-
+  
   NestingDepth:
     enabled: true
     max_depth: 3

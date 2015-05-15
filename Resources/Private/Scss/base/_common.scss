@@ -86,8 +86,9 @@ textarea {
 	}
 }
 
-[type=radio],
-[type=checkbox] {
+// 'input' prefix required for Bootstrap override
+input[type=radio],
+input[type=checkbox] {
 	margin: 0;
 }
 

@@ -1,0 +1,100 @@
+.goobit3-search {
+	img {
+		display: inline;
+		border: 0;
+		vertical-align: top;
+
+		&.lock {
+			margin-top: 1px;
+		}
+
+		&:hover {
+			border: 0;
+			background: white;
+		}
+	}
+}
+
+.goobit3-search__form {
+	position: relative;
+
+	label {
+		width: 100%;
+	}
+}
+
+.goobit3-search__proposal-line {
+	// TODO: Is this used?
+	width: 100%;
+
+	&:hover {
+		background-color: $color-red-dark;
+		color: white;
+	}
+}
+
+.goobit3-search__input {
+	padding: $gutter - $border-width;
+	width: 100%;
+	border: $border-width solid $border-color;
+}
+
+.goobit3-search__submit {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: ($gutter * 2 - $border-width * 2 + $line-height);
+	height: ($gutter * 2 - $border-width * 2 + $line-height);
+	border: 0;
+	background: none;
+	font-size: $font-size-large;
+	font-family: 'FontAwesome';
+
+	@include hover {
+		background: none;
+		color: $link-hover-color;
+	}
+}
+
+.goobit3-results {
+	display: table;
+	padding: 0;
+	list-style: none;
+}
+
+.goobit3-results__item {
+	display: table-row;
+
+	> div {
+		display: table-cell;
+		padding-bottom: $line-height;
+		vertical-align: top;
+
+		+ div {
+			padding-left: 1em;
+		}
+	}
+}
+
+.goobit3-results__list {
+	padding: 0;
+}
+
+.goobit3-results__thumbnail {
+	// TODO
+}
+
+.goobit3-results__index {
+	color: $text-color-light;
+	text-align: right;
+	font-weight: bold;
+}
+
+.goobit3-results__info {
+	width: 100%;
+}
+
+// TODO: Get this button a class
+.sidebar form button {
+	float: right;
+}

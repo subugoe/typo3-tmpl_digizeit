@@ -1,0 +1,19 @@
+.goobit3__purl {
+	font-weight: bold;
+}
+
+.goobit3__lock {
+	float: right;
+	//TODO: fa fa-lock
+	border: 0 !important;
+	color: $color-gray;
+	font-size: 2em;
+
+	@include hover {
+		color: $link-hover-color;
+	}
+
+	&--open {
+		//TODO: fa fa-unlock
+	}
+}

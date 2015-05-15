@@ -1,0 +1,16 @@
+.goobit3-pagination {
+	text-align: center;
+
+	ol {
+		@include horizontal-link-list(false);
+		display: inline-block;
+		margin: $line-height 0;
+	}
+}
+
+.goobit3-pagination__page-link {
+	&--current {
+		background: $active-color;
+		color: #fff;
+	}
+}

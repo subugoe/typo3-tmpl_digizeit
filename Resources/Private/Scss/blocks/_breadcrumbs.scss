@@ -25,7 +25,7 @@
 }
 
 .breadcrumbs__separator {
-	@include fa-icon('angle-right');
+	@include fa-icon('angle-right', false);
 	margin-left: .5em;
 	color: $color-gray-dark;
 }

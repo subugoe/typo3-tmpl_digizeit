@@ -13,6 +13,7 @@ scss-lint.log
 .jruby
 Documentation/_make/build/
 *.iml
+*.css.map
 
 node_modules
 tests/_output/*

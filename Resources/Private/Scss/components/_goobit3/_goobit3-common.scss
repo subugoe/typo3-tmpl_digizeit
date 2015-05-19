@@ -3,10 +3,10 @@
 }
 
 .goobit3__lock {
-	float: right;
-	//TODO: fa fa-lock
+	@include fa-icon('lock', false);
 	border: 0 !important;
 	color: $color-gray;
+	float: right;
 	font-size: 2em;
 
 	@include hover {
@@ -14,6 +14,6 @@
 	}
 
 	&--open {
-		//TODO: fa fa-unlock
+		@include fa-icon('unlock', false);
 	}
 }

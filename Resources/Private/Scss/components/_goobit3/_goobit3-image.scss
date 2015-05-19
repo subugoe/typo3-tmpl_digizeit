@@ -2,12 +2,11 @@
 	font-size: $font-size-large;
 
 	&--pdf {
+		@include fa-icon('file-pdf-o');
 		float: right;
 		margin: 0 .5em;
 		border: 0 !important;
 		font-size: 2em;
-
-		// TODO: fa fa-file-pdf-o
 	}
 }
 
@@ -26,14 +25,24 @@
 }
 
 .goobit3-image-viewer__controls {
-	margin: $line-height 0;
+	margin-top: $line-height;
 
 	&--right {
 		text-align: right;
 	}
 
-	button + button {
-		margin-left: 1px;
+	form > button,
+	form > div {
+		margin: 0 1px $gutter 0;
+		vertical-align: top;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	form > div {
+		padding: 0 $gutter;
 	}
 }
 

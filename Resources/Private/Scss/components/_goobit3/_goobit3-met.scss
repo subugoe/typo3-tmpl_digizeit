@@ -1,6 +1,21 @@
 .goobit3-met__list {
+	border-bottom: $border;
+	display: table;
+	list-style: none !important;
 	margin-left: 0;
 	padding-bottom: $line-height - $border-width;
-	border-bottom: $border;
-	list-style: none !important;
+	width: 100%;
+
+	li {
+		display: table-row;
+
+		> span {
+			display: table-cell;
+
+			&:first-child {
+				padding-right: 1em;
+				width: 20%;
+			}
+		}
+	}
 }

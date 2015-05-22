@@ -80,7 +80,7 @@ textarea {
 	padding: $line-height / 4;
 
 	&:focus {
-		background: #fff;
+		background: $white;
 		border-color: $link-color;
 		box-shadow: 0 0 .25em rgba(#000, .2) inset;
 	}
@@ -113,7 +113,7 @@ img {
 }
 
 table {
-	border-bottom: 1px solid #ddd; // TODO: Find and check td border
+	border-bottom: 1px solid $border-color;
 }
 
 .disabled {

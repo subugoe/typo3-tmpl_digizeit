@@ -71,7 +71,7 @@
     // Chrome (OSX) fix for https://github.com/twbs/bootstrap/issues/11245
     // Once fixed, we can just straight up remove this.
     select {
-        background: #fff !important;
+        background: $white !important;
     }
 
     // Bootstrap components
@@ -93,7 +93,7 @@
 
         td,
         th {
-            background-color: #fff !important;
+            background-color: $white !important;
         }
     }
     .table-bordered {

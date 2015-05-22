@@ -12,8 +12,8 @@
 		color: $color-brown-light;
 
 		@include hover {
-			border-color: white;
-			color: white;
+			border-color: $white;
+			color: $white;
 		}
 	}
 }

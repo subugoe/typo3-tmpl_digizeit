@@ -18,8 +18,8 @@
 		text-decoration: none;
 
 		@include hover {
-			border-color: white;
-			color: white;
+			border-color: $white;
+			color: $white;
 		}
 	}
 

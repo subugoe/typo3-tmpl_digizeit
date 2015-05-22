@@ -31,6 +31,14 @@
 				<source>Druckansicht</source>
 				<target state="signed-off">Druckansicht</target>
 			</trans-unit>
+			<trans-unit id="printview" approved="yes">
+				<source>Druckansicht</source>
+				<target state="signed-off">Druckansicht</target>
+			</trans-unit>
+			<trans-unit id="hits" approved="yes">
+				<source>Treffer</source>
+				<target state="signed-off">Treffer</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

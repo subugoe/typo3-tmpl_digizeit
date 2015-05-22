@@ -39,6 +39,10 @@
 				<source>printable view</source>
 				<target state="signed-off">printable view</target>
 			</trans-unit>
+			<trans-unit id="hits" approved="yes">
+				<source>Hits</source>
+				<target state="signed-off">Hits</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

@@ -12,7 +12,7 @@
 	padding: 1em;
 	border: $color-blue 1px dashed;
 	background-color: $color-brown-lightest;
-	color: black;
+	color: $black;
 	line-height: 1.1em;
 }
 
@@ -35,7 +35,7 @@
 	padding: 1em;
 	border: $color-blue 1px dashed;
 	background-color: $color-gray-lightest;
-	color: black;
+	color: $black;
 	font-family: $font-monospace;
 	line-height: 1.1em;
 }

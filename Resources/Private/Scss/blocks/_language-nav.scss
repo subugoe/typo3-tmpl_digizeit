@@ -13,13 +13,13 @@
 		display: inline-block;
 		padding: ($gutter / 3);
 		border: 0;
-		color: white;
+		color: $white;
 		text-decoration: none;
 		line-height: 1;
 
 		@include hover {
 			border: 0;
-			background: white;
+			background: $white;
 			color: $color-red-dark;
 		}
 	}

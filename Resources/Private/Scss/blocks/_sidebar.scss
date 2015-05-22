@@ -1,7 +1,7 @@
 .sidebar {
 	@include make-md-column(4);
 	padding: ($gutter * 2) $gutter 0 ($gutter * 3);
-	background: white url('#{$img-path}sidebar-border-left.png') ($line-height - 12px) repeat-y;
+	background: $white url('#{$img-path}sidebar-border-left.png') ($line-height - 12px) repeat-y;
 
 	@media (max-width: $screen-sm-max) {
 		padding: 0;

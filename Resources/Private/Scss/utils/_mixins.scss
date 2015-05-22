@@ -85,7 +85,7 @@
 
 		@include hover {
 			background: $link-color;
-			color: #fff;
+			color: $white;
 		}
 	}
 
@@ -98,7 +98,7 @@
 
 	.active a {
 		background: $active-color;
-		color: #fff;
+		color: $white;
 	}
 }
 

@@ -10,7 +10,7 @@
 
 		&:hover {
 			border: 0;
-			background: white;
+			background: $white;
 		}
 	}
 }
@@ -29,7 +29,7 @@
 
 	&:hover {
 		background-color: $color-red-dark;
-		color: white;
+		color: $white;
 	}
 }
 
@@ -37,6 +37,12 @@
 	padding: $gutter - $border-width;
 	width: 100%;
 	border: $border-width solid $border-color;
+}
+
+.goobit3-search__hit-count {
+	color: $text-color-light;
+	font-size: $font-size-small;
+	text-align: right;
 }
 
 .goobit3-search__submit {

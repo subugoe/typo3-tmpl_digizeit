@@ -144,7 +144,7 @@
 			<ul class="goobit3-met__list">
 				<!-- Structurtyp -->
 				<li>
-					<span><strong><xsl:value-of select="$structure" /><xsl:text>: </xsl:text></strong></span>
+					<span class="goobit3-met__item-label"><xsl:value-of select="$structure" /><xsl:text>: </xsl:text></span>
 					<span>
 						<xsl:value-of select="$docstrct" />
 						<a href="http://www.digizeitschriften.de/informationen/subskription/" title="###LOCKTEXT###">
@@ -161,7 +161,7 @@
 
 				<xsl:if test="mods:titleInfo[not(@*)]/mods:title">
 					<li>
-						<span><strong><xsl:value-of select="$title" /><xsl:text>: </xsl:text></strong></span>
+						<span class="goobit3-met__item-label"><xsl:value-of select="$title" /><xsl:text>: </xsl:text></span>
 						<span><xsl:value-of select="mods:titleInfo[not(@*)]/mods:title" /></span>
 					</li>
 				</xsl:if>
@@ -169,13 +169,13 @@
 				<!-- Volume -->
 				<xsl:if test="mods:titleInfo[not(@*)]/mods:partName">
 					<li>
-						<span><strong><xsl:value-of select="$volume" /><xsl:text>: </xsl:text></strong></span>
+						<span class="goobit3-met__item-label"><xsl:value-of select="$volume" /><xsl:text>: </xsl:text></span>
 						<span><xsl:value-of select="mods:titleInfo[not(@*)]/mods:partName" /></span>
 					</li>
 				</xsl:if>
 				<xsl:if test="mods:part[@type='host']/mods:detail/mods:number">
 					<li>
-						<span><strong><xsl:value-of select="$volume" /><xsl:text>: </xsl:text></strong></span>
+						<span class="goobit3-met__item-label"><xsl:value-of select="$volume" /><xsl:text>: </xsl:text></span>
 						<span><xsl:value-of select="mods:part[@type='host']/mods:detail/mods:number" /></span>
 					</li>
 				</xsl:if>
@@ -184,9 +184,9 @@
 				<xsl:for-each select="mods:titleInfo[@*]/mods:title" >
 					<xsl:sort select="../attribute::type" />
 					<li>
-						<span><strong>
+						<span class="goobit3-met__item-label">
 							<xsl:value-of select="$title" /><xsl:text>: </xsl:text>
-						</strong></span>
+						</span>
 						<span>
 							<xsl:value-of select="." />
 						</span>
@@ -196,10 +196,10 @@
 				<!-- Persons -->
 				<xsl:for-each select="mods:name[not(@*)]" >
 					<li>
-						<span><strong>
+						<span class="goobit3-met__item-label">
 							<xsl:apply-templates select="mods:role/mods:roleTerm" mode="modsRoleTerm" />
 							<xsl:text>: </xsl:text>
-						</strong></span>
+						</span>
 						<span>
 							<xsl:choose>
 								<xsl:when test="mods:displayForm">
@@ -216,10 +216,10 @@
 				<xsl:for-each select="mods:name[@*]" >
 					<xsl:sort select="attribute::type" />
 					<li>
-						<span><strong>
+						<span class="goobit3-met__item-label">
 							<xsl:apply-templates select="mods:role/mods:roleTerm" mode="modsRoleTerm" />
 							<xsl:text>: </xsl:text>
-						</strong></span>
+						</span>
 						<span>
 							<xsl:choose>
 								<xsl:when test="mods:displayForm">
@@ -238,9 +238,9 @@
 					<xsl:choose>
 						<xsl:when test="mods:dateIssued">
 							<li>
-								<span><strong>
+								<span class="goobit3-met__item-label">
 									<xsl:value-of select="$publicationyear" /><xsl:text>: </xsl:text>
-								</strong></span>
+								</span>
 								<span>
 									<xsl:value-of select="mods:dateIssued" />
 								</span>
@@ -249,9 +249,9 @@
 					</xsl:choose>
 					<xsl:for-each select="mods:place" >
 						<li>
-							<span><strong>
+							<span class="goobit3-met__item-label">
 								<xsl:value-of select="$placeofpublication" /><xsl:text>: </xsl:text>
-							</strong></span>
+							</span>
 							<span>
 								<xsl:value-of select="mods:placeTerm" />
 							</span>
@@ -259,9 +259,9 @@
 					</xsl:for-each>
 					<xsl:for-each select="mods:publisher" >
 						<li>
-							<span><strong>
+							<span class="goobit3-met__item-label">
 								<xsl:value-of select="$publisher" /><xsl:text>: </xsl:text>
-							</strong></span>
+							</span>
 							<span>
 								<xsl:value-of select="." />
 							</span>
@@ -273,9 +273,9 @@
 				<xsl:for-each select="mods:subject" >
 					<xsl:for-each select="mods:topic" >
 						<li>
-							<span><strong>
+							<span class="goobit3-met__item-label">
 								<xsl:value-of select="$keywords" /><xsl:text>: </xsl:text>
-							</strong></span>
+							</span>
 							<span>
 								<xsl:value-of select="." />
 							</span>
@@ -286,9 +286,9 @@
 					<xsl:for-each select="mods:titleInfo/mods:title" >
 						<xsl:sort select="../attribute::type" />
 						<li>
-							<span><strong>
+							<span class="goobit3-met__item-label">
 								<xsl:value-of select="$title" /><xsl:text>: </xsl:text>
-							</strong></span>
+							</span>
 							<span>
 								<xsl:value-of select="." />
 							</span>
@@ -298,10 +298,10 @@
 					<!-- Subject Persons -->
 					<xsl:for-each select="mods:name[not(@*)]" >
 						<li>
-							<span><strong>
+							<span class="goobit3-met__item-label">
 								<xsl:apply-templates select="mods:role/mods:roleTerm" mode="modsRoleTerm" />
 								<xsl:text>: </xsl:text>
-							</strong></span>
+							</span>
 							<span>
 								<xsl:choose>
 									<xsl:when test="mods:displayForm">
@@ -317,10 +317,10 @@
 					<xsl:for-each select="mods:name[@*]" >
 						<xsl:sort select="attribute::type" />
 						<li>
-							<span><strong>
+							<span class="goobit3-met__item-label">
 								<xsl:apply-templates select="mods:role/mods:roleTerm" mode="modsRoleTerm" />
 								<xsl:text>: </xsl:text>
-							</strong></span>
+							</span>
 							<span>
 								<xsl:choose>
 									<xsl:when test="mods:displayForm">
@@ -337,9 +337,9 @@
 					<!-- Subject geographic -->
 					<xsl:for-each select="mods:geographic" >
 						<li>
-							<span><strong>
+							<span class="goobit3-met__item-label">
 								<xsl:value-of select="$geographic" /><xsl:text>: </xsl:text>
-							</strong></span>
+							</span>
 							<span>
 								<xsl:value-of select="." />
 							</span>
@@ -354,33 +354,33 @@
 					<li>
 						<xsl:choose>
 							<xsl:when test="attribute::displayLabel">
-								<span><strong>
+								<span class="goobit3-met__item-label">
 									<xsl:value-of select="attribute::displayLabel" /><xsl:text>: </xsl:text>
-								</strong></span>
+								</span>
 								<span>
 									<xsl:value-of select="." />
 								</span>
 							</xsl:when>
 							<xsl:when test="attribute::authority='GDZ' or attribute::authority='gdz' or attribute::authority='dz' or attribute::authority='DZ'">
-								<span><strong>
+								<span class="goobit3-met__item-label">
 									<xsl:value-of select="$collections" /><xsl:text>: </xsl:text>
-								</strong></span>
+								</span>
 								<span>
 									<xsl:value-of select="translate(substring(.,5),'_',' ')" />
 								</span>
 							</xsl:when>
 							<xsl:when test="attribute::authority">
-								<span><strong>
+								<span class="goobit3-met__item-label">
 									<xsl:value-of select="attribute::authority" /><xsl:text>: </xsl:text>
-								</strong></span>
+								</span>
 								<span>
 									<xsl:value-of select="." />
 								</span>
 							</xsl:when>
 							<xsl:otherwise>
-								<span><strong>
+								<span class="goobit3-met__item-label">
 									<xsl:text>Klassifikation: </xsl:text>
-								</strong></span>
+								</span>
 								<span>
 									<xsl:value-of select="." />
 								</span>
@@ -393,9 +393,9 @@
 				<xsl:choose>
 					<xsl:when test="$scannedimages!='0'">
 						<li>
-							<span><strong>
+							<span class="goobit3-met__item-label">
 								<xsl:value-of select="$scannedpages" /><xsl:text>: </xsl:text>
-							</strong></span>
+							</span>
 							<span>
 								<xsl:value-of select="$scannedimages" />
 							</span>
@@ -413,9 +413,9 @@
 								<xsl:variable name="ppn">
 									<xsl:value-of select="substring(.,4)" />
 								</xsl:variable>
-								<span><strong>
+								<span class="goobit3-met__item-label">
 									PPN (digital)<xsl:text>: </xsl:text>
-								</strong></span>
+								</span>
 								<xsl:choose>
 									<xsl:when test="not(contains(.,'_')) and not(starts-with(.,'GDZ'))">
 										<span>
@@ -433,9 +433,9 @@
 								<xsl:variable name="ppnopac">
 									<xsl:value-of select="substring(.,4)" />
 								</xsl:variable>
-								<span><strong>
+								<span class="goobit3-met__item-label">
 									PPN (original)<xsl:text>: </xsl:text>
-								</strong></span>
+								</span>
 								<xsl:choose>
 									<xsl:when test="not(contains(.,'_')) and not(starts-with(.,'GDZ'))">
 										<span>
@@ -450,9 +450,9 @@
 								</xsl:choose>
 							</xsl:when>
 							<xsl:when test="attribute::type='purl'">
-								<span><strong>
+								<span class="goobit3-met__item-label">
 									PURL<xsl:text>: </xsl:text>
-								</strong></span>
+								</span>
 								<span>
 									<a><xsl:attribute name="href"><xsl:value-of select="." /></xsl:attribute><xsl:value-of select="." /></a>
 								</span>
@@ -491,25 +491,25 @@
 										</xsl:otherwise>
 									</xsl:choose>
 								</xsl:variable>
-								<span><strong>
+								<span class="goobit3-met__item-label">
 									<xsl:value-of select="attribute::type" /><xsl:text>: </xsl:text>
-								</strong></span>
+								</span>
 								<span>
 									<a href="http://rzblx1.uni-regensburg.de/ezeit/?{$zdbid}" target="_blank" title="ZDB"><xsl:value-of select="." /></a>
 								</span>
 							</xsl:when>
 							<xsl:when test="attribute::type='ISSN'">
-								<span><strong>
+								<span class="goobit3-met__item-label">
 									ISSN<xsl:text>: </xsl:text>
-								</strong></span>
+								</span>
 								<span>
 									<xsl:value-of select="." />
 								</span>
 							</xsl:when>
 							<xsl:otherwise>
-								<span><strong>
+								<span class="goobit3-met__item-label">
 									<xsl:text>Identifier: </xsl:text>
-								</strong></span>
+								</span>
 								<span>
 									<xsl:value-of select="." />
 								</span>
@@ -527,9 +527,9 @@
 								<xsl:variable name="ppn">
 									<xsl:value-of select="." />
 								</xsl:variable>
-								<span><strong>
+								<span class="goobit3-met__item-label">
 									<xsl:text>PURL: </xsl:text>
-								</strong></span>
+								</span>
 								<span>
 									<a href="{$ppnresolverurl}{$ppn}" target="_blank"><xsl:value-of select="$ppnresolverurl" /><xsl:value-of select="." /></a>
 								</span>
@@ -540,9 +540,9 @@
 								<xsl:variable name="ppn">
 									<xsl:value-of select="." />
 								</xsl:variable>
-								<span><strong>
+								<span class="goobit3-met__item-label">
 									<xsl:text>Katalog: </xsl:text>
-								</strong></span>
+								</span>
 								<span>
 									<a href ="{$swb-link}{$ppn}"><xsl:value-of select="." /></a>
 								</span>
@@ -553,9 +553,9 @@
 								<xsl:variable name="ppn">
 									<xsl:value-of select="." />
 								</xsl:variable>
-								<span><strong>
+								<span class="goobit3-met__item-label">
 									<xsl:text>PURL: </xsl:text>
-								</strong></span>
+								</span>
 								<span>
 									<a href="{$ppnresolverurl}{$ppn}" target="_blank"><xsl:value-of select="$ppnresolverurl" /><xsl:value-of select="." /></a>
 								</span>
@@ -579,9 +579,9 @@
 											<xsl:variable name="ppnopac">
 												<xsl:value-of select="substring(.,4)" />
 											</xsl:variable>
-											<span><strong>
+											<span class="goobit3-met__item-label">
 												<xsl:text>Links: </xsl:text>
-											</strong></span>
+											</span>
 											<span>
 												<a href="{$metsresolverurl}{$ppn}" target="_blank" title="METS-Download"><img src="/fileadmin/layout/mets.png" border="0" /></a>
 												<xsl:choose>
@@ -610,9 +610,9 @@
 											<xsl:variable name="ppnopac">
 												<xsl:value-of select="substring(.,4)" />
 											</xsl:variable>
-											<span><strong>
+											<span class="goobit3-met__item-label">
 												<xsl:text>Links: </xsl:text>
-											</strong></span>
+											</span>
 											<span>
 												<a href="{$metsresolverurl}{$ppn}" target="_blank" title="METS-Download"><img src="/fileadmin/layout/mets.png" border="0" /></a>
 												<xsl:choose>
@@ -637,9 +637,9 @@
 							<xsl:choose>
 								<xsl:when test="attribute::type='urn'">
 									<li>
-										<span><strong>
+										<span class="goobit3-met__item-label">
 											<xsl:text>Links: </xsl:text>
-										</strong></span>
+										</span>
 										<span>
 											<a href="{$metsresolverurl}{$PID}" target="_blank" title="METS-Download"><img src="/fileadmin/layout/mets.png" border="0" /></a>
 											<xsl:choose>
@@ -661,9 +661,9 @@
 							<xsl:choose>
 								<xsl:when test="attribute::type='urn'"> -->
 									<li>
-										<span><strong>
+										<span class="goobit3-met__item-label">
 											<xsl:text>Links: </xsl:text>
-										</strong></span>
+										</span>
 										<span>
 											<a href="{$metsresolverurl}{$PID}" target="_blank" title="METS-Download"><img src="/fileadmin/layout/mets.png" border="0" /></a>
 											<xsl:choose>

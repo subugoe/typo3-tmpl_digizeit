@@ -7,14 +7,14 @@ body {
 	background: $background-color;
 	color: $text-color;
 
-	&::before,
-	&::after {
+	&:before,
+	&:after {
 		position: absolute;
 		z-index: -1;
 		content: '';
 	}
 
-	&::before {
+	&:before {
 		top: -165px + $topbar-height;
 		left: -45px - $gutter;
 		z-index: 9;

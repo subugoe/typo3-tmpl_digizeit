@@ -12,10 +12,15 @@
 		> span {
 			display: table-cell;
 
-			&:first-child {
-				padding-right: 1em;
-				width: 20%;
+			@media (max-width: $screen-sm-max) {
+				display: block;
 			}
 		}
 	}
+}
+
+.goobit3-met__item-label {
+	font-weight: bold;
+	padding-right: 1em;
+	width: 20%;
 }

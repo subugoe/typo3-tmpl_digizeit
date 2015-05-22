@@ -76,7 +76,7 @@
 			<a href="http://www.digizeitschriften.de/informationen/subskription/" title="###LOCKTEXT###">
 				<xsl:attribute name="class">
 					<xsl:choose>
-						<xsl:when test="'###LOCKBUTTON###'='typo3conf/ext/goobit3/res/lockclosed_big.gif'">goobit3__lock</xsl:when>
+						<xsl:when test="'###LOCKSTATUS###'='closed'">goobit3__lock</xsl:when>
 						<xsl:otherwise>goobit3__lock goobit3__lock--open</xsl:otherwise>
 					</xsl:choose>
 				</xsl:attribute>

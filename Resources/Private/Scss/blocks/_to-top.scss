@@ -1,12 +1,18 @@
 .to-top {
 	@include button;
 	position: fixed;
-	right: 0;
+	right: $gutter;
 	bottom: $wedge-wrapper-height;
 	z-index: 15;
-	display: none;
 	width: $topbar-height-small;
 	height: $topbar-height-small;
 	border-right: 0;
 	font-size: $font-size-large;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.to-top--visible {
+	opacity: 1;
+	visibility: visible;
 }

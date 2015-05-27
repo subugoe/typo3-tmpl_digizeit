@@ -42,9 +42,9 @@ jQuery(function() {
 
 	$(window).scroll( function() {
 		if ( $(window).scrollTop() > 250 ) {
-			$('.to-top:hidden').fadeIn()
+			$('.to-top').addClass('to-top--visible')
 		} else {
-			$('.to-top:visible').fadeOut()
+			$('.to-top').removeClass('to-top--visible')
 		}
 	})
 

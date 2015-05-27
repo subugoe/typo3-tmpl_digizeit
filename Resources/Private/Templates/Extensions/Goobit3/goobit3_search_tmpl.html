@@ -12,7 +12,7 @@
 				<span class="sr-only">Suchbegriff:</span>
 				<input class="goobit3-search__input" size="25" name="formquery" value="###FORM_SQUERY_VALUE###" onKeyup="tx_goobit3_searchproposallist(xajax.getFormValues('tx-goobit3-search_form'))" />
 			</label>
-			<input class="goobit3-search__submit" type="submit" value="&#xf002" title="Suchen"/>
+			<input class="goobit3-search__submit" type="submit" value="&#xf002;" title="Suchen"/>
 		</form>
 		<div class="goobit3-search__hit-count">###HITMESSAGE###</div>
 	</div>
@@ -39,7 +39,7 @@
 					<a class="goobit3__lock goobit3__lock--###LOCKSTATUS###" href="/informationen/subskription/" title="###LOCKTEXT###"></a>
 				</div>
 				<div class="goobit3-results__thumbnail">
-					<div class="###THUMBNAILDIVID###">###THUMBNAIL###</div><!-- TODO: Class name / thumbnail is not displayed -->
+					<div class="###THUMBNAILDIVID###">###THUMBNAIL###</div>
 					###THUMBNAILSCRIPT###
 				</div>
 				<div class="goobit3-results__info">
@@ -66,9 +66,9 @@
 			</ol>
 		</div>
 	</div>
+</div><!-- Close parent .content -->
 
 <!-- ###SSEARCHRIGHT### BEGIN-->
-
 <div class="sidebar">
 
 		<h4>###SEARCHFIELDCAPTION###</h4>
@@ -90,7 +90,8 @@
 			<!-- ###SSEARCHDOCSTRCT### END-->
 		</ul>
 
-</div>
+<!-- .sidebar will be closed by parent template -->
+
 <!-- ###SSEARCHRIGHT### END-->
 
 <!-- ###SSEARCH### END-->

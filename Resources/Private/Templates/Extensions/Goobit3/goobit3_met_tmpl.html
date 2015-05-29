@@ -5,6 +5,10 @@
 <!-- ###NOSEARCHINDEX### END-->
 
 <!-- ###MODS### BEGIN-->
+<a href="http://www.digizeitschriften.de/informationen/subskription/" class="goobit3__lock goobit3__lock--###LOCKSTATUS###" title="###LOCKTEXT###">
+	<span class="sr-only">###LOCKTEXT###</span>
+</a>
+
 <div id="goobit3-met">
 	<!-- ###MODSSEC### BEGIN-->
 	<?xml version="1.0" encoding="utf-8"?>
@@ -147,15 +151,6 @@
 					<span class="goobit3-met__item-label"><xsl:value-of select="$structure" /><xsl:text>: </xsl:text></span>
 					<span>
 						<xsl:value-of select="$docstrct" />
-						<a href="http://www.digizeitschriften.de/informationen/subskription/" title="###LOCKTEXT###">
-							<xsl:attribute name="class">
-								<xsl:choose>
-									<xsl:when test="'###LOCKSTATUS###'='closed'">goobit3__lock</xsl:when>
-									<xsl:otherwise>goobit3__lock goobit3__lock--open</xsl:otherwise>
-								</xsl:choose>
-							</xsl:attribute>
-							<span class="sr-only">###LOCKTEXT###</span>
-						</a>
 					</span>
 				</li>
 
@@ -583,14 +578,14 @@
 												<xsl:text>Links: </xsl:text>
 											</span>
 											<span>
-												<a href="{$metsresolverurl}{$ppn}" target="_blank" title="METS-Download"><img src="/fileadmin/layout/mets.png" border="0" /></a>
+												<a class="goobit3-met__image-link" href="{$metsresolverurl}{$ppn}" target="_blank" title="METS-Download"><img src="/fileadmin/layout/mets.png" /></a>
 												<xsl:choose>
 													<xsl:when test="$dfgv-link!=''">
-														<a href="{$dfgv-link}{$ppn}" target="_blank" title="DFG-Viewer"><img src="/fileadmin/layout/dfgv_icon1.gif" border="0" /></a>
+														<a class="goobit3-met__image-link" href="{$dfgv-link}{$ppn}" target="_blank" title="DFG-Viewer"><img src="/fileadmin/layout/dfgv_icon1.gif" /></a>
 													</xsl:when>
 												</xsl:choose>
 												<xsl:if test="not(contains(.,'_'))">
-													<a href="{$opac-link}{$ppnopac}" target="_blank" title="SUB-OPAC"><img src="/fileadmin/layout/opac.gif" border="0" /></a>
+													<a class="goobit3-met__image-link" href="{$opac-link}{$ppnopac}" target="_blank" title="SUB-OPAC"><img src="/fileadmin/layout/opac.gif" /></a>
 												</xsl:if>
 											</span>
 										</xsl:if>
@@ -614,14 +609,14 @@
 												<xsl:text>Links: </xsl:text>
 											</span>
 											<span>
-												<a href="{$metsresolverurl}{$ppn}" target="_blank" title="METS-Download"><img src="/fileadmin/layout/mets.png" border="0" /></a>
+												<a class="goobit3-met__image-link" href="{$metsresolverurl}{$ppn}" target="_blank" title="METS-Download"><img src="/fileadmin/layout/mets.png" /></a>
 												<xsl:choose>
 													<xsl:when test="$dfgv-link!=''">
-														<a href="{$dfgv-link}{$ppn}" target="_blank" title="DFG-Viewer"><img src="/fileadmin/layout/dfgv_icon1.gif" border="0" /></a>
+														<a class="goobit3-met__image-link" href="{$dfgv-link}{$ppn}" target="_blank" title="DFG-Viewer"><img src="/fileadmin/layout/dfgv_icon1.gif" /></a>
 													</xsl:when>
 												</xsl:choose>
 												<xsl:if test="not(contains(.,'_'))">
-													<a href="{$opac-link}{$ppnopac}" target="_blank" title="SUB-OPAC"><img src="/fileadmin/layout/opac.gif" border="0" /></a>
+													<a class="goobit3-met__image-link" href="{$opac-link}{$ppnopac}" target="_blank" title="SUB-OPAC"><img src="/fileadmin/layout/opac.gif" /></a>
 												</xsl:if>
 											</span>
 										</xsl:if>
@@ -641,10 +636,10 @@
 											<xsl:text>Links: </xsl:text>
 										</span>
 										<span>
-											<a href="{$metsresolverurl}{$PID}" target="_blank" title="METS-Download"><img src="/fileadmin/layout/mets.png" border="0" /></a>
+											<a class="goobit3-met__image-link" href="{$metsresolverurl}{$PID}" target="_blank" title="METS-Download"><img src="/fileadmin/layout/mets.png" /></a>
 											<xsl:choose>
 												<xsl:when test="$dfgv-link!=''">
-													<a href="{$dfgv-link}{$PID}" target="_blank" title="DFG-Viewer"><img src="/fileadmin/layout/dfgv_icon1.gif" border="0" /></a>
+													<a class="goobit3-met__image-link" href="{$dfgv-link}{$PID}" target="_blank" title="DFG-Viewer"><img src="/fileadmin/layout/dfgv_icon1.gif" /></a>
 												</xsl:when>
 											</xsl:choose>
 										</span>
@@ -657,25 +652,19 @@
 
 					<!-- Links - other PIs-->
 					<xsl:when test="$ismets">
-						<!-- <xsl:for-each select="mods:identifier" >
-							<xsl:choose>
-								<xsl:when test="attribute::type='urn'"> -->
-									<li>
-										<span class="goobit3-met__item-label">
-											<xsl:text>Links: </xsl:text>
-										</span>
-										<span>
-											<a href="{$metsresolverurl}{$PID}" target="_blank" title="METS-Download"><img src="/fileadmin/layout/mets.png" border="0" /></a>
-											<xsl:choose>
-												<xsl:when test="$dfgv-link!=''">
-													<a href="{$dfgv-link}{$PID}" target="_blank" title="DFG-Viewer"><img src="/fileadmin/layout/dfgv_icon1.gif" border="0" /></a>
-												</xsl:when>
-											</xsl:choose>
-										</span>
-									</li>
-								<!-- </xsl:when>
-							</xsl:choose>
-						</xsl:for-each> -->
+						<li>
+							<span class="goobit3-met__item-label">
+								<xsl:text>Links: </xsl:text>
+							</span>
+							<span>
+								<a class="goobit3-met__image-link" href="{$metsresolverurl}{$PID}" target="_blank" title="METS-Download"><img src="/fileadmin/layout/mets.png" /></a>
+								<xsl:choose>
+									<xsl:when test="$dfgv-link!=''">
+										<a class="goobit3-met__image-link" href="{$dfgv-link}{$PID}" target="_blank" title="DFG-Viewer"><img src="/fileadmin/layout/dfgv_icon1.gif" /></a>
+									</xsl:when>
+								</xsl:choose>
+							</span>
+						</li>
 					</xsl:when>
 				</xsl:choose>
 

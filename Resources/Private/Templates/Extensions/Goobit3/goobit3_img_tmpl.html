@@ -4,6 +4,9 @@
 
 <!-- ###IMAGEVIEW## BEGIN -->
 <!--  ###HEAD### BEGIN -->
+<a href="http://www.digizeitschriften.de/informationen/subskription/" class="goobit3__lock goobit3__lock--###LOCKSTATUS###" title="###LOCKTEXT###">
+	<span class="sr-only">###LOCKTEXT###</span>
+</a>
 
 <div class="goobit3-image__head">
 	<!-- ###HEADSECTION### BEGIN-->
@@ -72,17 +75,6 @@
 
 		<!--  Main Title -->
 		<xsl:template match="mods:mods[last()]/mods:titleInfo[1]/mods:title" mode="maintitle">
-
-			<a href="http://www.digizeitschriften.de/informationen/subskription/" title="###LOCKTEXT###">
-				<xsl:attribute name="class">
-					<xsl:choose>
-						<xsl:when test="'###LOCKSTATUS###'='closed'">goobit3__lock</xsl:when>
-						<xsl:otherwise>goobit3__lock goobit3__lock--open</xsl:otherwise>
-					</xsl:choose>
-				</xsl:attribute>
-				<span class="sr-only">###LOCKTEXT###</span>
-			</a>
-
 			<xsl:choose>
 				<xsl:when test="string-length(normalize-space(string(.))) &lt;= 180">
 					<xsl:choose>

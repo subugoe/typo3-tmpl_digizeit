@@ -14,7 +14,7 @@
 
 .goobit3-toc-item {
 	@for $i from 1 through 5 {
-		&.indent-#{$i * 20} {
+		&--indent-#{$i * 20} {
 			padding-left: ($i - 2) * 2em;
 		}
 	}

@@ -3,6 +3,9 @@
 <!-- ###NOSEARCHINDEX### END-->
 
 <!-- ###MODS### BEGIN-->
+<a href="http://www.digizeitschriften.de/informationen/subskription/" class="goobit3__lock goobit3__lock--###LOCKSTATUS###" title="###LOCKTEXT###">
+	<span class="sr-only">###LOCKTEXT###</span>
+</a>
 
 <div class="goobit3-toc">
 
@@ -161,17 +164,6 @@
 			<!-- <xsl:apply-templates select="mods:note[@ID='goobiweb.bbf.dipf.de']" mode="periodicalvolume" /> -->
 			<xsl:apply-templates select="mods:note[@ID='preImport']" mode="periodicalvolume" />
 
-				<!-- TODO: Move this? -->
-				<a href="http://www.digizeitschriften.de/informationen/subskription/" title="###LOCKTEXT###">
-					<xsl:attribute name="class">
-						<xsl:choose>
-							<xsl:when test="'###LOCKSTATUS###'='closed'">goobit3__lock</xsl:when>
-							<xsl:otherwise>goobit3__lock goobit3__lock--open</xsl:otherwise>
-						</xsl:choose>
-					</xsl:attribute>
-					<span class="sr-only">###LOCKTEXT###</span>
-				</a>
-
 				<!-- Main title line -->
 				<xsl:choose>
 
@@ -320,20 +312,12 @@
 								</xsl:for-each>
 							</xsl:if>
 							<!-- pagenumber -->
-							<xsl:choose>
-								<xsl:when test="$pdflink">
-									<span class="goobit3-toc-item__page-number">
-										<a href="{$link}"><xsl:value-of select="$page" /></a>
-										<!-- TODO: On dev, PDF is never set. Please check -->
-										<a href="{$pdflink}" class="goobit3-toc-item__pdf-link"><span class="sr-only">PDF</span></a>
-									</span>
-								</xsl:when>
-								<xsl:otherwise>
-									<span class="goobit3-toc-item__page-number">
-										<a href="{$link}"><xsl:value-of select="$page" /></a>
-									</span>
-								</xsl:otherwise>
-							</xsl:choose>
+							<span class="goobit3-toc-item__page-number">
+								<a href="{$link}"><xsl:value-of select="$page" /></a>
+								<xsl:if test="$pdflink">
+									<a href="{$pdflink}" class="goobit3-toc-item__pdf-link"><span class="sr-only">PDF</span></a>
+								</xsl:if>
+							</span>
 						</div>
 
 						<xsl:apply-templates select="mods:relatedItem[@type='preceding']" mode="preceding" />

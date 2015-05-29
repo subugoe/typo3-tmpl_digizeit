@@ -4,7 +4,7 @@
 config {
 	xmlprologue = none
 	no_cache = 0
-	admPanel = 1
+	admPanel = 0
 
 	removeDefaultJS = 0
 

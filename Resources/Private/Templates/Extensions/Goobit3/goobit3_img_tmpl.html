@@ -98,15 +98,14 @@
 				</xsl:when>
 			</xsl:choose>
 		</xsl:template>
+
 		<xsl:template match="mods:mods[last()]/mods:extension/goobi:type" mode="maintitle">
 			<a name="navi"></a>
 			<xsl:choose>
 				<xsl:when test="not(/mods:modsCollection/mods:mods[last()]/mods:titleInfo[1]/mods:title)">
 					<xsl:choose>
 						<xsl:when test="$pdflink">
-							<div class="goobit3-image__title goobit3-image__title--pdf">
-								<a href="{$pdflink}"><img src="/fileadmin/layout/pdficon_big.png" alt="PDF" title="PDF" /></a>
-							</div>
+							<a class="goobit3-image__title goobit3-image__title--pdf" href="{$pdflink}" title="PDF"><span class="sr-only">PDF</span></a>
 						</xsl:when>
 					</xsl:choose>
 					<div class="goobit3-image__title">

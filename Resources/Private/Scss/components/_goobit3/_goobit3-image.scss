@@ -4,7 +4,7 @@
 	&--pdf {
 		@include fa-icon('file-pdf-o');
 		float: right;
-		margin: 0 .5em;
+		margin-left: .5em;
 		border: 0 !important;
 		font-size: 2em;
 	}

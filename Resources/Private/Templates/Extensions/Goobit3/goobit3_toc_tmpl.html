@@ -21,17 +21,6 @@
 		<xsl:param name="pdficon" value="0" />
 		<xsl:param name="publlink" value="" />
 
-		<!-- TODO: Move this -->
-		<a href="http://www.digizeitschriften.de/informationen/subskription/" title="###LOCKTEXT###">
-			<xsl:attribute name="class">
-				<xsl:choose>
-					<xsl:when test="'###LOCKSTATUS###'='closed'">goobit3__lock</xsl:when>
-					<xsl:otherwise>goobit3__lock goobit3__lock--open</xsl:otherwise>
-				</xsl:choose>
-			</xsl:attribute>
-			<span class="sr-only">###LOCKTEXT###</span>
-		</a>
-
 		<!-- schnelle schmutzige Lösung für DigiZeit besser umbauen zu modsCollection siehe tx_goobi_img.php -->
 		<xsl:template match="mods:note[@ID='MGH']" mode="periodicalvolume">
 			<xsl:choose>
@@ -172,7 +161,18 @@
 			<!-- <xsl:apply-templates select="mods:note[@ID='goobiweb.bbf.dipf.de']" mode="periodicalvolume" /> -->
 			<xsl:apply-templates select="mods:note[@ID='preImport']" mode="periodicalvolume" />
 
-			   <!-- Main title line -->
+				<!-- TODO: Move this? -->
+				<a href="http://www.digizeitschriften.de/informationen/subskription/" title="###LOCKTEXT###">
+					<xsl:attribute name="class">
+						<xsl:choose>
+							<xsl:when test="'###LOCKSTATUS###'='closed'">goobit3__lock</xsl:when>
+							<xsl:otherwise>goobit3__lock goobit3__lock--open</xsl:otherwise>
+						</xsl:choose>
+					</xsl:attribute>
+					<span class="sr-only">###LOCKTEXT###</span>
+				</a>
+
+				<!-- Main title line -->
 				<xsl:choose>
 
 					<xsl:when test="$indention='0'">
@@ -319,12 +319,9 @@
 									</xsl:if>
 								</xsl:for-each>
 							</xsl:if>
-							<!--  pagenumber  -->
+							<!-- pagenumber -->
 							<xsl:choose>
 								<xsl:when test="$pdflink">
-									<!--
-									<form action="dms/gcs-wrapper" method="post" name="{$structid}" class="siteno"><input type="hidden" name="gcsurl" value="{$pdflink}" /><a href="{$link}"><xsl:value-of select="$page" /></a><a href="#" onClick="{$structid}.submit(); return false;" class="sitepdf"><img class="pdficon" src="{$pdficon}" alt="PDF" title="PDF" /></a></form>
-									//-->
 									<span class="goobit3-toc-item__page-number">
 										<a href="{$link}"><xsl:value-of select="$page" /></a>
 										<!-- TODO: On dev, PDF is never set. Please check -->

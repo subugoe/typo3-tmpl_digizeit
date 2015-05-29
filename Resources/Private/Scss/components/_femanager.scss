@@ -8,7 +8,7 @@
 	}
 
 	label {
-		@extend .col-md-3; // TODO: Why does this raise a CSScomb error?
+		@extend .col-md-3;
 
 		&.radio {
 			@extend .radio-inline;
@@ -16,7 +16,7 @@
 	}
 
 	.controls {
-		@extend .col-md-5; // TODO: Why does this raise a CSScomb error?
+		@extend .col-md-5;
 	}
 
 	[type=text],

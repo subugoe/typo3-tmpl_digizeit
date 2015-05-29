@@ -1,0 +1,41 @@
+.goobit3-results {
+	display: table;
+	padding: 0;
+	list-style: none;
+}
+
+.goobit3-results__item {
+	display: table-row;
+
+	> div {
+		display: table-cell;
+		padding-bottom: $line-height;
+		vertical-align: top;
+
+		+ div {
+			padding-left: 1em;
+		}
+	}
+}
+
+.goobit3-results__list {
+	padding: 0;
+}
+
+.goobit3-results__thumbnail {
+	// TODO
+}
+
+.goobit3-results__index {
+	color: $text-color-light;
+	text-align: right;
+	font-weight: bold;
+}
+
+.goobit3-results__info {
+	width: 100%;
+}
+
+.goobit3-results__button {
+	float: right;
+}

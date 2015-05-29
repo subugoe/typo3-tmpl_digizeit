@@ -18,10 +18,9 @@ body {
 		top: -165px + $topbar-height;
 		left: -45px - $gutter;
 		z-index: 9;
-		width: 380px;
+		width: 60px;
 		height: 320px;
 		background: url('#{$img-path}bgicon.svg') no-repeat top left;
-		pointer-events: none; // TODO: Only works in IE>10. Possible solution: Make the right part of the tilted background image a part of the top wedge.
 
 		@media (max-width: $screen-sm-max) {
 			display: none;

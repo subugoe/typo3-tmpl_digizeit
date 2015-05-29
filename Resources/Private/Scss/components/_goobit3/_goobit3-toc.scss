@@ -18,27 +18,22 @@
 			padding-left: ($i - 2) * 2em;
 		}
 	}
+}
 
-	a {
-		margin-right: 1em;
+.goobit3-toc-item__link {
+	&--pdf {
+		@include fa-icon('file-pdf-o');
+		border: 0 !important;
+		margin-left: 1em;
 	}
 }
 
 .goobit3-toc-item__page-number {
 	float: right;
-}
-
-.goobit3-toc-item__pdf-link {
-	@include fa-icon('file-pdf-o')
+	margin-left: 1em;
 }
 
 .goobit3-toc-item__current {
 	background-color: $color-brown-lighter;
 	font-weight: bold;
-}
-
-.goobit3-toc-item__space {
-	float: left;
-	// TODO: What is this? Sounds like a non-semantic element.
-	vertical-align: top;
 }

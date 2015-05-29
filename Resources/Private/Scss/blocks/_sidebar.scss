@@ -6,10 +6,6 @@
 	@media (max-width: $screen-sm-max) {
 		padding: 0;
 		background: none;
-
-		li br {
-			display: none; // TODO: This should be removed completely
-		}
 	}
 
 	h3 {

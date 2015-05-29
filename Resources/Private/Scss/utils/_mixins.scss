@@ -13,7 +13,7 @@
 	min-height: $line-height;
 	border: 1px solid $color-gray-lighter;
 	background: $color-gray-lighter;
-	line-height: $line-height !important; //TODO
+	line-height: $line-height !important;
 	transition: all $time-short;
 
 	@include hover {

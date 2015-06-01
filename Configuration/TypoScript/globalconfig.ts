@@ -161,6 +161,7 @@ plugin.tx_irfaq_pi1 {
 	iconPlus = /typo3conf/ext/tmpl_digizeit/Resources/Public/Images/plus.gif
 	iconMinus = /typo3conf/ext/tmpl_digizeit/Resources/Public/Images/minus.gif
 	templateFile = EXT:tmpl_digizeit/Resources/Private/Templates/Extensions/Irfaq/Irfaq.html
+	addDefaultJs = 0
 	_CSS_DEFAULT_STYLE >
 }
 

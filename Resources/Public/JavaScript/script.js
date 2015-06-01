@@ -40,6 +40,21 @@ jQuery(function() {
 		$('body').click()
 	})
 
+	$('.irfaq__toggle--show-all').click( function() {
+		$('.irfaq__answer').slideDown()
+	})
+
+	$('.irfaq__toggle--hide-all').click( function() {
+		$('.irfaq__answer').slideUp()
+	})
+
+	$('.irfaq__question').click( function() {
+		$(this)
+			.toggleClass('irfaq__question--minus')
+			.siblings('.irfaq__answer')
+				.slideToggle()
+	})
+
 	$(window).scroll( function() {
 		if ( $(window).scrollTop() > 250 ) {
 			$('.to-top').addClass('to-top--visible')

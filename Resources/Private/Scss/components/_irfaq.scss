@@ -1,35 +1,30 @@
-.tx-irfaq-item {
+.irfaq__item {
 	border-bottom: 1px dotted $border-color;
 }
 
-.tx-irfaq-dynheader {
+.irfaq__question {
+	@include fa-icon('plus-square');
 	display: table;
-	padding: ($line-height / 3) 0;
+	padding: ($line-height / 2) 0;
 	width: 100%;
 	table-layout: fixed;
-	font-weight: bold;
 	cursor: pointer;
 
 	@include hover {
 		color: $link-hover-color;
 	}
 
-	.fa {
-		display: table-cell;
-		width: 1.5em;
+	&--minus {
+		@include fa-icon('minus-square');
+	}
 
-		//TODO: Add icon: @include fa-icon(?);
+	&:before {
+		display: table-cell;
+  		width: 1.5em;
 	}
 }
 
-.tx-irfaq-toggle-plus .fa {
-	@extend .fa-plus-square;
-}
-
-.tx-irfaq-toggle-minus .fa {
-	@extend .fa-minus-square;
-}
-
-.tx-irfaq-dynans {
-	padding: ($line-height * 2/3) 0 0;
+.irfaq__answer {
+	display: none;
+	padding: ($line-height / 2) 0 0;
 }

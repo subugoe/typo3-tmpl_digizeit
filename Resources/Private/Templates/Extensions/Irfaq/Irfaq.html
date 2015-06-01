@@ -99,10 +99,10 @@ RELATED_LINKS - related links (if any)
 <!-- ###TEMPLATE_DYNAMIC### begin
 	This is the template for dynamic FAQ list.
 -->
-<div class="tx-irfaq-pi1 tx-irfaq-toggle">
+<div class="irfaq">
 	<p>
-		<button type="button" class="tx-irfaq-toggle-all-show">###TEXT_SHOW###</button>
-		<button type="button" class="tx-irfaq-toggle-all-hide">###TEXT_HIDE###</button>
+		<button type="button" class="irfaq__toggle irfaq__toggle--show-all">###TEXT_SHOW###</button>
+		<button type="button" class="irfaq__toggle irfaq__toggle--hide-all">###TEXT_HIDE###</button>
 	</p>
 	<dl>
 	<!-- ###CONTENT### begin
@@ -111,13 +111,13 @@ RELATED_LINKS - related links (if any)
 		<!-- ###FAQ### begin
 			Template for a single FAQ item
 		-->
-		<div class="tx-irfaq-item">
-			<dt class="tx-irfaq-dynheader tx-irfaq-toggle-plus">
-				<i class="fa"></i> ###FAQ_Q###
+		<div class="irfaq__item">
+			<dt class="irfaq__question">
+				###FAQ_Q###
 			</dt>
-			<dd class="tx-irfaq-dynans">
+			<dd class="irfaq__answer">
 				###FAQ_A###
-				<div class="additional-info">
+				<div class="irfaq__info">
 					###TEXT_CATEGORY### ###FAQ_CATEGORY###
 					###TEXT_EXPERT### ###FAQ_EXPERT### ###FAQ_EXPERT_URL###
 					###TEXT_ASKED_BY### ###ASKED_BY###

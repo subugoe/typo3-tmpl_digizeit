@@ -5,6 +5,10 @@
 	padding: ($gutter*2) $gutter ($wedge-height + 5px);
 	background: $white;
 
+	@media(max-width: $screen-sm-max) {
+		padding: ($gutter*2) 0 ($gutter + $wedge-height + 5px);
+	}
+
 	a {
 		border: 0;
 		color: $color-gray;
@@ -16,19 +20,6 @@
 	}
 
 	ul {
-		margin: 0;
-		padding: 0 $gutter;
-		list-style: none;
-	}
-
-	li {
-		float: left;
-		margin-right: .75em;
-		padding-right: .75em;
-		border-right: $border;
-
-		&:last-child {
-			border-right: 0;
-		}
+		@include horizontal-link-list;
 	}
 }

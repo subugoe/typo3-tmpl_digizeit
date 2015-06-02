@@ -13,6 +13,10 @@
 }
 
 .goobit3-toc-item {
+	&:nth-child(2n-1) {
+		background: $color-gray-lightest;
+	}
+
 	@for $i from 1 through 5 {
 		&--indent-#{$i * 20} {
 			padding-left: ($i - 2) * 2em;

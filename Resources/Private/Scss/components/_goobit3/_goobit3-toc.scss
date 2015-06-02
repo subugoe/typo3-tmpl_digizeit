@@ -13,6 +13,8 @@
 }
 
 .goobit3-toc-item {
+	@include clearfix;
+
 	&:nth-child(2n-1) {
 		background: $color-gray-lightest;
 	}
@@ -40,4 +42,8 @@
 .goobit3-toc-item__current {
 	background-color: $color-brown-lighter;
 	font-weight: bold;
+}
+
+.goobit3-toc-item__site-title {
+	margin-right: .5em;
 }

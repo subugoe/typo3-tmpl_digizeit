@@ -247,38 +247,34 @@
 							<!-- title -->
 							<xsl:choose>
 								<xsl:when test="mods:titleInfo[1]/mods:title and string-length(normalize-space(string(mods:titleInfo[1]/mods:title))) &lt;= 80">
-									<a href="{$link}"><span class="goobit3-toc-item__site-title"><xsl:value-of select="mods:titleInfo[1]/mods:title" /></span></a>
+									<a href="{$link}" class="goobit3-toc-item__site-title"><xsl:value-of select="mods:titleInfo[1]/mods:title" /></a>
 									<xsl:if test="mods:titleInfo[1]/mods:partName">
-										<a href="{$link}"><span class="goobit3-toc-item__site-title">
+										<a href="{$link}" class="goobit3-toc-item__site-title">
 											<xsl:text>  </xsl:text><xsl:value-of select="$docstrct" /><xsl:text>  </xsl:text>
-											<xsl:value-of select="mods:titleInfo[1]/mods:partName" /></span>
+											<xsl:value-of select="mods:titleInfo[1]/mods:partName" />
 										</a>
 									</xsl:if>
 								</xsl:when>
 								<xsl:when test="mods:titleInfo[1]/mods:title and string-length(normalize-space(string(mods:titleInfo[1]/mods:title))) &gt;= 80">
-									<a href="{$link}">
-									<span class="goobit3-toc-item__site-title">
+									<a href="{$link}" class="goobit3-toc-item__site-title">
 										<xsl:attribute name="title"><xsl:value-of select="mods:titleInfo[1]/mods:title" /></xsl:attribute>
 										<xsl:value-of select="concat(substring(normalize-space(string(mods:titleInfo[1]/mods:title)),0,80),'...')" />
-									</span>
 									</a>
 									<xsl:if test="mods:titleInfo[1]/mods:partName">
-										<a href="{$link}"><span class="goobit3-toc-item__site-title">
+										<a href="{$link}" class="goobit3-toc-item__site-title">
 											<xsl:text>  </xsl:text><xsl:value-of select="$docstrct" /><xsl:text>  </xsl:text>
-											<xsl:value-of select="mods:titleInfo[1]/mods:partName" /></span>
+											<xsl:value-of select="mods:titleInfo[1]/mods:partName" />
 										</a>
 									</xsl:if>
 								</xsl:when>
 								<xsl:when test="not(mods:titleInfo[1]/mods:title) and string-length($docstrct) &gt;= 80">
-									<a href="{$link}">
-									<span class="goobit3-toc-item__site-title">
+									<a href="{$link}" class="goobit3-toc-item__site-title">
 										<xsl:attribute name="title"><xsl:value-of select="$docstrct" /></xsl:attribute>
 										<xsl:value-of select="concat(substring($docstrct,0,80),'...')" />
-									</span>
 									</a>
 								</xsl:when>
 								<xsl:otherwise>
-									<a href="{$link}"><span class="goobit3-toc-item__site-title"><xsl:value-of select="$docstrct" /></span></a>
+									<a href="{$link}" class="goobit3-toc-item__site-title"><xsl:value-of select="$docstrct" /></a>
 								</xsl:otherwise>
 							</xsl:choose>
 

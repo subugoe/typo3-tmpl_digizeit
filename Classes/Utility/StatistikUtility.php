@@ -29,12 +29,9 @@ $frontendUser = \TYPO3\CMS\Frontend\Utility\EidUtility::initFeUser();
 /** @var \TYPO3\CMS\Core\Database\DatabaseConnection $db */
 $db = $GLOBALS['TYPO3_DB'];
 
-/** @var \TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController $tsfe */
-$tsfe = $GLOBALS['TSFE'];
+$userID = $GLOBALS['TSFE']->fe_user->user['uid'];
 
-$userID = $frontendUser->id;
-
-$strFe_groups = $frontendUser->user['usergroup'];
+$strFe_groups = $GLOBALS['TSFE']->fe_user->user['usergroup'];
 $arrFe_groups = explode(',', $strFe_groups);
 
 $arrCollections = array('Anglistik',

@@ -7,6 +7,7 @@
 	color: $color-gray;
 	float: right;
 	font-size: 1.7em;
+	line-height: $line-height;
 
 	@include hover {
 		color: $link-hover-color;

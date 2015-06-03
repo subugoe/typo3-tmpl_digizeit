@@ -1,5 +1,15 @@
-.goobit3__purl {
-	font-weight: bold;
+.goobit3__comment {
+	border-bottom: $border;
+	margin: $line-height 0;
+	padding-bottom: ($line-height - $border-width);
+
+	> div > br {
+		display: none;
+	}
+
+	> div > a > img {
+		margin-right: $gutter;
+	}
 }
 
 .goobit3__lock {
@@ -24,4 +34,8 @@
 	&--closed {
 		@include fa-icon('lock', false);
 	}
+}
+
+.goobit3__purl {
+	font-weight: bold;
 }

@@ -2,6 +2,7 @@
 	padding: $gutter ($gutter * 2);
 	background: $color-brown-lighter;
 	font-size: $font-size-large;
+	margin-bottom: $line-height;
 
 	@media (max-width: $screen-sm-max) {
 		padding: $gutter;

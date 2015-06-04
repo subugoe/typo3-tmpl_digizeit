@@ -3,7 +3,6 @@
 }
 
 .irfaq__question {
-	@include fa-icon('plus-square');
 	display: table;
 	padding: ($line-height / 2) 0;
 	width: 100%;
@@ -14,7 +13,11 @@
 		color: $link-hover-color;
 	}
 
-	&--minus {
+	&:before {
+		@include fa-icon('plus-square');
+	}
+
+	&--minus:before {
 		@include fa-icon('minus-square');
 	}
 

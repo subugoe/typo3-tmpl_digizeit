@@ -28,13 +28,6 @@ page.includeJSlibs {
 	script = EXT:tmpl_digizeit/Resources/Public/JavaScript/script.js
 }
 
-[useragent = *MSIE 8*]
-page.includeJSlibs.html5shiv = http://html5shiv.googlecode.com/svn/trunk/html5.js
-page.includeJSlibs.html5shiv.external = 1
-page.includeJSlibs.html5shiv.excludeFromConcatenation = 1
-page.includeJSlibs.html5shiv.disableCompression = 1
-[global]
-
 page.10 = FLUIDTEMPLATE
 page.10 {
 	template = FILE
@@ -88,6 +81,14 @@ page.10 {
 	# Substitute the ###footmenu### subparts with dynamic menu
 	subparts.footmenu < temp.footmenu
 }
+
+page.headerData.500 = TEXT
+page.headerData.500.value (
+<!--[if lt IE 9]>
+	<link rel="stylesheet" type="text/css" href="typo3conf/ext/tmpl_digizeit/Resources/Public/JavaScript/modernizr.custom.46257.js" media="all" />
+<![endif]-->
+)
+
 
 [globalVar = TSFE:type=100]
 	config.admPanel = 0

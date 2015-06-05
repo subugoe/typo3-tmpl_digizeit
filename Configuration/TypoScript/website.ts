@@ -24,7 +24,7 @@ page.includeCSS {
 }
 
 page.includeJSlibs {
-	featureDetection = EXT:tmpl_digizeit/Resources/Public/JavaScript/modernizr.custom.46257.js
+	featureDetection = EXT:tmpl_digizeit/Resources/Public/JavaScript/html5shiv.min.js
 	featureDetection.allWrap = <!--[if lt IE 9]>|<![endif]-->
 	script = EXT:tmpl_digizeit/Resources/Public/JavaScript/script.js
 }

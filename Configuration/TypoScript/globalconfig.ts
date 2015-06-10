@@ -301,4 +301,5 @@ plugin.tx_ttaddress_pi1 {
 		description.wrap = <br styles="clear: both;">|
 		description.required = 1
 	}
+	wrap = <div class="ttaddress"><input type="search" class="ttaddress__filter">|</div>
 }

@@ -3,13 +3,16 @@ var config = {
 		sass: ['./Resources/Private/Scss/**/*.scss', '!./Resources/Private/Scss/vendors/**/*.scss'],
 		css: './Resources/Public/Css/',
 		svg: './Resources/Public/Images/Layout/*.svg',
-		svgout: './Resources/Public/Images/Layout/'
+		svgout: './Resources/Public/Images/Layout/',
+		js: './Resources/Private/JavaScript/**/*.js',
+		jsmin: './Resources/Public/JavaScript/'
 	},
 	production: false
 }
 
 var gulp = require('gulp'),
 	autoprefixer = require('gulp-autoprefixer'),
+	uglify = require('gulp-uglify'),
 	livereload = require('gulp-livereload'),
 	notifier = require('node-notifier'),
 	sass = require('gulp-sass'),
@@ -37,12 +40,14 @@ function color(string, color) {
 	return prefix + string + '\033[0m'
 }
 
-gulp.task('compile', function() {
-	gulp.start('sass')
+gulp.task('default', function() {
+	gulp.start('lint', 'sass', 'uglify', 'watch')
 })
 
-gulp.task('default', function() {
-	gulp.start('lint', 'compile', 'watch')
+gulp.task('uglify', function() {
+	gulp.src(config.paths.js)
+		.pipe(uglify())
+		.pipe(gulp.dest(config.paths.jsmin))
 })
 
 gulp.task('lint', function() {
@@ -60,11 +65,11 @@ gulp.task('lint-watch', function() {
 
 gulp.task('production', function() {
 	config.production = true
-	gulp.start('lint', 'compile')
+	gulp.start('lint', 'sass')
 })
 
 gulp.task('svgmin', function() {
-	return gulp.src(config.paths.svg)
+	gulp.src(config.paths.svg)
 		.pipe(svgmin())
 		.pipe(gulp.dest(config.paths.svgout))
 })
@@ -95,5 +100,6 @@ gulp.task('sass', function() {
 
 gulp.task('watch', function() {
 	livereload.listen()
-	gulp.watch(config.paths.sass, ['compile'])
+	gulp.watch(config.paths.sass, ['sass'])
+	gulp.watch(config.paths.js, ['uglify'])
 })

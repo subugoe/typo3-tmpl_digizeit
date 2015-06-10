@@ -282,7 +282,6 @@ plugin.tx_ttaddress_pi1 {
 		last_name.required = 1
 		image.wrap = |
 		image.required = 1
-		address.wrap = <br />|
 		address.required = 1
 		zip.wrap = <br />|
 		zip.required = 1
@@ -298,8 +297,10 @@ plugin.tx_ttaddress_pi1 {
 		phone.required = 1
 		fax.wrap = <br />Fax:&nbsp;|
 		fax.required = 1
-		description.wrap = <br styles="clear: both;">|
+		description.wrap = <br>|
 		description.required = 1
+		region.wrap = <br>
+		country.wrap = <br>
 	}
 	wrap = <div class="ttaddress"><input type="search" class="ttaddress__filter" placeholder="Filter">|</div>
 }

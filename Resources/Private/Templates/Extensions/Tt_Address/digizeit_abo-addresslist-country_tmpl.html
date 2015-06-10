@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>Adress Template für Abonnenten-Navigation nach Land</title>
+	<title>Adress Template für Abonnenten International</title>
 </head>
 <body>
 
@@ -33,8 +33,20 @@ Markers you can use:
 -->
 
 <!-- ###TEMPLATE_ADDRESS### beginn -->
-<div class="ttaddress__item ttaddress__item--short">
-	<a href="#address###UID###" title="###LASTNAME###" alt="###LASTNAME###">###COUNTRY###</a>
+<div class="ttaddress__item">
+	<a name="address###UID###" title="###LASTNAME###" alt="###LASTNAME###"></a>
+	###LASTNAME###
+	<p>
+		###IMAGE###
+		###ADDRESS###
+		###ZIP### ###CITY###
+		###COUNTRY###
+
+		###WWW###
+		###FAX###
+		###PHONE###
+	</p>
+	###DESCRIPTION###
 </div>
 <!-- ###TEMPLATE_ADDRESS### end -->
 

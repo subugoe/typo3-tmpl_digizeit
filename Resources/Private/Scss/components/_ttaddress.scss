@@ -1,6 +1,25 @@
 .ttaddress__filter {
-	@include big-input;
+	@include search-input;
 	margin-bottom: $line-height;
+	max-width: 28em;
+}
+
+.ttaddress__clear-filter {
+	@include fa-icon('close');
+	background: none;
+	border: 0;
+	color: $text-color-light;
+	cursor: pointer;
+	display: none;
+	margin: ($line-height / 1.5) 0 0 (-$line-height * 1.25);
+	position: absolute;
+	padding: 0;
+
+	@include hover {
+		background: none;
+		color: $link-hover-color;
+		outline: 0 !important;
+	}
 }
 
 .ttaddress__item {

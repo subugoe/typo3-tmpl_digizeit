@@ -24,7 +24,7 @@
 }
 
 .goobit3-search__input {
-	@include big-input;
+	@include search-input;
 }
 
 .goobit3-search__hit-count {

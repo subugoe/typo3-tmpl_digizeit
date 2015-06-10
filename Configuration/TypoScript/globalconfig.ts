@@ -302,5 +302,5 @@ plugin.tx_ttaddress_pi1 {
 		region.wrap = <br>
 		country.wrap = <br>
 	}
-	wrap = <div class="ttaddress"><input type="search" class="ttaddress__filter" placeholder="Filter">|</div>
+	wrap = <div class="ttaddress"><input type="text" class="ttaddress__filter" placeholder="Filter"><button class="ttaddress__clear-filter"><span class="sr-only">Clear</span></button>|</div>
 }

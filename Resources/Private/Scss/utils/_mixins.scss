@@ -6,12 +6,6 @@
 	background: none;
 }
 
-@mixin big-input {
-	padding: $gutter - $border-width;
-	width: 100%;
-	border: $border-width solid $border-color;
-}
-
 @mixin button {
 	@extend .btn;
 	@extend .btn-default;
@@ -129,4 +123,10 @@
 	&.active {
 		z-index: 1;
 	}
+}
+
+@mixin search-input {
+	padding: $gutter - $border-width;
+	width: 100%;
+	border: $border-width solid $border-color;
 }

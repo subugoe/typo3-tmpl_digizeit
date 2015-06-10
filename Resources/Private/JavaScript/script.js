@@ -77,7 +77,8 @@ jQuery(function() {
 
 	// Filter for address list
 
-	$('.ttaddress__filter').keyup( function() {
+	$('.ttaddress__filter')
+	.keyup( function() {
 		var val = $(this).val().toLowerCase()
 		var $addressItems = $(this).closest('.ttaddress').find('.ttaddress__item')
 		if ( val > '' ) {
@@ -91,6 +92,11 @@ jQuery(function() {
 		} else {
 			$addressItems.slideDown()
 		}
+		$(this).next('.ttaddress__clear-filter').toggle( val > '' )
+	})
+
+	$('.ttaddress__clear-filter').click( function() {
+		$(this).prev('.ttaddress__filter').val('').keyup()
 	})
 
 	// SVG -> PNG fallback for older browsers

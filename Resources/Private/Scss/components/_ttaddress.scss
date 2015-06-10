@@ -1,3 +1,8 @@
+.ttaddress__filter {
+	@include big-input;
+	margin-bottom: $line-height;
+}
+
 .ttaddress__item {
 	margin-bottom: $line-height - 1px;
 	border-bottom: $border;

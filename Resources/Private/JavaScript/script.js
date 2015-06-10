@@ -75,6 +75,24 @@ jQuery(function() {
 		$('html, body').animate({scrollTop: 0})
 	})
 
+	// Filter for address list
+
+	$('.ttaddress__filter').keyup( function() {
+		var val = $(this).val().toLowerCase()
+		var $addressItems = $(this).closest('.ttaddress').find('.ttaddress__item')
+		if ( val > '' ) {
+			$addressItems.each( function() {
+				if ( $(this).text().toLowerCase().indexOf(val) > -1 ) {
+					$(this).slideDown()
+				} else {
+					$(this).slideUp()
+				}
+			})
+		} else {
+			$addressItems.slideDown()
+		}
+	})
+
 	// SVG -> PNG fallback for older browsers
 
 	if ( ! document.implementation.hasFeature('http://www.w3.org/TR/SVG11/feature#Image', '1.1') ) {

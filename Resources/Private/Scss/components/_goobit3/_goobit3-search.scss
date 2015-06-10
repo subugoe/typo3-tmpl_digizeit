@@ -24,9 +24,7 @@
 }
 
 .goobit3-search__input {
-	padding: $gutter - $border-width;
-	width: 100%;
-	border: $border-width solid $border-color;
+	@include big-input;
 }
 
 .goobit3-search__hit-count {

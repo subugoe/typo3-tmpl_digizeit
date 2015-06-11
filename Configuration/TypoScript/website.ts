@@ -25,7 +25,9 @@ page.includeCSS {
 
 page.includeJSlibs {
 	html5shiv = EXT:tmpl_digizeit/Resources/Public/JavaScript/html5shiv.min.js
+	html5shiv.allWrap = <!--[if lt IE 9]>|<![endif]-->
 	respond = EXT:tmpl_digizeit/Resources/Public/JavaScript/respond.min.js
+	respond.allWrap = <!--[if lt IE 9]>|<![endif]-->
 	script = EXT:tmpl_digizeit/Resources/Public/JavaScript/script.js
 }
 

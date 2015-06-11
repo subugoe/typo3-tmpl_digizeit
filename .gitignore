@@ -17,3 +17,4 @@ Documentation/_make/build/
 
 node_modules
 tests/_output/*
+/nbproject/private/

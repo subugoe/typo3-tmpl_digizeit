@@ -5,6 +5,7 @@
 }
 
 .blog__entry {
+	@include clearfix;
 	margin-bottom: $line-height;
 	padding-bottom: $line-height - $border-width;
 	border-bottom: $border;

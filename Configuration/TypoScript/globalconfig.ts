@@ -193,7 +193,6 @@ plugin.tt_news {
 	}
 
 	_CSS_DEFAULT_STYLE >
-	_CSS_DEFAULT_STYLE >
 	displayList.subheader_stdWrap {
 		append = TEXT
 		append.data = register:newsMoreLink

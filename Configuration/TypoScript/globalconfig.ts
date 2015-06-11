@@ -127,11 +127,11 @@ page.headerData {
         <meta name="google-site-verification" content="sRqPpOhhh-nLRbPb1YBWyGsmO7GMGjeCkhGqolueRj0" />
 	)
 
-    # Viewport for mobile devices
-    600 = TEXT
-   	600.value (
+	# Viewport for mobile devices
+	600 = TEXT
+	600.value (
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   	)
+	)
 
 	# DC Meta tags
 	1000 = TEXT
@@ -277,30 +277,33 @@ plugin.tx_felogin_pi1 {
 ###gender, first_name, middle_name, last_name, title, email, phone, mobile, www, address, building, room, birthday, organization, city, zip, region, country, image, fax, description, mainGroup
 
 plugin.tx_ttaddress_pi1 {
-	templates.digizeit_abo-address_tmpl {
-		last_name.wrap = <h4>|</h4>
-		last_name.required = 1
-		image.wrap = |
-		image.required = 1
-		address.required = 1
-		zip.wrap = <br />|
-		zip.required = 1
-		city.wrap = |
-		city.required = 1
-		www.typolink.parameter.field = www
-		www.typolink.extTarget = _blank
-		www.wrap = <br />|
-		www.required = 1
-		email.wrap = <br />Email:&nbsp;|
-		email.required = 1
-		phone.wrap = <br />Tel:&nbsp;|
-		phone.required = 1
-		fax.wrap = <br />Fax:&nbsp;|
-		fax.required = 1
-		description.wrap = <br>|
-		description.required = 1
-		region.wrap = <br>
-		country.wrap = <br>
+	templates {
+		digizeit_abo-addresslist-region_tmpl {
+			last_name.wrap = <h4>|</h4>
+			last_name.required = 1
+			image.wrap = |
+			image.required = 1
+			address.required = 1
+			zip.wrap = <br />|
+			zip.required = 1
+			city.wrap = |
+			city.required = 1
+			www.typolink.parameter.field = www
+			www.typolink.extTarget = _blank
+			www.wrap = <br />|
+			www.required = 1
+			email.wrap = <br />Email:&nbsp;|
+			email.required = 1
+			phone.wrap = <br />Tel:&nbsp;|
+			phone.required = 1
+			fax.wrap = <br />Fax:&nbsp;|
+			fax.required = 1
+			description.wrap = <br>|
+			description.required = 1
+			region.wrap = <br>
+			country.wrap = <br>
+		}
+		digizeit_abo-addresslist-country_tmpl < plugin.tx_ttaddress_pi1.templates.digizeit_abo-addresslist-region_tmpl
 	}
-	wrap = <div class="ttaddress"><input type="text" class="ttaddress__filter" placeholder="Filter"><button class="ttaddress__clear-filter"><span class="sr-only">Clear</span></button>|</div>
+	wrap = <div class="ttaddress"><input type="search" class="ttaddress__filter" placeholder="Filter">|</div>
 }

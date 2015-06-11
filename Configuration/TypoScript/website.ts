@@ -24,7 +24,8 @@ page.includeCSS {
 }
 
 page.includeJSlibs {
-	featureDetection = EXT:tmpl_digizeit/Resources/Public/JavaScript/html5shiv.min.js
+	html5shiv = EXT:tmpl_digizeit/Resources/Public/JavaScript/html5shiv.min.js
+	respond = EXT:tmpl_digizeit/Resources/Public/JavaScript/respond.min.js
 	script = EXT:tmpl_digizeit/Resources/Public/JavaScript/script.js
 }
 

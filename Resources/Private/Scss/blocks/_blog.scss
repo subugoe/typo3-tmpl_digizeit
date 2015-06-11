@@ -18,6 +18,10 @@
 .blog__heading {
 	margin-top: 0;
 	color: $color-red-dark;
+
+	a {
+		border: 0 !important;
+	}
 }
 
 .blog__date {

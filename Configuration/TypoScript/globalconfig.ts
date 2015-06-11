@@ -172,6 +172,8 @@ plugin.tx_ttaddress_pi1 {
 
 #tt_news - Plugin
 plugin.tt_news {
+	_LOCAL_LANG.de.backToList = Zurück zu %s
+	_LOCAL_LANG.en.backToList = Back to %s
 	templateFile = EXT:tmpl_digizeit/Resources/Private/Templates/Extensions/Tt_News/digizeit_news_tmpl.html
 	excludeAlreadyDisplayedNews = 0
 	latestLimit = 1

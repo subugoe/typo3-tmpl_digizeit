@@ -77,22 +77,28 @@ jQuery(function() {
 
 	// Filter for address list
 
-	$('.ttaddress__filter')
-	.keyup( function() {
-		var val = $(this).val().toLowerCase()
-		var $addressItems = $(this).closest('.ttaddress').find('.ttaddress__item')
-		if ( val > '' ) {
-			$addressItems.each( function() {
-				if ( $(this).text().toLowerCase().indexOf(val) > -1 ) {
-					$(this).slideDown()
+	$('.ttaddress__filter').keyup( function() {
+		var tokens = $(this).val().toLowerCase().split(' ')
+		var $items = $(this).closest('.ttaddress').find('.ttaddress__item')
+		if ( tokens !== [''] ) {
+			$items.each( function(index, item) {
+				var show = true
+				$.each(tokens, function(index, token) {
+					if ( $(item).text().toLowerCase().indexOf(token) === -1 ) {
+						show = false
+						return false
+					}
+				})
+				if ( show ) {
+					$(item).slideDown('slow')
 				} else {
-					$(this).slideUp()
+					$(item).slideUp('slow')
 				}
 			})
 		} else {
 			$addressItems.slideDown()
 		}
-		$(this).next('.ttaddress__clear-filter').toggle( val > '' )
+		$(this).next('.ttaddress__clear-filter').toggle( tokens > [''] )
 	})
 
 	$('.ttaddress__clear-filter').click( function() {

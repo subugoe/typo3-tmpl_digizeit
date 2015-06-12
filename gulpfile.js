@@ -65,7 +65,7 @@ gulp.task('lint-watch', function() {
 
 gulp.task('production', function() {
 	config.production = true
-	gulp.start('lint', 'sass')
+	gulp.start('lint', 'sass', 'uglify')
 })
 
 gulp.task('svgmin', function() {

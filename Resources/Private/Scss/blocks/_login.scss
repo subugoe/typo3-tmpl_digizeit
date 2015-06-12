@@ -44,12 +44,12 @@
 		float: right;
 		margin: (-$line-height / 4) 0;
 	}
-}
 
-.login__form--inline {
-	[type=text],
-	[type=password] {
-		width: 61.8%;
+	&--inline {
+		[type=text],
+		[type=password] {
+			width: 61.8%;
+		}
 	}
 }
 
@@ -59,11 +59,17 @@
 
 	@media (max-width: $screen-sm-max) {
 		margin-right: 0;
+		padding: 6px 0 ($line-height + 6px);
 	}
 }
 
 .login__input {
 	@include input;
+
+	&--email {
+		display: inline;
+		max-width: 20em;
+	}
 }
 
 .login__submit {
@@ -73,4 +79,8 @@
 .login__footer {
 	margin-top: ($line-height / 2);
 	text-align: right;
+
+	@media (max-width: $screen-sm-max) {
+		text-align: left;
+	}
 }

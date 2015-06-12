@@ -11,6 +11,7 @@
 	@extend .btn-default;
 	min-width: $line-height;
 	min-height: $line-height;
+	margin-top: -2px;
 	border: 1px solid $color-gray-lighter;
 	background: $color-gray-lighter;
 	line-height: $line-height !important;

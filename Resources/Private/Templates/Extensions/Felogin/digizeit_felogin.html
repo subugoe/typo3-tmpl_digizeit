@@ -52,7 +52,7 @@
 ###STATUS_MESSAGE###
 <!-- ###LOGIN_FORM### -->
 <form class="login__form login__form--inline" action="###ACTION_URI###" target="_top" method="post" onsubmit="###ON_SUBMIT###">
-	
+
 	<h3>###LEGEND###</h3>
 
 	<label>
@@ -64,7 +64,7 @@
 		###PASSWORD_LABEL###
 		<input type="password" name="pass" value=""  class="tx_felogin_pi1-inputtext">
 	</label>
-	
+
 	<!--###PERMALOGIN_VALID###-->
 		<label>
 			###PERMALOGIN###
@@ -72,7 +72,7 @@
 			<input name="permalogin" value="1" type="checkbox" ###PERMALOGIN_CHECKBOX_ATTRIBUTES### id="permalogin"  onclick="document.getElementById('permaloginHiddenField').disabled = this.checked;">
 		</label>
 	<!--###PERMALOGIN_VALID###-->
-	
+
 	<input type="submit" name="submit" value="###LOGIN_LABEL###">
 
 	<input type="hidden" name="logintype" value="login">
@@ -103,11 +103,11 @@
 		<label>###USERNAME_LABEL###</label>
 	 	###USERNAME###
 	</div>
-	<input type="submit" name="submit" value="###LOGOUT_LABEL###" />
+	<input type="submit" name="submit" value="###LOGOUT_LABEL###">
 
-	<input type="hidden" name="logintype" value="logout" />
-	<input type="hidden" name="pid" value="###STORAGE_PID###" />
-	<input type="hidden" name="###PREFIXID###[noredirect]" value="###NOREDIRECT###" />
+	<input type="hidden" name="logintype" value="logout">
+	<input type="hidden" name="pid" value="###STORAGE_PID###">
+	<input type="hidden" name="###PREFIXID###[noredirect]" value="###NOREDIRECT###">
 
 </form>
 
@@ -121,13 +121,13 @@
 
 <!-- ###FORGOT_FORM### -->
 <form action="###ACTION_URI###" method="post">
-	<input type="hidden" name="tx_felogin_pi1[forgot_hash]" value="###FORGOTHASH###" />
+	<input type="hidden" name="tx_felogin_pi1[forgot_hash]" value="###FORGOTHASH###">
 	<h3>###LEGEND###</h3>
-	<div>
-		<label for="tx_felogin_pi1-forgot-email">###DATA_LABEL###</label>
-		<br /><input type="text" name="###FORGOT_EMAIL###" class="tx_felogin_pi1-inputtext" />
-	</div>
-	<input type="submit" name="submit" value="###SEND_PASSWORD###" />
+	<p>
+		<label for="tx_felogin_pi1-forgot-email">###DATA_LABEL###</label><br>
+		<input id="tx_felogin_pi1-forgot-email" type="text" name="###FORGOT_EMAIL###" class="login__input login__input--email">
+		<input type="submit" name="submit" value="###SEND_PASSWORD###">
+	</p>
 </form>
 <!-- ###FORGOT_FORM### -->
 <p>###BACKLINK_LOGIN###</p>
@@ -141,7 +141,7 @@
 
 <!-- ###CHANGEPASSWORD_FORM### -->
 <form action="###ACTION_URI###" method="post">
-	
+
 	<h3>###LEGEND###</h3>
 	<div>
 		<label for="tx_felogin_pi1-newpassword1">###NEWPASSWORD1_LABEL###</label>
@@ -158,6 +158,4 @@
 </form>
 <!-- ###CHANGEPASSWORD_FORM### -->
 ###BACKLINK_LOGIN###
-<!--###TEMPLATE_CHANGEPASSWORD###--> 
-
-
+<!--###TEMPLATE_CHANGEPASSWORD###-->

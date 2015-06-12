@@ -7,3 +7,5 @@ temp.felogin {
 }
 
 page.10.marks.FELOGIN < temp.felogin
+lib.forgotPasswordPageUid = TEXT
+lib.forgotPasswordPageUid.value = {$felogin.forgotPasswordPageUid}

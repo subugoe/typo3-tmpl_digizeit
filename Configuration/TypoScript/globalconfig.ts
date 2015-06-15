@@ -196,14 +196,14 @@ plugin.tt_news {
 	displayList.subheader_stdWrap {
 		append = TEXT
 		append.data = register:newsMoreLink
-		append.wrap = <div class=news-list-morelink>|</div>
+		append.wrap = <span class=blog__more-link>|</span>
 		append.if.isTrue.field = bodytext
 	}
 
 	displayLatest.subheader_stdWrap {
 		append = TEXT
 		append.data = register:newsMoreLink
-		append.wrap = <div class=news-list-morelink>|</div>
+		append.wrap = <span class=blog__more-link>|</span>
 		append.if.isTrue.field = bodytext
 	}
 }

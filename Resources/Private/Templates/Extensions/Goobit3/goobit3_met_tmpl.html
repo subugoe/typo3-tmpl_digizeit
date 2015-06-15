@@ -563,113 +563,116 @@
 					</xsl:choose>
 				</xsl:for-each>
 
-				<xsl:choose>
-					<!-- Links GDZ Produktion-->
-					<xsl:when test="starts-with($PID,'PPN')">
+				<!-- Show icons only for Zeitschrift and Band -->
+				<xsl:if test="($docstrct='Zeitschrift' or $docstrct='Periodical' or $docstrct='Zeitschriftenband' or $docstrct='Periodical volume')">
+					<xsl:choose>
+						<!-- Links GDZ Produktion-->
+						<xsl:when test="starts-with($PID,'PPN')">
 
-						<xsl:for-each select="mods:identifier" >
-							<xsl:choose>
-								<xsl:when test="attribute::type='PPN'">
-									<li>
-										<xsl:if test="starts-with(.,'PPN')">
-											<xsl:variable name="ppn">
-												<xsl:value-of select="." />
-											</xsl:variable>
-											<xsl:variable name="ppnopac">
-												<xsl:value-of select="substring(.,4)" />
-											</xsl:variable>
-											<span class="goobit3-met__item-label">
-												<xsl:text>Links: </xsl:text>
-											</span>
-											<span>
-												<a class="goobit3-met__image-link" href="{$metsresolverurl}{$ppn}" target="_blank" title="METS-Download"><img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/mets.png" /></a>
-												<xsl:choose>
-													<xsl:when test="$dfgv-link!=''">
-														<a class="goobit3-met__image-link" href="{$dfgv-link}{$ppn}" target="_blank" title="DFG-Viewer"><img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/dfgv_icon1.gif" /></a>
-													</xsl:when>
-												</xsl:choose>
-												<xsl:if test="not(contains(.,'_'))">
-													<a class="goobit3-met__image-link" href="{$opac-link}{$ppnopac}" target="_blank" title="SUB-OPAC"><img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/opac.gif" /></a>
-												</xsl:if>
-											</span>
-										</xsl:if>
-									</li>
-								</xsl:when>
-							</xsl:choose>
-						</xsl:for-each>
-
-						<xsl:for-each select="mods:recordInfo/mods:recordIdentifier">
-							<xsl:choose>
-								<xsl:when test="attribute::source='gbv-ppn'">
-									<li>
-										<xsl:if test="starts-with(.,'PPN')">
-											<xsl:variable name="ppn">
-												<xsl:value-of select="." />
-											</xsl:variable>
-											<xsl:variable name="ppnopac">
-												<xsl:value-of select="substring(.,4)" />
-											</xsl:variable>
-											<span class="goobit3-met__item-label">
-												<xsl:text>Links: </xsl:text>
-											</span>
-											<span>
-												<a class="goobit3-met__image-link" href="{$metsresolverurl}{$ppn}" target="_blank" title="METS-Download"><img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/mets.png" /></a>
-												<xsl:choose>
-													<xsl:when test="$dfgv-link!=''">
-														<a class="goobit3-met__image-link" href="{$dfgv-link}{$ppn}" target="_blank" title="DFG-Viewer"><img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/dfgv_icon1.gif" /></a>
-													</xsl:when>
-												</xsl:choose>
-												<xsl:if test="not(contains(.,'_'))">
-													<a class="goobit3-met__image-link" href="{$opac-link}{$ppnopac}" target="_blank" title="SUB-OPAC"><img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/opac.gif" /></a>
-												</xsl:if>
-											</span>
-										</xsl:if>
-									</li>
-								</xsl:when>
-							</xsl:choose>
-						</xsl:for-each>
-					</xsl:when>
-
-					<!-- Links - URN as PI -->
-					<xsl:when test="starts-with($PID,'urn')">
-						<xsl:for-each select="mods:identifier" >
-							<xsl:choose>
-								<xsl:when test="attribute::type='urn'">
-									<li>
-										<span class="goobit3-met__item-label">
-											<xsl:text>Links: </xsl:text>
-										</span>
-										<span>
-											<a class="goobit3-met__image-link" href="{$metsresolverurl}{$PID}" target="_blank" title="METS-Download"><img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/mets.png" /></a>
-											<xsl:choose>
-												<xsl:when test="$dfgv-link!=''">
-													<a class="goobit3-met__image-link" href="{$dfgv-link}{$PID}" target="_blank" title="DFG-Viewer"><img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/dfgv_icon1.gif" /></a>
-												</xsl:when>
-											</xsl:choose>
-										</span>
-									</li>
-								</xsl:when>
-							</xsl:choose>
-						</xsl:for-each>
-					</xsl:when>
-
-					<!-- Links - other PIs-->
-					<xsl:otherwise>
-						<li>
-							<span class="goobit3-met__item-label">
-								<xsl:text>Links: </xsl:text>
-							</span>
-							<span>
-								<a class="goobit3-met__image-link" href="{$metsresolverurl}{$PID}" target="_blank" title="METS-Download"><img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/mets.png" /></a>
+							<xsl:for-each select="mods:identifier" >
 								<xsl:choose>
-									<xsl:when test="$dfgv-link!=''">
-										<a class="goobit3-met__image-link" href="{$dfgv-link}{$PID}" target="_blank" title="DFG-Viewer"><img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/dfgv_icon1.gif" /></a>
+									<xsl:when test="attribute::type='PPN'">
+										<li>
+											<xsl:if test="starts-with(.,'PPN')">
+												<xsl:variable name="ppn">
+													<xsl:value-of select="." />
+												</xsl:variable>
+												<xsl:variable name="ppnopac">
+													<xsl:value-of select="substring(.,4)" />
+												</xsl:variable>
+												<span class="goobit3-met__item-label">
+													<xsl:text>Links: </xsl:text>
+												</span>
+												<span>
+													<a class="goobit3-met__image-link" href="{$metsresolverurl}{$ppn}" target="_blank" title="METS-Download"><img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/mets.png" /></a>
+													<xsl:choose>
+														<xsl:when test="$dfgv-link!=''">
+															<a class="goobit3-met__image-link" href="{$dfgv-link}{$ppn}" target="_blank" title="DFG-Viewer"><img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/dfgv_icon1.gif" /></a>
+														</xsl:when>
+													</xsl:choose>
+													<xsl:if test="not(contains(.,'_'))">
+														<a class="goobit3-met__image-link" href="{$opac-link}{$ppnopac}" target="_blank" title="SUB-OPAC"><img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/opac.gif" /></a>
+													</xsl:if>
+												</span>
+											</xsl:if>
+										</li>
 									</xsl:when>
 								</xsl:choose>
-							</span>
-						</li>
-					</xsl:otherwise>
-				</xsl:choose>
+							</xsl:for-each>
+
+							<xsl:for-each select="mods:recordInfo/mods:recordIdentifier">
+								<xsl:choose>
+									<xsl:when test="attribute::source='gbv-ppn'">
+										<li>
+											<xsl:if test="starts-with(.,'PPN')">
+												<xsl:variable name="ppn">
+													<xsl:value-of select="." />
+												</xsl:variable>
+												<xsl:variable name="ppnopac">
+													<xsl:value-of select="substring(.,4)" />
+												</xsl:variable>
+												<span class="goobit3-met__item-label">
+													<xsl:text>Links: </xsl:text>
+												</span>
+												<span>
+													<a class="goobit3-met__image-link" href="{$metsresolverurl}{$ppn}" target="_blank" title="METS-Download"><img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/mets.png" /></a>
+													<xsl:choose>
+														<xsl:when test="$dfgv-link!=''">
+															<a class="goobit3-met__image-link" href="{$dfgv-link}{$ppn}" target="_blank" title="DFG-Viewer"><img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/dfgv_icon1.gif" /></a>
+														</xsl:when>
+													</xsl:choose>
+													<xsl:if test="not(contains(.,'_'))">
+														<a class="goobit3-met__image-link" href="{$opac-link}{$ppnopac}" target="_blank" title="SUB-OPAC"><img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/opac.gif" /></a>
+													</xsl:if>
+												</span>
+											</xsl:if>
+										</li>
+									</xsl:when>
+								</xsl:choose>
+							</xsl:for-each>
+						</xsl:when>
+
+						<!-- Links - URN as PI -->
+						<xsl:when test="starts-with($PID,'urn')">
+							<xsl:for-each select="mods:identifier" >
+								<xsl:choose>
+									<xsl:when test="attribute::type='urn'">
+										<li>
+											<span class="goobit3-met__item-label">
+												<xsl:text>Links: </xsl:text>
+											</span>
+											<span>
+												<a class="goobit3-met__image-link" href="{$metsresolverurl}{$PID}" target="_blank" title="METS-Download"><img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/mets.png" /></a>
+												<xsl:choose>
+													<xsl:when test="$dfgv-link!=''">
+														<a class="goobit3-met__image-link" href="{$dfgv-link}{$PID}" target="_blank" title="DFG-Viewer"><img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/dfgv_icon1.gif" /></a>
+													</xsl:when>
+												</xsl:choose>
+											</span>
+										</li>
+									</xsl:when>
+								</xsl:choose>
+							</xsl:for-each>
+						</xsl:when>
+
+						<!-- Links - other PIs-->
+						<xsl:otherwise>
+							<li>
+								<span class="goobit3-met__item-label">
+									<xsl:text>Links: </xsl:text>
+								</span>
+								<span>
+									<a class="goobit3-met__image-link" href="{$metsresolverurl}{$PID}" target="_blank" title="METS-Download"><img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/mets.png" /></a>
+									<xsl:choose>
+										<xsl:when test="$dfgv-link!=''">
+											<a class="goobit3-met__image-link" href="{$dfgv-link}{$PID}" target="_blank" title="DFG-Viewer"><img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/dfgv_icon1.gif" /></a>
+										</xsl:when>
+									</xsl:choose>
+								</span>
+							</li>
+						</xsl:otherwise>
+					</xsl:choose>
+				</xsl:if>
 
 		   </ul>
 		</xsl:template>

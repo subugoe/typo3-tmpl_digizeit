@@ -134,6 +134,14 @@
 			</xsl:choose>
 		</xsl:template>
 
+                <xsl:template match="mods:note[@ID='www.wuerttembergische-kirchengeschichte.de']" mode="periodicalvolume">
+                    <xsl:choose>
+                        <xsl:when test="$docstrct='Zeitschrift' or $docstrct='Periodical'">
+                            <div class="goobit3_comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /></div>
+                        </xsl:when>
+                    </xsl:choose>
+                </xsl:template>
+
 		<xsl:template match="/mods:mods">
 			<xsl:apply-templates select="mods:note[@ID='MGH']" mode="periodicalvolume" />
 			<xsl:apply-templates select="mods:note[@ID='destatis.de']" mode="periodicalvolume" />
@@ -144,6 +152,7 @@
 			<xsl:apply-templates select="mods:note[@ID='www.uni-weimar.de.ubweimar']" mode="periodicalvolume" />
 			<xsl:apply-templates select="mods:note[@ID='europeana.ub.uni-frankfurt.de']" mode="periodicalvolume" />
 			<xsl:apply-templates select="mods:note[@ID='goobiweb.bbf.dipf.de']" mode="periodicalvolume" />
+                        <xsl:apply-templates select="mods:note[@ID='www.wuerttembergische-kirchengeschichte.de']" mode="periodicalvolume" />
 
 			<ul class="goobit3-met__list">
 				<!-- Structurtyp -->

@@ -137,7 +137,7 @@
                 <xsl:template match="mods:note[@ID='www.wuerttembergische-kirchengeschichte.de']" mode="periodicalvolume">
                     <xsl:choose>
                         <xsl:when test="$docstrct='Zeitschrift' or $docstrct='Periodical'">
-                            <div class="goobit3_comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /></div>
+                            <div class="goobit3__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /></div>
                         </xsl:when>
                     </xsl:choose>
                 </xsl:template>

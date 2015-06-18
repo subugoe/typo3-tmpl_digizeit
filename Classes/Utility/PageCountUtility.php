@@ -28,7 +28,7 @@ namespace Subugoe\TmplDigizeit\Utility;
 /* +++++ MyDigiZeit/VG Wort ++++++++++++++++++++ */
 /* +++++++++++++++++++++++++++++++++++++++++++++ */
 
-define('__DZROOT__', realpath(__DIR__ . '/../../../'));
+define('__DZROOT__', realpath(PATH_site . '/../'));
 
 class PageCountUtility {
 

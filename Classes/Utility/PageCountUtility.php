@@ -79,9 +79,9 @@ class PageCountUtility {
 		'strWall' => '1925',
 		'ppnResolver' => 'http://resolver.sub.uni-goettingen.de/purl/?',
 		'metsResolver' => 'http://www.digizeitschriften.de/dms/metsresolver/?PPN=',
-		'solrPhpsUrl' => 'http://localhost:8080/digizeit/select/?wt=phps',
-		'arrSerFields' => array('ACL', 'STRUCTRUN', 'PRE', 'SUC'),
-		'digizeitonly' => '((ACL:free OR ACL:gesamtabo) AND NOT(ACL:ubfrankfurt OR ACL:ubheidelberg OR ACL:ubtuebingen OR ACL:ubweimar OR ACL:zbwkieldigire)) ',
+		'solrPhpsUrl' => 'http://localhost:8080/digizeit2/collection1/select/?wt=phps',
+		'arrSerFields' => array('structrun'),
+		'digizeitonly' => '((acl:free OR acl:gesamtabo) AND NOT(acl:(dipfbbfberlin OR ubfrankfurt OR ubheidelberg OR ubtuebingen OR ubweimar OR zbwkieldigire OR ubmannheim OR sbbberlin))) ',
 	);
 
 	public function main() {
@@ -100,7 +100,7 @@ class PageCountUtility {
 			$this->cache = array();
 		}
 
-		$this->config['end'] = date("Ymd", time());
+		$this->config['end'] = date("Y-m-d", time()) . 'T' . date("H:i:s", time()) . 'Z';
 
 		$this->POST = \TYPO3\CMS\Core\Utility\GeneralUtility::_POST();
 
@@ -144,7 +144,7 @@ class PageCountUtility {
 			$arrCol = array();
 			if (!in_array(0, $this->POST['collect'])) {
 				foreach ($this->POST['collect'] as $collect) {
-					$arrCol[] = 'DC:"' . $collect . '"';
+					$arrCol[] = 'dc:"' . $collect . '"';
 				}
 				$arrQuery[] = '(' . implode(' OR ', $arrCol) . ')';
 			}
@@ -158,17 +158,17 @@ class PageCountUtility {
 						$arrAcl[] = $this->config[$license];
 						break;
 					}
-					$arrAcl[] = 'ACL:"' . $license . '"';
+					$arrAcl[] = 'acl:"' . $license . '"';
 				}
 				$arrQuery[] = '(' . implode(' OR ', $arrAcl) . ')';
 			}
 
-			$this->start = $this->POST['start']['year'][0] . $this->POST['start']['month'][0] . '01';
+			$this->start = $this->POST['start']['year'][0] . '-' . $this->POST['start']['month'][0] . '-' . '01T00:00:00Z';
 			$lastdayofmonth = date("t", mktime(0, 0, 0, intval($this->POST['end']['month'][0]), 1, $this->POST['end']['year'][0]));
-			$this->end = $this->POST['end']['year'][0] . $this->POST['end']['month'][0] . $lastdayofmonth;
+			$this->end = $this->POST['end']['year'][0] . '-' . $this->POST['end']['month'][0] . '-' . $lastdayofmonth . 'T23:59:59Z';
 
 			// prepare volumes
-			$volumeQuery = 'ISWORK:1 AND DATEINDEXED:[' . $this->start . ' TO ' . $this->end . ']';
+			$volumeQuery = 'iswork:1 AND dateindexed:[' . $this->start . ' TO ' . $this->end . ']';
 
 			if (count($arrQuery)) {
 				$q = implode(' AND ', $arrQuery) . ' AND ' . $volumeQuery;
@@ -179,14 +179,14 @@ class PageCountUtility {
 				'q' => urlencode($q),
 				'start' => 0,
 				'rows' => 99999,
-				'sort' => 'CURRENTNOSORT+asc'
+				'sort' => 'currentnosort+asc'
 			);
 			$arrVolumeSolr = $this->getSolrResult($arrParams);
 			// end prepare volumes
 
 
 			//get all periodicals from start!
-			$periodicalQuery = 'DOCSTRCT:periodical AND DATEINDEXED:[00000000 TO ' . $this->end . ']';
+			$periodicalQuery = 'docstrct:periodical';
 
 			if (count($arrQuery)) {
 				$q = implode(' AND ', $arrQuery) . ' AND ' . $periodicalQuery;
@@ -198,7 +198,7 @@ class PageCountUtility {
 				'q' => urlencode($q),
 				'start' => 0,
 				'rows' => 9999,
-				'sort' => 'BYTITLE+asc'
+				'sort' => 'bytitle+asc'
 			);
 			$arrPeriodicalSolr = $this->getSolrResult($arrParams);
 
@@ -207,40 +207,40 @@ class PageCountUtility {
 			$this->arrResult = array();
 			$this->arrPredecessor = array();
 			foreach ($arrPeriodicalSolr['response']['docs'] as $periodical) {
-				if (isset($periodical['SUC'])) {
-					$this->arrPredecessor[$periodical['PPN']] = $periodical;
-					$this->arrPredecessor[$periodical['PPN']]['PAGES'] = 0;
+				if (isset($periodical['suc'])) {
+					$this->arrPredecessor[$periodical['pid']] = $periodical;
+					$this->arrPredecessor[$periodical['pid']]['PAGES'] = 0;
 				} else {
-					$this->arrResult[$periodical['PPN']] = $periodical;
-					$this->arrResult[$periodical['PPN']]['PAGES'] = 0;
+					$this->arrResult[$periodical['pid']] = $periodical;
+					$this->arrResult[$periodical['pid']]['PAGES'] = 0;
 				}
 			}
 
 			// add volumes to journals
 			foreach ($arrVolumeSolr['response']['docs'] as $volume) {
 				$this->getInfo($volume);
-				if (isset($this->arrPredecessor[$volume['STRUCTRUN'][0]['PPN']])) {
-					$this->arrPredecessor[$volume['STRUCTRUN'][0]['PPN']]['volumes'][] = $volume;
+				if (isset($this->arrPredecessor[$volume['structrun'][0]['pid']])) {
+					$this->arrPredecessor[$volume['structrun'][0]['pid']]['volumes'][] = $volume;
 				}
-				if (isset($this->arrResult[$volume['STRUCTRUN'][0]['PPN']])) {
-					$this->arrResult[$volume['STRUCTRUN'][0]['PPN']]['volumes'][] = $volume;
+				if (isset($this->arrResult[$volume['structrun'][0]['pid']])) {
+					$this->arrResult[$volume['structrun'][0]['pid']]['volumes'][] = $volume;
 				}
 			}
 
 
 			// add info to predecessors
-			foreach ($this->arrPredecessor as $ppn => $periodical) {
-				$this->getInfo($this->arrPredecessor[$ppn]);
+			foreach ($this->arrPredecessor as $pid => $periodical) {
+				$this->getInfo($this->arrPredecessor[$pid]);
 			}
 
 			// add info and predecessors to journals
-			foreach ($this->arrResult as $ppn => $periodical) {
-				if (isset($periodical['PRE'])) {
-					foreach ($periodical['PRE'] as $_ppn) {
-						$this->getPredecessor($ppn, $_ppn);
+			foreach ($this->arrResult as $pid => $periodical) {
+				if (isset($periodical['pre'])) {
+					foreach ($periodical['pre'] as $_pid) {
+						$this->getPredecessor($pid, $_pid);
 					}
 				}
-				$this->getInfo($this->arrResult[$ppn]);
+				$this->getInfo($this->arrResult[$pid]);
 			}
 			// end periodicals
 
@@ -259,10 +259,11 @@ class PageCountUtility {
 			$arrLines[] = "\n";
 			foreach ($this->arrResult as $periodical) {
 				if (in_array('digizeitonly', $this->POST['license'])) {
-					foreach ($periodical['ACL'] as $key => $license) {
-						$periodical['ACL'][$key] = strtolower($license);
+                                        $periodical['acl'] = array_unique($periodical['acl']);
+					foreach ($periodical['acl'] as $key => $license) {
+						$periodical['acl'][$key] = strtolower($license);
 					}
-					if (!in_array('gesamtabo', $periodical['ACL'])) {
+					if (!in_array('gesamtabo', $periodical['acl'])) {
 						continue;
 					}
 				}
@@ -289,8 +290,8 @@ class PageCountUtility {
 	protected function getLine($periodical) {
 		$column = array();
 		$column[0] = $periodical['linenumber'];
-		$column[1] = trim($periodical['TITLE']);
-		$column[2] = $this->config['ppnResolver'] . trim($periodical['PPN']);
+		$column[1] = trim($periodical['title'][0]);
+		$column[2] = $this->config['ppnResolver'] . trim($periodical['pid']);
 		$column[3] = trim($periodical['COPYRIGHT']);
 		$column[4] = trim($periodical['DATERUN']);
 		$column[5] = 0;
@@ -298,7 +299,7 @@ class PageCountUtility {
 		$column[7] = 0;
 		$column[8] = 0;
 		foreach ($periodical['volumes'] as $volume) {
-			if ($volume['YEARPUBLISH'] <= $this->config['strWall']) {
+			if ($volume['yearpublish'] <= $this->config['strWall']) {
 				$column[5] += $volume['PAGES'];
 				$column[6]++;
 			} else {
@@ -306,29 +307,29 @@ class PageCountUtility {
 				$column[8]++;
 			}
 		}
-		$column[9] = trim($this->dateFormat($periodical['FIRSTIMPORT']));
-		$column[10] = trim($this->dateFormat($periodical['LASTIMPORT']));
-		$column[11] = trim($this->downloads[$periodical['PPN']]);
+		$column[9] = trim($periodical['FIRSTIMPORT']);
+		$column[10] = trim($periodical['LASTIMPORT']);
+		$column[11] = trim($this->downloads[$periodical['pid']]);
 		return implode("\t", $column);
 	}
 
-	protected function getPredecessor($ppn, $_ppn) {
-		if (isset($this->arrPredecessor[$_ppn])) {
-			$this->arrResult[$ppn]['PREDECESSOR'][$_ppn] = $this->arrPredecessor[$_ppn];
-			if ($this->arrPredecessor[$_ppn]['PRE']) {
-				foreach ($this->arrPredecessor[$_ppn]['PRE'] as $PPN) {
-					$this->getPredecessor($ppn, $PPN);
+	protected function getPredecessor($pid, $_pid) {
+		if (isset($this->arrPredecessor[$_pid])) {
+			$this->arrResult[$pid]['PREDECESSOR'][$_pid] = $this->arrPredecessor[$_pid];
+			if ($this->arrPredecessor[$_pid]['PRE']) {
+				foreach ($this->arrPredecessor[$_pid]['PRE'] as $PPNPID) {
+					$this->getPredecessor($pid, $PID);
 				}
 			}
 		}
 	}
 
 	protected function getInfo(&$arr) {
-		if (!isset($this->cache[$arr['PPN']]['cachemodified']) OR $this->cache[$arr['PPN']]['cachemodified'] < $arr['DATEMODIFIED']) {
-			unset($this->cache[$arr['PPN']]);
+		if (!isset($this->cache[$arr['pid']]['cachemodified']) OR $this->cache[$arr['pid']]['cachemodified'] < $arr['datemodified']) {
+			unset($this->cache[$arr['pid']]);
 
 			$dom = new DOMDocument('1.0', 'UTF-8');
-			$test = $dom->load($this->config['metsResolver'] . trim($arr['PPN']));
+			$test = $dom->load($this->config['metsResolver'] . trim($arr['pid']));
 			if (!$test) {
 				return false;
 			}
@@ -339,35 +340,32 @@ class PageCountUtility {
 			$nodeList = $xpath->evaluate('/mets:mets/mets:dmdSec/mets:mdWrap[@MDTYPE="MODS"]/mets:xmlData/mods:mods/mods:accessCondition[@type="copyright"]');
 			if ($nodeList->length) {
 				$arr['COPYRIGHT'] = trim($nodeList->item(0)->nodeValue);
-				$this->cache[$arr['PPN']]['COPYRIGHT'] = $arr['COPYRIGHT'];
+				$this->cache[$arr['pid']]['COPYRIGHT'] = $arr['COPYRIGHT'];
 			}
 
 			//scanned pages
-			if (strtolower($arr['DOCSTRCT']) == 'periodicalvolume') {
+			if (strtolower($arr['docstrct']) == 'periodicalvolume') {
 				$nodeList = $xpath->evaluate('/mets:mets/mets:structMap[@TYPE="PHYSICAL"]/mets:div/mets:div');
 				if ($nodeList->length) {
 					$arr['PAGES'] = $nodeList->length;
-					$this->cache[$arr['PPN']]['PAGES'] = $arr['PAGES'];
+					$this->cache[$arr['pid']]['PAGES'] = $arr['PAGES'];
 				}
-				$arr['YEARPUBLISH'] = str_replace(array('(' . '{', '[', ']', '}', ')'), '', $arr['YEARPUBLISH']);
-				$arr['YEARPUBLISH'] = intval(trim(array_shift(explode('/', $arr['YEARPUBLISH']))));
-
 			}
 
 			//first- / last Import
-			if (strtolower($arr['DOCSTRCT']) == 'periodical') {
+			if (strtolower($arr['docstrct']) == 'periodical') {
 				$arrParams = array(
-					'q' => urlencode('ISWORK:1 AND IDPARENTDOC:"' . $arr['PPN'] . '"'),
+					'q' => urlencode('iswork:1 AND idparentdoc:"' . $arr['pid'] . '"'),
 					'start' => 0,
 					'rows' => 9999,
-					'sort' => 'DATEINDEXED+asc'
+					'sort' => 'dateindexed+asc'
 				);
 				$arrSolr = $this->getSolrResult($arrParams);
 				if ($arrSolr['response']['docs']) {
-					$arr['FIRSTIMPORT'] = $arrSolr['response']['docs'][0]['DATEINDEXED'];
-					$this->cache[$arr['PPN']]['FIRSTIMPORT'] = $arr['FIRSTIMPORT'];
-					$arr['LASTIMPORT'] = $arrSolr['response']['docs'][count($arrSolr['response']['docs']) - 1]['DATEINDEXED'];
-					$this->cache[$arr['PPN']]['LASTIMPORT'] = $arr['LASTIMPORT'];
+					$arr['FIRSTIMPORT'] = $arrSolr['response']['docs'][0]['dateindexed'];
+					$this->cache[$arr['pid']]['FIRSTIMPORT'] = $arr['FIRSTIMPORT'];
+					$arr['LASTIMPORT'] = $arrSolr['response']['docs'][count($arrSolr['response']['docs']) - 1]['dateindexed'];
+					$this->cache[$arr['pid']]['LASTIMPORT'] = $arr['LASTIMPORT'];
 				}
 
 				//date run from note
@@ -375,7 +373,7 @@ class PageCountUtility {
 					$nodeList = $xpath->evaluate('/mets:mets/mets:dmdSec/mets:mdWrap[@MDTYPE="MODS"]/mets:xmlData/mods:mods/mods:note[@type="date/sequential designation"]');
 					if ($nodeList->length) {
 						$arr['DATERUN'] = trim($nodeList->item(0)->nodeValue);
-						$this->cache[$arr['PPN']]['DATERUN'] = $arr['DATERUN'];
+						$this->cache[$arr['pid']]['DATERUN'] = $arr['DATERUN'];
 					}
 				}
 				//date run from otherdate
@@ -383,7 +381,7 @@ class PageCountUtility {
 					$nodeList = $xpath->evaluate('/mets:mets/mets:dmdSec/mets:mdWrap[@MDTYPE="MODS"]/mets:xmlData/mods:mods/mods:originInfo/mods:dateOther');
 					if ($nodeList->length) {
 						$arr['DATERUN'] = trim($nodeList->item(0)->nodeValue);
-						$this->cache[$arr['PPN']]['DATERUN'] = $arr['DATERUN'];
+						$this->cache[$arr['pid']]['DATERUN'] = $arr['DATERUN'];
 					}
 				}
 				//date run from dateIssued start / end
@@ -410,14 +408,14 @@ class PageCountUtility {
 					}
 				}
 
-				$this->cache[$arr['PPN']]['DATERUN'] = $arr['DATERUN'];
+				$this->cache[$arr['pid']]['DATERUN'] = $arr['DATERUN'];
 
 			}
 
-			$this->updateCache($arr['PPN']);
+			$this->updateCache($arr['pid']);
 		} else {
-			if ($this->cache[$arr['PPN']]) {
-				foreach ($this->cache[$arr['PPN']] as $key => $val) {
+			if ($this->cache[$arr['pid']]) {
+				foreach ($this->cache[$arr['pid']] as $key => $val) {
 					$arr[$key] = $val;
 				}
 			}
@@ -427,26 +425,22 @@ class PageCountUtility {
 			foreach ($arr['volumes'] as $volume) {
 				$arr['PAGES'] += $volume['PAGES'];
 			}
-			foreach ($arr['PREDECESSOR'] as $ppn => $journal) {
+			foreach ($arr['PREDECESSOR'] as $pid => $journal) {
 				foreach ($journal['volumes'] as $volume) {
-					$arr['PREDECESSOR'][$ppn]['PAGES'] += $volume['PAGES'];
+					$arr['PREDECESSOR'][$pid]['PAGES'] += $volume['PAGES'];
 				}
 			}
 		}
 	}
 
 
-	protected function dateFormat($YYYYMMDD) {
-		return substr($YYYYMMDD, 6, 2) . '.' . substr($YYYYMMDD, 4, 2) . '.' . substr($YYYYMMDD, 0, 4);
-	}
-
 	protected function getLicenseForm() {
 		$arrParams = array(
-			'q' => urlencode('ACL:*'),
+			'q' => urlencode('acl:*'),
 			'start' => 0,
 			'rows' => 0,
 			'facet' => 'on',
-			'facet.field' => 'ACL',
+			'facet.field' => 'acl',
 			'facet.sort' => 'lexicographic',
 		);
 		$arrSolr = $this->getSolrResult($arrParams);
@@ -501,7 +495,7 @@ class PageCountUtility {
 		$i = 1;
 
 		$arrParams = array(
-			'q' => urlencode('DOCSTRCT:periodical'),
+			'q' => urlencode('docstrct:periodical'),
 			'start' => 0,
 			'rows' => 0,
 			'facet' => 'on',
@@ -541,15 +535,15 @@ class PageCountUtility {
 
 		$i = 1;
 		$arrParams = array(
-			'q' => urlencode('DOCSTRCT:*'),
+			'q' => urlencode('docstrct:*'),
 			'start' => 0,
 			'rows' => 0,
 			'facet' => 'on',
-			'facet.field' => 'DOCSTRCT',
+			'facet.field' => 'docstrct',
 			'facet.sort' => 'lexicographic',
 		);
 		$arrSolr = $this->getSolrResult($arrParams);
-		$arrFields = $arrSolr['facet_counts']['facet_fields']['DOCSTRCT'];
+		$arrFields = $arrSolr['facet_counts']['facet_fields']['docstrct'];
 		foreach ($arrFields as $field => $count) {
 			$struct[$i]['item'] = $field;
 			$struct[$i]['value'] = $field;
@@ -721,7 +715,7 @@ class PageCountUtility {
 						$length = strrpos(trim($node->nodeValue), ')') - strrpos(trim($node->nodeValue), '(') - 1;
 						$ppn = trim(substr(trim($node->nodeValue), $start, $length));
 						$arrParams = array(
-							'q' => urlencode('PPN:"' . $ppn . '" AND DOCSTRCT:periodical'),
+							'q' => urlencode('pid:"' . $ppn . '" AND docstrct:periodical'),
 							'start' => 0,
 							'rows' => 1,
 						);

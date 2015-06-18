@@ -273,10 +273,13 @@ class PageCountUtility {
 				if ($periodical['PREDECESSOR']) {
 					foreach ($periodical['PREDECESSOR'] as $_periodical) {
 						$periodical['linemumber'] = '';
-						$arrLines[] = $this->getLine($_periodical);
                                                 $arrLines[] = "\n";
+						$arrLines[] = $this->getLine($_periodical);
 					}
-				}
+                                        $arrLines[] = "\n";
+				} else {
+                                    $arrLines[] = "\n";                                    
+                                }
 				$arrLines[] = "\n";
 			}
 			header('Content-type: text/csv; charset=UTF-8');

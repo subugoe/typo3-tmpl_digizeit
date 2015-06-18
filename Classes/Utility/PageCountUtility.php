@@ -85,6 +85,7 @@ class PageCountUtility {
 	);
 
 	public function main() {
+                ini_set('memory_limit', '2048M');
 
 		$this->config['cache'] = sys_get_temp_dir() . $this->config['cache'];
 		$this->config['counter'] = realpath(__DZROOT__ . $this->config['counter']);

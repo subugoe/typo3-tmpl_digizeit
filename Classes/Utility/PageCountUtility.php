@@ -624,8 +624,8 @@ class PageCountUtility {
 		return $arrSolr;
 	}
 
-	protected function updateCache($ppn) {
-		$this->cache[$ppn]['cachemodified'] = date('Ymd', time());
+	protected function updateCache($pid) {
+		$this->cache[$pid]['cachemodified'] = date('Y-m-d', time()) . 'T' . date('H:i:s', time()) .'Z';
 		file_put_contents($this->config['cache'], json_encode($this->cache));
 	}
 

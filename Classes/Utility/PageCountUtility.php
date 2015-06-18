@@ -274,6 +274,7 @@ class PageCountUtility {
 					foreach ($periodical['PREDECESSOR'] as $_periodical) {
 						$periodical['linemumber'] = '';
 						$arrLines[] = $this->getLine($_periodical);
+                                                $arrLines[] = "\n";
 					}
 				}
 				$arrLines[] = "\n";

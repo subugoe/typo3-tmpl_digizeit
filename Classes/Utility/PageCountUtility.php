@@ -503,7 +503,7 @@ class PageCountUtility {
 			'facet.sort' => 'lexicographic',
 		);
 		$arrSolr = $this->getSolrResult($arrParams);
-		$arrFields = $arrSolr['facet_counts']['facet_fields']['DC'];
+		$arrFields = $arrSolr['facet_counts']['facet_fields']['dc'];
 
 		foreach ($arrFields as $field => $count) {
 			$collect[$i]['item'] = $field;

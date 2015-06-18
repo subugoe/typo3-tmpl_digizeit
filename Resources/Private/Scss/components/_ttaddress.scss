@@ -1,6 +1,7 @@
 .ttaddress__filter {
 	@include search-input;
 	margin-bottom: $line-height;
+	margin-top: $line-height;
 	max-width: 28em;
 }
 

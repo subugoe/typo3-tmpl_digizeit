@@ -436,7 +436,7 @@ class PageCountUtility {
 
 	protected function getLicenseForm() {
 		$arrParams = array(
-			'q' => urlencode('acl:*'),
+			'q' => '',
 			'start' => 0,
 			'rows' => 0,
 			'facet' => 'on',
@@ -444,7 +444,7 @@ class PageCountUtility {
 			'facet.sort' => 'lexicographic',
 		);
 		$arrSolr = $this->getSolrResult($arrParams);
-		$arrACL = $arrSolr['facet_counts']['facet_fields']['ACL'];
+		$arrACL = $arrSolr['facet_counts']['facet_fields']['acl'];
 		$arrACL = array_merge(array('all' => 'All'), $arrACL);
 		$arrACL = array_merge(array('digizeitonly' => 'VGWort'), $arrACL);
 
@@ -495,11 +495,11 @@ class PageCountUtility {
 		$i = 1;
 
 		$arrParams = array(
-			'q' => urlencode('docstrct:periodical'),
+			'q' => '',
 			'start' => 0,
 			'rows' => 0,
 			'facet' => 'on',
-			'facet.field' => 'DC',
+			'facet.field' => 'dc',
 			'facet.sort' => 'lexicographic',
 		);
 		$arrSolr = $this->getSolrResult($arrParams);

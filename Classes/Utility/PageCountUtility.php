@@ -328,7 +328,7 @@ class PageCountUtility {
 		if (!isset($this->cache[$arr['pid']]['cachemodified']) OR $this->cache[$arr['pid']]['cachemodified'] < $arr['datemodified']) {
 			unset($this->cache[$arr['pid']]);
 
-			$dom = new DOMDocument('1.0', 'UTF-8');
+			$dom = new \DOMDocument('1.0', 'UTF-8');
 			$test = $dom->load($this->config['metsResolver'] . trim($arr['pid']));
 			if (!$test) {
 				return false;
@@ -697,11 +697,11 @@ class PageCountUtility {
 			}
 		}
 
-		$xml = new DOMDocument('1.0', 'UTF-8');
+		$xml = new \DOMDocument('1.0', 'UTF-8');
 		foreach ($arrDate as $date => $arrMonth) {
 			$test = $xml->load($this->config['counter'] . '/' . $date . '/xml/all.xml');
 			if ($test) {
-				$xpath = new DOMXpath($xml);
+				$xpath = new \DOMXpath($xml);
 				// title nodes: "title text (PPN)"
 				$nodeList = $xpath->evaluate('/excel_workbook/sheets/sheet[2]/rows/row/cell[@col="0"]');
 				if ($nodeList->length) {

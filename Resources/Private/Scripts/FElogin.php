@@ -24,7 +24,13 @@
  * ************************************************************* */
 
 class user_FElogin {
-	var $cObj;// The backReference to the mother cObj object set at call time
+
+	/**
+	 * The backReference to the mother cObj object set at call time
+	 * @todo maybe not used
+	 * @var \TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer
+	 */
+	public $cObj;
 
 	/**
 	 * @var \TYPO3\CMS\Fluid\View\StandaloneView
@@ -59,7 +65,7 @@ class user_FElogin {
 
 	protected function createTemplate() {
 		/** @var \TYPO3\CMS\Fluid\View\StandaloneView template */
-		$this->view = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Fluid\\View\\StandaloneView');
+		$this->view = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Fluid\View\StandaloneView::class);
 		$this->view->setFormat('html');
 		$templateRootPath = \TYPO3\CMS\Core\Utility\GeneralUtility::getFileAbsFileName(\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('tmpl_digizeit') . 'Resources/Private/Templates/');
 		$templatePathAndFilename = $templateRootPath . 'Fe.html';

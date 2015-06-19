@@ -34,7 +34,7 @@ class user_FElogin {
 	/**
 	 * Call it from a USER cObject with 'userFunc = user_FElogin->main'
 	 */
-	function main($content, $conf) {
+	public function main($content, $conf) {
 		$this->createTemplate();
 		$arrGP = array_merge($GLOBALS['_GET'], $GLOBALS['_POST']);
 		$this->view->assign('storagePid', $conf['storagePid']);

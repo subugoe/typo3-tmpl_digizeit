@@ -83,10 +83,10 @@ class PageCountUtility {
 	);
 
 	public function main() {
-                $arrGoobit3Conf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['goobit3']);
-                $this->config['solrPhpsUrl'] = $arrGoobit3Conf['solrPhpsUrl'];
-                $this->config['metsResolver'] = $arrGoobit3Conf['metsresolverurl'];
-                
+		$arrGoobit3Conf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['goobit3']);
+		$this->config['solrPhpsUrl'] = $arrGoobit3Conf['solrPhpsUrl'];
+		$this->config['metsResolver'] = $arrGoobit3Conf['metsresolverurl'];
+
 		$this->config['cache'] = sys_get_temp_dir() . $this->config['cache'];
 		$this->config['counter'] = realpath(__DZROOT__ . $this->config['counter']);
 
@@ -260,7 +260,7 @@ class PageCountUtility {
 			$arrLines[] = "\n";
 			foreach ($this->arrResult as $periodical) {
 				if (in_array('digizeitonly', $this->POST['license'])) {
-                                        $periodical['acl'] = array_unique($periodical['acl']);
+					$periodical['acl'] = array_unique($periodical['acl']);
 					foreach ($periodical['acl'] as $key => $license) {
 						$periodical['acl'][$key] = strtolower($license);
 					}
@@ -274,13 +274,13 @@ class PageCountUtility {
 				if ($periodical['PREDECESSOR']) {
 					foreach ($periodical['PREDECESSOR'] as $_periodical) {
 						$periodical['linemumber'] = '';
-                                                $arrLines[] = "\n";
+						$arrLines[] = "\n";
 						$arrLines[] = $this->getLine($_periodical);
 					}
-                                        $arrLines[] = "\n";
+					$arrLines[] = "\n";
 				} else {
-                                    $arrLines[] = "\n";                                    
-                                }
+					$arrLines[] = "\n";
+				}
 				$arrLines[] = "\n";
 			}
 			header('Content-type: text/csv; charset=UTF-8');
@@ -292,6 +292,10 @@ class PageCountUtility {
 
 	}
 
+	/**
+	 * @param $periodical
+	 * @return string
+	 */
 	protected function getLine($periodical) {
 		$column = array();
 		$column[0] = $periodical['linenumber'];
@@ -318,6 +322,10 @@ class PageCountUtility {
 		return implode("\t", $column);
 	}
 
+	/**
+	 * @param $pid
+	 * @param $_pid
+	 */
 	protected function getPredecessor($pid, $_pid) {
 		if (isset($this->arrPredecessor[$_pid])) {
 			$this->arrResult[$pid]['PREDECESSOR'][$_pid] = $this->arrPredecessor[$_pid];
@@ -329,6 +337,10 @@ class PageCountUtility {
 		}
 	}
 
+	/**
+	 * @param $arr
+	 * @return bool
+	 */
 	protected function getInfo(&$arr) {
 		if (!isset($this->cache[$arr['pid']]['cachemodified']) OR $this->cache[$arr['pid']]['cachemodified'] < $arr['datemodified']) {
 			unset($this->cache[$arr['pid']]);
@@ -437,7 +449,6 @@ class PageCountUtility {
 			}
 		}
 	}
-
 
 	protected function getLicenseForm() {
 		$arrParams = array(
@@ -630,7 +641,7 @@ class PageCountUtility {
 	}
 
 	protected function updateCache($pid) {
-		$this->cache[$pid]['cachemodified'] = date('Y-m-d', time()) . 'T' . date('H:i:s', time()) .'Z';
+		$this->cache[$pid]['cachemodified'] = date('Y-m-d', time()) . 'T' . date('H:i:s', time()) . 'Z';
 		file_put_contents($this->config['cache'], json_encode($this->cache));
 	}
 

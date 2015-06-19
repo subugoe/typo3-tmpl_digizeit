@@ -112,7 +112,7 @@ class IpCalculatorUtility {
 	 *
 	 * @param string $ip
 	 * @param string $end
-	 * @return bool|void
+	 * @return mixed
 	 */
 	protected function minMask($ip, $end) {
 
@@ -145,6 +145,10 @@ class IpCalculatorUtility {
 
 	}
 
+	/**
+	 * @param $ip
+	 * @return bool|string
+	 */
 	protected function checkIP($ip) {
 		$arrIP = explode('.', trim($ip));
 		if (count($arrIP) < 4) {
@@ -159,6 +163,10 @@ class IpCalculatorUtility {
 		return implode('.', $arrIP);
 	}
 
+	/**
+	 * @param $ip
+	 * @return bool|string
+	 */
 	protected function decTObin($ip) {
 		$ip = $this->checkIP($ip);
 		if (!$ip) {
@@ -172,6 +180,10 @@ class IpCalculatorUtility {
 		return $bin;
 	}
 
+	/**
+	 * @param $ip
+	 * @return bool|string
+	 */
 	protected function binTOdec($ip) {
 		if (strlen(trim($ip)) < 32) {
 			return false;

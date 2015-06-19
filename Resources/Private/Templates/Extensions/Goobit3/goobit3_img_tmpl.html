@@ -265,12 +265,12 @@
 
 					<!--  previous page -->
 					<xsl:if test="$backphysid!=$physid">
-						<button class="fa fa-backward" name="backPHYSID" value="{$backphysid}" onclick="document.forms['tx-goobit3-img_form'].physid.value = this.value; document.forms['tx-goobit3-img_form'].submit();" title="previous page">
+						<button class="fa fa-chevron-left" name="backPHYSID" value="{$backphysid}" onclick="document.forms['tx-goobit3-img_form'].physid.value = this.value; document.forms['tx-goobit3-img_form'].submit();" title="previous page">
 							<span class="sr-only">previous page</span>
 						</button>
 					</xsl:if>
 					<xsl:if test="$backphysid=$physid">
-						<button class="fa fa-backward" disabled="disabled">
+						<button class="fa fa-chevron-left" disabled="disabled">
 							<span class="sr-only">previous page</span>
 						</button>
 					</xsl:if>
@@ -292,7 +292,8 @@
 								</xsl:for-each>
 							</select>
 						</label>
-						<button class="fa fa-arrow-right" onclick="document.forms['tx-goobit3-img_form'].physid.value = document.forms['tx-goobit3-img_form'].selectPHYSID.value; document.forms['tx-goobit3-img_form'].submit();" title="goto page">
+						<button class="fa fa-file" onclick="document.forms['tx-goobit3-img_form'].physid.value = document.forms['tx-goobit3-img_form'].selectPHYSID.value; document.forms['tx-goobit3-img_form'].submit();" title="goto page">
+							<span class="goobit3-image-viever__overlay-icon fa fa-caret-right"></span>
 							<span class="sr-only">goto page</span>
 						</button>
 					</div>
@@ -300,12 +301,12 @@
 
 					<!--  next page -->
 					<xsl:if test="$forwardphysid!=$physid">
-						<button class="fa fa-forward" name="forwardPHYSID" value="{$forwardphysid}" onclick="document.forms['tx-goobit3-img_form'].physid.value = this.value; document.forms['tx-goobit3-img_form'].submit();" title="next page">
+						<button class="fa fa-chevron-right" name="forwardPHYSID" value="{$forwardphysid}" onclick="document.forms['tx-goobit3-img_form'].physid.value = this.value; document.forms['tx-goobit3-img_form'].submit();" title="next page">
 							<span class="sr-only">next page</span>
 						</button>
 					</xsl:if>
 					<xsl:if test="$forwardphysid=$physid">
-						<button class="fa fa-forward">
+						<button class="fa fa-chevron-right">
 							<span class="sr-only" disabled="disabled">next page inactive</span>
 						</button>
 					</xsl:if>
@@ -373,24 +374,24 @@
 
 					<!--  previous page -->
 					<xsl:if test="$backphysid!=$physid">
-						<button class="fa fa-backward" name="backPHYSID" value="{$backphysid}" onclick="document.forms['tx-goobit3-img_form_bottom'].physid.value = this.value; document.forms['tx-goobit3-img_form'].submit();" title="previous page">
+						<button class="fa fa-chevron-left" name="backPHYSID" value="{$backphysid}" onclick="document.forms['tx-goobit3-img_form_bottom'].physid.value = this.value; document.forms['tx-goobit3-img_form'].submit();" title="previous page">
 							<span class="sr-only">previous page</span>
 						</button>
 					</xsl:if>
 					<xsl:if test="$backphysid=$physid">
-						<button class="fa fa-backward" disabled="disabled">
+						<button class="fa fa-chevron-left" disabled="disabled">
 							<span class="sr-only">previous page</span>
 						</button>
 					</xsl:if>
 
 					<!--  next page -->
 					<xsl:if test="$forwardphysid!=$physid">
-						<button class="fa fa-forward" name="forwardPHYSID" value="{$forwardphysid}" onclick="document.forms['tx-goobit3-img_form_bottom'].physid.value = this.value; document.forms['tx-goobit3-img_form'].submit();" title="next page">
+						<button class="fa fa-chevron-right" name="forwardPHYSID" value="{$forwardphysid}" onclick="document.forms['tx-goobit3-img_form_bottom'].physid.value = this.value; document.forms['tx-goobit3-img_form'].submit();" title="next page">
 							<span class="sr-only">next page</span>
 						</button>
 					</xsl:if>
 					<xsl:if test="$forwardphysid=$physid">
-						<button class="fa fa-forward">
+						<button class="fa fa-chevron-right">
 							<span class="sr-only" disabled="disabled">next page inactive</span>
 						</button>
 					</xsl:if>

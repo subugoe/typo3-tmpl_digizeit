@@ -78,15 +78,15 @@ class PageCountUtility {
 		'start' => '20020730',
 		'strWall' => '1925',
 		'ppnResolver' => 'http://resolver.sub.uni-goettingen.de/purl/?',
-		'metsResolver' => 'http://www.digizeitschriften.de/dms/metsresolver/?PPN=',
-		'solrPhpsUrl' => 'http://localhost:8080/digizeit2/collection1/select/?wt=phps',
 		'arrSerFields' => array('structrun'),
 		'digizeitonly' => '((acl:free OR acl:gesamtabo) AND NOT(acl:(dipfbbfberlin OR ubfrankfurt OR ubheidelberg OR ubtuebingen OR ubweimar OR zbwkieldigire OR ubmannheim OR sbbberlin))) ',
 	);
 
 	public function main() {
-                ini_set('memory_limit', '2048M');
-
+                $arrGoobit3Conf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['goobit3']);
+                $this->config['solrPhpsUrl'] = $arrGoobit3Conf['solrPhpsUrl'];
+                $this->config['metsResolver'] = $arrGoobit3Conf['metsresolverurl'];
+                
 		$this->config['cache'] = sys_get_temp_dir() . $this->config['cache'];
 		$this->config['counter'] = realpath(__DZROOT__ . $this->config['counter']);
 

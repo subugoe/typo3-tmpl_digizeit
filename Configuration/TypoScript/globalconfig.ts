@@ -47,7 +47,7 @@ config {
 	uniqueLinkVars = 1
 
 	tx_piwik {
-		piwik_host = http://piwik.gwdg.de/
+		piwik_host = https://piwik.gwdg.de/
 		piwik_idsite = 142
 		trackGoal = 1
 		setDomains = 92.51.150.136,*.digizeitschriften.de,*.digizeitschriften.org,resolver.sub.uni-goettingen.de

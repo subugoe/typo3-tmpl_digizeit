@@ -59,3 +59,13 @@
 		display: block;
 	}
 }
+
+.goobit3-image-viever__overlay-icon {
+	color: $btn-default-bg;
+	text-indent: -1em;
+	transition: color $time-short;
+
+	:hover > & {
+		color: $link-hover-color;
+	}
+}

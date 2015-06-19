@@ -15,7 +15,7 @@
 
 		<xsl:output method="html"/>
 
-		<xsl:param name="YEARPUBLISH" value="0" />
+		<xsl:param name="yearpublish" value="0" />
 		<xsl:param name="Successor" value="0" />
 		<xsl:param name="Predecessor" value="0" />
 		<xsl:param name="basepurl" value="0" />
@@ -165,7 +165,7 @@
 			<xsl:apply-templates select="mods:note[@ID='www.zbw.eu.digire']" mode="periodicalvolume" />
 			<xsl:apply-templates select="mods:note[@ID='www.uni-weimar.de.ubweimar']" mode="periodicalvolume" />
 			<xsl:apply-templates select="mods:note[@ID='europeana.ub.uni-frankfurt.de']" mode="periodicalvolume" />
-                        <xsl:apply-templates select="mods:note[@ID='www.wuerttembergische-kirchengeschichte.de']" mode="periodicalvolume" />
+			<xsl:apply-templates select="mods:note[@ID='www.wuerttembergische-kirchengeschichte.de']" mode="periodicalvolume" />
 			<xsl:apply-templates select="mods:note[@ID='goobiweb.bbf.dipf.de']" mode="periodicalvolume" />
 			<xsl:apply-templates select="mods:note[@ID='preImport']" mode="periodicalvolume" />
 
@@ -244,8 +244,8 @@
 						<div class="goobit3-toc-item goobit3-toc-item--indent-{$indention} goobit3-toc-item--{$current}">
 							<!-- year of publication -->
 							<xsl:choose>
-								<xsl:when test="$YEARPUBLISH">
-									<a href="{$link}"><span class="goobit3-toc-item__site-year"><xsl:value-of select="$YEARPUBLISH" /></span></a>
+								<xsl:when test="$yearpublish">
+									<a href="{$link}"><span class="goobit3-toc-item__site-year"><xsl:value-of select="$yearpublish" /></span></a>
 								</xsl:when>
 							</xsl:choose>
 

@@ -593,14 +593,20 @@
 													<xsl:text>Links: </xsl:text>
 												</span>
 												<span>
-													<a class="goobit3-met__image-link" href="{$metsresolverurl}{$ppn}" target="_blank" title="METS-Download"><img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/mets.png" /></a>
+													<a class="goobit3-met__image-link" href="{$metsresolverurl}{$ppn}" target="_blank" title="METS-Download">
+														<img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/mets.gif" width="60" height="24" />
+													</a>
 													<xsl:choose>
 														<xsl:when test="$dfgv-link!=''">
-															<a class="goobit3-met__image-link" href="{$dfgv-link}{$ppn}" target="_blank" title="DFG-Viewer"><img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/dfgv_icon1.gif" /></a>
+															<a class="goobit3-met__image-link" href="{$dfgv-link}{$ppn}" target="_blank" title="DFG-Viewer">
+																<img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/dfg-viewer.gif" width="30" height="24" />
+															</a>
 														</xsl:when>
 													</xsl:choose>
 													<xsl:if test="not(contains(.,'_'))">
-														<a class="goobit3-met__image-link" href="{$opac-link}{$ppnopac}" target="_blank" title="SUB-OPAC"><img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/opac.gif" /></a>
+														<a class="goobit3-met__image-link" href="{$opac-link}{$ppnopac}" target="_blank" title="SUB-OPAC">
+															<img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/sub-opac.gif" width="35" height="24" />
+														</a>
 													</xsl:if>
 												</span>
 											</xsl:if>
@@ -624,14 +630,20 @@
 													<xsl:text>Links: </xsl:text>
 												</span>
 												<span>
-													<a class="goobit3-met__image-link" href="{$metsresolverurl}{$ppn}" target="_blank" title="METS-Download"><img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/mets.png" /></a>
+													<a class="goobit3-met__image-link" href="{$metsresolverurl}{$ppn}" target="_blank" title="METS-Download">
+														<img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/mets.gif" width="60" height="24" />
+													</a>
 													<xsl:choose>
 														<xsl:when test="$dfgv-link!=''">
-															<a class="goobit3-met__image-link" href="{$dfgv-link}{$ppn}" target="_blank" title="DFG-Viewer"><img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/dfgv_icon1.gif" /></a>
+															<a class="goobit3-met__image-link" href="{$dfgv-link}{$ppn}" target="_blank" title="DFG-Viewer">
+																<img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/dfg-viewer.gif" width="30" height="24" />
+															</a>
 														</xsl:when>
 													</xsl:choose>
 													<xsl:if test="not(contains(.,'_'))">
-														<a class="goobit3-met__image-link" href="{$opac-link}{$ppnopac}" target="_blank" title="SUB-OPAC"><img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/opac.gif" /></a>
+														<a class="goobit3-met__image-link" href="{$opac-link}{$ppnopac}" target="_blank" title="SUB-OPAC">
+															<img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/sub-opac.gif" width="35" height="24" />
+														</a>
 													</xsl:if>
 												</span>
 											</xsl:if>
@@ -651,10 +663,14 @@
 												<xsl:text>Links: </xsl:text>
 											</span>
 											<span>
-												<a class="goobit3-met__image-link" href="{$metsresolverurl}{$PID}" target="_blank" title="METS-Download"><img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/mets.png" /></a>
+												<a class="goobit3-met__image-link" href="{$metsresolverurl}{$PID}" target="_blank" title="METS-Download">
+													<img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/mets.gif" width="60" height="24" />
+												</a>
 												<xsl:choose>
 													<xsl:when test="$dfgv-link!=''">
-														<a class="goobit3-met__image-link" href="{$dfgv-link}{$PID}" target="_blank" title="DFG-Viewer"><img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/dfgv_icon1.gif" /></a>
+														<a class="goobit3-met__image-link" href="{$dfgv-link}{$PID}" target="_blank" title="DFG-Viewer">
+															<img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/dfg-viewer.gif" width="30" height="24" />
+														</a>
 													</xsl:when>
 												</xsl:choose>
 											</span>
@@ -671,10 +687,14 @@
 									<xsl:text>Links: </xsl:text>
 								</span>
 								<span>
-									<a class="goobit3-met__image-link" href="{$metsresolverurl}{$PID}" target="_blank" title="METS-Download"><img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/mets.png" /></a>
+									<a class="goobit3-met__image-link" href="{$metsresolverurl}{$PID}" target="_blank" title="METS-Download">
+										<img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/mets.gif" width="60" height="24" />
+									</a>
 									<xsl:choose>
 										<xsl:when test="$dfgv-link!=''">
-											<a class="goobit3-met__image-link" href="{$dfgv-link}{$PID}" target="_blank" title="DFG-Viewer"><img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/dfgv_icon1.gif" /></a>
+											<a class="goobit3-met__image-link" href="{$dfgv-link}{$PID}" target="_blank" title="DFG-Viewer">
+												<img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/dfg-viewer.gif" width="30" height="24" />
+											</a>
 										</xsl:when>
 									</xsl:choose>
 								</span>

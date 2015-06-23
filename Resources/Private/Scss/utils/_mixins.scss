@@ -23,15 +23,9 @@
 	}
 }
 
-@mixin fa-icon($name, $with-text: true) {
+@mixin fa-icon($name) {
 	@extend .fa;
 	@extend .fa-#{$name};
-
-	@if $with-text {
-		&:before {
-			margin-right: .5em;
-		}
-	}
 }
 
 @mixin input {

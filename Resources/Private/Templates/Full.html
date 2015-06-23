@@ -1,3 +1,5 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
 <f:render partial="Navigation"/>
 
 <f:render partial="Login"/>
@@ -12,7 +14,7 @@
 
 		<f:render partial="Header"/>
 
-		<f:render partial="Language"/>
+		<v:render.uncache partial="Language"/>
 
 		<f:cObject typoscriptObjectPath="page.10.subparts.breadcrumb"/>
 

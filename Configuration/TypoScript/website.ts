@@ -35,7 +35,7 @@ page.10 = FLUIDTEMPLATE
 page.10 {
 	template = FILE
 	extbase.controllerExtensionName = tmpl_digizeit
-	partialRootPath = EXT:tmpl_digizeit/Resources/Private/Templates/Partials/
+	partialRootPath = EXT:tmpl_digizeit/Resources/Private/Partials/
 	layoutRootPath = EXT:tmpl_digizeit/Resources/Private/Templates/Layouts/
 	settings {
 	}

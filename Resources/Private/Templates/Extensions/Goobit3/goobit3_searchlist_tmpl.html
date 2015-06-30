@@ -1,28 +1,101 @@
-<!-- This template is not yet fully BEMed. Is it used? -->
-
 <!-- ###NOSEARCHINDEX### BEGIN-->
-<div class="goobit3-search">
-	<span class="warning">###WARNMESSAGE###</span>
-</div>
+<span class="goobit3__warning">###WARNMESSAGE###</span>
 <!-- ###NOSEARCHINDEX### END-->
-###TESTURL###
 
 <!-- ###SSEARCH### BEGIN-->
-<div class="goobit3-search">
-	<div class="goobit3-pagination">
-		<ol class="goobit3-pagination__list">
-			<!-- ###BROWSEBARTOP### START -->
-				###RESULTFIRSTPRE###
-				###RESULTPREVPRE###
-				###RESULTLINK###
-				###RESULTNEXTPOST###
-				###RESULTLASTPOST###
-			<!-- ###BROWSEBARTOP### END -->
+	<!-- ###SSEARCHFORM### BEGIN -->
+	<div class="goobit3-search">
+<!--
+		<h4>###SEARCHTITLE###</h4>
+                <form class="goobit3-search__form" action="###FORM_ACTION###" method="post">
+			###HIDDEN###
+			<label>
+				<span class="sr-only">Suchbegriff:</span>
+				<input class="goobit3-search__input" size="25" name="formquery" value="###FORM_SQUERY_VALUE###" />
+			</label>
+			<input class="goobit3-search__submit" type="submit" value="&#xf002;" title="Suchen"/>
+		</form>
+-->
+		<div class="goobit3-search__hit-count">###HITMESSAGE###</div>
+	</div>
+	<!-- ###SSEARCHFORM### END -->
+
+	<div class="goobit3-results">
+		<div class="goobit3-pagination">
+			<ol class="goobit3-pagination__list">
+				<!-- ###BROWSEBARTOP### START -->
+					###RESULTFIRSTPRE###
+					###RESULTPREVPRE###
+					###RESULTLINK###
+					###RESULTNEXTPOST###
+					###RESULTLASTPOST###
+				<!-- ###BROWSEBARTOP### END -->
+			</ol>
+		</div>
+
+		<ol class="goobit3-results__list">
+		<!-- ###SSEARCHHIT### BEGIN-->
+			<li class="goobit3-results__item">
+				<div class="goobit3-results__index">
+					###COUNT###
+					<a class="goobit3__lock goobit3__lock--###LOCKSTATUS### goobit3__lock--small" href="/informationen/subskription/" title="###LOCKTEXT###"></a>
+				</div>
+				<div class="goobit3-results__thumbnail">
+					<div class="###THUMBNAILDIVID###">###THUMBNAIL###</div>
+					###THUMBNAILSCRIPT###
+				</div>
+				<div class="goobit3-results__info">
+					<div class="title">###TITLE###</div>
+					<div>###CREATORSTRING###</div>
+					<div>###ORDERFIELD###</div>
+					 ###FULLTEXTSCRIPT###
+					<div class="###FULLTEXTID###"></div>
+					<div>###STRUCTRUN###</div>
+				</div>
+			</li>
+		<!-- ###SSEARCHHIT### END -->
 		</ol>
+
+		<div class="goobit3-pagination">
+			<ol class="goobit3-pagination__list">
+				<!-- ###BROWSEBARTOP### START -->
+					###RESULTFIRSTPRE###
+					###RESULTPREVPRE###
+					###RESULTLINK###
+					###RESULTNEXTPOST###
+					###RESULTLASTPOST###
+				<!-- ###BROWSEBARTOP### END -->
+			</ol>
+		</div>
 	</div>
 
-	<!-- ###SSEARCHHIT### BEGIN -->
-		<b>###TITLE###</b>&nbsp;###PUBLISHER###<!-- ###MOVINGWALL_PRE### &nbsp(Moving Wall: ###MOVINGWALL###) ###MOVINGWALL_POST### //-->
-	<!-- ###SSEARCHHIT### END -->
-</div>
+<!-- ###SSEARCHRIGHT### BEGIN-->
+
+	</div><!-- Close parent .content -->
+
+	<div class="sidebar">
+
+		<h4>###SEARCHFIELDCAPTION###</h4>
+		###SEARCHFIELDFORM###
+
+		<h4>###SEARCHORDERCAPTION###</h4>
+		###SEARCHORDERFORM###
+
+		<h4>###COLCAPTION###</h4>
+		<ul>
+			<!-- ###SSEARCHDC### BEGIN-->
+			<li>###DC###</li>
+			<!-- ###SSEARCHDC### END-->
+		</ul>
+		<h4>###CATCAPTION###</h4>
+		<ul>
+			<!-- ###SSEARCHDOCSTRCT### BEGIN-->
+			<li>###DOCSTRCT###</li>
+			<!-- ###SSEARCHDOCSTRCT### END-->
+		</ul>
+
+	<!-- .sidebar will be closed by parent template -->
+
+<!-- ###SSEARCHRIGHT### END-->
+
 <!-- ###SSEARCH### END-->

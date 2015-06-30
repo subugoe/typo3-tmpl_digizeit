@@ -52,7 +52,7 @@ class user_FElogin {
 			if (strpos(strtolower(\TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv('TYPO3_REQUEST_URL')), 'id=139') || strpos(strtolower(\TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv('TYPO3_REQUEST_URL')), 'mydigizeit')) {
 				$action = 'https://www.digizeitschriften.de/';
 			} else {
-				$action = str_replace('http://', 'https://', strtolower(\TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv('TYPO3_REQUEST_URL')));
+				$action = str_replace('http://', 'https://', \TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv('TYPO3_REQUEST_URL'));
 			}
 			$this->view->assign('loginType', 'logout');
 			$this->view->assign('loggedIn', $GLOBALS['TSFE']->fe_user->user['name']);

@@ -11,7 +11,9 @@
 }
 
 .blog__back-link {
-	@include fa-icon('arrow-left', true)
+	&:before {
+		@include fa-icon('arrow-left')
+	}
 }
 
 .blog__heading {

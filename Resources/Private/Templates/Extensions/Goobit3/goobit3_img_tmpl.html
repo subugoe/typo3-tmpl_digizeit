@@ -205,37 +205,37 @@
 
 					<!--  rotateleft -->
 					<xsl:if test="$rotateleft">
-						<button class="fa fa-undo" name="ROTATE" value="{$rotateleft}" onclick="document.forms['tx-goobit3-img_form'].ROTATE.value = this.value; document.forms['tx-goobit3-img_form'].submit();" title="rotate left">
-							<span class="sr-only">Rotate left</span>
+						<button class="fa fa-undo" name="ROTATE" value="{$rotateleft}" onclick="document.forms['tx-goobit3-img_form'].ROTATE.value = this.value; document.forms['tx-goobit3-img_form'].submit();" title="{$label_rotateleft}">
+							<span class="sr-only">{$label_rotateleft}</span>
 						</button>
 					</xsl:if>
 
 					<!--  rotateright -->
 					<xsl:if test="$rotateright">
-						<button class="fa fa-repeat" name="ROTATE" value="{$rotateright}" onclick="document.forms['tx-goobit3-img_form'].ROTATE.value = this.value; document.forms['tx-goobit3-img_form'].submit();" title="rotate right">
-							<span class="sr-only">Rotate right</span>
+						<button class="fa fa-repeat" name="ROTATE" value="{$rotateright}" onclick="document.forms['tx-goobit3-img_form'].ROTATE.value = this.value; document.forms['tx-goobit3-img_form'].submit();" title="{$label_rotateright}">
+							<span class="sr-only">{$label_rotateright}</span>
 						</button>
 					</xsl:if>
 
 					<!--  zoomminus -->
 					<xsl:if test="$zoomminus!=$use">
-						<button class="fa fa-search-minus" name="USE" value="{$zoomminus}" onclick="document.forms['tx-goobit3-img_form'].USE.value = this.value; document.forms['tx-goobit3-img_form'].submit();" title="zoom out">
-							<span class="sr-only">zoom out</span></button>
+						<button class="fa fa-search-minus" name="USE" value="{$zoomminus}" onclick="document.forms['tx-goobit3-img_form'].USE.value = this.value; document.forms['tx-goobit3-img_form'].submit();" title="{$zoomout}">
+							<span class="sr-only">{$zoomout}</span></button>
 					</xsl:if>
 					<xsl:if test="$zoomminus=$use">
-						<button class="fa fa-search-minus" disabled="disabled"><span class="sr-only">zoom out disabled</span>
+						<button class="fa fa-search-minus" disabled="disabled"><span class="sr-only">{$zoomout} disabled</span>
 						</button>
 					</xsl:if>
 
 					<!--  zoomplus -->
 					<xsl:if test="$zoomplus!=$use">
-						<button class="fa fa-search-plus" name="USE" value="{$zoomplus}" onclick="document.forms['tx-goobit3-img_form'].USE.value = this.value; document.forms['tx-goobit3-img_form'].submit();" title="zoom in">
-							<span class="sr-only">zoom in</span>
+						<button class="fa fa-search-plus" name="USE" value="{$zoomplus}" onclick="document.forms['tx-goobit3-img_form'].USE.value = this.value; document.forms['tx-goobit3-img_form'].submit();" title="{$zoomin}">
+							<span class="sr-only">{$zoomin}</span>
 						</button>
 					</xsl:if>
 					<xsl:if test="$zoomplus=$use">
 						<button class="fa fa-search-plus" disabled="disabled">
-							<span class="sr-only">zoom in disabled</span>
+							<span class="sr-only">{$zoomin} disabled</span>
 						</button>
 					</xsl:if>
 
@@ -265,13 +265,22 @@
 
 					<!--  previous page -->
 					<xsl:if test="$backphysid!=$physid">
+<<<<<<< HEAD
 						<button class="fa fa-chevron-left" name="backPHYSID" value="{$backphysid}" onclick="document.forms['tx-goobit3-img_form'].physid.value = this.value; document.forms['tx-goobit3-img_form'].submit();" title="previous page">
 							<span class="sr-only">previous page</span>
+=======
+						<button class="fa fa-chevron-left" name="backPHYSID" value="{$backphysid}" onclick="document.forms['tx-goobit3-img_form'].physid.value = this.value; document.forms['tx-goobit3-img_form'].submit();" title="{$previousPage}">
+							<span class="sr-only">{$previousPage}</span>
+>>>>>>> ba1d56f68a6f14bcab1c17e34ff6775040ddea1e
 						</button>
 					</xsl:if>
 					<xsl:if test="$backphysid=$physid">
 						<button class="fa fa-chevron-left" disabled="disabled">
+<<<<<<< HEAD
 							<span class="sr-only">previous page</span>
+=======
+							<span class="sr-only">{$previousPage}</span>
+>>>>>>> ba1d56f68a6f14bcab1c17e34ff6775040ddea1e
 						</button>
 					</xsl:if>
 
@@ -292,22 +301,37 @@
 								</xsl:for-each>
 							</select>
 						</label>
+<<<<<<< HEAD
 						<button class="fa fa-file" onclick="document.forms['tx-goobit3-img_form'].physid.value = document.forms['tx-goobit3-img_form'].selectPHYSID.value; document.forms['tx-goobit3-img_form'].submit();" title="goto page">
 							<span class="goobit3-image-viever__overlay-icon fa fa-caret-right"></span>
 							<span class="sr-only">goto page</span>
+=======
+						<button class="fa fa-file" onclick="document.forms['tx-goobit3-img_form'].physid.value = document.forms['tx-goobit3-img_form'].selectPHYSID.value; document.forms['tx-goobit3-img_form'].submit();" title="{$gotoPage}">
+							<span class="goobit3-image-viever__overlay-icon fa fa-caret-right"></span>
+							<span class="sr-only">{$gotoPage}</span>
+>>>>>>> ba1d56f68a6f14bcab1c17e34ff6775040ddea1e
 						</button>
 					</div>
 					<!--  after pageturner -->
 
 					<!--  next page -->
 					<xsl:if test="$forwardphysid!=$physid">
+<<<<<<< HEAD
 						<button class="fa fa-chevron-right" name="forwardPHYSID" value="{$forwardphysid}" onclick="document.forms['tx-goobit3-img_form'].physid.value = this.value; document.forms['tx-goobit3-img_form'].submit();" title="next page">
 							<span class="sr-only">next page</span>
+=======
+						<button class="fa fa-chevron-right" name="forwardPHYSID" value="{$forwardphysid}" onclick="document.forms['tx-goobit3-img_form'].physid.value = this.value; document.forms['tx-goobit3-img_form'].submit();" title="{$nextPage}">
+							<span class="sr-only">{$nextPage}</span>
+>>>>>>> ba1d56f68a6f14bcab1c17e34ff6775040ddea1e
 						</button>
 					</xsl:if>
 					<xsl:if test="$forwardphysid=$physid">
 						<button class="fa fa-chevron-right">
+<<<<<<< HEAD
 							<span class="sr-only" disabled="disabled">next page inactive</span>
+=======
+							<span class="sr-only" disabled="disabled">{$nextPage} {$controls_inactive}</span>
+>>>>>>> ba1d56f68a6f14bcab1c17e34ff6775040ddea1e
 						</button>
 					</xsl:if>
 
@@ -319,7 +343,7 @@
 					</xsl:if>
 					<xsl:if test="$endphysid=$physid">
 						<button class="fa fa-step-forward" disabled="disabled">
-							<span class="sr-only" disabled="disabled">{$endtype} inactive</span>
+							<span class="sr-only" disabled="disabled">{$endtype} {$controls_inactive}</span>
 						</button>
 					</xsl:if>
 
@@ -331,7 +355,7 @@
 					</xsl:if>
 					<xsl:if test="$endbookphysid=$physid">
 						<button class="fa fa-fast-forward">
-							<span class="sr-only" disabled="disabled">{$endbooktype} inactive</span>
+							<span class="sr-only" disabled="disabled">{$endbooktype} {$controls_inactive}</span>
 						</button>
 					</xsl:if>
 
@@ -374,25 +398,43 @@
 
 					<!--  previous page -->
 					<xsl:if test="$backphysid!=$physid">
+<<<<<<< HEAD
 						<button class="fa fa-chevron-left" name="backPHYSID" value="{$backphysid}" onclick="document.forms['tx-goobit3-img_form_bottom'].physid.value = this.value; document.forms['tx-goobit3-img_form'].submit();" title="previous page">
 							<span class="sr-only">previous page</span>
+=======
+						<button class="fa fa-chevron-left" name="backPHYSID" value="{$backphysid}" onclick="document.forms['tx-goobit3-img_form_bottom'].physid.value = this.value; document.forms['tx-goobit3-img_form'].submit();" title="{$previousPage}">
+							<span class="sr-only">{$previousPage}</span>
+>>>>>>> ba1d56f68a6f14bcab1c17e34ff6775040ddea1e
 						</button>
 					</xsl:if>
 					<xsl:if test="$backphysid=$physid">
 						<button class="fa fa-chevron-left" disabled="disabled">
+<<<<<<< HEAD
 							<span class="sr-only">previous page</span>
+=======
+							<span class="sr-only">{$previousPage}</span>
+>>>>>>> ba1d56f68a6f14bcab1c17e34ff6775040ddea1e
 						</button>
 					</xsl:if>
 
 					<!--  next page -->
 					<xsl:if test="$forwardphysid!=$physid">
+<<<<<<< HEAD
 						<button class="fa fa-chevron-right" name="forwardPHYSID" value="{$forwardphysid}" onclick="document.forms['tx-goobit3-img_form_bottom'].physid.value = this.value; document.forms['tx-goobit3-img_form'].submit();" title="next page">
 							<span class="sr-only">next page</span>
+=======
+						<button class="fa fa-chevron-right" name="forwardPHYSID" value="{$forwardphysid}" onclick="document.forms['tx-goobit3-img_form_bottom'].physid.value = this.value; document.forms['tx-goobit3-img_form'].submit();" title="{$nextPage}">
+							<span class="sr-only">{$nextPage}</span>
+>>>>>>> ba1d56f68a6f14bcab1c17e34ff6775040ddea1e
 						</button>
 					</xsl:if>
 					<xsl:if test="$forwardphysid=$physid">
 						<button class="fa fa-chevron-right">
+<<<<<<< HEAD
 							<span class="sr-only" disabled="disabled">next page inactive</span>
+=======
+							<span class="sr-only" disabled="disabled">{$nextPage} {$controls_inactive}</span>
+>>>>>>> ba1d56f68a6f14bcab1c17e34ff6775040ddea1e
 						</button>
 					</xsl:if>
 
@@ -404,7 +446,7 @@
 					</xsl:if>
 					<xsl:if test="$endphysid=$physid">
 						<button class="fa fa-step-forward" disabled="disabled">
-							<span class="sr-only" disabled="disabled">{$endtype} inactive</span>
+							<span class="sr-only" disabled="disabled">{$endtype} {$controls_inactive}</span>
 						</button>
 					</xsl:if>
 
@@ -416,7 +458,7 @@
 					</xsl:if>
 					<xsl:if test="$endbookphysid=$physid">
 						<button class="fa fa-fast-forward">
-							<span class="sr-only" disabled="disabled">{$endbooktype} inactive</span>
+							<span class="sr-only" disabled="disabled">{$endbooktype} {$controls_inactive}</span>
 						</button>
 					</xsl:if>
 				</form>

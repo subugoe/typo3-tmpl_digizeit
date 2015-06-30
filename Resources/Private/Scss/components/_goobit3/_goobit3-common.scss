@@ -28,11 +28,11 @@
 	}
 
 	&--open {
-		@include fa-icon('unlock', false);
+		@include fa-icon('unlock');
 	}
 
 	&--closed {
-		@include fa-icon('lock', false);
+		@include fa-icon('lock');
 	}
 }
 

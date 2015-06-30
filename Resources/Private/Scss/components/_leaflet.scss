@@ -1,7 +1,15 @@
 .leaflet-container {
 	.leaflet-popup-close-button {
-		&:hover {
-			border: 0;
-		}
+		border: 0;
+	}
+}
+
+.leaflet-popup-content-wrapper {
+	border-radius: 0;
+}
+
+.leaflet-control-attribution {
+	a:hover {
+		text-decoration: none;
 	}
 }

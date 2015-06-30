@@ -26,5 +26,10 @@
 }
 
 .goobit3-met__image-link {
+	border: 0 !important;
 	margin-right: 1em;
+
+	&:hover {
+		opacity: .7
+	}
 }

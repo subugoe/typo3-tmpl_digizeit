@@ -18,13 +18,16 @@
 	float: right;
 	font-size: 1.7em;
 	line-height: $line-height;
+	margin-left: $line-height;
 
 	@include hover {
 		color: $link-hover-color;
 	}
 
 	&--small {
+		float: none;
 		font-size: 1em;
+		margin: 0;
 	}
 
 	&--open {

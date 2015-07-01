@@ -60,16 +60,10 @@
 	}
 }
 
-.goobit3-image-viever__overlay-icon {
-<<<<<<< HEAD
-	@include transition(color);
-	color: $btn-default-bg;
-	text-indent: -1em;
-=======
+    .goobit3-image-viever__overlay-icon {
 	color: $btn-default-bg;
 	text-indent: -1em;
 	transition: color $time-short;
->>>>>>> ba1d56f68a6f14bcab1c17e34ff6775040ddea1e
 
 	:hover > & {
 		color: $link-hover-color;

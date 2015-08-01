@@ -79,7 +79,7 @@ class PageCountUtility {
 		'strWall' => '1925',
 		'ppnResolver' => 'http://resolver.sub.uni-goettingen.de/purl/?',
 		'arrSerFields' => array('structrun'),
-		'digizeitonly' => '((acl:free OR acl:gesamtabo) AND NOT(acl:(dipfbbfberlin OR ubfrankfurt OR ubheidelberg OR ubtuebingen OR ubweimar OR zbwkieldigire OR ubmannheim OR sbbberlin))) ',
+		'digizeitonly' => '(NOT(dc:510.mathematics) AND (acl:free OR acl:gesamtabo) AND NOT(acl:(dipfbbfberlin OR ubfrankfurt OR ubheidelberg OR ubtuebingen OR ubweimar OR zbwkieldigire OR ubmannheim OR sbbberlin))) ',
 	);
 
 	public function main() {
@@ -180,7 +180,8 @@ class PageCountUtility {
 				'q' => urlencode($q),
 				'start' => 0,
 				'rows' => 99999,
-				'sort' => 'currentnosort+asc'
+                                'fl' => 'pid,structrun,suc,pre,acl,title,bytitle,datemodified,dateindexed,docstrct,yearpublish',
+                                'sort' => 'currentnosort+asc'
 			);
 			$arrVolumeSolr = $this->getSolrResult($arrParams);
 			// end prepare volumes
@@ -199,15 +200,19 @@ class PageCountUtility {
 				'q' => urlencode($q),
 				'start' => 0,
 				'rows' => 9999,
+                                'fl' => 'pid,structrun,suc,pre,acl,title,bytitle,datemodified,dateindexed,docstrct,yearpublish',
 				'sort' => 'bytitle+asc'
 			);
 			$arrPeriodicalSolr = $this->getSolrResult($arrParams);
-
 
 			// seperating main journals from predecessors
 			$this->arrResult = array();
 			$this->arrPredecessor = array();
 			foreach ($arrPeriodicalSolr['response']['docs'] as $periodical) {
+                                $periodical['acl'] = array_unique($periodical['acl']);
+                                foreach ($periodical['acl'] as $key => $license) {
+                                    $periodical['acl'][$key] = strtolower($license);
+                                }
 				if (isset($periodical['suc'])) {
 					$this->arrPredecessor[$periodical['pid']] = $periodical;
 					$this->arrPredecessor[$periodical['pid']]['PAGES'] = 0;
@@ -217,6 +222,24 @@ class PageCountUtility {
 				}
 			}
 
+                        //remove journals with daterun ends before $this->config['strWall']
+                        foreach($this->arrResult as $pid=>$journal) {
+                            $arrParams = array(
+				'q' => 'iswork:1+AND+idparentdoc:"'.$pid.'"',
+				'start' => 0,
+				'rows' => 1,
+                                'fl' => 'yearpublish',
+				'sort' => 'yearpublish+desc'
+                            );
+                            $arrSolr = $this->getSolrResult($arrParams);
+                            if ($arrSolr['response']['docs']) {
+                                if(trim($arrSolr['response']['docs'][0]['yearpublish'])<=$this->config['strWall']) {
+                                    unset($this->arrResult[$pid]);
+                                }
+                            }
+                        }
+                        
+                        
 			// add volumes to journals
 			foreach ($arrVolumeSolr['response']['docs'] as $volume) {
 				$this->getInfo($volume);
@@ -233,7 +256,7 @@ class PageCountUtility {
 			foreach ($this->arrPredecessor as $pid => $periodical) {
 				$this->getInfo($this->arrPredecessor[$pid]);
 			}
-
+                        
 			// add info and predecessors to journals
 			foreach ($this->arrResult as $pid => $periodical) {
 				if (isset($periodical['pre'])) {
@@ -245,6 +268,13 @@ class PageCountUtility {
 			}
 			// end periodicals
 
+                        // Sort by COPYRIGHT (Verlag)
+                        foreach ($this->arrResult as $pid => $row) {
+                            $COPYRIGHT[$pid]    = strtolower($row['COPYRIGHT']);
+                            $bytitle[$pid] = strtolower($row['bytitle']);
+                        }
+                        array_multisort($COPYRIGHT, $bytitle, $this->arrResult);
+                        
 			// get downloads from counter
 			$this->downloads = array();
 			$this->getDownloads($this->POST['start']['year'][0] . $this->POST['start']['month'][0], $this->POST['end']['year'][0] . $this->POST['end']['month'][0]);
@@ -255,8 +285,8 @@ class PageCountUtility {
 			//legend
 			$arrLines[] = "\t" . 'DigiZeitschriften: ' . "\t" . $this->POST['start']['month'][0] . '/' . $this->POST['start']['year'][0] . ' bis ' . $this->POST['end']['month'][0] . '/' . $this->POST['end']['year'][0];
 			$arrLines[] = "\n\n\n";
-			$arrLines[] = "\t\t\t\t\t" . 'Importierte Seiten / Bände: ' . "\t\t\t\t" . 'Band Importe:' . "\t\n";
-			$arrLines[] = 'Anzahl Zss.' . "\t" . 'Titel inkl. Vorgänger' . "\t" . 'Persistent URL' . "\t" . 'Verlag.' . "\t" . 'Erscheiniungsverlauf.' . "\t" . 'vor 1926' . "\t" . 'Bände' . "\t" . 'nach 1926' . "\t" . 'Bände' . "\t" . 'erster' . "\t" . 'letzter' . "\t" . 'Downloads';
+			$arrLines[] = "\t\t\t\t\t" . 'Importierte Seiten / Bände vor 1926:' . "\t\t" . 'Importierte Seiten / Bände nach 1926:' . "\t\t\t" . 'Band Importe:' . "\t\n";
+			$arrLines[] = 'Anzahl Zss.' . "\t" . 'Verlag.' . "\t" . 'Titel inkl. Vorgänger' . "\t" . 'Persistent URL' . "\t" . 'Erscheiniungsverlauf.' . "\t" . 'Seiten' . "\t" . 'Bände' . "\t" . 'Seiten' . "\t" . 'Bände' . "\t" . 'Downloads' . "\t" . 'erster' . "\t" . 'letzter' . "\t" . 'OA only';
 			$arrLines[] = "\n";
 			foreach ($this->arrResult as $periodical) {
 				if (in_array('digizeitonly', $this->POST['license'])) {
@@ -264,9 +294,11 @@ class PageCountUtility {
 					foreach ($periodical['acl'] as $key => $license) {
 						$periodical['acl'][$key] = strtolower($license);
 					}
+                                        /*
 					if (!in_array('gesamtabo', $periodical['acl'])) {
 						continue;
 					}
+                                         */
 				}
 				$count++;
 				$periodical['linenumber'] = $count;
@@ -299,9 +331,9 @@ class PageCountUtility {
 	protected function getLine($periodical) {
 		$column = array();
 		$column[0] = $periodical['linenumber'];
-		$column[1] = trim($periodical['title'][0]);
-		$column[2] = $this->config['ppnResolver'] . trim($periodical['pid']);
-		$column[3] = trim($periodical['COPYRIGHT']);
+		$column[1] = trim($periodical['COPYRIGHT']);
+		$column[2] = trim($periodical['title'][0]);
+		$column[3] = $this->config['ppnResolver'] . trim($periodical['pid']);
 		$column[4] = trim($periodical['DATERUN']);
 		$column[5] = 0;
 		$column[6] = 0;
@@ -316,9 +348,10 @@ class PageCountUtility {
 				$column[8]++;
 			}
 		}
-		$column[9] = trim($periodical['FIRSTIMPORT']);
-		$column[10] = trim($periodical['LASTIMPORT']);
-		$column[11] = trim($this->downloads[$periodical['pid']]);
+		$column[9] = trim($this->downloads[$periodical['pid']]);
+		$column[10] = trim($periodical['FIRSTIMPORT']);
+		$column[11] = trim($periodical['LASTIMPORT']);
+		$column[12] = trim($periodical['OAONLY']);
 		return implode("\t", $column);
 	}
 
@@ -329,12 +362,28 @@ class PageCountUtility {
 	protected function getPredecessor($pid, $_pid) {
 		if (isset($this->arrPredecessor[$_pid])) {
 			$this->arrResult[$pid]['PREDECESSOR'][$_pid] = $this->arrPredecessor[$_pid];
-			if ($this->arrPredecessor[$_pid]['PRE']) {
-				foreach ($this->arrPredecessor[$_pid]['PRE'] as $PPNPID) {
+			if ($this->arrPredecessor[$_pid]['pre']) {
+				foreach ($this->arrPredecessor[$_pid]['pre'] as $PID) {
 					$this->getPredecessor($pid, $PID);
 				}
 			}
 		}
+	}
+
+        /**
+	 * @param date (YYYY-MM-DDThh:mm:ssZ)
+	 * 
+	 */
+	protected function dateFormat($date, $addTime = false) {
+            $arrTmp = explode('T',str_replace('Z', '', $date));
+            $arrDate = explode('-', $arrTmp[0]);
+            $arrTime = explode(':', $arrTmp[1]);
+            $timestamp = mktime ($arrTime[0], $arrTime[1], $arrTime[2], $arrDate[1], $arrDate[2], $arrDate[0]);
+            if($addTime) {
+                return date('d.m.Y H:i:s', $timestamp);
+            } else {
+                return date('d.m.Y', $timestamp);
+            }            
 	}
 
 	/**
@@ -369,19 +418,27 @@ class PageCountUtility {
 				}
 			}
 
-			//first- / last Import
+			//first- / last Import / Openaccess only
 			if (strtolower($arr['docstrct']) == 'periodical') {
+                                if(in_array('free', $arr['acl']) && !in_array('gesamtabo', $arr['acl'])) {
+                                    $arr['OAONLY'] = 'X';
+                                    $this->cache[$arr['pid']]['OAONLY'] = 'X';
+                                } else {
+                                    $arr['OAONLY'] = '';
+                                    $this->cache[$arr['pid']]['OAONLY'] = '';
+                                }
 				$arrParams = array(
 					'q' => urlencode('iswork:1 AND idparentdoc:"' . $arr['pid'] . '"'),
 					'start' => 0,
 					'rows' => 9999,
+                                        'fl' => 'dateindexed',
 					'sort' => 'dateindexed+asc'
 				);
 				$arrSolr = $this->getSolrResult($arrParams);
 				if ($arrSolr['response']['docs']) {
-					$arr['FIRSTIMPORT'] = $arrSolr['response']['docs'][0]['dateindexed'];
+					$arr['FIRSTIMPORT'] = $this->dateFormat($arrSolr['response']['docs'][0]['dateindexed']);
 					$this->cache[$arr['pid']]['FIRSTIMPORT'] = $arr['FIRSTIMPORT'];
-					$arr['LASTIMPORT'] = $arrSolr['response']['docs'][count($arrSolr['response']['docs']) - 1]['dateindexed'];
+					$arr['LASTIMPORT'] = $this->dateFormat($arrSolr['response']['docs'][count($arrSolr['response']['docs']) - 1]['dateindexed']);
 					$this->cache[$arr['pid']]['LASTIMPORT'] = $arr['LASTIMPORT'];
 				}
 

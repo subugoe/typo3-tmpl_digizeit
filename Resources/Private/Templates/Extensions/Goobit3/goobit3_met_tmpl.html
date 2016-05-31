@@ -657,7 +657,26 @@
 						<xsl:when test="starts-with($PID,'urn')">
 							<xsl:for-each select="mods:identifier" >
 								<xsl:choose>
-									<xsl:when test="attribute::type='urn'">
+									<!--<xsl:when test="attribute::type='urn'">
+										<li>
+											<span class="goobit3-met__item-label">
+												<xsl:text>Links: </xsl:text>
+											</span>
+											<span>
+												<a class="goobit3-met__image-link" href="{$metsresolverurl}{$PID}" target="_blank" title="METS-Download">
+													<img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/mets.gif" width="60" height="24" />
+												</a>
+												<xsl:choose>
+													<xsl:when test="$dfgv-link!=''">
+														<a class="goobit3-met__image-link" href="{$dfgv-link}{$PID}" target="_blank" title="DFG-Viewer">
+															<img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/dfg-viewer.gif" width="30" height="24" />
+														</a>
+													</xsl:when>
+												</xsl:choose>
+											</span>
+										</li>
+									</xsl:when>-->
+									<xsl:when test=".=$PID">
 										<li>
 											<span class="goobit3-met__item-label">
 												<xsl:text>Links: </xsl:text>
@@ -680,26 +699,6 @@
 							</xsl:for-each>
 						</xsl:when>
 
-						<!-- Links - other PIs-->
-						<xsl:otherwise>
-							<li>
-								<span class="goobit3-met__item-label">
-									<xsl:text>Links: </xsl:text>
-								</span>
-								<span>
-									<a class="goobit3-met__image-link" href="{$metsresolverurl}{$PID}" target="_blank" title="METS-Download">
-										<img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/mets.gif" width="60" height="24" />
-									</a>
-									<xsl:choose>
-										<xsl:when test="$dfgv-link!=''">
-											<a class="goobit3-met__image-link" href="{$dfgv-link}{$PID}" target="_blank" title="DFG-Viewer">
-												<img src="/typo3conf/ext/tmpl_digizeit/Resources/Public/Images/dfg-viewer.gif" width="30" height="24" />
-											</a>
-										</xsl:when>
-									</xsl:choose>
-								</span>
-							</li>
-						</xsl:otherwise>
 					</xsl:choose>
 				</xsl:if>
 

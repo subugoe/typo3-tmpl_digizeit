@@ -9578,7 +9578,8 @@ table {
   float: right;
   margin-left: 1em; }
 
-.goobit3-toc-item__current {
+.goobit3-toc-item__current,
+.goobit3-toc-item--tx-goobit3-toc_toc_current {
   background-color: #f3ecd5;
   font-weight: bold; }
 

@@ -238,8 +238,8 @@ class PageCountUtility {
                                 }
                             }
                         }
-                        
-                        
+
+
 			// add volumes to journals
 			foreach ($arrVolumeSolr['response']['docs'] as $volume) {
 				$this->getInfo($volume);
@@ -256,7 +256,7 @@ class PageCountUtility {
 			foreach ($this->arrPredecessor as $pid => $periodical) {
 				$this->getInfo($this->arrPredecessor[$pid]);
 			}
-                        
+
 			// add info and predecessors to journals
 			foreach ($this->arrResult as $pid => $periodical) {
 				if (isset($periodical['pre'])) {
@@ -274,7 +274,7 @@ class PageCountUtility {
                             $bytitle[$pid] = strtolower($row['bytitle']);
                         }
                         array_multisort($COPYRIGHT, $bytitle, $this->arrResult);
-                        
+
 			// get downloads from counter
 			$this->downloads = array();
 			$this->getDownloads($this->POST['start']['year'][0] . $this->POST['start']['month'][0], $this->POST['end']['year'][0] . $this->POST['end']['month'][0]);
@@ -359,20 +359,23 @@ class PageCountUtility {
 	 * @param $pid
 	 * @param $_pid
 	 */
-	protected function getPredecessor($pid, $_pid) {
-		if (isset($this->arrPredecessor[$_pid])) {
-			$this->arrResult[$pid]['PREDECESSOR'][$_pid] = $this->arrPredecessor[$_pid];
-			if ($this->arrPredecessor[$_pid]['pre']) {
-				foreach ($this->arrPredecessor[$_pid]['pre'] as $PID) {
-					$this->getPredecessor($pid, $PID);
-				}
-			}
-		}
-	}
+	 protected function getPredecessor($pid, $_pid, $signatur = false) {
+ 		if (isset($this->arrPredecessor[$_pid])) {
+ 			$this->arrResult[$pid]['PREDECESSOR'][$_pid] = $this->arrPredecessor[$_pid];
+ 			if ($this->arrPredecessor[$_pid]['pre']) {
+ 				foreach ($this->arrPredecessor[$_pid]['pre'] as $PID) {
+ 					if($PID . '-' . $_pid == $signatur) {
+ 						continue;
+ 					}
+ 					$this->getPredecessor($pid, $PID, $_pid . '-' . $PID);
+ 				}
+ 			}
+ 		}
+ 	}
 
         /**
 	 * @param date (YYYY-MM-DDThh:mm:ssZ)
-	 * 
+	 *
 	 */
 	protected function dateFormat($date, $addTime = false) {
             $arrTmp = explode('T',str_replace('Z', '', $date));
@@ -383,7 +386,7 @@ class PageCountUtility {
                 return date('d.m.Y H:i:s', $timestamp);
             } else {
                 return date('d.m.Y', $timestamp);
-            }            
+            }
 	}
 
 	/**

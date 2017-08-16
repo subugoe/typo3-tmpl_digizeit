@@ -36,10 +36,10 @@
 			<xsl:apply-templates select="mods:mods[last()]/mods:extension/goobi:type" mode="maintitle" />
 			<xsl:apply-templates select="mods:mods/mods:extension/goobi:type" mode="structrun" />
 			<xsl:apply-templates select="mods:mods[last()]/mods:extension/goobi:purl" mode="purl" />
-			<xsl:apply-templates select="mods:mods[1]/mods:accessCondition[@type='dz']/text::cc-by-4.0" mode="cc-by" />
+			<xsl:apply-templates select="mods:mods[1]/mods:accessCondition[@type='dz']/text()='cc-by-4.0'" mode="cc-by" />
 		</xsl:template>
 
-		<xsl:template match="mods:mods[1]/mods:accessCondition[@type='dz']/text::cc-by-4.0" mode="cc-by" >
+		<xsl:template match="mods:mods[1]/mods:accessCondition[@type='dz']/text()='cc-by-4.0'" mode="cc-by" >
 		<div class="goobit3__comment">
 			<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons Lizenzvertrag" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />Dieses Werk ist lizenziert unter einer <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Namensnennung 4.0 International Lizenz</a>
 		</div>

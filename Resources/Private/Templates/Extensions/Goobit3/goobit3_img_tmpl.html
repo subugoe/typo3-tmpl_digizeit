@@ -13,8 +13,8 @@
 	<?xml version="1.0" encoding="utf-8"?>
 	<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:goobi="http://www.goobi.org/">
 
-		<xsl:output method="html"/>
-		<xsl:param name="link" value=''/>
+		<xsl:output method="html" />
+		<xsl:param name="link" value='' />
 		<xsl:param name="pdflink" value="0" />
 		<xsl:param name="pdficon" value="0" />
 		<xsl:param name="firstpage" value="0" />
@@ -33,49 +33,76 @@
 			<xsl:apply-templates select="mods:mods[1]/mods:note[@ID='goobiweb.bbf.dipf.de']" mode="comment" />
 			<xsl:apply-templates select="mods:mods[1]/mods:note[@ID='www.wuerttembergische-kirchengeschichte.de']" mode="comment" />
 			<xsl:apply-templates select="mods:mods[last()]/mods:titleInfo[1]/mods:title" mode="maintitle" />
-			<xsl:apply-templates select="mods:mods[last()]/mods:extension/goobi:type" mode="maintitle"/>
-			<xsl:apply-templates select="mods:mods/mods:extension/goobi:type" mode="structrun"/>
-			<xsl:apply-templates select="mods:mods[last()]/mods:extension/goobi:purl" mode="purl"/>
+			<xsl:apply-templates select="mods:mods[last()]/mods:extension/goobi:type" mode="maintitle" />
+			<xsl:apply-templates select="mods:mods/mods:extension/goobi:type" mode="structrun" />
+			<xsl:apply-templates select="mods:mods[last()]/mods:extension/goobi:purl" mode="purl" />
+			<xsl:apply-templates select="mods:mods[1]/mods:accessCondition[@type='dz']/text::cc-by-4.0" mode="cc-by" />
+		</xsl:template>
+
+		<xsl:template match="mods:mods[1]/mods:accessCondition[@type='dz']/text::cc-by-4.0" mode="cc-by" >
+		<div class="goobit3__comment">
+			<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons Lizenzvertrag" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />Dieses Werk ist lizenziert unter einer <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Namensnennung 4.0 International Lizenz</a>
+		</div>
 		</xsl:template>
 
 		<xsl:template match="mods:mods[1]/mods:note[@ID='MGH']" mode="comment">
-			<div class="goobit3__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /></div>
+			<div class="goobit3__comment">
+				<xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))" />
+			</div>
 		</xsl:template>
 
 		<xsl:template match="mods:mods[1]/mods:note[@ID='destatis.de']" mode="comment">
-			<div class="goobit3__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /></div>
+			<div class="goobit3__comment">
+				<xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))" />
+			</div>
 		</xsl:template>
 
 		<xsl:template match="mods:mods[1]/mods:note[@ID='diglit.ub.uni-heidelberg.de']" mode="comment">
-			<div class="goobit3__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /></div>
+			<div class="goobit3__comment">
+				<xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))" />
+			</div>
 		</xsl:template>
 
 		<xsl:template match="mods:mods[1]/mods:note[@ID='digi.ub.uni-heidelberg.de']" mode="comment">
-			<div class="goobit3__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /></div>
+			<div class="goobit3__comment">
+				<xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))" />
+			</div>
 		</xsl:template>
 
 		<xsl:template match="mods:mods[1]/mods:note[@ID='idb.ub.uni-tuebingen.de']" mode="comment">
-			<div class="goobit3__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /></div>
+			<div class="goobit3__comment">
+				<xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))" />
+			</div>
 		</xsl:template>
 
 		<xsl:template match="mods:mods[1]/mods:note[@ID='www.zbw.eu.digire']" mode="comment">
-			<div class="goobit3__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /></div>
+			<div class="goobit3__comment">
+				<xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))" />
+			</div>
 		</xsl:template>
 
 		<xsl:template match="mods:mods[1]/mods:note[@ID='www.uni-weimar.de.ubweimar']" mode="comment">
-			<div class="goobit3__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /></div>
+			<div class="goobit3__comment">
+				<xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))" />
+			</div>
 		</xsl:template>
 
 		<xsl:template match="mods:mods[1]/mods:note[@ID='europeana.ub.uni-frankfurt.de']" mode="comment">
-			<div class="goobit3__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /></div>
+			<div class="goobit3__comment">
+				<xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))" />
+			</div>
 		</xsl:template>
 
 		<xsl:template match="mods:mods[1]/mods:note[@ID='goobiweb.bbf.dipf.de']" mode="comment">
-			<div class="goobit3__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /></div>
+			<div class="goobit3__comment">
+				<xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))" />
+			</div>
 		</xsl:template>
-                <xsl:template match="mods:mods[1]/mods:note[@ID='www.wuerttembergische-kirchengeschichte.de']" mode="comment">
-                    <div class="goobit3__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))"  /></div>
-                </xsl:template>
+		<xsl:template match="mods:mods[1]/mods:note[@ID='www.wuerttembergische-kirchengeschichte.de']" mode="comment">
+			<div class="goobit3__comment">
+				<xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))" />
+			</div>
+		</xsl:template>
 
 		<!--  Main Title -->
 		<xsl:template match="mods:mods[last()]/mods:titleInfo[1]/mods:title" mode="maintitle">
@@ -120,7 +147,7 @@
 		</xsl:template>
 
 		<!-- StructRun -->
-		<xsl:template match="mods:mods/mods:extension/goobi:type"  mode="structrun">
+		<xsl:template match="mods:mods/mods:extension/goobi:type" mode="structrun">
 			<xsl:choose>
 				<xsl:when test="position()=last()">
 					<span class="goobit3-image__struct">
@@ -170,8 +197,11 @@
 		<xsl:template match="mods:mods[last()]/mods:extension/goobi:purl" mode="purl">
 			<div class="goobit3__purl">
 				<a>
-					<xsl:attribute name="href"><xsl:value-of select="." /></xsl:attribute>
-					<xsl:attribute name="title"><xsl:text>PURL</xsl:text></xsl:attribute>
+					<xsl:attribute name="href">
+						<xsl:value-of select="." /></xsl:attribute>
+					<xsl:attribute name="title">
+						<xsl:text>PURL</xsl:text>
+					</xsl:attribute>
 					<xsl:value-of select="." />
 				</a>
 			</div>
@@ -179,7 +209,8 @@
 
 
 	</xsl:stylesheet>
-	<!--  ###HEADSECTION### END> --><?xml version="1.0" encoding="utf-8"?>
+	<!--  ###HEADSECTION### END> -->
+	<?xml version="1.0" encoding="utf-8"?>
 </div>
 <!-- ###HEAD### END -->
 
@@ -188,7 +219,7 @@
 	<?xml version="1.0" encoding="utf-8"?>
 	<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:mets="http://www.loc.gov/METS/">
 
-		<xsl:output method="html"/>
+		<xsl:output method="html" />
 
 		<xsl:template name="style">
 			<!-- Platz fuer StyleSheets -->

@@ -44,7 +44,7 @@
 //### INIT ###########################################################
 //####################################################################
 
-$solrPhpsUrl = 'http://localhost:8080/digizeit/select/?wt=phps';
+$solrPhpsUrl = 'http://www.digizeitschriften.de/digizeit2/select/?wt=phps';
 $metsPath = '/storage/digizeit/mets_repository/indexed_mets/';
 
 $arrQuery = explode('/', htmlentities(trim($_SERVER['QUERY_STRING']), ENT_QUOTES, "UTF-8"));

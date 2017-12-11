@@ -20,20 +20,11 @@
 
 [DB]
 ;#### solr ####
-solrPhpsUrl = "http://localhost:8080/digizeit/select/?wt=phps"
+solrPhpsUrl = "http://www.digizeitschriften.de/digizeit2/select/?wt=phps"
 engine = solr
 serialized = STRUCTRUN,ACL
 defaultfield = DEFAULT
 datefield = DATEINDEXED
-
-;### LUCENE phpJavaBridge ###
-;    javabridge = "http://localhost:8087/myJBridge_20111123/java/Java.inc"
-;    engine = lucene
-;    index = /srv/www/chroot/digizeit/digizeit/lucene
-;    stopwordfile = ./stopwords_java.txt
-;    defaultfield = 'DEFAULT'
-;    datefield = DATEMODIFIED
-;    datefield = DATEINDEXED
 
 [MAIN]
 error_reporting = 0

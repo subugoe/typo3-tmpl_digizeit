@@ -27,7 +27,7 @@ set_time_limit(0);
 error_reporting(0);
 $scriptPath = dirname(__FILE__);
 
-$solrPhpsUrl = "http://localhost:8080/digizeit/select/?wt=phps&q=";
+$solrPhpsUrl = "http://www.digizeitschriften.de/digizeit2/select/?wt=phps&q=";
 
 $strVolumeAboQuery = urlencode('ISWORK:1 AND ACL:gesamtabo AND NOT(ACL: free OR ACL:ubheidelberg OR ACL:ubtuebingen OR ACL:ubfrankfurt)');
 

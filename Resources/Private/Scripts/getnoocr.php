@@ -1,10 +1,7 @@
 <?php
-$strOCRPath = '/srv/www/chroot/digizeit/digizeit/htdocs/gdzocr/';
+$strOCRPath = '/storage/digizeit/gdzocr/';
 #$strOCRPath = '/srv/www/chroot/dzdev/dzdev/htdocs/gdzocr/';
-$strDZPath = '/storage_lokal/indexed_mets/';
-
-#$strOCRPath = '/hidrive/sftp/users/digizeit/gdzocr/';
-#$strDZPath = '/hidrive/sftp/users/digizeit/mets_repository/indexed_mets/';
+$strDZPath = '/storage/digizeit/mets/';
 
 $arrOCR = scandir($strOCRPath);
 foreach ($arrOCR as $k => $v) {

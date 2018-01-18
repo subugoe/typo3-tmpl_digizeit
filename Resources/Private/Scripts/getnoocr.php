@@ -1,6 +1,5 @@
 <?php
 $strOCRPath = '/storage/digizeit/gdzocr/';
-#$strOCRPath = '/srv/www/chroot/dzdev/dzdev/htdocs/gdzocr/';
 $strDZPath = '/storage/digizeit/mets/';
 
 $arrOCR = scandir($strOCRPath);

@@ -134,6 +134,14 @@
 			</xsl:choose>
 		</xsl:template>
 
+        <xsl:template match="mods:note[@ID='digital-beta.staatsbibliothek-berlin.de']" mode="periodicalvolume">
+			<xsl:choose>
+				<xsl:when test="$docstrct='Zeitschrift' or $docstrct='Periodical'">
+					<div class="goobit3__comment"><xsl:value-of disable-output-escaping="yes" select="normalize-space(string(.))" /></div>
+				</xsl:when>
+			</xsl:choose>
+		</xsl:template>
+
 		<xsl:template match="mods:note[@ID='www.wuerttembergische-kirchengeschichte.de']" mode="periodicalvolume">
 			<xsl:choose>
 				<xsl:when test="$docstrct='Zeitschrift' or $docstrct='Periodical'">
@@ -152,6 +160,7 @@
 			<xsl:apply-templates select="mods:note[@ID='www.uni-weimar.de.ubweimar']" mode="periodicalvolume" />
 			<xsl:apply-templates select="mods:note[@ID='europeana.ub.uni-frankfurt.de']" mode="periodicalvolume" />
 			<xsl:apply-templates select="mods:note[@ID='goobiweb.bbf.dipf.de']" mode="periodicalvolume" />
+            <xsl:apply-templates select="mods:note[@ID='digital-beta.staatsbibliothek-berlin.de']" mode="periodicalvolume" />
             <xsl:apply-templates select="mods:note[@ID='www.wuerttembergische-kirchengeschichte.de']" mode="periodicalvolume" />
 
 			<ul class="goobit3-met__list">
@@ -409,7 +418,7 @@
 
 				<!-- Identifier -->
 				<xsl:for-each select="mods:identifier" >
-						
+
 					<xsl:if test="attribute::type!='ADBID'">
 					<li>
 						<xsl:choose>

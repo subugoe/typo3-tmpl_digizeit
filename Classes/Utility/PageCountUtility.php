@@ -79,7 +79,7 @@ class PageCountUtility {
 		'strWall' => '1925',
 		'ppnResolver' => 'http://resolver.sub.uni-goettingen.de/purl/?',
 		'arrSerFields' => array('structrun'),
-		'digizeitonly' => '(NOT(dc:510.mathematics) AND (acl:free OR acl:gesamtabo) AND NOT(acl:(dipfbbfberlin OR ubfrankfurt OR ubheidelberg OR ubtuebingen OR ubweimar OR zbwkieldigire OR ubmannheim OR sbbberlin))) ',
+		'digizeitonly' => '(NOT(dc:510.mathematics) AND (acl:free OR acl:gesamtabo) AND NOT(acl:(dipfbbfberlin OR ubfrankfurt OR ubheidelberg OR ubtuebingen OR ubweimar OR zbwkieldigire OR ubmannheim OR sbberlin))) ',
 	);
 
 	public function main() {

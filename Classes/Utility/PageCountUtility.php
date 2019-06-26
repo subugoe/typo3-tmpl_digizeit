@@ -79,7 +79,7 @@ class PageCountUtility {
 		'strWall' => '1925',
 		'ppnResolver' => 'http://resolver.sub.uni-goettingen.de/purl/?',
 		'arrSerFields' => array('structrun'),
-		'digizeitonly' => '(NOT(dc:510.mathematics) AND (acl:free OR acl:gesamtabo) AND NOT(acl:(dipfbbfberlin OR ubfrankfurt OR ubheidelberg OR ubtuebingen OR ubweimar OR zbwkieldigire OR ubmannheim OR sbberlin))) ',
+		'digizeitonly' => '(NOT(dc:510.mathematics) AND (acl:free OR acl:gesamtabo*) AND NOT(acl:(dipfbbfberlin OR ubfrankfurt OR ubheidelberg OR ubtuebingen OR ubweimar OR zbwkieldigire OR ubmannheim OR sbberlin))) ',
 	);
 
 	public function main() {
@@ -423,7 +423,8 @@ class PageCountUtility {
 
 			//first- / last Import / Openaccess only
 			if (strtolower($arr['docstrct']) == 'periodical') {
-                                if(in_array('free', $arr['acl']) && !in_array('gesamtabo', $arr['acl'])) {
+                                //if(in_array('free', $arr['acl']) && !in_array('gesamtabo', $arr['acl'])) {
+                                if(in_array('free', $arr['acl'])) {
                                     $arr['OAONLY'] = 'X';
                                     $this->cache[$arr['pid']]['OAONLY'] = 'X';
                                 } else {
